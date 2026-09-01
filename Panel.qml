@@ -328,19 +328,22 @@ Item {
 
                 Rectangle { width: 1; height: parent.height; color: "#2d3d40" }
 
-                Flickable {
-                  id: readingScroll
+                Item {
                   width: parent.width - cardsPane.width - 21
                   height: parent.height
-                  contentWidth: width
-                  contentHeight: summaryColumn.implicitHeight
-                  clip: true
-                  boundsBehavior: Flickable.StopAtBounds
 
-                  Column {
-                    id: summaryColumn
-                    width: readingScroll.width - 14
-                    spacing: 11
+                  Flickable {
+                    id: readingScroll
+                    anchors.fill: parent
+                    contentWidth: width
+                    contentHeight: summaryColumn.implicitHeight
+                    clip: true
+                    boundsBehavior: Flickable.StopAtBounds
+
+                    Column {
+                      id: summaryColumn
+                      width: readingScroll.width - 14
+                      spacing: 11
 
                     Text { width: parent.width; text: root.reading ? (root.reading.cards.length === 1 ? root.modeLabel()+"  ·  "+root.reading.cards[0].card.title.toUpperCase() : root.reading.spreadName.toUpperCase()) : "PREPARING DRAW"; color: root.cyan; font.family: "monospace"; font.pixelSize: 11; font.bold: true; font.letterSpacing: 1.2; wrapMode: Text.Wrap; textFormat: Text.PlainText }
                     Text { width: parent.width; text: root.reading ? root.reading.synthesis : "Drawing from the complete 78-card system…"; color: root.ivory; font.family: "monospace"; font.pixelSize: 13; lineHeight: 1.35; wrapMode: Text.Wrap; textFormat: Text.PlainText }
@@ -353,7 +356,36 @@ Item {
                     Text { width: parent.width; text: "ANOTHER WAY TO READ IT"; color: root.brass; font.family: "monospace"; font.pixelSize: 9; font.bold: true; font.letterSpacing: 1.2; textFormat: Text.PlainText }
                     Text { width: parent.width; text: root.reading ? root.reading.alternative : ""; color: root.ivory; font.family: "monospace"; font.pixelSize: 11; lineHeight: 1.3; wrapMode: Text.Wrap; textFormat: Text.PlainText }
                     Text { width: parent.width; text: root.reading ? root.reading.reflection : ""; color: root.cyan; font.family: "monospace"; font.pixelSize: 12; lineHeight: 1.3; wrapMode: Text.Wrap; textFormat: Text.PlainText }
-                    ArcanaButton { visible: root.service && root.service.currentReadingKind === "daily"; text: root.pendingRedraw === "daily" ? "R  CONFIRM REDRAW" : "R  REDRAW DAILY"; danger: root.pendingRedraw === "daily"; onClicked: root.confirmDailyRedraw() }
+                      ArcanaButton { visible: root.service && root.service.currentReadingKind === "daily"; text: root.pendingRedraw === "daily" ? "R  CONFIRM REDRAW" : "R  REDRAW DAILY"; danger: root.pendingRedraw === "daily"; onClicked: root.confirmDailyRedraw() }
+                    }
+                  }
+
+                  Rectangle {
+                    visible: readingScroll.contentHeight > readingScroll.height + 2 && !readingScroll.atYEnd
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.bottom: parent.bottom
+                    height: 42
+                    gradient: Gradient {
+                      GradientStop { position: 0.0; color: "#00101416" }
+                      GradientStop { position: 0.62; color: "#dc101416" }
+                      GradientStop { position: 1.0; color: "#ff101416" }
+                    }
+                  }
+
+                  Text {
+                    visible: readingScroll.contentHeight > readingScroll.height + 2 && !readingScroll.atYEnd
+                    anchors.right: parent.right
+                    anchors.rightMargin: 12
+                    anchors.bottom: parent.bottom
+                    anchors.bottomMargin: 7
+                    text: "SCROLL  ↓"
+                    color: root.cyan
+                    font.family: "monospace"
+                    font.pixelSize: 9
+                    font.bold: true
+                    font.letterSpacing: 1
+                    textFormat: Text.PlainText
                   }
                 }
               }
