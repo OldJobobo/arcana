@@ -65,7 +65,7 @@ The launch is never automatic. Omarchy agents may run with unattended/auto-appro
 
 ```bash
 npm test
-node tools/validate-release.js
+node tests/validate-release.js
 ```
 
 Validation levels are reported separately: repository/data, deterministic helpers, Marketplace scanner, Quattro validator, live shell load, persistence, and configured-agent handoff.
