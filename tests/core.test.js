@@ -23,6 +23,16 @@ test("draw count is bounded by the deck", () => {
   assert.equal(Arcana.draw(deck, {seed:"x", count:0}).length, 1);
 });
 
+test("QML JsonAdapter array-like values are accepted at the engine boundary", () => {
+  const qmlDeck = {length: deck.length};
+  for (let index=0; index<deck.length; index++) qmlDeck[index] = deck[index];
+  const selection = Arcana.draw(qmlDeck, {seed:"qml-boundary",count:3,reversals:true});
+  assert.equal(selection.length,3);
+  const qmlSelection = {length: selection.length};
+  for (let index=0; index<selection.length; index++) qmlSelection[index] = selection[index];
+  assert.equal(Arcana.compose(qmlDeck,qmlSelection,"context-friction-doorway").cards.length,3);
+});
+
 test("daily key is stable for an explicit local date", () => {
   assert.equal(Arcana.dailyKey("2026-09-01"), "daily:2026-09-01:composer-v1");
   assert.equal(Arcana.dailyKey("2026-09-01"), Arcana.dailyKey("2026-09-01"));

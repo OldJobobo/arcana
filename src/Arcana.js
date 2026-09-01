@@ -46,9 +46,18 @@ function boundedCount(value, total) {
   return Math.max(1, Math.min(Math.max(1,total), wanted));
 }
 
+function toArray(value) {
+  if (Array.isArray(value)) return value;
+  if (!value || !Number.isFinite(Number(value.length))) return [];
+  const output=[];
+  const length=Math.max(0,Math.floor(Number(value.length)));
+  for (let index=0;index<length;index++) output.push(value[index]);
+  return output;
+}
+
 function draw(deck, options) {
   options = options || {};
-  const cards = Array.isArray(deck) ? deck : [];
+  const cards = toArray(deck);
   if (!cards.length) return [];
   const next = rng(options.seed || "omarchy-arcana");
   const pool = cards.map((card,index) => index);
@@ -58,7 +67,7 @@ function draw(deck, options) {
     const pick = Math.floor(next() * pool.length);
     const card = cards[pool.splice(pick,1)[0]];
     const reversed = options.reversals === true && next() < 0.34;
-    const modes = Array.isArray(card.orientationModes) ? card.orientationModes : [];
+    const modes = toArray(card.orientationModes);
     const mode = reversed && modes.length ? modes[Math.floor(next()*modes.length)] : null;
     output.push({
       cardId: card.id,
@@ -79,7 +88,7 @@ function findCard(deck,id) {
 }
 
 function findMode(card,id) {
-  const modes=Array.isArray(card.orientationModes) ? card.orientationModes : [];
+  const modes=toArray(card.orientationModes);
   for (let i=0;i<modes.length;i++) if (modes[i].id === id) return modes[i];
   return modes.length ? modes[0] : {id:"shadowed",label:"Shadowed",reading:"The card's capacity may be blocked, distorted, or overextended."};
 }
@@ -146,7 +155,8 @@ function patternSummary(cards) {
 }
 
 function compose(deck,selections,spreadId) {
-  const chosen=Array.isArray(selections) ? selections : [];
+  deck=toArray(deck);
+  const chosen=toArray(selections);
   const spread = SPREADS[spreadId] && SPREADS[spreadId].length === chosen.length ? SPREADS[spreadId] : SPREADS.single;
   const cards=[];
   const evidence=[];

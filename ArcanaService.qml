@@ -41,7 +41,7 @@ Item {
 
   function persistedDailyIsCurrent() {
     return stateAdapter.dailyDate === localDateKey()
-      && Array.isArray(stateAdapter.dailySelection)
+      && stateAdapter.dailySelection
       && stateAdapter.dailySelection.length === 1
   }
 
@@ -233,12 +233,12 @@ Item {
 
   IpcHandler {
     target: "org.ministryoftaste.omarchy-arcana.service"
-    function status(): string {
+    function status(arg: string): string {
       return JSON.stringify({ready:root.ready,cards:root.cards.length,kind:root.currentReadingKind,agentStatus:root.agentStatus})
     }
-    function daily(): string { return root.requestDaily(false) ? "ok" : "busy" }
-    function free(): string { return root.requestFree() ? "ok" : "busy" }
-    function spread(): string { return root.requestSpread() ? "ok" : "busy" }
+    function daily(arg: string): string { return root.requestDaily(false) ? "ok" : "busy" }
+    function free(arg: string): string { return root.requestFree() ? "ok" : "busy" }
+    function spread(arg: string): string { return root.requestSpread() ? "ok" : "busy" }
   }
 
   Component.onCompleted: {
