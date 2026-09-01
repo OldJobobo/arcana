@@ -14,7 +14,8 @@ Item {
   readonly property string stateBase: (Quickshell.env("XDG_STATE_HOME") || home + "/.local/state") + "/omarchy"
   readonly property string statePath: stateBase + "/omarchy-arcana.json"
   readonly property string agentContextDir: stateBase + "/arcana-agent-context"
-  readonly property var cards: deckAdapter.cards || []
+  property var deckDocument: ({schemaVersion: 0, cards: []})
+  readonly property var cards: deckDocument.cards || []
   readonly property bool ready: cards.length === 78
 
   property var currentReading: null
@@ -37,6 +38,24 @@ Item {
   function reversalsEnabled() {
     var p = stateAdapter.preferences || ({})
     return p.reversals !== false
+  }
+
+  function deckSnapshot() {
+    return JSON.parse(JSON.stringify(root.cards || []))
+  }
+
+  function loadDeck() {
+    try {
+      var parsed = JSON.parse(deckStore.text() || "{}")
+      deckDocument = parsed && parsed.schemaVersion === 1 && parsed.cards ? parsed : ({schemaVersion: 0, cards: []})
+    } catch (error) {
+      deckDocument = ({schemaVersion: 0, cards: []})
+      console.warn("Omarchy Arcana could not parse assets/cards.json:", error)
+    }
+  }
+
+  function selectionSnapshot(selection) {
+    return JSON.parse(JSON.stringify(selection || []))
   }
 
   function persistedDailyIsCurrent() {
@@ -95,7 +114,7 @@ Item {
     var seed = kind === "daily"
       ? Arcana.dailyKey(localDateKey()) + ":" + entropy
       : kind + ":" + entropy + ":" + String(Number(stateAdapter.freeCounter || 0))
-    var selection = Arcana.draw(cards, {seed: seed, count: count, reversals: reversalsEnabled()})
+    var selection = Arcana.draw(deckSnapshot(), {seed: seed, count: count, reversals: reversalsEnabled()})
     if (kind === "daily") {
       stateAdapter.dailyDate = localDateKey()
       stateAdapter.dailySeed = seed
@@ -107,7 +126,7 @@ Item {
   }
 
   function setReading(kind, selection, spreadId) {
-    var reading = Arcana.compose(cards, selection, spreadId)
+    var reading = Arcana.compose(deckSnapshot(), selectionSnapshot(selection), spreadId)
     reading.createdAt = new Date().toISOString()
     reading.kind = kind
     currentReading = reading
@@ -150,12 +169,7 @@ Item {
     path: Qt.resolvedUrl("assets/cards.json")
     blockLoading: true
     printErrors: true
-    adapter: JsonAdapter {
-      id: deckAdapter
-      property int schemaVersion: 1
-      property string methodVersion: ""
-      property var cards: []
-    }
+    onLoaded: root.loadDeck()
   }
 
   FileView {
@@ -242,6 +256,7 @@ Item {
   }
 
   Component.onCompleted: {
+    loadDeck()
     if (stateAdapter.lastReading) restoreLastReading()
   }
 }

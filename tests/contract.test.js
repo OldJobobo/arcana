@@ -44,6 +44,13 @@ test("dynamic agent prompts use a Process argv array and never bar.run interpola
   assert.doesNotMatch(qml, /bash\s+-lc/);
 });
 
+test("Quattro JsonAdapter graphs are normalized before entering pure JS", () => {
+  const qml = fs.readFileSync(path.join(root, "ArcanaService.qml"), "utf8");
+  assert.match(qml, /JSON\.parse\(JSON\.stringify\(root\.cards \|\| \[\]\)\)/);
+  assert.match(qml, /Arcana\.draw\(deckSnapshot\(\)/);
+  assert.match(qml, /Arcana\.compose\(deckSnapshot\(\), selectionSnapshot\(selection\)/);
+});
+
 test("repository contains release documentation and no executable helper", () => {
   for (const file of ["README.md", "LICENSE", "CHANGELOG.md", "INTERPRETATION-RESEARCH-AND-SPEC.md"])
     assert.equal(fs.existsSync(path.join(root, file)), true, file);
