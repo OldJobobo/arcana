@@ -107,16 +107,22 @@ function sentence(text) {
   return clean ? clean+"." : "";
 }
 
+function naturalTitle(text) {
+  return String(text||"").split(" ").map((word,index) =>
+    index > 0 && /^(Of|And|The)$/i.test(word) ? word.toLowerCase() : word
+  ).join(" ");
+}
+
 function positionText(card, orientationText, positionId) {
   const core=lowerStart(orientationText || (card.traditional && card.traditional.core));
   const system=lowerStart(card.omarchy && card.omarchy.systemLens);
   if (positionId === "context")
-    return sentence("The situation may currently be organized around " + core) + " " + sentence("Through the Omarchy lens, " + system);
+    return sentence("The situation may currently be organized around " + core) + " " + sentence("System context: " + system);
   if (positionId === "friction")
-    return sentence("The pressure may involve " + core) + " " + sentence("Ask whether " + system);
+    return sentence("The pressure may involve " + core) + " " + sentence("In system terms: " + system);
   if (positionId === "doorway")
-    return sentence("A possible opening is to work with " + core) + " " + sentence("In practice, " + system);
-  return sentence("This draw centers " + core) + " " + sentence("Through the Omarchy lens, " + system);
+    return sentence("A possible opening is to work with " + core) + " " + sentence("Practical translation: " + system);
+  return sentence("This draw centers " + core) + " " + sentence("Omarchy translation: " + system);
 }
 
 function relationshipType(a,b) {
@@ -144,7 +150,7 @@ function relationship(a,b,from,to) {
     from,
     to,
     type,
-    text:a.title+" and "+b.title+" "+verbs[type]+"."
+    text:naturalTitle(a.title)+" and "+naturalTitle(b.title)+" "+verbs[type]+"."
   };
 }
 
