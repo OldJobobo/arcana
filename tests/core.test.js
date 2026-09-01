@@ -52,6 +52,17 @@ test("context friction doorway composition transforms positions and relates card
   assert.match(reading.synthesis, /pressure|friction/i);
   assert.match(reading.synthesis, /possible experiment|opening/i);
   assert.ok(reading.evidence.length >= 6);
+  assert.match(reading.cards[1].transformed, /analysis is no longer clarifying the branch/i);
+  assert.doesNotMatch(reading.synthesis, /\.\.|\.;|;\s+(?:in|practically)/i);
+  assert.doesNotMatch(reading.alternative, /^Another way to read it:/i);
+});
+
+test("single-card copy omits spread-only artifacts and closes cleanly", () => {
+  const reading = Arcana.compose(deck,[{cardId:"major-00-fool",orientation:"upright"}],"single");
+  assert.equal(reading.relationships.length,0);
+  assert.equal(reading.patterns.length,0);
+  assert.doesNotMatch(reading.synthesis,/\.\.|\.;/);
+  assert.doesNotMatch(reading.alternative,/^Another way to read it:/i);
 });
 
 test("fixed input produces fixed canonical output", () => {

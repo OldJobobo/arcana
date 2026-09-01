@@ -8,12 +8,12 @@ Column {
   property real cardHeight: Math.round(cardWidth * 1.75)
 
   width: cardWidth
-  spacing: 8
+  spacing: 6
 
   Rectangle {
     width: root.cardWidth
     height: root.cardHeight
-    radius: 4
+    radius: 5
     color: "#171b1d"
     border.width: 1
     border.color: root.itemData && root.itemData.orientation === "reversed" ? "#b89b61" : "#40575a"
@@ -22,7 +22,7 @@ Column {
       anchors.fill: parent
       anchors.margins: -5
       z: -1
-      radius: 7
+      radius: 8
       color: "#56000000"
     }
 
@@ -43,6 +43,7 @@ Column {
 
   Text {
     width: parent.width
+    visible: root.itemData && root.itemData.positionId !== "single"
     text: root.itemData ? root.itemData.positionLabel.toUpperCase() : ""
     color: "#62d6df"
     font.family: "monospace"
@@ -58,7 +59,7 @@ Column {
     text: root.itemData ? root.itemData.card.title.toUpperCase() : ""
     color: "#e4e0d6"
     font.family: "monospace"
-    font.pixelSize: 11
+    font.pixelSize: 12
     font.bold: true
     horizontalAlignment: Text.AlignHCenter
     elide: Text.ElideRight
@@ -67,8 +68,20 @@ Column {
 
   Text {
     width: parent.width
+    text: root.itemData ? root.itemData.card.systemTitle.toUpperCase() : ""
+    color: "#b89b61"
+    font.family: "monospace"
+    font.pixelSize: 9
+    font.letterSpacing: 0.7
+    horizontalAlignment: Text.AlignHCenter
+    elide: Text.ElideRight
+    textFormat: Text.PlainText
+  }
+
+  Text {
+    width: parent.width
     text: root.itemData ? root.itemData.orientationLabel : ""
-    color: "#899a9c"
+    color: root.itemData && root.itemData.orientation === "reversed" ? "#b89b61" : "#899a9c"
     font.family: "monospace"
     font.pixelSize: 9
     horizontalAlignment: Text.AlignHCenter

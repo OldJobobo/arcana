@@ -94,20 +94,29 @@ function findMode(card,id) {
 }
 
 function lowerStart(text) {
-  text=String(text||"").trim();
+  text=cleanFragment(text);
   return text ? text.charAt(0).toLowerCase()+text.slice(1) : "the named pattern";
 }
 
+function cleanFragment(text) {
+  return String(text||"").trim().replace(/[\s.;,:!?]+$/g,"");
+}
+
+function sentence(text) {
+  const clean=cleanFragment(text);
+  return clean ? clean+"." : "";
+}
+
 function positionText(card, orientationText, positionId) {
-  const core=lowerStart(card.traditional && card.traditional.core);
+  const core=lowerStart(orientationText || (card.traditional && card.traditional.core));
   const system=lowerStart(card.omarchy && card.omarchy.systemLens);
   if (positionId === "context")
-    return "The situation may currently be organized around " + core + "; in the Omarchy lens, " + system;
+    return sentence("The situation may currently be organized around " + core) + " " + sentence("Through the Omarchy lens, " + system);
   if (positionId === "friction")
-    return "The pressure or friction may involve " + core + ". Consider whether " + system;
+    return sentence("The pressure may involve " + core) + " " + sentence("Ask whether " + system);
   if (positionId === "doorway")
-    return "A possible experiment or opening is to work with " + core + "; practically, " + system;
-  return "This draw may be organized around " + core + "; in the Omarchy lens, " + system;
+    return sentence("A possible opening is to work with " + core) + " " + sentence("In practice, " + system);
+  return sentence("This draw centers " + core) + " " + sentence("Through the Omarchy lens, " + system);
 }
 
 function relationshipType(a,b) {
@@ -197,8 +206,8 @@ function compose(deck,selections,spreadId) {
   }
   const patterns=patternSummary(cards);
   for (const pattern of patterns) evidence.push({id:pattern.id,kind:"spread-pattern",text:pattern.text,sources:["composer-v1"]});
-  const synthesis=cards.map(x=>x.transformed).join(" ") + (relationships.length ? " Across the spread, "+lowerStart(relationships[0].text) : "");
-  const alternative=cards.length>1 ? "Another way to read it: the friction may be protecting a capacity that the doorway asks you to use more deliberately, rather than naming a simple obstacle." : "Another way to read it: this capacity may be present but underused, rather than absent.";
+  const synthesis=cards.map(x=>x.transformed).join(" ") + (relationships.length ? " "+sentence("Across the spread, "+lowerStart(relationships[0].text)) : "");
+  const alternative=cards.length>1 ? "The friction may be protecting a capacity that the doorway asks you to use more deliberately, rather than naming a simple obstacle." : "This capacity may be present but underused, rather than absent.";
   return {
     schemaVersion:1,
     methodVersion:METHOD_VERSION,

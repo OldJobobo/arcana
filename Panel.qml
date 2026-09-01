@@ -182,9 +182,9 @@ Item {
       Rectangle {
         id: frame
         anchors.centerIn: parent
-        width: Math.min(1160, Math.max(760, surface.width - 64))
-        height: Math.min(720, Math.max(620, surface.height - 56))
-        radius: 6
+        width: Math.min(1080, Math.max(720, surface.width - 72))
+        height: Math.min(680, Math.max(580, surface.height - 72))
+        radius: 8
         color: root.graphite
         border.width: 1
         border.color: "#3e5558"
@@ -199,12 +199,12 @@ Item {
 
         Column {
           anchors.fill: parent
-          anchors.margins: 22
+          anchors.margins: 24
           spacing: 0
 
           Item {
             width: parent.width
-            height: 66
+            height: 58
 
             Item {
               x: 0
@@ -251,7 +251,7 @@ Item {
 
           Item {
             width: parent.width
-            height: 54
+            height: 48
 
             Row {
               anchors.left: parent.left
@@ -281,7 +281,7 @@ Item {
           Item {
             id: content
             width: parent.width
-            height: frame.height - 22*2 - 66 - 54 - 2 - 37
+            height: frame.height - 24*2 - 58 - 48 - 2 - 31
 
             Item {
               anchors.fill: parent
@@ -289,13 +289,13 @@ Item {
 
               Row {
                 anchors.fill: parent
-                anchors.topMargin: 18
-                anchors.bottomMargin: 12
-                spacing: 22
+                anchors.topMargin: 16
+                anchors.bottomMargin: 10
+                spacing: 20
 
                 Item {
                   id: cardsPane
-                  width: root.reading && root.reading.cards && root.reading.cards.length === 3 ? 684 : 410
+                  width: root.reading && root.reading.cards && root.reading.cards.length === 3 ? 558 : 330
                   height: parent.height
 
                   Image {
@@ -310,15 +310,17 @@ Item {
 
                   Row {
                     visible: !!root.reading
-                    anchors.centerIn: parent
-                    spacing: root.reading && root.reading.cards.length === 3 ? 18 : 0
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.top: parent.top
+                    anchors.topMargin: 10
+                    spacing: root.reading && root.reading.cards.length === 3 ? 12 : 0
 
                     Repeater {
                       model: root.reading ? root.reading.cards : []
                       delegate: CardFace {
                         required property var modelData
                         itemData: modelData
-                        cardWidth: root.reading && root.reading.cards.length === 3 ? 210 : 258
+                        cardWidth: root.reading && root.reading.cards.length === 3 ? 178 : 238
                       }
                     }
                   }
@@ -328,7 +330,7 @@ Item {
 
                 Flickable {
                   id: readingScroll
-                  width: parent.width - cardsPane.width - 23
+                  width: parent.width - cardsPane.width - 21
                   height: parent.height
                   contentWidth: width
                   contentHeight: summaryColumn.implicitHeight
@@ -338,16 +340,16 @@ Item {
                   Column {
                     id: summaryColumn
                     width: readingScroll.width - 14
-                    spacing: 14
+                    spacing: 11
 
-                    Text { width: parent.width; text: root.reading ? root.reading.spreadName.toUpperCase() : "PREPARING DRAW"; color: root.cyan; font.family: "monospace"; font.pixelSize: 11; font.bold: true; font.letterSpacing: 1.4; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                    Text { width: parent.width; text: root.reading ? (root.reading.cards.length === 1 ? root.modeLabel()+"  ·  "+root.reading.cards[0].card.title.toUpperCase() : root.reading.spreadName.toUpperCase()) : "PREPARING DRAW"; color: root.cyan; font.family: "monospace"; font.pixelSize: 11; font.bold: true; font.letterSpacing: 1.2; wrapMode: Text.Wrap; textFormat: Text.PlainText }
                     Text { width: parent.width; text: root.reading ? root.reading.synthesis : "Drawing from the complete 78-card system…"; color: root.ivory; font.family: "monospace"; font.pixelSize: 13; lineHeight: 1.35; wrapMode: Text.Wrap; textFormat: Text.PlainText }
                     Rectangle { width: parent.width; height: 1; color: "#334447" }
-                    Text { width: parent.width; text: "RELATIONSHIPS"; color: root.brass; font.family: "monospace"; font.pixelSize: 9; font.bold: true; font.letterSpacing: 1.2; textFormat: Text.PlainText }
-                    Text { width: parent.width; text: root.relationshipText(); color: root.muted; font.family: "monospace"; font.pixelSize: 11; lineHeight: 1.3; wrapMode: Text.Wrap; textFormat: Text.PlainText }
-                    Text { width: parent.width; text: "SPREAD PATTERN"; color: root.brass; font.family: "monospace"; font.pixelSize: 9; font.bold: true; font.letterSpacing: 1.2; textFormat: Text.PlainText }
-                    Text { width: parent.width; text: root.patternText(); color: root.muted; font.family: "monospace"; font.pixelSize: 11; lineHeight: 1.3; wrapMode: Text.Wrap; textFormat: Text.PlainText }
-                    Rectangle { width: parent.width; height: 1; color: "#334447" }
+                    Text { visible: root.reading && root.reading.relationships.length > 0; width: parent.width; text: "RELATIONSHIPS"; color: root.brass; font.family: "monospace"; font.pixelSize: 9; font.bold: true; font.letterSpacing: 1.2; textFormat: Text.PlainText }
+                    Text { visible: root.reading && root.reading.relationships.length > 0; width: parent.width; text: root.relationshipText(); color: root.muted; font.family: "monospace"; font.pixelSize: 11; lineHeight: 1.3; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                    Text { visible: root.reading && root.reading.cards.length > 1; width: parent.width; text: "SPREAD PATTERN"; color: root.brass; font.family: "monospace"; font.pixelSize: 9; font.bold: true; font.letterSpacing: 1.2; textFormat: Text.PlainText }
+                    Text { visible: root.reading && root.reading.cards.length > 1; width: parent.width; text: root.patternText(); color: root.muted; font.family: "monospace"; font.pixelSize: 11; lineHeight: 1.3; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                    Rectangle { visible: root.reading && root.reading.cards.length > 1; width: parent.width; height: 1; color: "#334447" }
                     Text { width: parent.width; text: "ANOTHER WAY TO READ IT"; color: root.brass; font.family: "monospace"; font.pixelSize: 9; font.bold: true; font.letterSpacing: 1.2; textFormat: Text.PlainText }
                     Text { width: parent.width; text: root.reading ? root.reading.alternative : ""; color: root.ivory; font.family: "monospace"; font.pixelSize: 11; lineHeight: 1.3; wrapMode: Text.Wrap; textFormat: Text.PlainText }
                     Text { width: parent.width; text: root.reading ? root.reading.reflection : ""; color: root.cyan; font.family: "monospace"; font.pixelSize: 12; lineHeight: 1.3; wrapMode: Text.Wrap; textFormat: Text.PlainText }
@@ -475,9 +477,9 @@ Item {
           Rectangle { width: parent.width; height: 1; color: "#273638" }
           Item {
             width: parent.width
-            height: 36
+            height: 30
             Text { anchors.left: parent.left; anchors.verticalCenter: parent.verticalCenter; text: "D DAILY   F FREE   S SPREAD   A AGENT   I METHOD   ESC CLOSE"; color: root.muted; font.family: "monospace"; font.pixelSize: 9; font.letterSpacing: 0.65; textFormat: Text.PlainText }
-            Text { anchors.right: parent.right; anchors.verticalCenter: parent.verticalCenter; text: "LOCAL CANONICAL  //  AGENT OPTIONAL"; color: root.brass; font.family: "monospace"; font.pixelSize: 9; font.letterSpacing: 0.65; textFormat: Text.PlainText }
+            Text { anchors.right: parent.right; anchors.verticalCenter: parent.verticalCenter; text: "LOCAL READING  //  AGENT PROSE OPTIONAL"; color: root.brass; font.family: "monospace"; font.pixelSize: 9; font.letterSpacing: 0.55; textFormat: Text.PlainText }
           }
         }
       }
