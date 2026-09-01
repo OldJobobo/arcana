@@ -114,7 +114,8 @@ Item {
     var seed = kind === "daily"
       ? Arcana.dailyKey(localDateKey()) + ":" + entropy
       : kind + ":" + entropy + ":" + String(Number(stateAdapter.freeCounter || 0))
-    var selection = Arcana.draw(deckSnapshot(), {seed: seed, count: count, reversals: reversalsEnabled()})
+    var normalizedDeck = deckSnapshot()
+    var selection = Arcana.draw(normalizedDeck, {seed: seed, count: count, reversals: reversalsEnabled()})
     if (kind === "daily") {
       stateAdapter.dailyDate = localDateKey()
       stateAdapter.dailySeed = seed
