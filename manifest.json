@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "org.ministryoftaste.omarchy-arcana",
+  "name": "Omarchy Arcana",
+  "version": "0.1.0-alpha",
+  "author": "Ministry of Taste",
+  "license": "MIT",
+  "description": "A keyboard-first, shell-native reflective tarot system for Omarchy Quattro.",
+  "kinds": [
+    "service",
+    "panel",
+    "bar-widget"
+  ],
+  "keepLoaded": true,
+  "entryPoints": {
+    "service": "ArcanaService.qml",
+    "panel": "Panel.qml",
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Omarchy Arcana",
+    "description": "Open daily, free, and Context / Friction / Doorway readings",
+    "category": "Reflection",
+    "allowMultiple": false,
+    "defaultSection": "right"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "id": "waite-pkt",
+      "kind": "historical-public-domain",
+      "title": "The Pictorial Key to the Tarot",
+      "author": "A. E. Waite",
+      "use": "Historical comparison and provenance anchor; not copied as the runtime card prose."
+    },
+    {
+      "id": "vault-keywords",
+      "kind": "user-vault-reference",
+      "title": "Tarot Card Meanings — 78 Cards",
+      "use": "Compact upright and reversed keyword research input derived from the user vault."
+    },
+    {
+      "id": "omarchy-guide",
+      "kind": "original-deck-authorship",
+      "title": "Omarchy Arcana Major and Minor Guides",
+      "use": "Original system titles, suit translations, and deck-specific lenses."
+    },
+    {
+      "id": "composer-v1",
+      "kind": "original-method",
+      "title": "Constrained Interpretive Synthesis v1",
+      "use": "Position, relationship, pattern, and synthesis rules."
+    }
+  ]
+}
