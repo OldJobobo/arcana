@@ -267,7 +267,7 @@ Item {
             Text {
               anchors.right: parent.right
               anchors.verticalCenter: parent.verticalCenter
-              text: root.pendingRedraw === "daily" ? "PRESS R AGAIN TO REPLACE TODAY’S CARD" : "CANONICAL LOCAL READING"
+              text: root.pendingRedraw === "daily" ? "PRESS R AGAIN TO REPLACE TODAY’S CARD" : "78 CARDS  ·  COMPOSER V1"
               color: root.pendingRedraw === "daily" ? root.brass : root.muted
               font.family: "monospace"
               font.pixelSize: 9
@@ -320,7 +320,7 @@ Item {
                       delegate: CardFace {
                         required property var modelData
                         itemData: modelData
-                        cardWidth: root.reading && root.reading.cards.length === 3 ? 178 : 238
+                        cardWidth: root.reading && root.reading.cards.length === 3 ? 178 : 228
                       }
                     }
                   }
