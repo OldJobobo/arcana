@@ -213,11 +213,13 @@ Item {
           border.color: root.panelBorder
 
         Rectangle {
+          id: innerKeyline
           anchors.fill: parent
-          anchors.margins: -8
-          z: -1
-          radius: 10
-          color: "#60000000"
+          anchors.margins: 2
+          radius: 6
+          color: "transparent"
+          border.width: 1
+          border.color: Qt.rgba(root.ivory.r, root.ivory.g, root.ivory.b, 0.055)
         }
 
         Column {

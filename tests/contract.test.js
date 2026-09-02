@@ -90,3 +90,10 @@ test("theme colors toggle between Arcana identity and live system roles", () => 
   assert.match(panel, /COLORS.*ARCANA/s);
   assert.match(panel, /COLORS.*SYSTEM/s);
 });
+
+test("panel edge uses a single border and restrained inner keyline", () => {
+  const panel = fs.readFileSync(path.join(root, "Panel.qml"), "utf8");
+  assert.doesNotMatch(panel, /anchors\.margins:\s*-8/);
+  assert.doesNotMatch(panel, /#60000000/i);
+  assert.match(panel, /id:\s*innerKeyline/);
+});
