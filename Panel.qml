@@ -34,6 +34,7 @@ Item {
   property real renderScale: effectiveScale
   property real revealOpacity: 0
   property real revealOffset: 16
+  property real contentOpacity: 0
   property real readingOpacity: 1
 
   Behavior on renderScale { NumberAnimation { duration: 280; easing.type: Easing.OutCubic } }
@@ -50,6 +51,23 @@ Item {
     interval: 32
     repeat: false
     onTriggered: panelReveal.restart()
+  }
+
+  Timer {
+    id: contentRevealStart
+    interval: 160
+    repeat: false
+    onTriggered: contentReveal.restart()
+  }
+
+  NumberAnimation {
+    id: contentReveal
+    target: root
+    property: "contentOpacity"
+    from: 0
+    to: 1
+    duration: 320
+    easing.type: Easing.OutCubic
   }
 
   ParallelAnimation {
@@ -76,22 +94,29 @@ Item {
   function open(payloadJson) {
     panelReveal.stop()
     revealStart.stop()
+    contentReveal.stop()
+    contentRevealStart.stop()
     revealOpacity = 0
     revealOffset = 16
+    contentOpacity = 0
     opened = true
     viewMode = "reading"
     pendingRedraw = ""
     resolveService()
     if (service && !service.currentReading) service.requestDaily(false)
     revealStart.restart()
+    contentRevealStart.restart()
     Qt.callLater(function() { keyboardRoot.forceActiveFocus() })
   }
 
   function close() {
     revealStart.stop()
     panelReveal.stop()
+    contentRevealStart.stop()
+    contentReveal.stop()
     revealOpacity = 0
     revealOffset = 16
+    contentOpacity = 0
     opened = false
     pendingRedraw = ""
     viewMode = "reading"
@@ -269,9 +294,11 @@ Item {
         }
 
         Column {
+          id: interfaceContent
           anchors.fill: parent
           anchors.margins: 24
           spacing: 0
+          opacity: root.contentOpacity
 
           Item {
             width: parent.width

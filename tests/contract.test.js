@@ -104,6 +104,9 @@ test("motion is perceptible, bounded, state-driven, and never loops", () => {
   assert.match(panel, /id:\s*panelReveal/);
   assert.match(panel, /id:\s*revealStart/);
   assert.match(panel, /interval:\s*(?:2[4-9]|3\d|4[0-8])/);
+  assert.match(panel, /id:\s*contentRevealStart/);
+  assert.match(panel, /interval:\s*160/);
+  assert.match(panel, /id:\s*contentReveal/);
   assert.match(panel, /id:\s*readingFade/);
   assert.match(panel, /Behavior on renderScale/);
   assert.match(panel, /ColorAnimation/);
