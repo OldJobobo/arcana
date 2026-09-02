@@ -8,8 +8,17 @@ Column {
   property real cardHeight: Math.round(cardWidth * 1.75)
   property bool revealed: true
   property bool hovered: hoverArea.containsMouse
+  property color artPrimary: "#469bff"
+  property color artSecondary: "#71d4e6"
+  property color artFault: "#f15b4a"
   property real flipAngle: revealed ? 180 : 0
   readonly property bool faceVisible: flipAngle >= 90
+  readonly property string artworkFilename: {
+    if (root.flipAngle < 90) return "card-back.png"
+    if (!root.itemData || !root.itemData.card || !root.itemData.card.image) return ""
+    var parts = String(root.itemData.card.image).split("/")
+    return parts[parts.length - 1]
+  }
   signal revealRequested()
   signal inspectRequested()
 
@@ -70,17 +79,24 @@ Column {
         angle: root.flipAngle < 90 ? root.flipAngle : root.flipAngle - 180
       }
 
-      Image {
+      ThemeCardImage {
         anchors.fill: parent
         anchors.margins: 3
         source: root.flipAngle < 90
           ? Qt.resolvedUrl("../assets/cards/card-back.png")
           : (root.itemData ? Qt.resolvedUrl("../" + root.itemData.card.image) : "")
-        fillMode: Image.PreserveAspectFit
-        asynchronous: true
-        cache: true
-        smooth: true
-        mipmap: true
+        primaryMaskSource: root.artworkFilename
+          ? Qt.resolvedUrl("../assets/card-masks/primary/" + root.artworkFilename)
+          : ""
+        secondaryMaskSource: root.artworkFilename
+          ? Qt.resolvedUrl("../assets/card-masks/secondary/" + root.artworkFilename)
+          : ""
+        faultMaskSource: root.artworkFilename
+          ? Qt.resolvedUrl("../assets/card-masks/fault/" + root.artworkFilename)
+          : ""
+        primaryColor: root.artPrimary
+        secondaryColor: root.artSecondary
+        faultColor: root.artFault
         rotation: root.flipAngle >= 90 && root.itemData && root.itemData.orientation === "reversed" ? 180 : 0
       }
 

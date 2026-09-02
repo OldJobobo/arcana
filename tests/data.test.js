@@ -40,6 +40,33 @@ test("the reversible back is packaged at shell resolution", () => {
   assert.equal(fs.existsSync(path.join(root,"assets/cards/card-back.png")),true);
 });
 
+test("every card and back package three semantic spot-color masks", () => {
+  const names=[...deck.cards.map(card => path.basename(card.image)),"card-back.png"];
+  for (const role of ["primary","secondary","fault"]) {
+    for (const name of names) {
+      const file=path.join(root,"assets/card-masks",role,name);
+      assert.equal(fs.existsSync(file),true,path.relative(root,file));
+    }
+  }
+});
+
+test("fault masks declare the exact sparse semantic coverage", () => {
+  const contract = JSON.parse(fs.readFileSync(path.join(root, "assets/card-masks/fault-contract.json"), "utf8"));
+  assert.deepEqual(contract.active, [
+    "14-major-arcana-13-death.png",
+    "16-major-arcana-15-the-devil.png",
+    "17-major-arcana-16-the-tower.png",
+    "41-cups-05-five-of-cups.png",
+    "53-swords-03-three-of-swords.png",
+    "55-swords-05-five-of-swords.png",
+    "59-swords-09-nine-of-swords.png",
+    "60-swords-10-ten-of-swords.png",
+    "69-pentacles-05-five-of-pentacles.png"
+  ]);
+  assert.equal(contract.transparentCount, 70);
+  assert.match(contract.policy, /failure|conflict|destructive/i);
+});
+
 test("runtime source catalog separates public-domain, vault, and original work", () => {
   const sources=JSON.parse(fs.readFileSync(path.join(root,"assets/sources.json"),"utf8"));
   assert.equal(sources.schemaVersion,1);

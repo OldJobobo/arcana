@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "policy": "Fault pixels are reserved for meaningful warnings, failure, conflict, or destructive states. Cards outside this set intentionally package fully transparent fault masks so the three-layer runtime contract remains uniform.",
+  "active": [
+    "14-major-arcana-13-death.png",
+    "16-major-arcana-15-the-devil.png",
+    "17-major-arcana-16-the-tower.png",
+    "41-cups-05-five-of-cups.png",
+    "53-swords-03-three-of-swords.png",
+    "55-swords-05-five-of-swords.png",
+    "59-swords-09-nine-of-swords.png",
+    "60-swords-10-ten-of-swords.png",
+    "69-pentacles-05-five-of-pentacles.png"
+  ],
+  "transparentCount": 70
+}

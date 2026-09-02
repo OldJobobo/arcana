@@ -20,6 +20,11 @@ Item {
   property bool cardsComplete: true
   property bool inspectionOpen: false
   property var inspectionItem: null
+  readonly property string inspectionArtworkFilename: {
+    if (!inspectionItem || !inspectionItem.card || !inspectionItem.card.image) return ""
+    var parts = String(inspectionItem.card.image).split("/")
+    return parts[parts.length - 1]
+  }
   property real inspectionProgress: 0
   readonly property var reading: service ? service.currentReading : null
   readonly property int readingRevision: service ? service.readingRevision : 0
@@ -31,6 +36,17 @@ Item {
   property color fault: systemTheme ? Color.urgent : "#d97743"
   property color graphite: systemTheme ? Color.popups.background : "#101416"
   property color panelBorder: systemTheme ? Color.popups.border : "#3e5558"
+  property color artContrastSurface: "#10151a"
+  property color rawArtPrimary: systemTheme ? Color.accent : "#469bff"
+  property color rawArtSecondary: systemTheme
+    ? Qt.rgba((Color.accent.r * 0.68) + (Color.popups.text.r * 0.32),
+        (Color.accent.g * 0.68) + (Color.popups.text.g * 0.32),
+        (Color.accent.b * 0.68) + (Color.popups.text.b * 0.32), 1)
+    : "#71d4e6"
+  property color rawArtFault: systemTheme ? Color.urgent : "#f15b4a"
+  property color artPrimary: contrastGuard(rawArtPrimary, "#469bff", 3)
+  property color artSecondary: contrastGuard(rawArtSecondary, "#71d4e6", 3)
+  property color artFault: contrastGuard(rawArtFault, "#f15b4a", 3)
   readonly property real baseWidth: 1080
   readonly property real baseHeight: 680
   readonly property real selectedScale: service ? service.uiScale : 1
@@ -47,6 +63,28 @@ Item {
   property real contentOffset: 12
   property real readingOpacity: 1
 
+  function linearChannel(channel) {
+    return channel <= 0.03928 ? channel / 12.92 : Math.pow((channel + 0.055) / 1.055, 2.4)
+  }
+
+  function relativeLuminance(color) {
+    return (0.2126 * linearChannel(color.r))
+      + (0.7152 * linearChannel(color.g))
+      + (0.0722 * linearChannel(color.b))
+  }
+
+  function contrastRatio(first, second) {
+    var firstLuminance = relativeLuminance(first)
+    var secondLuminance = relativeLuminance(second)
+    var lighter = Math.max(firstLuminance, secondLuminance)
+    var darker = Math.min(firstLuminance, secondLuminance)
+    return (lighter + 0.05) / (darker + 0.05)
+  }
+
+  function contrastGuard(candidate, fallback, minimum) {
+    return contrastRatio(candidate, artContrastSurface) >= minimum ? candidate : fallback
+  }
+
   Behavior on renderScale { NumberAnimation { duration: 280; easing.type: Easing.OutCubic } }
   Behavior on cyan { ColorAnimation { duration: 220 } }
   Behavior on ivory { ColorAnimation { duration: 220 } }
@@ -55,6 +93,9 @@ Item {
   Behavior on fault { ColorAnimation { duration: 220 } }
   Behavior on graphite { ColorAnimation { duration: 220 } }
   Behavior on panelBorder { ColorAnimation { duration: 220 } }
+  Behavior on artPrimary { ColorAnimation { duration: 220 } }
+  Behavior on artSecondary { ColorAnimation { duration: 220 } }
+  Behavior on artFault { ColorAnimation { duration: 220 } }
 
   Timer {
     id: revealStart
@@ -582,13 +623,18 @@ Item {
                   width: root.reading && root.reading.cards && root.reading.cards.length === 3 ? 558 : 330
                   height: parent.height
 
-                  Image {
+                  ThemeCardImage {
                     visible: !root.reading
                     anchors.centerIn: parent
                     width: 220
                     height: 385
                     source: Qt.resolvedUrl("assets/cards/card-back.png")
-                    fillMode: Image.PreserveAspectFit
+                    primaryMaskSource: Qt.resolvedUrl("assets/card-masks/primary/card-back.png")
+                    secondaryMaskSource: Qt.resolvedUrl("assets/card-masks/secondary/card-back.png")
+                    faultMaskSource: Qt.resolvedUrl("assets/card-masks/fault/card-back.png")
+                    primaryColor: root.artPrimary
+                    secondaryColor: root.artSecondary
+                    faultColor: root.artFault
                     opacity: 0.74
                   }
 
@@ -608,6 +654,9 @@ Item {
                         itemData: modelData
                         cardWidth: root.reading && root.reading.cards.length === 3 ? 178 : 228
                         revealed: root.cardRevealed(index)
+                        artPrimary: root.artPrimary
+                        artSecondary: root.artSecondary
+                        artFault: root.artFault
                         onRevealRequested: root.revealCard(index)
                         onInspectRequested: root.openInspection(modelData)
                       }
@@ -904,15 +953,22 @@ Item {
               color: "#a6000000"
             }
 
-            Image {
+            ThemeCardImage {
               anchors.fill: parent
               anchors.margins: 4
               source: root.inspectionItem ? Qt.resolvedUrl(root.inspectionItem.card.image) : ""
-              fillMode: Image.PreserveAspectFit
-              asynchronous: true
-              cache: true
-              smooth: true
-              mipmap: true
+              primaryMaskSource: root.inspectionArtworkFilename
+                ? Qt.resolvedUrl("assets/card-masks/primary/" + root.inspectionArtworkFilename)
+                : ""
+              secondaryMaskSource: root.inspectionArtworkFilename
+                ? Qt.resolvedUrl("assets/card-masks/secondary/" + root.inspectionArtworkFilename)
+                : ""
+              faultMaskSource: root.inspectionArtworkFilename
+                ? Qt.resolvedUrl("assets/card-masks/fault/" + root.inspectionArtworkFilename)
+                : ""
+              primaryColor: root.artPrimary
+              secondaryColor: root.artSecondary
+              faultColor: root.artFault
               rotation: root.inspectionItem && root.inspectionItem.orientation === "reversed" ? 180 : 0
             }
 

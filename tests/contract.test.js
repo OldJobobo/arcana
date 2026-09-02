@@ -91,6 +91,17 @@ test("theme colors toggle between Arcana identity and live system roles", () => 
   assert.match(panel, /COLORS.*SYSTEM/s);
 });
 
+test("system artwork colors use deterministic card-scale contrast fallbacks", () => {
+  const panel = fs.readFileSync(path.join(root, "Panel.qml"), "utf8");
+  assert.match(panel, /function relativeLuminance\(color\)/);
+  assert.match(panel, /function contrastRatio\(first, second\)/);
+  assert.match(panel, /function contrastGuard\(candidate, fallback, minimum\)/);
+  assert.match(panel, /property color artContrastSurface:\s*"#10151a"/i);
+  assert.match(panel, /contrastGuard\(rawArtPrimary, "#469bff", 3\)/);
+  assert.match(panel, /contrastGuard\(rawArtSecondary, "#71d4e6", 3\)/);
+  assert.match(panel, /contrastGuard\(rawArtFault, "#f15b4a", 3\)/);
+});
+
 test("panel edge uses a single border and restrained inner keyline", () => {
   const panel = fs.readFileSync(path.join(root, "Panel.qml"), "utf8");
   assert.doesNotMatch(panel, /anchors\.margins:\s*-8/);
@@ -154,4 +165,20 @@ test("revealed cards open a bounded keyboard-accessible inspection view", () => 
   assert.match(panel, /CLICK \/ ENTER \/ ESC TO RETURN/);
   assert.match(panel, /event\.accepted = true/);
   assert.doesNotMatch(panel, /inspection.*Animation\.Infinite/i);
+});
+
+test("card artwork uses reusable theme-aware spot-color masks in reading and inspection views", () => {
+  const panel = fs.readFileSync(path.join(root, "Panel.qml"), "utf8");
+  const card = fs.readFileSync(path.join(root, "components/CardFace.qml"), "utf8");
+  const themed = fs.readFileSync(path.join(root, "components/ThemeCardImage.qml"), "utf8");
+  assert.match(themed, /Qt5Compat\.GraphicalEffects/);
+  assert.match(themed, /ColorOverlay/);
+  for (const role of ["primary", "secondary", "fault"])
+    assert.match(themed, new RegExp(`property color ${role}Color`));
+  assert.match(card, /ThemeCardImage\s*\{/);
+  assert.match(card, /card-masks/);
+  assert.match(panel, /ThemeCardImage\s*\{/);
+  assert.match(panel, /artPrimary/);
+  assert.match(panel, /Color\.accent/);
+  assert.match(panel, /Color\.urgent/);
 });

@@ -16,6 +16,7 @@ First complete alpha candidate.
 - Keyboard-first navigation and explicit daily redraw confirmation
 - Persistent `1×`, `1.25×`, and `1.5×` responsive panel scaling
 - Persistent Arcana/system theme-color toggle using Quattro semantic roles
+- Layered card renderer with fixed structural black/ivory and theme-responsive primary, secondary, and fault spot-color masks
 - Perceptible one-shot transitions for post-map reveal, scale, theme colors, reading changes, and mode registration
 - Face-down new draws with independent click/keyboard card flips, hover/focus lift, and interpretation reveal after the final card
 - Large bounded card-inspection lightbox with responsive `4:7` sizing, reversed orientation support, and mouse/keyboard dismissal
