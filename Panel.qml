@@ -23,6 +23,12 @@ Item {
   readonly property color brass: "#b89b61"
   readonly property color fault: "#d97743"
   readonly property color graphite: "#101416"
+  readonly property real baseWidth: 1080
+  readonly property real baseHeight: 680
+  readonly property real selectedScale: service ? service.uiScale : 1
+  readonly property real effectiveScale: Math.min(selectedScale,
+    Math.max(0.5, (surface.width - 48) / baseWidth),
+    Math.max(0.5, (surface.height - 48) / baseHeight))
 
   function resolveService() {
     if (!service && shell && typeof shell.serviceFor === "function")
@@ -139,10 +145,10 @@ Item {
     }
 
     mask: Region {
-      x: frame.x
-      y: frame.y
-      width: frame.width
-      height: frame.height
+      x: frameBounds.x
+      y: frameBounds.y
+      width: frameBounds.width
+      height: frameBounds.height
     }
 
     FocusScope {
@@ -172,6 +178,12 @@ Item {
           root.openAgentPreview(); event.accepted = true
         } else if (event.key === Qt.Key_I) {
           root.viewMode = "about"; event.accepted = true
+        } else if (event.key === Qt.Key_1) {
+          if (root.resolveService()) root.service.setUiScale(1); event.accepted = true
+        } else if (event.key === Qt.Key_2) {
+          if (root.resolveService()) root.service.setUiScale(1.25); event.accepted = true
+        } else if (event.key === Qt.Key_3) {
+          if (root.resolveService()) root.service.setUiScale(1.5); event.accepted = true
         } else if (event.key === Qt.Key_R && root.viewMode === "reading" && root.service && root.service.currentReadingKind === "daily") {
           root.confirmDailyRedraw(); event.accepted = true
         } else if (event.key === Qt.Key_Slash && root.viewMode === "agent") {
@@ -179,15 +191,22 @@ Item {
         }
       }
 
-      Rectangle {
-        id: frame
+      Item {
+        id: frameBounds
         anchors.centerIn: parent
-        width: Math.min(1080, Math.max(720, surface.width - 72))
-        height: Math.min(680, Math.max(580, surface.height - 72))
-        radius: 8
-        color: root.graphite
-        border.width: 1
-        border.color: "#3e5558"
+        width: root.baseWidth * root.effectiveScale
+        height: root.baseHeight * root.effectiveScale
+
+        Rectangle {
+          id: frame
+          width: root.baseWidth
+          height: root.baseHeight
+          transformOrigin: Item.TopLeft
+          scale: root.effectiveScale
+          radius: 8
+          color: root.graphite
+          border.width: 1
+          border.color: "#3e5558"
 
         Rectangle {
           anchors.fill: parent
@@ -265,14 +284,26 @@ Item {
             }
 
             Text {
+              visible: root.pendingRedraw === "daily"
               anchors.right: parent.right
               anchors.verticalCenter: parent.verticalCenter
-              text: root.pendingRedraw === "daily" ? "PRESS R AGAIN TO REPLACE TODAY’S CARD" : "78 CARDS  ·  COMPOSER V1"
-              color: root.pendingRedraw === "daily" ? root.brass : root.muted
+              text: "PRESS R AGAIN TO REPLACE TODAY’S CARD"
+              color: root.brass
               font.family: "monospace"
               font.pixelSize: 9
               font.letterSpacing: 0.8
               textFormat: Text.PlainText
+            }
+
+            Row {
+              visible: root.pendingRedraw !== "daily"
+              anchors.right: parent.right
+              anchors.verticalCenter: parent.verticalCenter
+              spacing: 5
+              Text { anchors.verticalCenter: parent.verticalCenter; text: "SCALE"; color: root.muted; font.family: "monospace"; font.pixelSize: 9; font.letterSpacing: 1; textFormat: Text.PlainText }
+              ArcanaButton { text: "1×"; compact: true; selected: root.selectedScale === 1; onClicked: { if (root.resolveService()) root.service.setUiScale(1) } }
+              ArcanaButton { text: "1.25×"; compact: true; selected: root.selectedScale === 1.25; onClicked: { if (root.resolveService()) root.service.setUiScale(1.25) } }
+              ArcanaButton { text: "1.5×"; compact: true; selected: root.selectedScale === 1.5; onClicked: { if (root.resolveService()) root.service.setUiScale(1.5) } }
             }
           }
 
@@ -510,11 +541,12 @@ Item {
           Item {
             width: parent.width
             height: 30
-            Text { anchors.left: parent.left; anchors.verticalCenter: parent.verticalCenter; text: "D DAILY   F FREE   S SPREAD   A AGENT   I METHOD   ESC CLOSE"; color: root.muted; font.family: "monospace"; font.pixelSize: 9; font.letterSpacing: 0.65; textFormat: Text.PlainText }
+            Text { anchors.left: parent.left; anchors.verticalCenter: parent.verticalCenter; text: "D DAILY   F FREE   S SPREAD   A AGENT   I METHOD   1/2/3 SCALE   ESC CLOSE"; color: root.muted; font.family: "monospace"; font.pixelSize: 9; font.letterSpacing: 0.65; textFormat: Text.PlainText }
             Text { anchors.right: parent.right; anchors.verticalCenter: parent.verticalCenter; text: "LOCAL READING  //  AGENT PROSE OPTIONAL"; color: root.brass; font.family: "monospace"; font.pixelSize: 9; font.letterSpacing: 0.55; textFormat: Text.PlainText }
           }
         }
       }
     }
   }
+}
 }

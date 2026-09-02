@@ -2,6 +2,7 @@ import QtQuick
 import Quickshell
 import Quickshell.Io
 import "src/Arcana.js" as Arcana
+import "src/Settings.js" as Settings
 
 Item {
   id: root
@@ -28,6 +29,7 @@ Item {
   property string configuredAgent: ""
   property string agentStatus: "idle"
   property bool agentLaunchRunning: false
+  property real uiScale: 1
 
   signal readingUpdated()
 
@@ -38,6 +40,21 @@ Item {
   function reversalsEnabled() {
     var p = stateAdapter.preferences || ({})
     return p.reversals !== false
+  }
+
+  function restorePreferences() {
+    var preferences = stateAdapter.preferences || ({})
+    uiScale = Settings.normalizeScale(preferences.uiScale)
+  }
+
+  function setUiScale(value) {
+    var next = Settings.normalizeScale(value)
+    var preferences = JSON.parse(JSON.stringify(stateAdapter.preferences || ({})))
+    preferences.uiScale = next
+    stateAdapter.preferences = preferences
+    uiScale = next
+    stateStore.writeAdapter()
+    return next
   }
 
   function deckSnapshot() {
@@ -180,7 +197,10 @@ Item {
     blockLoading: true
     watchChanges: true
     printErrors: false
-    onLoaded: root.restoreLastReading()
+    onLoaded: {
+      root.restorePreferences()
+      root.restoreLastReading()
+    }
     onFileChanged: reload()
     adapter: JsonAdapter {
       id: stateAdapter
@@ -191,7 +211,7 @@ Item {
       property var lastReading: null
       property string lastReadingKind: "daily"
       property int freeCounter: 0
-      property var preferences: ({reversals: true})
+      property var preferences: ({reversals:true, uiScale:1})
     }
   }
 
@@ -249,15 +269,17 @@ Item {
   IpcHandler {
     target: "org.ministryoftaste.omarchy-arcana.service"
     function status(arg: string): string {
-      return JSON.stringify({ready:root.ready,cards:root.cards.length,kind:root.currentReadingKind,agentStatus:root.agentStatus})
+      return JSON.stringify({ready:root.ready,cards:root.cards.length,kind:root.currentReadingKind,agentStatus:root.agentStatus,scale:root.uiScale})
     }
     function daily(arg: string): string { return root.requestDaily(false) ? "ok" : "busy" }
     function free(arg: string): string { return root.requestFree() ? "ok" : "busy" }
     function spread(arg: string): string { return root.requestSpread() ? "ok" : "busy" }
+    function scale(arg: string): string { return String(root.setUiScale(Number(arg))) }
   }
 
   Component.onCompleted: {
     loadDeck()
+    restorePreferences()
     if (stateAdapter.lastReading) restoreLastReading()
   }
 }

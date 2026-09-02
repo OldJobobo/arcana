@@ -60,3 +60,19 @@ test("repository contains release documentation and no executable helper", () =>
   for (const dir of ["scripts", "bin"]) if (fs.existsSync(path.join(root, dir))) forbidden.push(dir);
   assert.deepEqual(forbidden, []);
 });
+
+test("panel scale is persisted, constrained, and keyboard accessible", () => {
+  const service = fs.readFileSync(path.join(root, "ArcanaService.qml"), "utf8");
+  const panel = fs.readFileSync(path.join(root, "Panel.qml"), "utf8");
+  assert.match(service, /property real uiScale/);
+  assert.match(service, /function setUiScale\(value\)/);
+  assert.match(service, /preferences.*uiScale/s);
+  assert.match(service, /stateStore\.writeAdapter\(\)/);
+  assert.match(panel, /effectiveScale/);
+  assert.match(panel, /frameBounds/);
+  assert.match(panel, /Qt\.Key_1/);
+  assert.match(panel, /Qt\.Key_2/);
+  assert.match(panel, /Qt\.Key_3/);
+  for (const label of ["1×", "1.25×", "1.5×"])
+    assert.match(panel, new RegExp(label.replace(".", "\\.")));
+});
