@@ -107,6 +107,7 @@ test("motion is perceptible, bounded, state-driven, and never loops", () => {
   assert.match(panel, /id:\s*contentRevealStart/);
   assert.match(panel, /interval:\s*160/);
   assert.match(panel, /id:\s*contentReveal/);
+  assert.match(panel, /property real contentOffset:\s*12/);
   assert.match(panel, /id:\s*readingFade/);
   assert.match(panel, /Behavior on renderScale/);
   assert.match(panel, /ColorAnimation/);
@@ -114,6 +115,6 @@ test("motion is perceptible, bounded, state-driven, and never loops", () => {
   assert.doesNotMatch(panel + button, /loops:\s*Animation\.Infinite|running:\s*true[\s\S]{0,120}loops/i);
   const durations = [...(panel + button).matchAll(/duration:\s*(\d+)/g)].map(match => Number(match[1]));
   assert.ok(durations.length >= 6);
-  assert.ok(durations.some(duration => duration >= 240), durations.join(","));
-  assert.ok(durations.every(duration => duration <= 320), durations.join(","));
+  assert.ok(durations.some(duration => duration >= 400), durations.join(","));
+  assert.ok(durations.every(duration => duration <= 450), durations.join(","));
 });

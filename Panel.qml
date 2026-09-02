@@ -35,6 +35,7 @@ Item {
   property real revealOpacity: 0
   property real revealOffset: 16
   property real contentOpacity: 0
+  property real contentOffset: 12
   property real readingOpacity: 1
 
   Behavior on renderScale { NumberAnimation { duration: 280; easing.type: Easing.OutCubic } }
@@ -60,14 +61,24 @@ Item {
     onTriggered: contentReveal.restart()
   }
 
-  NumberAnimation {
+  ParallelAnimation {
     id: contentReveal
-    target: root
-    property: "contentOpacity"
-    from: 0
-    to: 1
-    duration: 320
-    easing.type: Easing.OutCubic
+    NumberAnimation {
+      target: root
+      property: "contentOpacity"
+      from: 0
+      to: 1
+      duration: 420
+      easing.type: Easing.InOutCubic
+    }
+    NumberAnimation {
+      target: root
+      property: "contentOffset"
+      from: 12
+      to: 0
+      duration: 420
+      easing.type: Easing.InOutCubic
+    }
   }
 
   ParallelAnimation {
@@ -99,6 +110,7 @@ Item {
     revealOpacity = 0
     revealOffset = 16
     contentOpacity = 0
+    contentOffset = 12
     opened = true
     viewMode = "reading"
     pendingRedraw = ""
@@ -117,6 +129,7 @@ Item {
     revealOpacity = 0
     revealOffset = 16
     contentOpacity = 0
+    contentOffset = 12
     opened = false
     pendingRedraw = ""
     viewMode = "reading"
@@ -299,6 +312,7 @@ Item {
           anchors.margins: 24
           spacing: 0
           opacity: root.contentOpacity
+          transform: Translate { y: root.contentOffset }
 
           Item {
             width: parent.width
