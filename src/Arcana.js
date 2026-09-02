@@ -113,7 +113,12 @@ function naturalTitle(text) {
   ).join(" ");
 }
 
-function positionText(card, orientationText, positionId) {
+function referredTitle(text) {
+  const title=naturalTitle(text);
+  return /^The\s/.test(title) ? lowerStart(title) : "the " + title;
+}
+
+function positionText(card, orientationText, positionId, reversed) {
   const core=lowerStart(orientationText || (card.traditional && card.traditional.core));
   const system=lowerStart(card.omarchy && card.omarchy.systemLens);
   if (positionId === "context")
@@ -122,7 +127,11 @@ function positionText(card, orientationText, positionId) {
     return sentence("The pressure may involve " + core) + " " + sentence("In system terms: " + system);
   if (positionId === "doorway")
     return sentence("A possible opening is to work with " + core) + " " + sentence("Practical translation: " + system);
-  return sentence("This draw centers " + core) + " " + sentence("Omarchy translation: " + system);
+  const title=naturalTitle(card.title);
+  const reading=reversed
+    ? sentence("Reversed, " + referredTitle(title) + " suggests " + core)
+    : sentence(title + " points to " + core);
+  return reading + " " + sentence("In Omarchy terms, " + system);
 }
 
 function relationshipType(a,b) {
@@ -184,7 +193,7 @@ function compose(deck,selections,spreadId) {
     const mode=reversed ? findMode(card,selected.modeId) : null;
     const orientationLabel=reversed ? "Reversed · "+mode.label : "Upright";
     const orientationText=reversed ? mode.reading : card.traditional.core;
-    const transformed=positionText(card,orientationText,position.id);
+    const transformed=positionText(card,orientationText,position.id,reversed);
     const item={
       cardId:card.id,
       card,

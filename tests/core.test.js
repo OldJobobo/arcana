@@ -3,6 +3,7 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const Arcana = require("../src/Arcana.js");
+const completeDeck = require("../assets/cards.json").cards;
 
 const deck = [
   {id:"major-00-fool",order:1,arcana:"major",suit:null,rank:"0",element:"air",title:"The Fool",systemTitle:"First Boot",traditional:{core:"beginning and openness",uprightKeywords:["beginning","openness"],reversedKeywords:["recklessness"]},omarchy:{systemLens:"Enter an unconfigured possibility deliberately."},orientationModes:[{id:"blocked",label:"Blocked",reading:"Preparation is being skipped."}],reflection:"What beginning needs both openness and preparation?",sources:["waite-pkt","omarchy-guide"]},
@@ -57,12 +58,35 @@ test("context friction doorway composition transforms positions and relates card
   assert.doesNotMatch(reading.alternative, /^Another way to read it:/i);
 });
 
-test("single-card copy omits spread-only artifacts and closes cleanly", () => {
+test("single-card copy names the card and uses a natural upright sentence", () => {
   const reading = Arcana.compose(deck,[{cardId:"major-00-fool",orientation:"upright"}],"single");
   assert.equal(reading.relationships.length,0);
   assert.equal(reading.patterns.length,0);
+  assert.equal(reading.synthesis,"The Fool points to beginning and openness. In Omarchy terms, enter an unconfigured possibility deliberately.");
+  assert.doesNotMatch(reading.synthesis,/this draw centers|omarchy translation/i);
   assert.doesNotMatch(reading.synthesis,/\.\.|\.;/);
   assert.doesNotMatch(reading.alternative,/^Another way to read it:/i);
+});
+
+test("single-card reversed copy treats orientation prose as a sentence", () => {
+  const reading = Arcana.compose(deck,[{cardId:"swords-02-two",orientation:"reversed",modeId:"distorted"}],"single");
+  assert.equal(reading.synthesis,"Reversed, the Two of Swords suggests analysis is no longer clarifying the branch. In Omarchy terms, a choice is suspended between paths.");
+  assert.doesNotMatch(reading.synthesis,/centers|suggests:\s|\.\.|\.;/i);
+});
+
+test("all 78 cards produce clean upright and reversed single-card prose", () => {
+  for (const card of completeDeck) {
+    for (const orientation of ["upright","reversed"]) {
+      const reading = Arcana.compose(completeDeck,[{
+        cardId:card.id,
+        orientation,
+        modeId:card.orientationModes[0].id
+      }],"single");
+      assert.doesNotMatch(reading.synthesis,/this draw centers|omarchy translation|\.\.|\.;/i,card.id+" "+orientation);
+      assert.doesNotMatch(reading.synthesis,/suggests\s+[A-Z]/,card.id+" "+orientation);
+      assert.match(reading.synthesis,new RegExp(card.title.replace(/[.*+?^${}()|[\]\\]/g,"\\$&").split(" ").join("\\s+"),"i"),card.id+" "+orientation);
+    }
+  }
 });
 
 test("fixed input produces fixed canonical output", () => {
