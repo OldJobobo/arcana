@@ -9,6 +9,7 @@ Column {
   property bool revealed: true
   property bool hovered: hoverArea.containsMouse
   property real flipAngle: revealed ? 180 : 0
+  readonly property bool faceVisible: flipAngle >= 90
   signal revealRequested()
 
   width: cardWidth
@@ -56,7 +57,7 @@ Column {
       border.width: root.activeFocus || root.hovered ? 2 : 1
       border.color: root.activeFocus || root.hovered
         ? "#62d6df"
-        : (root.revealed && root.itemData && root.itemData.orientation === "reversed" ? "#b89b61" : "#40575a")
+        : (root.faceVisible && root.itemData && root.itemData.orientation === "reversed" ? "#b89b61" : "#40575a")
 
       transform: Rotation {
         origin.x: cardPlane.width / 2
@@ -119,12 +120,12 @@ Column {
 
   Text {
     width: parent.width
-    text: root.revealed && root.itemData ? root.itemData.card.title.toUpperCase() : "CLICK / ENTER TO REVEAL"
-    color: root.revealed ? "#e4e0d6" : "#62d6df"
+    text: root.faceVisible && root.itemData ? root.itemData.card.title.toUpperCase() : "CLICK / ENTER TO REVEAL"
+    color: root.faceVisible ? "#e4e0d6" : "#62d6df"
     font.family: "monospace"
-    font.pixelSize: root.revealed ? 12 : 9
+    font.pixelSize: root.faceVisible ? 12 : 9
     font.bold: true
-    font.letterSpacing: root.revealed ? 0 : 0.8
+    font.letterSpacing: root.faceVisible ? 0 : 0.8
     horizontalAlignment: Text.AlignHCenter
     elide: Text.ElideRight
     textFormat: Text.PlainText
@@ -133,9 +134,9 @@ Column {
 
   Text {
     width: parent.width
-    text: root.revealed && root.itemData ? root.itemData.card.systemTitle.toUpperCase() : "ORDER SURROUNDING MYSTERY"
+    text: root.faceVisible && root.itemData ? root.itemData.card.systemTitle.toUpperCase() : "ORDER SURROUNDING MYSTERY"
     color: "#b89b61"
-    opacity: root.revealed ? 1 : 0.62
+    opacity: root.faceVisible ? 1 : 0.62
     font.family: "monospace"
     font.pixelSize: 9
     font.letterSpacing: 0.7
@@ -147,8 +148,8 @@ Column {
 
   Text {
     width: parent.width
-    text: root.revealed && root.itemData ? root.itemData.orientationLabel : "FACE DOWN"
-    color: root.revealed && root.itemData && root.itemData.orientation === "reversed" ? "#b89b61" : "#899a9c"
+    text: root.faceVisible && root.itemData ? root.itemData.orientationLabel : "FACE DOWN"
+    color: root.faceVisible && root.itemData && root.itemData.orientation === "reversed" ? "#b89b61" : "#899a9c"
     font.family: "monospace"
     font.pixelSize: 9
     horizontalAlignment: Text.AlignHCenter

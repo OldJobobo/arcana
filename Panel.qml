@@ -97,6 +97,16 @@ Item {
     NumberAnimation { target: root; property: "readingOpacity"; to: 1; duration: 240; easing.type: Easing.OutCubic }
   }
 
+  Timer {
+    id: readingRevealDelay
+    interval: 420
+    repeat: false
+    onTriggered: {
+      cardsComplete = true
+      readingFade.restart()
+    }
+  }
+
   function cardRevealed(index) {
     return revealedCards[String(index)] === true
   }
@@ -109,6 +119,7 @@ Item {
   }
 
   function revealAllCards() {
+    readingRevealDelay.stop()
     var next = ({})
     if (reading && reading.cards)
       for (var i = 0; i < reading.cards.length; i++) next[String(i)] = true
@@ -118,6 +129,7 @@ Item {
   }
 
   function veilCards() {
+    readingRevealDelay.stop()
     revealedCards = ({})
     cardsComplete = false
     readingOpacity = 0
@@ -133,8 +145,7 @@ Item {
     for (var key in revealedCards) next[key] = revealedCards[key]
     next[String(index)] = true
     revealedCards = next
-    cardsComplete = allCardsRevealed()
-    if (cardsComplete) readingFade.restart()
+    if (allCardsRevealed()) readingRevealDelay.restart()
     else Qt.callLater(function() {
       var following = cardRepeater.itemAt(index + 1)
       if (following) following.forceActiveFocus()
@@ -183,6 +194,7 @@ Item {
     panelReveal.stop()
     contentRevealStart.stop()
     contentReveal.stop()
+    readingRevealDelay.stop()
     revealOpacity = 0
     revealOffset = 16
     contentOpacity = 0

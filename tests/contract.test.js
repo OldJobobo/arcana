@@ -126,6 +126,8 @@ test("new cards are keyboard-accessible physical reveals", () => {
   assert.match(panel, /property var revealedCards/);
   assert.match(panel, /function allCardsRevealed/);
   assert.match(panel, /function revealCard/);
+  assert.match(panel, /id:\s*readingRevealDelay/);
+  assert.match(panel, /interval:\s*420/);
   assert.match(panel, /REVEAL ALL|REVEAL THE CARD/);
   assert.match(card, /signal revealRequested/);
   assert.match(card, /activeFocusOnTab:\s*true/);
