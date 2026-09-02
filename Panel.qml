@@ -15,6 +15,9 @@ Item {
   property string viewMode: "reading"
   property string pendingRedraw: ""
   property string question: ""
+  property bool veilNextReading: false
+  property var revealedCards: ({})
+  property bool cardsComplete: true
   readonly property var reading: service ? service.currentReading : null
   readonly property int readingRevision: service ? service.readingRevision : 0
   readonly property bool systemTheme: service && service.themeMode === "system"
@@ -94,7 +97,58 @@ Item {
     NumberAnimation { target: root; property: "readingOpacity"; to: 1; duration: 240; easing.type: Easing.OutCubic }
   }
 
-  onReadingRevisionChanged: if (opened) readingFade.restart()
+  function cardRevealed(index) {
+    return revealedCards[String(index)] === true
+  }
+
+  function allCardsRevealed() {
+    if (!reading || !reading.cards || reading.cards.length === 0) return false
+    for (var i = 0; i < reading.cards.length; i++)
+      if (!cardRevealed(i)) return false
+    return true
+  }
+
+  function revealAllCards() {
+    var next = ({})
+    if (reading && reading.cards)
+      for (var i = 0; i < reading.cards.length; i++) next[String(i)] = true
+    revealedCards = next
+    cardsComplete = true
+    readingOpacity = 1
+  }
+
+  function veilCards() {
+    revealedCards = ({})
+    cardsComplete = false
+    readingOpacity = 0
+    Qt.callLater(function() {
+      var first = cardRepeater.itemAt(0)
+      if (first) first.forceActiveFocus()
+    })
+  }
+
+  function revealCard(index) {
+    if (cardRevealed(index)) return
+    var next = ({})
+    for (var key in revealedCards) next[key] = revealedCards[key]
+    next[String(index)] = true
+    revealedCards = next
+    cardsComplete = allCardsRevealed()
+    if (cardsComplete) readingFade.restart()
+    else Qt.callLater(function() {
+      var following = cardRepeater.itemAt(index + 1)
+      if (following) following.forceActiveFocus()
+    })
+  }
+
+  function handleReadingRevision() {
+    if (!opened) return
+    if (veilNextReading) veilCards()
+    else revealAllCards()
+    veilNextReading = false
+  }
+
+  onReadingRevisionChanged: handleReadingRevision()
 
   function resolveService() {
     if (!service && shell && typeof shell.serviceFor === "function")
@@ -115,10 +169,13 @@ Item {
     viewMode = "reading"
     pendingRedraw = ""
     resolveService()
-    if (service && !service.currentReading) service.requestDaily(false)
+    if (service && !service.currentReading) {
+      veilNextReading = true
+      if (!service.requestDaily(false)) veilNextReading = false
+    } else revealAllCards()
     revealStart.restart()
     contentRevealStart.restart()
-    Qt.callLater(function() { keyboardRoot.forceActiveFocus() })
+    Qt.callLater(function() { if (cardsComplete) keyboardRoot.forceActiveFocus() })
   }
 
   function close() {
@@ -144,29 +201,46 @@ Item {
   function showDaily() {
     viewMode = "reading"
     pendingRedraw = ""
+    veilNextReading = false
     if (resolveService()) service.requestDaily(false)
   }
 
   function drawFree() {
     viewMode = "reading"
     pendingRedraw = ""
-    if (resolveService()) service.requestFree()
+    veilNextReading = true
+    veilCards()
+    if (!resolveService() || !service.requestFree()) {
+      veilNextReading = false
+      revealAllCards()
+    }
   }
 
   function drawSpread() {
     viewMode = "reading"
     pendingRedraw = ""
-    if (resolveService()) service.requestSpread()
+    veilNextReading = true
+    veilCards()
+    if (!resolveService() || !service.requestSpread()) {
+      veilNextReading = false
+      revealAllCards()
+    }
   }
 
   function confirmDailyRedraw() {
     if (pendingRedraw === "daily") {
       pendingRedraw = ""
-      if (resolveService()) service.requestDaily(true)
+      veilNextReading = true
+      veilCards()
+      if (!resolveService() || !service.requestDaily(true)) {
+        veilNextReading = false
+        revealAllCards()
+      }
     } else pendingRedraw = "daily"
   }
 
   function openAgentPreview() {
+    if (!cardsComplete) return
     pendingRedraw = ""
     viewMode = "agent"
     if (resolveService()) service.prepareAgent(question)
@@ -427,7 +501,6 @@ Item {
             Item {
               anchors.fill: parent
               visible: root.viewMode === "reading"
-              opacity: root.readingOpacity
 
               Row {
                 anchors.fill: parent
@@ -458,11 +531,15 @@ Item {
                     spacing: root.reading && root.reading.cards.length === 3 ? 12 : 0
 
                     Repeater {
+                      id: cardRepeater
                       model: root.reading ? root.reading.cards : []
                       delegate: CardFace {
                         required property var modelData
+                        required property int index
                         itemData: modelData
                         cardWidth: root.reading && root.reading.cards.length === 3 ? 178 : 228
+                        revealed: root.cardRevealed(index)
+                        onRevealRequested: root.revealCard(index)
                       }
                     }
                   }
@@ -474,8 +551,42 @@ Item {
                   width: parent.width - cardsPane.width - 21
                   height: parent.height
 
+                  Column {
+                    visible: root.reading && !root.cardsComplete
+                    anchors.centerIn: parent
+                    width: parent.width - 48
+                    spacing: 12
+
+                    Text {
+                      width: parent.width
+                      text: root.reading && root.reading.cards.length > 1 ? "REVEAL ALL THREE CARDS" : "REVEAL THE CARD"
+                      color: root.cyan
+                      font.family: "monospace"
+                      font.pixelSize: 14
+                      font.bold: true
+                      font.letterSpacing: 1.8
+                      horizontalAlignment: Text.AlignHCenter
+                      textFormat: Text.PlainText
+                    }
+                    Text {
+                      width: parent.width
+                      text: root.reading && root.reading.cards.length > 1
+                        ? "Each position opens independently. The reading appears when the spread is complete."
+                        : "Lift the card with focus or hover, then click or press Enter to turn it."
+                      color: root.muted
+                      font.family: "monospace"
+                      font.pixelSize: 11
+                      lineHeight: 1.4
+                      wrapMode: Text.Wrap
+                      horizontalAlignment: Text.AlignHCenter
+                      textFormat: Text.PlainText
+                    }
+                  }
+
                   Flickable {
                     id: readingScroll
+                    visible: root.cardsComplete
+                    opacity: root.readingOpacity
                     anchors.fill: parent
                     contentWidth: width
                     contentHeight: summaryColumn.implicitHeight
@@ -503,7 +614,7 @@ Item {
                   }
 
                   Rectangle {
-                    visible: readingScroll.contentHeight > readingScroll.height + 2 && !readingScroll.atYEnd
+                    visible: root.cardsComplete && readingScroll.contentHeight > readingScroll.height + 2 && !readingScroll.atYEnd
                     anchors.left: parent.left
                     anchors.right: parent.right
                     anchors.bottom: parent.bottom
@@ -516,7 +627,7 @@ Item {
                   }
 
                   Text {
-                    visible: readingScroll.contentHeight > readingScroll.height + 2 && !readingScroll.atYEnd
+                    visible: root.cardsComplete && readingScroll.contentHeight > readingScroll.height + 2 && !readingScroll.atYEnd
                     anchors.right: parent.right
                     anchors.rightMargin: 12
                     anchors.bottom: parent.bottom

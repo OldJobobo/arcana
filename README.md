@@ -17,7 +17,7 @@ Omarchy Arcana is a standalone Omarchy Quattro/Quickshell plugin that turns a co
 - Quiet bar widget and floating keyboard-first panel
 - Persistent `1×`, `1.25×`, and `1.5×` panel scaling with responsive screen fit
 - Persistent `ARCANA` / `SYSTEM` color mode; system mode follows live Omarchy semantic theme colors
-- Brief state-driven motion for panel reveal, scale, color, reading, and registration-line transitions
+- Staged panel reveal plus physical card motion: hover/focus lift, face-down draws, and click/keyboard flip reveals
 - Explicit **Ask Your Agent** packet preview using Omarchy’s configured default agent
 
 Agent prose is optional and non-canonical. Arcana never treats tarot as prophecy, diagnosis, professional advice, or factual authority.
@@ -48,6 +48,8 @@ omarchy-shell shell summon org.ministryoftaste.omarchy-arcana '{}'
 | `T` | Toggle Arcana identity colors / active Omarchy theme colors |
 | `1` / `2` / `3` | Set panel scale to `1×` / `1.25×` / `1.5×` |
 | `R` | Confirmed daily redraw flow |
+| `Tab` / `Shift+Tab` | Move focus between face-down cards and controls |
+| `Enter` / `Space` | Reveal the focused card |
 | `/` | Focus the optional agent question |
 | `Esc` / `Q` | Back or close |
 

@@ -118,3 +118,22 @@ test("motion is perceptible, bounded, state-driven, and never loops", () => {
   assert.ok(durations.some(duration => duration >= 400), durations.join(","));
   assert.ok(durations.every(duration => duration <= 450), durations.join(","));
 });
+
+test("new cards are keyboard-accessible physical reveals", () => {
+  const panel = fs.readFileSync(path.join(root, "Panel.qml"), "utf8");
+  const card = fs.readFileSync(path.join(root, "components/CardFace.qml"), "utf8");
+  assert.match(panel, /property bool veilNextReading/);
+  assert.match(panel, /property var revealedCards/);
+  assert.match(panel, /function allCardsRevealed/);
+  assert.match(panel, /function revealCard/);
+  assert.match(panel, /REVEAL ALL|REVEAL THE CARD/);
+  assert.match(card, /signal revealRequested/);
+  assert.match(card, /activeFocusOnTab:\s*true/);
+  assert.match(card, /card-back\.png/);
+  assert.match(card, /property real flipAngle/);
+  assert.match(card, /axis\.y:\s*1/);
+  assert.match(card, /Behavior on scale/);
+  assert.match(card, /Keys\.on(?:Return|Enter|Space)Pressed/);
+  assert.match(card, /hoverEnabled:\s*true/);
+  assert.doesNotMatch(card, /loops:\s*Animation\.Infinite/);
+});
