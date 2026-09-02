@@ -130,6 +130,14 @@ test("motion is perceptible, bounded, state-driven, and never loops", () => {
   assert.ok(durations.every(duration => duration <= 450), durations.join(","));
 });
 
+test("agent preview reserves its action row above the persistent footer", () => {
+  const panel = fs.readFileSync(path.join(root, "Panel.qml"), "utf8");
+  assert.match(panel, /id:\s*agentActions/);
+  assert.match(panel, /height:\s*Math\.max\(120,\s*parent\.height\s*-\s*y\s*-\s*agentActions\.height\s*-\s*parent\.spacing\s*-\s*18\)/);
+  assert.match(panel, /id:\s*agentActions\s*\n\s*height:\s*38/);
+  assert.doesNotMatch(panel, /height:\s*parent\.height\s*-\s*172/);
+});
+
 test("new cards are keyboard-accessible physical reveals", () => {
   const panel = fs.readFileSync(path.join(root, "Panel.qml"), "utf8");
   const card = fs.readFileSync(path.join(root, "components/CardFace.qml"), "utf8");

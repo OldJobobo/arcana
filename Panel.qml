@@ -810,7 +810,7 @@ Item {
 
                 Rectangle {
                   width: parent.width
-                  height: parent.height - 172
+                  height: Math.max(120, parent.height - y - agentActions.height - parent.spacing - 18)
                   color: "#0c1012"
                   border.width: 1
                   border.color: "#2d3d40"
@@ -838,6 +838,8 @@ Item {
                 }
 
                 Row {
+                  id: agentActions
+                  height: 38
                   spacing: 10
                   ArcanaButton { systemTheme: root.systemTheme; visible: root.service && (root.service.agentStatus === "unset" || root.service.agentStatus === "retry"); text: root.service && root.service.agentStatus === "retry" ? "RECHECK AGENT" : "CHOOSE DEFAULT AGENT"; onClicked: { if (root.service.agentStatus === "retry") root.openAgentPreview(); else root.service.openAgentPicker() } }
                   ArcanaButton { systemTheme: root.systemTheme; visible: root.service && root.service.agentStatus === "ready"; text: "LAUNCH " + (root.service ? root.service.configuredAgent.toUpperCase() : "AGENT"); onClicked: root.service.launchAgent() }
