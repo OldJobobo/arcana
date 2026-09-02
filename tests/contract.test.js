@@ -97,3 +97,17 @@ test("panel edge uses a single border and restrained inner keyline", () => {
   assert.doesNotMatch(panel, /#60000000/i);
   assert.match(panel, /id:\s*innerKeyline/);
 });
+
+test("motion is brief, state-driven, and never loops", () => {
+  const panel = fs.readFileSync(path.join(root, "Panel.qml"), "utf8");
+  const button = fs.readFileSync(path.join(root, "components/ArcanaButton.qml"), "utf8");
+  assert.match(panel, /id:\s*panelReveal/);
+  assert.match(panel, /id:\s*readingFade/);
+  assert.match(panel, /Behavior on renderScale/);
+  assert.match(panel, /ColorAnimation/);
+  assert.match(panel, /Behavior on width/);
+  assert.doesNotMatch(panel + button, /loops:\s*Animation\.Infinite|running:\s*true[\s\S]{0,120}loops/i);
+  const durations = [...(panel + button).matchAll(/duration:\s*(\d+)/g)].map(match => Number(match[1]));
+  assert.ok(durations.length >= 6);
+  assert.ok(durations.every(duration => duration <= 200), durations.join(","));
+});

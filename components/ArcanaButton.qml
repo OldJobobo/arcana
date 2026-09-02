@@ -28,6 +28,9 @@ Rectangle {
   activeFocusOnTab: true
 
   Behavior on color { ColorAnimation { duration: 90 } }
+  Behavior on accent { ColorAnimation { duration: 120 } }
+  Behavior on foreground { ColorAnimation { duration: 120 } }
+  Behavior on quietBorder { ColorAnimation { duration: 120 } }
 
   Text {
     id: label
@@ -39,6 +42,7 @@ Rectangle {
     font.bold: true
     font.letterSpacing: 0.8
     textFormat: Text.PlainText
+    Behavior on color { ColorAnimation { duration: 90 } }
   }
 
   Keys.onReturnPressed: root.clicked()

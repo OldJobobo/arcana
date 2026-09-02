@@ -17,6 +17,7 @@ Omarchy Arcana is a standalone Omarchy Quattro/Quickshell plugin that turns a co
 - Quiet bar widget and floating keyboard-first panel
 - Persistent `1×`, `1.25×`, and `1.5×` panel scaling with responsive screen fit
 - Persistent `ARCANA` / `SYSTEM` color mode; system mode follows live Omarchy semantic theme colors
+- Brief state-driven motion for panel reveal, scale, color, reading, and registration-line transitions
 - Explicit **Ask Your Agent** packet preview using Omarchy’s configured default agent
 
 Agent prose is optional and non-canonical. Arcana never treats tarot as prophecy, diagnosis, professional advice, or factual authority.

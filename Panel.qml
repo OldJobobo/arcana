@@ -18,19 +18,47 @@ Item {
   readonly property var reading: service ? service.currentReading : null
   readonly property int readingRevision: service ? service.readingRevision : 0
   readonly property bool systemTheme: service && service.themeMode === "system"
-  readonly property color cyan: systemTheme ? Color.accent : "#62d6df"
-  readonly property color ivory: systemTheme ? Color.popups.text : "#e4e0d6"
-  readonly property color muted: systemTheme ? Color.muted : "#899a9c"
-  readonly property color brass: systemTheme ? Color.popups.border : "#b89b61"
-  readonly property color fault: systemTheme ? Color.urgent : "#d97743"
-  readonly property color graphite: systemTheme ? Color.popups.background : "#101416"
-  readonly property color panelBorder: systemTheme ? Color.popups.border : "#3e5558"
+  property color cyan: systemTheme ? Color.accent : "#62d6df"
+  property color ivory: systemTheme ? Color.popups.text : "#e4e0d6"
+  property color muted: systemTheme ? Color.muted : "#899a9c"
+  property color brass: systemTheme ? Color.popups.border : "#b89b61"
+  property color fault: systemTheme ? Color.urgent : "#d97743"
+  property color graphite: systemTheme ? Color.popups.background : "#101416"
+  property color panelBorder: systemTheme ? Color.popups.border : "#3e5558"
   readonly property real baseWidth: 1080
   readonly property real baseHeight: 680
   readonly property real selectedScale: service ? service.uiScale : 1
   readonly property real effectiveScale: Math.min(selectedScale,
     Math.max(0.5, (surface.width - 48) / baseWidth),
     Math.max(0.5, (surface.height - 48) / baseHeight))
+  property real renderScale: effectiveScale
+  property real revealOpacity: 0
+  property real revealOffset: 8
+  property real readingOpacity: 1
+
+  Behavior on renderScale { NumberAnimation { duration: 180; easing.type: Easing.OutCubic } }
+  Behavior on cyan { ColorAnimation { duration: 120 } }
+  Behavior on ivory { ColorAnimation { duration: 120 } }
+  Behavior on muted { ColorAnimation { duration: 120 } }
+  Behavior on brass { ColorAnimation { duration: 120 } }
+  Behavior on fault { ColorAnimation { duration: 120 } }
+  Behavior on graphite { ColorAnimation { duration: 120 } }
+  Behavior on panelBorder { ColorAnimation { duration: 120 } }
+
+  ParallelAnimation {
+    id: panelReveal
+    NumberAnimation { target: root; property: "revealOpacity"; from: 0; to: 1; duration: 160; easing.type: Easing.OutCubic }
+    NumberAnimation { target: root; property: "revealOffset"; from: 8; to: 0; duration: 160; easing.type: Easing.OutCubic }
+  }
+
+  SequentialAnimation {
+    id: readingFade
+    NumberAnimation { target: root; property: "readingOpacity"; to: 0; duration: 0 }
+    PauseAnimation { duration: 20 }
+    NumberAnimation { target: root; property: "readingOpacity"; to: 1; duration: 140; easing.type: Easing.OutCubic }
+  }
+
+  onReadingRevisionChanged: if (opened) readingFade.restart()
 
   function resolveService() {
     if (!service && shell && typeof shell.serviceFor === "function")
@@ -44,10 +72,14 @@ Item {
     pendingRedraw = ""
     resolveService()
     if (service && !service.currentReading) service.requestDaily(false)
+    panelReveal.restart()
     Qt.callLater(function() { keyboardRoot.forceActiveFocus() })
   }
 
   function close() {
+    panelReveal.stop()
+    revealOpacity = 0
+    revealOffset = 8
     opened = false
     pendingRedraw = ""
     viewMode = "reading"
@@ -198,15 +230,17 @@ Item {
       Item {
         id: frameBounds
         anchors.centerIn: parent
-        width: root.baseWidth * root.effectiveScale
-        height: root.baseHeight * root.effectiveScale
+        anchors.verticalCenterOffset: root.revealOffset
+        width: root.baseWidth * root.renderScale
+        height: root.baseHeight * root.renderScale
+        opacity: root.revealOpacity
 
         Rectangle {
           id: frame
           width: root.baseWidth
           height: root.baseHeight
           transformOrigin: Item.TopLeft
-          scale: root.effectiveScale
+          scale: root.renderScale
           radius: 8
           color: root.graphite
           border.width: 1
@@ -237,9 +271,25 @@ Item {
               width: 46
               height: 38
               Rectangle { anchors.centerIn: parent; width: 20; height: 20; rotation: 45; color: "transparent"; border.width: 1; border.color: root.cyan }
-              Rectangle { anchors.verticalCenter: parent.verticalCenter; width: 42; height: 1; color: root.cyan; opacity: 0.72 }
+              Rectangle {
+                id: registrationLine
+                anchors.verticalCenter: parent.verticalCenter
+                width: root.viewMode === "reading" ? 42 : (root.viewMode === "agent" ? 32 : 37)
+                height: 1
+                color: root.cyan
+                opacity: 0.72
+                Behavior on width { NumberAnimation { duration: 110; easing.type: Easing.OutCubic } }
+              }
               Rectangle { anchors.centerIn: parent; width: 4; height: 4; radius: 2; color: root.cyan }
-              Rectangle { x: 38; y: 30; width: 4; height: 4; radius: 2; color: root.brass }
+              Rectangle {
+                x: registrationLine.width - 4
+                y: 30
+                width: 4
+                height: 4
+                radius: 2
+                color: root.brass
+                Behavior on x { NumberAnimation { duration: 110; easing.type: Easing.OutCubic } }
+              }
             }
 
             Column {
@@ -324,6 +374,7 @@ Item {
             Item {
               anchors.fill: parent
               visible: root.viewMode === "reading"
+              opacity: root.readingOpacity
 
               Row {
                 anchors.fill: parent
