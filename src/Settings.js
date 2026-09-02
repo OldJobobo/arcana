@@ -10,9 +10,14 @@ function normalizeScale(value) {
   return 1;
 }
 
+function normalizeThemeMode(value) {
+  return value === "system" ? "system" : "arcana";
+}
+
 var api = {
   SUPPORTED_SCALES: SUPPORTED_SCALES,
-  normalizeScale: normalizeScale
+  normalizeScale: normalizeScale,
+  normalizeThemeMode: normalizeThemeMode
 };
 
 if (typeof module !== "undefined" && module.exports) module.exports = api;

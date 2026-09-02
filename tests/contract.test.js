@@ -76,3 +76,17 @@ test("panel scale is persisted, constrained, and keyboard accessible", () => {
   for (const label of ["1×", "1.25×", "1.5×"])
     assert.match(panel, new RegExp(label.replace(".", "\\.")));
 });
+
+test("theme colors toggle between Arcana identity and live system roles", () => {
+  const service = fs.readFileSync(path.join(root, "ArcanaService.qml"), "utf8");
+  const panel = fs.readFileSync(path.join(root, "Panel.qml"), "utf8");
+  assert.match(service, /property string themeMode/);
+  assert.match(service, /function toggleThemeMode\(\)/);
+  assert.match(service, /preferences\.themeMode/);
+  assert.match(panel, /Color\.popups\.background/);
+  assert.match(panel, /Color\.popups\.text/);
+  assert.match(panel, /Color\.accent/);
+  assert.match(panel, /Qt\.Key_T/);
+  assert.match(panel, /COLORS.*ARCANA/s);
+  assert.match(panel, /COLORS.*SYSTEM/s);
+});

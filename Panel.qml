@@ -17,12 +17,14 @@ Item {
   property string question: ""
   readonly property var reading: service ? service.currentReading : null
   readonly property int readingRevision: service ? service.readingRevision : 0
-  readonly property color cyan: "#62d6df"
-  readonly property color ivory: "#e4e0d6"
-  readonly property color muted: "#899a9c"
-  readonly property color brass: "#b89b61"
-  readonly property color fault: "#d97743"
-  readonly property color graphite: "#101416"
+  readonly property bool systemTheme: service && service.themeMode === "system"
+  readonly property color cyan: systemTheme ? Color.accent : "#62d6df"
+  readonly property color ivory: systemTheme ? Color.popups.text : "#e4e0d6"
+  readonly property color muted: systemTheme ? Color.muted : "#899a9c"
+  readonly property color brass: systemTheme ? Color.popups.border : "#b89b61"
+  readonly property color fault: systemTheme ? Color.urgent : "#d97743"
+  readonly property color graphite: systemTheme ? Color.popups.background : "#101416"
+  readonly property color panelBorder: systemTheme ? Color.popups.border : "#3e5558"
   readonly property real baseWidth: 1080
   readonly property real baseHeight: 680
   readonly property real selectedScale: service ? service.uiScale : 1
@@ -184,6 +186,8 @@ Item {
           if (root.resolveService()) root.service.setUiScale(1.25); event.accepted = true
         } else if (event.key === Qt.Key_3) {
           if (root.resolveService()) root.service.setUiScale(1.5); event.accepted = true
+        } else if (event.key === Qt.Key_T) {
+          if (root.resolveService()) root.service.toggleThemeMode(); event.accepted = true
         } else if (event.key === Qt.Key_R && root.viewMode === "reading" && root.service && root.service.currentReadingKind === "daily") {
           root.confirmDailyRedraw(); event.accepted = true
         } else if (event.key === Qt.Key_Slash && root.viewMode === "agent") {
@@ -206,7 +210,7 @@ Item {
           radius: 8
           color: root.graphite
           border.width: 1
-          border.color: "#3e5558"
+          border.color: root.panelBorder
 
         Rectangle {
           anchors.fill: parent
@@ -256,7 +260,7 @@ Item {
               textFormat: Text.PlainText
             }
 
-            ArcanaButton {
+            ArcanaButton { systemTheme: root.systemTheme;
               id: closeButton
               anchors.right: parent.right
               anchors.verticalCenter: parent.verticalCenter
@@ -276,11 +280,11 @@ Item {
               anchors.left: parent.left
               anchors.verticalCenter: parent.verticalCenter
               spacing: 8
-              ArcanaButton { text: "D  DAILY"; compact: true; selected: root.viewMode === "reading" && root.service && root.service.currentReadingKind === "daily"; onClicked: root.showDaily() }
-              ArcanaButton { text: "F  FREE"; compact: true; selected: root.viewMode === "reading" && root.service && root.service.currentReadingKind === "free"; onClicked: root.drawFree() }
-              ArcanaButton { text: "S  SPREAD"; compact: true; selected: root.viewMode === "reading" && root.service && root.service.currentReadingKind === "spread"; onClicked: root.drawSpread() }
-              ArcanaButton { text: "A  AGENT"; compact: true; selected: root.viewMode === "agent"; onClicked: root.openAgentPreview() }
-              ArcanaButton { text: "I  METHOD"; compact: true; selected: root.viewMode === "about"; onClicked: root.viewMode = "about" }
+              ArcanaButton { systemTheme: root.systemTheme; text: "D  DAILY"; compact: true; selected: root.viewMode === "reading" && root.service && root.service.currentReadingKind === "daily"; onClicked: root.showDaily() }
+              ArcanaButton { systemTheme: root.systemTheme; text: "F  FREE"; compact: true; selected: root.viewMode === "reading" && root.service && root.service.currentReadingKind === "free"; onClicked: root.drawFree() }
+              ArcanaButton { systemTheme: root.systemTheme; text: "S  SPREAD"; compact: true; selected: root.viewMode === "reading" && root.service && root.service.currentReadingKind === "spread"; onClicked: root.drawSpread() }
+              ArcanaButton { systemTheme: root.systemTheme; text: "A  AGENT"; compact: true; selected: root.viewMode === "agent"; onClicked: root.openAgentPreview() }
+              ArcanaButton { systemTheme: root.systemTheme; text: "I  METHOD"; compact: true; selected: root.viewMode === "about"; onClicked: root.viewMode = "about" }
             }
 
             Text {
@@ -301,9 +305,10 @@ Item {
               anchors.verticalCenter: parent.verticalCenter
               spacing: 5
               Text { anchors.verticalCenter: parent.verticalCenter; text: "SCALE"; color: root.muted; font.family: "monospace"; font.pixelSize: 9; font.letterSpacing: 1; textFormat: Text.PlainText }
-              ArcanaButton { text: "1×"; compact: true; selected: root.selectedScale === 1; onClicked: { if (root.resolveService()) root.service.setUiScale(1) } }
-              ArcanaButton { text: "1.25×"; compact: true; selected: root.selectedScale === 1.25; onClicked: { if (root.resolveService()) root.service.setUiScale(1.25) } }
-              ArcanaButton { text: "1.5×"; compact: true; selected: root.selectedScale === 1.5; onClicked: { if (root.resolveService()) root.service.setUiScale(1.5) } }
+              ArcanaButton { systemTheme: root.systemTheme; text: "1×"; compact: true; selected: root.selectedScale === 1; onClicked: { if (root.resolveService()) root.service.setUiScale(1) } }
+              ArcanaButton { systemTheme: root.systemTheme; text: "1.25×"; compact: true; selected: root.selectedScale === 1.25; onClicked: { if (root.resolveService()) root.service.setUiScale(1.25) } }
+              ArcanaButton { systemTheme: root.systemTheme; text: "1.5×"; compact: true; selected: root.selectedScale === 1.5; onClicked: { if (root.resolveService()) root.service.setUiScale(1.5) } }
+              ArcanaButton { systemTheme: root.systemTheme; text: root.systemTheme ? "COLORS  SYSTEM" : "COLORS  ARCANA"; compact: true; selected: root.systemTheme; onClicked: { if (root.resolveService()) root.service.toggleThemeMode() } }
             }
           }
 
@@ -387,7 +392,7 @@ Item {
                     Text { width: parent.width; text: "ANOTHER WAY TO READ IT"; color: root.brass; font.family: "monospace"; font.pixelSize: 9; font.bold: true; font.letterSpacing: 1.2; textFormat: Text.PlainText }
                     Text { width: parent.width; text: root.reading ? root.reading.alternative : ""; color: root.ivory; font.family: "monospace"; font.pixelSize: 11; lineHeight: 1.3; wrapMode: Text.Wrap; textFormat: Text.PlainText }
                     Text { width: parent.width; text: root.reading ? root.reading.reflection : ""; color: root.cyan; font.family: "monospace"; font.pixelSize: 12; lineHeight: 1.3; wrapMode: Text.Wrap; textFormat: Text.PlainText }
-                      ArcanaButton { visible: root.service && root.service.currentReadingKind === "daily"; text: root.pendingRedraw === "daily" ? "R  CONFIRM REDRAW" : "R  REDRAW DAILY"; danger: root.pendingRedraw === "daily"; onClicked: root.confirmDailyRedraw() }
+                      ArcanaButton { systemTheme: root.systemTheme; visible: root.service && root.service.currentReadingKind === "daily"; text: root.pendingRedraw === "daily" ? "R  CONFIRM REDRAW" : "R  REDRAW DAILY"; danger: root.pendingRedraw === "daily"; onClicked: root.confirmDailyRedraw() }
                     }
                   }
 
@@ -462,7 +467,7 @@ Item {
                     }
                     Text { anchors.fill: parent; anchors.margins: 10; visible: questionInput.text === "" && !questionInput.activeFocus; text: "/  optional question or intention"; color: root.muted; font.family: "monospace"; font.pixelSize: 11; textFormat: Text.PlainText }
                   }
-                  ArcanaButton { id: actionButton; text: "REFRESH PACKET"; onClicked: root.openAgentPreview() }
+                  ArcanaButton { systemTheme: root.systemTheme; id: actionButton; text: "REFRESH PACKET"; onClicked: root.openAgentPreview() }
                 }
 
                 Text { width: parent.width; text: root.agentStatusText(); color: root.service && root.service.agentStatus === "launch-failed" ? root.fault : root.muted; font.family: "monospace"; font.pixelSize: 10; textFormat: Text.PlainText }
@@ -498,9 +503,9 @@ Item {
 
                 Row {
                   spacing: 10
-                  ArcanaButton { visible: root.service && (root.service.agentStatus === "unset" || root.service.agentStatus === "retry"); text: root.service && root.service.agentStatus === "retry" ? "RECHECK AGENT" : "CHOOSE DEFAULT AGENT"; onClicked: { if (root.service.agentStatus === "retry") root.openAgentPreview(); else root.service.openAgentPicker() } }
-                  ArcanaButton { visible: root.service && root.service.agentStatus === "ready"; text: "LAUNCH " + (root.service ? root.service.configuredAgent.toUpperCase() : "AGENT"); onClicked: root.service.launchAgent() }
-                  ArcanaButton { text: "BACK TO READING"; onClicked: { root.viewMode = "reading"; keyboardRoot.forceActiveFocus() } }
+                  ArcanaButton { systemTheme: root.systemTheme; visible: root.service && (root.service.agentStatus === "unset" || root.service.agentStatus === "retry"); text: root.service && root.service.agentStatus === "retry" ? "RECHECK AGENT" : "CHOOSE DEFAULT AGENT"; onClicked: { if (root.service.agentStatus === "retry") root.openAgentPreview(); else root.service.openAgentPicker() } }
+                  ArcanaButton { systemTheme: root.systemTheme; visible: root.service && root.service.agentStatus === "ready"; text: "LAUNCH " + (root.service ? root.service.configuredAgent.toUpperCase() : "AGENT"); onClicked: root.service.launchAgent() }
+                  ArcanaButton { systemTheme: root.systemTheme; text: "BACK TO READING"; onClicked: { root.viewMode = "reading"; keyboardRoot.forceActiveFocus() } }
                 }
               }
             }
@@ -531,7 +536,7 @@ Item {
                   Text { text: "PROVENANCE + REALITY SAFETY"; color: root.brass; font.family: "monospace"; font.pixelSize: 13; font.bold: true; font.letterSpacing: 1.2; textFormat: Text.PlainText }
                   Text { width: parent.width; text: "Historical anchor: A. E. Waite, public domain\nVault keyword research: user-local reference\nDeck-specific language: original Omarchy Arcana authorship\nComposer: deterministic original method\nAgent response: optional and visibly agent-assisted"; color: root.ivory; font.family: "monospace"; font.pixelSize: 11; lineHeight: 1.45; wrapMode: Text.Wrap; textFormat: Text.PlainText }
                   Text { width: parent.width; text: "Readings never claim prophecy, diagnosis, guaranteed outcomes, third-party mind access, legal advice, financial advice, or medical advice. Keep agency with the person asking. Ordinary evidence and trusted human support outrank symbolic inference when stakes are real."; color: root.muted; font.family: "monospace"; font.pixelSize: 11; lineHeight: 1.4; wrapMode: Text.Wrap; textFormat: Text.PlainText }
-                  ArcanaButton { text: "BACK TO READING"; onClicked: { root.viewMode = "reading"; keyboardRoot.forceActiveFocus() } }
+                  ArcanaButton { systemTheme: root.systemTheme; text: "BACK TO READING"; onClicked: { root.viewMode = "reading"; keyboardRoot.forceActiveFocus() } }
                 }
               }
             }
@@ -541,7 +546,7 @@ Item {
           Item {
             width: parent.width
             height: 30
-            Text { anchors.left: parent.left; anchors.verticalCenter: parent.verticalCenter; text: "D DAILY   F FREE   S SPREAD   A AGENT   I METHOD   1/2/3 SCALE   ESC CLOSE"; color: root.muted; font.family: "monospace"; font.pixelSize: 9; font.letterSpacing: 0.65; textFormat: Text.PlainText }
+            Text { anchors.left: parent.left; anchors.verticalCenter: parent.verticalCenter; text: "D DAILY   F FREE   S SPREAD   A AGENT   I METHOD   T COLORS   1/2/3 SCALE   ESC CLOSE"; color: root.muted; font.family: "monospace"; font.pixelSize: 9; font.letterSpacing: 0.65; textFormat: Text.PlainText }
             Text { anchors.right: parent.right; anchors.verticalCenter: parent.verticalCenter; text: "LOCAL READING  //  AGENT PROSE OPTIONAL"; color: root.brass; font.family: "monospace"; font.pixelSize: 9; font.letterSpacing: 0.55; textFormat: Text.PlainText }
           }
         }

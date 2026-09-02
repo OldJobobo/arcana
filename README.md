@@ -16,6 +16,7 @@ Omarchy Arcana is a standalone Omarchy Quattro/Quickshell plugin that turns a co
 - XDG-local JSON persistence
 - Quiet bar widget and floating keyboard-first panel
 - Persistent `1×`, `1.25×`, and `1.5×` panel scaling with responsive screen fit
+- Persistent `ARCANA` / `SYSTEM` color mode; system mode follows live Omarchy semantic theme colors
 - Explicit **Ask Your Agent** packet preview using Omarchy’s configured default agent
 
 Agent prose is optional and non-canonical. Arcana never treats tarot as prophecy, diagnosis, professional advice, or factual authority.
@@ -43,6 +44,7 @@ omarchy-shell shell summon org.ministryoftaste.omarchy-arcana '{}'
 | `S` | Context / Friction / Doorway |
 | `A` | Ask Your Agent preview |
 | `I` | Method and provenance |
+| `T` | Toggle Arcana identity colors / active Omarchy theme colors |
 | `1` / `2` / `3` | Set panel scale to `1×` / `1.25×` / `1.5×` |
 | `R` | Confirmed daily redraw flow |
 | `/` | Focus the optional agent question |
@@ -52,7 +54,7 @@ Middle-clicking the bar sigil performs a free draw without opening the panel; le
 
 ## State and trust boundary
 
-State is stored in `${XDG_STATE_HOME:-~/.local/state}/omarchy/omarchy-arcana.json`. The plugin stores only current daily selection, last reading, draw counter, and local preferences, including the selected panel scale. Scale persists across panel close, plugin reload, and shell restart; on smaller displays the rendered size fits within the available output without changing the saved selection. The plugin does not read arbitrary files, shell history, environment dumps, vault content, credentials, or unrelated state.
+State is stored in `${XDG_STATE_HOME:-~/.local/state}/omarchy/omarchy-arcana.json`. The plugin stores only current daily selection, last reading, draw counter, and local preferences, including panel scale and color mode. Both preferences persist across panel close, plugin reload, and shell restart. On smaller displays the rendered size fits within the available output without changing the saved scale. `SYSTEM` color mode follows Quattro’s live popup, text, accent, muted, border, and urgent roles; card artwork is never recolored. The plugin does not read arbitrary files, shell history, environment dumps, vault content, credentials, or unrelated state.
 
 The agent handoff contains only the current reading and an optional, clearly delimited user question. It uses argument-array process launch through:
 

@@ -1,4 +1,5 @@
 import QtQuick
+import qs.Commons
 
 Rectangle {
   id: root
@@ -8,7 +9,12 @@ Rectangle {
   property bool compact: false
   property bool danger: false
   property bool outlined: true
-  property color accent: danger ? "#d97743" : "#62d6df"
+  property bool systemTheme: false
+  property color accent: danger
+    ? (systemTheme ? Color.urgent : "#d97743")
+    : (systemTheme ? Color.accent : "#62d6df")
+  property color foreground: systemTheme ? Color.foreground : "#c7ccca"
+  property color quietBorder: systemTheme ? Color.popups.border : Qt.rgba(0.52,0.62,0.64,0.38)
   signal clicked()
 
   implicitWidth: Math.max(compact ? 76 : 118, label.implicitWidth + (compact ? 20 : 30))
@@ -18,7 +24,7 @@ Rectangle {
     ? Qt.rgba(accent.r,accent.g,accent.b,0.16)
     : (mouse.containsMouse || activeFocus ? Qt.rgba(accent.r,accent.g,accent.b,0.09) : "transparent")
   border.width: outlined || selected || activeFocus ? 1 : 0
-  border.color: selected || activeFocus ? accent : Qt.rgba(0.52,0.62,0.64,0.38)
+  border.color: selected || activeFocus ? accent : quietBorder
   activeFocusOnTab: true
 
   Behavior on color { ColorAnimation { duration: 90 } }
@@ -27,7 +33,7 @@ Rectangle {
     id: label
     anchors.centerIn: parent
     text: root.text
-    color: root.selected || mouse.containsMouse || root.activeFocus ? root.accent : "#c7ccca"
+    color: root.selected || mouse.containsMouse || root.activeFocus ? root.accent : root.foreground
     font.family: "monospace"
     font.pixelSize: root.compact ? 10 : 11
     font.bold: true

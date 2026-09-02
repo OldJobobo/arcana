@@ -15,3 +15,10 @@ test("panel scale fails closed to 1x", () => {
   for (const value of [null, undefined, "", 0, 1.1, 2, "large", NaN])
     assert.equal(Settings.normalizeScale(value), 1);
 });
+
+test("theme mode accepts arcana and system only", () => {
+  assert.equal(Settings.normalizeThemeMode("arcana"), "arcana");
+  assert.equal(Settings.normalizeThemeMode("system"), "system");
+  for (const value of [null, undefined, "", "dark", "SYSTEM", 1])
+    assert.equal(Settings.normalizeThemeMode(value), "arcana");
+});

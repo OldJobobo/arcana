@@ -30,6 +30,7 @@ Item {
   property string agentStatus: "idle"
   property bool agentLaunchRunning: false
   property real uiScale: 1
+  property string themeMode: "arcana"
 
   signal readingUpdated()
 
@@ -45,6 +46,7 @@ Item {
   function restorePreferences() {
     var preferences = stateAdapter.preferences || ({})
     uiScale = Settings.normalizeScale(preferences.uiScale)
+    themeMode = Settings.normalizeThemeMode(preferences.themeMode)
   }
 
   function setUiScale(value) {
@@ -55,6 +57,20 @@ Item {
     uiScale = next
     stateStore.writeAdapter()
     return next
+  }
+
+  function setThemeMode(value) {
+    var next = Settings.normalizeThemeMode(value)
+    var preferences = JSON.parse(JSON.stringify(stateAdapter.preferences || ({})))
+    preferences.themeMode = next
+    stateAdapter.preferences = preferences
+    themeMode = next
+    stateStore.writeAdapter()
+    return next
+  }
+
+  function toggleThemeMode() {
+    return setThemeMode(themeMode === "system" ? "arcana" : "system")
   }
 
   function deckSnapshot() {
@@ -211,7 +227,7 @@ Item {
       property var lastReading: null
       property string lastReadingKind: "daily"
       property int freeCounter: 0
-      property var preferences: ({reversals:true, uiScale:1})
+      property var preferences: ({reversals:true, uiScale:1, themeMode:"arcana"})
     }
   }
 
@@ -269,12 +285,13 @@ Item {
   IpcHandler {
     target: "org.ministryoftaste.omarchy-arcana.service"
     function status(arg: string): string {
-      return JSON.stringify({ready:root.ready,cards:root.cards.length,kind:root.currentReadingKind,agentStatus:root.agentStatus,scale:root.uiScale})
+      return JSON.stringify({ready:root.ready,cards:root.cards.length,kind:root.currentReadingKind,agentStatus:root.agentStatus,scale:root.uiScale,theme:root.themeMode})
     }
     function daily(arg: string): string { return root.requestDaily(false) ? "ok" : "busy" }
     function free(arg: string): string { return root.requestFree() ? "ok" : "busy" }
     function spread(arg: string): string { return root.requestSpread() ? "ok" : "busy" }
     function scale(arg: string): string { return String(root.setUiScale(Number(arg))) }
+    function theme(arg: string): string { return root.setThemeMode(String(arg)) }
   }
 
   Component.onCompleted: {
