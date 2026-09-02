@@ -95,7 +95,7 @@ VISUAL-GRAMMAR.md
 INTERPRETATION-RESEARCH-AND-SPEC.md
 ```
 
-The plugin consumes the optimized `300×525` fronts and optimized card back. The archival `1200×2100` cards remain outside the runtime package.
+The plugin consumes optimized `600×1050` fronts and card back so the `480×840` inspection view and scaled card surfaces never exceed the packaged source resolution. The archival `1200×2100` cards remain outside the runtime package. Decoded image memory is substantially larger than the compressed PNG package; compositor mipmaps, effect render targets, cache duplication, and allocator overhead can increase live use further.
 
 Current complete-deck verification:
 
@@ -326,7 +326,7 @@ Validation requirements:
 
 - exactly 78 records;
 - unique card, claim, prompt, source, and image IDs;
-- all image files exist and plugin fronts are `300×525`;
+- all image files exist and plugin fronts are `600×1050`;
 - one valid card back;
 - traditional and Omarchy layers exist for every card;
 - every card supports all three default positions;

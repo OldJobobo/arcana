@@ -6,7 +6,7 @@ Omarchy Arcana is a standalone Omarchy Quattro/Quickshell plugin that turns a co
 
 ## Alpha capabilities
 
-- Complete 78-card deck with reversible back at shell resolution (`300×525`, 4:7)
+- Complete 78-card deck with reversible back at high-density shell resolution (`600×1050`, 4:7)
 - Stable local-date daily draw
 - Repeatable free draws
 - Three-card `Context / Friction / Doorway` spread drawn without replacement

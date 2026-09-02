@@ -23,6 +23,12 @@ First complete alpha candidate.
 - Ask Your Agent preview with footer-safe responsive actions, no-agent path, and argument-array launch route
 - Contract, data, deterministic-engine, and release-tree validation
 
+### Changed
+
+- Raised all packaged card bases and semantic color masks from `300×525` to `600×1050`, eliminating source upscaling in the large inspection view and at the supported panel scales
+- Made runtime semantic masks pixel-disjoint and added release validation that rejects overlapping color roles
+- Hardened release validation with exact mask inventories and bounded, CRC-checked, fail-closed PNG decoding
+
 ### Status
 
 Repository completeness does not imply live Quattro certification. See the release report and screenshots produced from the dedicated test VM for the exact tested boundary.
