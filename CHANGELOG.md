@@ -14,6 +14,7 @@ First complete alpha candidate.
 - XDG-local persistence
 - Quattro service, panel, and bar-widget entry points
 - Keyboard-first navigation and explicit daily redraw confirmation
+- Persistent `1×`, `1.25×`, and `1.5×` responsive panel scaling
 - Ask Your Agent preview, no-agent path, and argument-array launch route
 - Contract, data, deterministic-engine, and release-tree validation
 
