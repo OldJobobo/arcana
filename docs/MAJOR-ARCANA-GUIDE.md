@@ -82,7 +82,7 @@ The cards retain their traditional archetypal roles. Their system titles add a s
 
 **Upright:** pause, surrender, altered perspective, productive suspension.  
 **Shadow:** needless stalling, martyrdom, suspension mistaken for resolution.  
-**System lens:** pause the process long enough to notice what constant movement has hidden.
+**System lens:** pause the process long enough to notice what gets lost in constant motion.
 
 ## XIII — Death · Terminate / Restart
 
