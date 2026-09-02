@@ -33,29 +33,36 @@ Item {
     Math.max(0.5, (surface.height - 48) / baseHeight))
   property real renderScale: effectiveScale
   property real revealOpacity: 0
-  property real revealOffset: 8
+  property real revealOffset: 16
   property real readingOpacity: 1
 
-  Behavior on renderScale { NumberAnimation { duration: 180; easing.type: Easing.OutCubic } }
-  Behavior on cyan { ColorAnimation { duration: 120 } }
-  Behavior on ivory { ColorAnimation { duration: 120 } }
-  Behavior on muted { ColorAnimation { duration: 120 } }
-  Behavior on brass { ColorAnimation { duration: 120 } }
-  Behavior on fault { ColorAnimation { duration: 120 } }
-  Behavior on graphite { ColorAnimation { duration: 120 } }
-  Behavior on panelBorder { ColorAnimation { duration: 120 } }
+  Behavior on renderScale { NumberAnimation { duration: 280; easing.type: Easing.OutCubic } }
+  Behavior on cyan { ColorAnimation { duration: 220 } }
+  Behavior on ivory { ColorAnimation { duration: 220 } }
+  Behavior on muted { ColorAnimation { duration: 220 } }
+  Behavior on brass { ColorAnimation { duration: 220 } }
+  Behavior on fault { ColorAnimation { duration: 220 } }
+  Behavior on graphite { ColorAnimation { duration: 220 } }
+  Behavior on panelBorder { ColorAnimation { duration: 220 } }
+
+  Timer {
+    id: revealStart
+    interval: 32
+    repeat: false
+    onTriggered: panelReveal.restart()
+  }
 
   ParallelAnimation {
     id: panelReveal
-    NumberAnimation { target: root; property: "revealOpacity"; from: 0; to: 1; duration: 160; easing.type: Easing.OutCubic }
-    NumberAnimation { target: root; property: "revealOffset"; from: 8; to: 0; duration: 160; easing.type: Easing.OutCubic }
+    NumberAnimation { target: root; property: "revealOpacity"; from: 0; to: 1; duration: 280; easing.type: Easing.OutCubic }
+    NumberAnimation { target: root; property: "revealOffset"; from: 16; to: 0; duration: 280; easing.type: Easing.OutCubic }
   }
 
   SequentialAnimation {
     id: readingFade
     NumberAnimation { target: root; property: "readingOpacity"; to: 0; duration: 0 }
-    PauseAnimation { duration: 20 }
-    NumberAnimation { target: root; property: "readingOpacity"; to: 1; duration: 140; easing.type: Easing.OutCubic }
+    PauseAnimation { duration: 32 }
+    NumberAnimation { target: root; property: "readingOpacity"; to: 1; duration: 240; easing.type: Easing.OutCubic }
   }
 
   onReadingRevisionChanged: if (opened) readingFade.restart()
@@ -67,19 +74,24 @@ Item {
   }
 
   function open(payloadJson) {
+    panelReveal.stop()
+    revealStart.stop()
+    revealOpacity = 0
+    revealOffset = 16
     opened = true
     viewMode = "reading"
     pendingRedraw = ""
     resolveService()
     if (service && !service.currentReading) service.requestDaily(false)
-    panelReveal.restart()
+    revealStart.restart()
     Qt.callLater(function() { keyboardRoot.forceActiveFocus() })
   }
 
   function close() {
+    revealStart.stop()
     panelReveal.stop()
     revealOpacity = 0
-    revealOffset = 8
+    revealOffset = 16
     opened = false
     pendingRedraw = ""
     viewMode = "reading"
@@ -278,7 +290,7 @@ Item {
                 height: 1
                 color: root.cyan
                 opacity: 0.72
-                Behavior on width { NumberAnimation { duration: 110; easing.type: Easing.OutCubic } }
+                Behavior on width { NumberAnimation { duration: 180; easing.type: Easing.OutCubic } }
               }
               Rectangle { anchors.centerIn: parent; width: 4; height: 4; radius: 2; color: root.cyan }
               Rectangle {
@@ -288,7 +300,7 @@ Item {
                 height: 4
                 radius: 2
                 color: root.brass
-                Behavior on x { NumberAnimation { duration: 110; easing.type: Easing.OutCubic } }
+                Behavior on x { NumberAnimation { duration: 180; easing.type: Easing.OutCubic } }
               }
             }
 

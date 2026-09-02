@@ -16,7 +16,7 @@ First complete alpha candidate.
 - Keyboard-first navigation and explicit daily redraw confirmation
 - Persistent `1×`, `1.25×`, and `1.5×` responsive panel scaling
 - Persistent Arcana/system theme-color toggle using Quattro semantic roles
-- Restrained one-shot transitions for reveal, scale, theme colors, reading changes, and mode registration
+- Perceptible one-shot transitions for post-map reveal, scale, theme colors, reading changes, and mode registration
 - Ask Your Agent preview, no-agent path, and argument-array launch route
 - Contract, data, deterministic-engine, and release-tree validation
 
