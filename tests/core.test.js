@@ -74,6 +74,12 @@ test("single-card reversed copy treats orientation prose as a sentence", () => {
   assert.doesNotMatch(reading.synthesis,/centers|suggests:\s|\.\.|\.;/i);
 });
 
+test("Hanged Man system language uses a natural completed thought", () => {
+  const reading = Arcana.compose(completeDeck,[{cardId:"major-12-the-hanged-man",orientation:"upright"}],"single");
+  assert.match(reading.synthesis,/notice what constant movement has hidden\.$/);
+  assert.doesNotMatch(reading.synthesis,/what forward motion concealed/i);
+});
+
 test("all 78 cards produce clean upright and reversed single-card prose", () => {
   for (const card of completeDeck) {
     for (const orientation of ["upright","reversed"]) {
