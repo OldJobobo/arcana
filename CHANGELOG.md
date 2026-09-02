@@ -18,6 +18,7 @@ First complete alpha candidate.
 - Persistent Arcana/system theme-color toggle using Quattro semantic roles
 - Perceptible one-shot transitions for post-map reveal, scale, theme colors, reading changes, and mode registration
 - Face-down new draws with independent click/keyboard card flips, hover/focus lift, and interpretation reveal after the final card
+- Large bounded card-inspection lightbox with responsive `4:7` sizing, reversed orientation support, and mouse/keyboard dismissal
 - Ask Your Agent preview, no-agent path, and argument-array launch route
 - Contract, data, deterministic-engine, and release-tree validation
 

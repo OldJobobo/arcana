@@ -18,6 +18,9 @@ Item {
   property bool veilNextReading: false
   property var revealedCards: ({})
   property bool cardsComplete: true
+  property bool inspectionOpen: false
+  property var inspectionItem: null
+  property real inspectionProgress: 0
   readonly property var reading: service ? service.currentReading : null
   readonly property int readingRevision: service ? service.readingRevision : 0
   readonly property bool systemTheme: service && service.themeMode === "system"
@@ -34,6 +37,9 @@ Item {
   readonly property real effectiveScale: Math.min(selectedScale,
     Math.max(0.5, (surface.width - 48) / baseWidth),
     Math.max(0.5, (surface.height - 48) / baseHeight))
+  readonly property real inspectionWidth: Math.min(480,
+    Math.max(220, surface.width - 120),
+    Math.max(220, (surface.height - 150) / 1.75))
   property real renderScale: effectiveScale
   property real revealOpacity: 0
   property real revealOffset: 16
@@ -107,6 +113,22 @@ Item {
     }
   }
 
+  NumberAnimation {
+    id: inspectionRevealAnimation
+    target: root
+    property: "inspectionProgress"
+    from: 0
+    to: 1
+    duration: 280
+    easing.type: Easing.OutCubic
+  }
+
+  SequentialAnimation {
+    id: inspectionCloseAnimation
+    NumberAnimation { target: root; property: "inspectionProgress"; to: 0; duration: 180; easing.type: Easing.InCubic }
+    ScriptAction { script: root.finishCloseInspection() }
+  }
+
   function cardRevealed(index) {
     return revealedCards[String(index)] === true
   }
@@ -161,6 +183,30 @@ Item {
 
   onReadingRevisionChanged: handleReadingRevision()
 
+  function openInspection(itemData) {
+    if (!itemData) return
+    inspectionCloseAnimation.stop()
+    inspectionRevealAnimation.stop()
+    inspectionItem = itemData
+    inspectionProgress = 0
+    inspectionOpen = true
+    inspectionRevealAnimation.restart()
+    Qt.callLater(function() { inspectionLayer.forceActiveFocus() })
+  }
+
+  function closeInspection() {
+    if (!inspectionOpen || inspectionCloseAnimation.running) return
+    inspectionRevealAnimation.stop()
+    inspectionCloseAnimation.restart()
+  }
+
+  function finishCloseInspection() {
+    inspectionOpen = false
+    inspectionItem = null
+    inspectionProgress = 0
+    Qt.callLater(function() { keyboardRoot.forceActiveFocus() })
+  }
+
   function resolveService() {
     if (!service && shell && typeof shell.serviceFor === "function")
       service = shell.serviceFor("org.ministryoftaste.omarchy-arcana")
@@ -195,6 +241,11 @@ Item {
     contentRevealStart.stop()
     contentReveal.stop()
     readingRevealDelay.stop()
+    inspectionRevealAnimation.stop()
+    inspectionCloseAnimation.stop()
+    inspectionOpen = false
+    inspectionItem = null
+    inspectionProgress = 0
     revealOpacity = 0
     revealOffset = 16
     contentOpacity = 0
@@ -315,10 +366,10 @@ Item {
     }
 
     mask: Region {
-      x: frameBounds.x
-      y: frameBounds.y
-      width: frameBounds.width
-      height: frameBounds.height
+      x: root.inspectionOpen ? 0 : frameBounds.x
+      y: root.inspectionOpen ? 0 : frameBounds.y
+      width: root.inspectionOpen ? surface.width : frameBounds.width
+      height: root.inspectionOpen ? surface.height : frameBounds.height
     }
 
     FocusScope {
@@ -327,6 +378,12 @@ Item {
       focus: true
 
       Keys.onPressed: function(event) {
+        if (root.inspectionOpen) {
+          if (event.key === Qt.Key_Escape || event.key === Qt.Key_Q || event.key === Qt.Key_Return || event.key === Qt.Key_Enter || event.key === Qt.Key_Space)
+            root.closeInspection()
+          event.accepted = true
+          return
+        }
         if (questionInput.activeFocus) {
           if (event.key === Qt.Key_Escape) {
             keyboardRoot.forceActiveFocus()
@@ -552,6 +609,7 @@ Item {
                         cardWidth: root.reading && root.reading.cards.length === 3 ? 178 : 228
                         revealed: root.cardRevealed(index)
                         onRevealRequested: root.revealCard(index)
+                        onInspectRequested: root.openInspection(modelData)
                       }
                     }
                   }
@@ -777,6 +835,116 @@ Item {
             height: 30
             Text { anchors.left: parent.left; anchors.verticalCenter: parent.verticalCenter; text: "D DAILY   F FREE   S SPREAD   A AGENT   I METHOD   T COLORS   1/2/3 SCALE   ESC CLOSE"; color: root.muted; font.family: "monospace"; font.pixelSize: 9; font.letterSpacing: 0.65; textFormat: Text.PlainText }
             Text { anchors.right: parent.right; anchors.verticalCenter: parent.verticalCenter; text: "LOCAL READING  //  AGENT PROSE OPTIONAL"; color: root.brass; font.family: "monospace"; font.pixelSize: 9; font.letterSpacing: 0.55; textFormat: Text.PlainText }
+          }
+        }
+      }
+
+      FocusScope {
+        id: inspectionLayer
+        anchors.fill: parent
+        visible: root.inspectionOpen
+        focus: root.inspectionOpen
+        z: 100
+
+        Keys.onPressed: function(event) {
+          if (event.key === Qt.Key_Escape || event.key === Qt.Key_Q || event.key === Qt.Key_Return || event.key === Qt.Key_Enter || event.key === Qt.Key_Space)
+            root.closeInspection()
+          event.accepted = true
+        }
+
+        Rectangle {
+          anchors.fill: parent
+          color: Qt.rgba(0, 0, 0, 0.88 * root.inspectionProgress)
+        }
+
+        MouseArea {
+          anchors.fill: parent
+          cursorShape: Qt.PointingHandCursor
+          onClicked: root.closeInspection()
+        }
+
+        Column {
+          id: inspectionContent
+          anchors.centerIn: parent
+          width: root.inspectionWidth
+          spacing: 8
+          opacity: root.inspectionProgress
+          scale: 0.84 + (0.16 * root.inspectionProgress)
+          transformOrigin: Item.Center
+
+          Text {
+            width: parent.width
+            text: "CARD INSPECTION  //  " + (root.inspectionItem ? root.inspectionItem.card.title.toUpperCase() : "")
+            color: root.cyan
+            font.family: "monospace"
+            font.pixelSize: 10
+            font.bold: true
+            font.letterSpacing: 1.2
+            horizontalAlignment: Text.AlignHCenter
+            elide: Text.ElideRight
+            textFormat: Text.PlainText
+          }
+
+          Rectangle {
+            id: inspectionCard
+            width: parent.width
+            height: Math.round(width * 1.75)
+            radius: 7
+            color: "#101416"
+            border.width: 2
+            border.color: root.inspectionItem && root.inspectionItem.orientation === "reversed" ? root.brass : root.cyan
+
+            Rectangle {
+              x: 10
+              y: 14
+              width: parent.width
+              height: parent.height
+              z: -1
+              radius: 9
+              color: "#a6000000"
+            }
+
+            Image {
+              anchors.fill: parent
+              anchors.margins: 4
+              source: root.inspectionItem ? Qt.resolvedUrl(root.inspectionItem.card.image) : ""
+              fillMode: Image.PreserveAspectFit
+              asynchronous: true
+              cache: true
+              smooth: true
+              mipmap: true
+              rotation: root.inspectionItem && root.inspectionItem.orientation === "reversed" ? 180 : 0
+            }
+
+            MouseArea {
+              anchors.fill: parent
+              cursorShape: Qt.PointingHandCursor
+              onClicked: root.closeInspection()
+            }
+          }
+
+          Text {
+            width: parent.width
+            text: root.inspectionItem ? root.inspectionItem.card.systemTitle.toUpperCase() + "  //  " + root.inspectionItem.orientationLabel.toUpperCase() : ""
+            color: root.brass
+            font.family: "monospace"
+            font.pixelSize: 10
+            font.bold: true
+            font.letterSpacing: 0.8
+            horizontalAlignment: Text.AlignHCenter
+            elide: Text.ElideRight
+            textFormat: Text.PlainText
+          }
+
+          Text {
+            width: parent.width
+            text: "CLICK / ENTER / ESC TO RETURN"
+            color: root.muted
+            font.family: "monospace"
+            font.pixelSize: 9
+            font.letterSpacing: 1.1
+            horizontalAlignment: Text.AlignHCenter
+            textFormat: Text.PlainText
           }
         }
       }

@@ -11,6 +11,7 @@ Column {
   property real flipAngle: revealed ? 180 : 0
   readonly property bool faceVisible: flipAngle >= 90
   signal revealRequested()
+  signal inspectRequested()
 
   width: cardWidth
   spacing: 6
@@ -28,6 +29,7 @@ Column {
 
   function requestReveal() {
     if (!revealed) revealRequested()
+    else inspectRequested()
   }
 
   Item {
@@ -97,7 +99,7 @@ Column {
       id: hoverArea
       anchors.fill: parent
       hoverEnabled: true
-      cursorShape: root.revealed ? Qt.ArrowCursor : Qt.PointingHandCursor
+      cursorShape: Qt.PointingHandCursor
       onClicked: {
         root.forceActiveFocus()
         root.requestReveal()

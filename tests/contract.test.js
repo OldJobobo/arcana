@@ -139,3 +139,19 @@ test("new cards are keyboard-accessible physical reveals", () => {
   assert.match(card, /hoverEnabled:\s*true/);
   assert.doesNotMatch(card, /loops:\s*Animation\.Infinite/);
 });
+
+test("revealed cards open a bounded keyboard-accessible inspection view", () => {
+  const panel = fs.readFileSync(path.join(root, "Panel.qml"), "utf8");
+  const card = fs.readFileSync(path.join(root, "components/CardFace.qml"), "utf8");
+  assert.match(card, /signal inspectRequested/);
+  assert.match(card, /if \(!revealed\) revealRequested\(\)[\s\S]{0,100}else inspectRequested\(\)/);
+  assert.match(panel, /property bool inspectionOpen/);
+  assert.match(panel, /function openInspection/);
+  assert.match(panel, /function closeInspection/);
+  assert.match(panel, /id:\s*inspectionLayer/);
+  assert.match(panel, /root\.inspectionOpen \? 0 : frameBounds\.x/);
+  assert.match(panel, /Math\.min\(480/);
+  assert.match(panel, /CLICK \/ ENTER \/ ESC TO RETURN/);
+  assert.match(panel, /event\.accepted = true/);
+  assert.doesNotMatch(panel, /inspection.*Animation\.Infinite/i);
+});
