@@ -67,7 +67,7 @@ const files=walk(root).filter(p=>!p.includes(path.sep+".git"+path.sep));
 const rel=files.map(p=>path.relative(root,p));
 
 if(manifest.schemaVersion!==1)fail("manifest schemaVersion")
-if(manifest.id!=="org.ministryoftaste.omarchy-arcana")fail("manifest id")
+if(manifest.id!=="org.ministryoftaste.arcana")fail("manifest id")
 if(manifest.version!=="0.1.0-alpha")fail("manifest version")
 for(const kind of ["service","panel","bar-widget"])if(!manifest.kinds.includes(kind))fail("missing kind "+kind)
 for(const ep of Object.values(manifest.entryPoints))if(!fs.existsSync(path.join(root,ep)))fail("missing entry point "+ep)

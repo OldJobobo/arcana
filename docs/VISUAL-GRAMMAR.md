@@ -1,4 +1,4 @@
-# Omarchy Arcana — Visual Grammar
+# Arcana — Visual Grammar
 
 ## Core Statement
 

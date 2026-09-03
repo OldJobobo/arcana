@@ -245,7 +245,7 @@ Item {
 
   function resolveService() {
     if (!service && shell && typeof shell.serviceFor === "function")
-      service = shell.serviceFor("org.ministryoftaste.omarchy-arcana")
+      service = shell.serviceFor("org.ministryoftaste.arcana")
     return service
   }
 
@@ -293,7 +293,7 @@ Item {
 
   function requestClose() {
     if (shell && typeof shell.hide === "function")
-      shell.hide("org.ministryoftaste.omarchy-arcana")
+      shell.hide("org.ministryoftaste.arcana")
     else close()
   }
 
@@ -390,7 +390,7 @@ Item {
     surfaceFormat.opaque: false
     exclusionMode: ExclusionMode.Ignore
 
-    WlrLayershell.namespace: "omarchy-arcana"
+    WlrLayershell.namespace: "arcana"
     WlrLayershell.layer: WlrLayer.Overlay
     WlrLayershell.keyboardFocus: root.opened ? WlrKeyboardFocus.Exclusive : WlrKeyboardFocus.None
 
@@ -528,7 +528,7 @@ Item {
               x: 58
               y: 1
               spacing: 3
-              Text { text: "OMARCHY ARCANA"; color: root.ivory; font.family: "monospace"; font.pixelSize: 19; font.bold: true; font.letterSpacing: 2.5; textFormat: Text.PlainText }
+              Text { text: "ARCANA"; color: root.ivory; font.family: "monospace"; font.pixelSize: 19; font.bold: true; font.letterSpacing: 2.5; textFormat: Text.PlainText }
               Text { text: "ORDER SURROUNDING MYSTERY"; color: root.muted; font.family: "monospace"; font.pixelSize: 9; font.letterSpacing: 2.2; textFormat: Text.PlainText }
             }
 
@@ -869,7 +869,7 @@ Item {
                   width: parent.width - Math.round(parent.width * 0.47) - 31
                   spacing: 14
                   Text { text: "PROVENANCE + REALITY SAFETY"; color: root.brass; font.family: "monospace"; font.pixelSize: 13; font.bold: true; font.letterSpacing: 1.2; textFormat: Text.PlainText }
-                  Text { width: parent.width; text: "Historical anchor: A. E. Waite, public domain\nVault keyword research: user-local reference\nDeck-specific language: original Omarchy Arcana authorship\nComposer: deterministic original method\nAgent response: optional and visibly agent-assisted"; color: root.ivory; font.family: "monospace"; font.pixelSize: 11; lineHeight: 1.45; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                  Text { width: parent.width; text: "Historical anchor: A. E. Waite, public domain\nVault keyword research: user-local reference\nDeck-specific language: original Arcana authorship\nComposer: deterministic original method\nAgent response: optional and visibly agent-assisted"; color: root.ivory; font.family: "monospace"; font.pixelSize: 11; lineHeight: 1.45; wrapMode: Text.Wrap; textFormat: Text.PlainText }
                   Text { width: parent.width; text: "Readings never claim prophecy, diagnosis, guaranteed outcomes, third-party mind access, legal advice, financial advice, or medical advice. Keep agency with the person asking. Ordinary evidence and trusted human support outrank symbolic inference when stakes are real."; color: root.muted; font.family: "monospace"; font.pixelSize: 11; lineHeight: 1.4; wrapMode: Text.Wrap; textFormat: Text.PlainText }
                   ArcanaButton { systemTheme: root.systemTheme; text: "BACK TO READING"; onClicked: { root.viewMode = "reading"; keyboardRoot.forceActiveFocus() } }
                 }

@@ -59,7 +59,7 @@ function draw(deck, options) {
   options = options || {};
   const cards = toArray(deck);
   if (!cards.length) return [];
-  const next = rng(options.seed || "omarchy-arcana");
+  const next = rng(options.seed || "arcana");
   const pool = cards.map((card,index) => index);
   const count = boundedCount(options.count, pool.length);
   const output = [];
@@ -242,9 +242,9 @@ function compose(deck,selections,spreadId) {
 function buildHandoff(reading,userQuestion) {
   const q=boundedText(userQuestion,MAX_QUESTION_CHARS).trim();
   const lines=[
-    "# Omarchy Arcana — AGENT-ASSISTED FOLLOW-UP",
+    "# Arcana — AGENT-ASSISTED FOLLOW-UP",
     "",
-    "Plugin: org.ministryoftaste.omarchy-arcana",
+    "Plugin: org.ministryoftaste.arcana",
     "Version: 0.1.0-alpha",
     "Canonical method: "+String(reading.methodVersion||METHOD_VERSION),
     "Spread: "+String(reading.spreadName||reading.spreadId||"Reading"),

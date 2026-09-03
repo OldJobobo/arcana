@@ -1,8 +1,8 @@
-# Omarchy Arcana Quickshell Plugin Implementation Plan
+# Arcana Quickshell Plugin Implementation Plan
 
 > **For Hermes:** Use subagent-driven development to implement this plan task-by-task, with specification and code-quality review before advancing between milestones.
 
-**Goal:** Build a standalone, marketplace-compatible Omarchy Quattro plugin that uses the completed 78-card Omarchy Arcana deck for stable daily cards, deliberate free draws, keyboard-first three-card spreads, deterministic multi-perspective interpretation, and an optional `Ask Your Agent` handoff through Omarchy's configured agent.
+**Goal:** Build a standalone, marketplace-compatible Omarchy Quattro plugin that uses the completed 78-card Arcana deck for stable daily cards, deliberate free draws, keyboard-first three-card spreads, deterministic multi-perspective interpretation, and an optional `Ask Your Agent` handoff through Omarchy's configured agent.
 
 **Architecture:** One third-party plugin repository provides a `bar-widget` entry point and a headless QML `service`. `BarWidget.qml` internally owns and loads `Panel.qml`, following the current Quattro details-panel pattern rather than declaring the nested panel as an independent plugin kind. The service owns global daily-card state, randomness, persistence, and multi-monitor synchronization; the panel remains presentation-lazy.
 
@@ -12,7 +12,7 @@
 
 ## 1. Product decision
 
-The plugin is **Omarchy Arcana**: a quiet bar sigil that summons a focused floating card panel. It is not a standalone application, Hermes Desktop extension, fullscreen game, generic divination platform, or permanent oversized desktop widget.
+The plugin is **Arcana**: a quiet bar sigil that summons a focused floating card panel. It is not a standalone application, Hermes Desktop extension, fullscreen game, generic divination platform, or permanent oversized desktop widget.
 
 The bar widget is the doorway. The floating panel is the experience. The service supplies stable shared state.
 
@@ -64,12 +64,12 @@ Use these identities consistently unless the user explicitly changes them before
 
 | Identity | Value |
 |---|---|
-| Product name | `Omarchy Arcana` |
-| Repository | `omarchy-arcana` |
-| Manifest ID | `org.ministryoftaste.omarchy-arcana` |
-| Installed directory | `~/.config/omarchy/plugins/org.ministryoftaste.omarchy-arcana` |
-| Bar module name | `org.ministryoftaste.omarchy-arcana` |
-| Summon target | `org.ministryoftaste.omarchy-arcana` |
+| Product name | `Arcana` |
+| Repository | `arcana` |
+| Manifest ID | `org.ministryoftaste.arcana` |
+| Installed directory | `~/.config/omarchy/plugins/org.ministryoftaste.arcana` |
+| Bar module name | `org.ministryoftaste.arcana` |
+| Summon target | `org.ministryoftaste.arcana` |
 
 Third-party IDs must not begin with `omarchy.`. The installed folder, manifest ID, module name, summon command, README, tests, and eventual marketplace listing must agree exactly.
 
@@ -80,7 +80,7 @@ Third-party IDs must not begin with `omarchy.`. The installed folder, manifest I
 Deck source directory:
 
 ```text
-/data/.hermes/artifacts/omarchy-arcana/
+/data/.hermes/artifacts/arcana/
 ```
 
 Required source artifacts:
@@ -169,7 +169,7 @@ Parse the unsigned integers and perform Fisher–Yates shuffling in QML-compatib
 ## 5. Proposed repository structure
 
 ```text
-omarchy-arcana/
+arcana/
 ├── manifest.json
 ├── BarWidget.qml
 ├── Panel.qml
@@ -213,7 +213,7 @@ omarchy-arcana/
 ├── LICENSE
 ├── SHA256SUMS
 └── .hermes/plans/
-    └── omarchy-arcana.md
+    └── arcana.md
 ```
 
 `tools/build_deck.py` is development-time source code, not an installer or runtime helper. It must not modify the user environment, download anything, or execute external content.
@@ -227,8 +227,8 @@ The intended manifest shape is:
 ```json
 {
   "schemaVersion": 1,
-  "id": "org.ministryoftaste.omarchy-arcana",
-  "name": "Omarchy Arcana",
+  "id": "org.ministryoftaste.arcana",
+  "name": "Arcana",
   "version": "0.1.0",
   "author": "Ministry of Taste",
   "description": "A keyboard-first tarot draw and reflection panel for Omarchy.",
@@ -347,7 +347,7 @@ Use XDG state storage rather than writing into the plugin checkout.
 Conceptual location:
 
 ```text
-$XDG_STATE_HOME/omarchy-arcana/
+$XDG_STATE_HOME/arcana/
 ├── current.json
 └── history.json
 ```

@@ -1,8 +1,8 @@
-# The Omarchy Arcana
+# Arcana
 
 ## Major Arcana Guide
 
-The Omarchy Arcana treats the desktop as a sovereign symbolic environment. Windows are thresholds, the terminal is an instrument of will, configuration is ritual, and the system’s cycles of creation, failure, repair, and mastery become a tarot journey.
+Arcana treats the desktop as a sovereign symbolic environment. Windows are thresholds, the terminal is an instrument of will, configuration is ritual, and the system’s cycles of creation, failure, repair, and mastery become a tarot journey.
 
 The cards retain their traditional archetypal roles. Their system titles add a second interpretive lens rather than replacing established tarot meaning.
 

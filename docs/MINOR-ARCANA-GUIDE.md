@@ -1,4 +1,4 @@
-# The Omarchy Arcana
+# Arcana
 
 ## Minor Arcana Guide
 

@@ -4,7 +4,7 @@ import qs.Ui
 
 BarWidget {
   id: root
-  moduleName: "org.ministryoftaste.omarchy-arcana"
+  moduleName: "org.ministryoftaste.arcana"
 
   readonly property var arcana: root.bar && root.bar.shell
     ? root.bar.shell.serviceFor(root.moduleName)
@@ -22,13 +22,13 @@ BarWidget {
     bar: root.bar
     labelVisible: false
     hasVisualContent: true
-    tooltipText: root.firstTitle !== "" ? "Omarchy Arcana · " + root.firstTitle : "Omarchy Arcana"
+    tooltipText: root.firstTitle !== "" ? "Arcana · " + root.firstTitle : "Arcana"
     fixedWidth: root.vertical ? -1 : Style.bar.sizeHorizontal
     fixedHeight: root.vertical ? Style.bar.sizeVertical : -1
 
     onPressed: function(mouseButton) {
       if (mouseButton === Qt.LeftButton && root.bar)
-        root.bar.run("omarchy-shell shell toggle org.ministryoftaste.omarchy-arcana '{}'")
+        root.bar.run("omarchy-shell shell toggle org.ministryoftaste.arcana '{}'")
       else if (mouseButton === Qt.MiddleButton && root.arcana)
         root.arcana.requestFree()
     }

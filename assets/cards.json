@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "deckId": "omarchy-arcana",
-  "deckTitle": "The Omarchy Arcana",
+  "deckId": "arcana",
+  "deckTitle": "Arcana",
   "version": "0.1.0-alpha",
   "methodVersion": "composer-v1",
   "statement": "Order surrounding mystery.",

@@ -14,7 +14,7 @@ function readJson(relative) {
 test("manifest freezes the alpha identity and all three Quattro kinds", () => {
   const manifest = readJson("manifest.json");
   assert.equal(manifest.schemaVersion, 1);
-  assert.equal(manifest.id, "org.ministryoftaste.omarchy-arcana");
+  assert.equal(manifest.id, "org.ministryoftaste.arcana");
   assert.equal(manifest.version, "0.1.0-alpha");
   assert.deepEqual(manifest.kinds, ["service", "panel", "bar-widget"]);
   assert.deepEqual(manifest.entryPoints, {

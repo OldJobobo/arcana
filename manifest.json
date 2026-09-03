@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "id": "org.ministryoftaste.omarchy-arcana",
-  "name": "Omarchy Arcana",
+  "id": "org.ministryoftaste.arcana",
+  "name": "Arcana",
   "version": "0.1.0-alpha",
   "author": "Ministry of Taste",
   "license": "MIT",
@@ -18,7 +18,7 @@
     "barWidget": "BarWidget.qml"
   },
   "barWidget": {
-    "displayName": "Omarchy Arcana",
+    "displayName": "Arcana",
     "description": "Open daily, free, and Context / Friction / Doorway readings",
     "category": "Reflection",
     "allowMultiple": false,

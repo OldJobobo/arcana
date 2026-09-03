@@ -1,14 +1,14 @@
-# Omarchy Arcana Interpretation Research and Specification
+# Arcana Interpretation Research and Specification
 
 **Status:** Research complete; interpretation and agent-handoff contract approved for planning. No plugin code or live integration is claimed by this document.
 
 **Research date:** 2026-09-01
 
-**Companion plan:** `OMARCHY-ARCANA-QUICKSHELL-PLUGIN-PLAN.md`
+**Companion plan:** `docs/IMPLEMENTATION-PLAN.md`
 
 ## 1. Purpose
 
-Omarchy Arcana needs a reading system that can produce several plausible interpretations without collapsing into either rigid fortune-telling or unlimited keyword association. The runtime must remain deterministic, local, inspectable, and testable. Agent assistance is an optional follow-up surface, not the canonical interpretation engine.
+Arcana needs a reading system that can produce several plausible interpretations without collapsing into either rigid fortune-telling or unlimited keyword association. The runtime must remain deterministic, local, inspectable, and testable. Agent assistance is an optional follow-up surface, not the canonical interpretation engine.
 
 The recommended method is **constrained interpretive synthesis**:
 
@@ -52,7 +52,7 @@ Joan Bunning's educational method is the clearest source for composition. It ide
 
 The Golden Dawn's *Book T* is useful historical evidence for elemental and court/pip correspondences, but not proof that one simplified numerological formula exhausts every card.[22] Mary K. Greer's account treats elemental dignities as an attention or strength mechanism, not a good/bad classifier.[10]
 
-Bunning's court-card method supports reading courts as personality patterns and contrasting approaches.[23][24] Omarchy Arcana should remove outdated gender, age, appearance, and hair-color essentialism and instead use rank × suit as role, approach, or interpersonal style.
+Bunning's court-card method supports reading courts as personality patterns and contrasting approaches.[23][24] Arcana should remove outdated gender, age, appearance, and hair-color essentialism and instead use rank × suit as role, approach, or interpersonal style.
 
 Modern educational sources independently demonstrate contextual card interpretation and several non-binary approaches to reversals; these are useful corroboration, not a reason to reproduce their wording.[12][13]
 
@@ -736,7 +736,7 @@ Supporting text:
 ### 10.6 Handoff template
 
 ```text
-# OMARCHY ARCANA READING HANDOFF v1
+# ARCANA READING HANDOFF v1
 
 ## PURPOSE
 Help the user explore this reading conversationally. This is symbolic and
@@ -817,7 +817,7 @@ The LLM Wiki's anti-sycophancy rule is binding on the handoff: supportive langua
 
 ## 12. Licensing and editorial policy for all 78 cards
 
-The 78-card semantic database must be authored as an original Omarchy Arcana work.
+The 78-card semantic database must be authored as an original Arcana work.
 
 For each card:
 

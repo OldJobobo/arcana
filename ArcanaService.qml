@@ -10,10 +10,10 @@ Item {
 
   property var shell: null
   property var manifest: null
-  readonly property string pluginId: "org.ministryoftaste.omarchy-arcana"
+  readonly property string pluginId: "org.ministryoftaste.arcana"
   readonly property string home: Quickshell.env("HOME") || ""
   readonly property string stateBase: (Quickshell.env("XDG_STATE_HOME") || home + "/.local/state") + "/omarchy"
-  readonly property string statePath: stateBase + "/omarchy-arcana.json"
+  readonly property string statePath: stateBase + "/arcana.json"
   readonly property string agentContextDir: stateBase + "/arcana-agent-context"
   property var deckDocument: ({schemaVersion: 0, cards: []})
   readonly property var cards: deckDocument.cards || []
@@ -83,7 +83,7 @@ Item {
       deckDocument = parsed && parsed.schemaVersion === 1 && parsed.cards ? parsed : ({schemaVersion: 0, cards: []})
     } catch (error) {
       deckDocument = ({schemaVersion: 0, cards: []})
-      console.warn("Omarchy Arcana could not parse assets/cards.json:", error)
+      console.warn("Arcana could not parse assets/cards.json:", error)
     }
   }
 
@@ -283,7 +283,7 @@ Item {
   }
 
   IpcHandler {
-    target: "org.ministryoftaste.omarchy-arcana.service"
+    target: "org.ministryoftaste.arcana.service"
     function status(arg: string): string {
       return JSON.stringify({ready:root.ready,cards:root.cards.length,kind:root.currentReadingKind,agentStatus:root.agentStatus,scale:root.uiScale,theme:root.themeMode})
     }
