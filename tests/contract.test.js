@@ -150,7 +150,7 @@ test("new cards are keyboard-accessible physical reveals", () => {
   assert.match(panel, /REVEAL ALL|REVEAL THE CARD/);
   assert.match(card, /signal revealRequested/);
   assert.match(card, /activeFocusOnTab:\s*true/);
-  assert.match(card, /card-back\.png/);
+  assert.match(card, /showBack:\s*root\.flipAngle\s*<\s*90/);
   assert.match(card, /property real flipAngle/);
   assert.match(card, /axis\.y:\s*1/);
   assert.match(card, /Behavior on scale/);
@@ -183,10 +183,68 @@ test("card artwork uses reusable theme-aware spot-color masks in reading and ins
   assert.match(themed, /ColorOverlay/);
   for (const role of ["primary", "secondary", "fault"])
     assert.match(themed, new RegExp(`property color ${role}Color`));
-  assert.match(card, /ThemeCardImage\s*\{/);
-  assert.match(card, /card-masks/);
-  assert.match(panel, /ThemeCardImage\s*\{/);
+  assert.match(card, /ArcanaCard\s*\{/);
+  assert.match(panel, /ArcanaCard\s*\{/);
   assert.match(panel, /artPrimary/);
   assert.match(panel, /Color\.accent/);
   assert.match(panel, /Color\.urgent/);
+});
+
+test("card structural chrome remains fixed while only semantic masks follow system colors", () => {
+  const panel = fs.readFileSync(path.join(root, "Panel.qml"), "utf8");
+  const inspection = panel.match(/id:\s*inspectionCard[\s\S]*?ArcanaCard\s*\{([\s\S]*?)\n\s*\}/);
+  assert.ok(inspection, "inspection ArcanaCard block");
+  const block = inspection[1];
+  for (const contract of [
+    /backgroundColor:\s*"#07090b"/,
+    /frameColor:\s*"#273139"/,
+    /artFrameColor:\s*"#36434b"/,
+    /inkColor:\s*"#e4e0d6"/,
+    /mutedColor:\s*"#899a9c"/,
+    /primaryColor:\s*root\.artPrimary/,
+    /secondaryColor:\s*root\.artSecondary/,
+    /faultColor:\s*root\.artFault/
+  ]) assert.match(block, contract);
+});
+
+test("release validation deeply checks artwork PNG integrity before accepting it", () => {
+  const validator = fs.readFileSync(path.join(root, "tests/validate-release.js"), "utf8");
+  assert.match(validator, /function validatePng\(file,expectedWidth,expectedHeight,allowedColorTypes\)/);
+  assert.match(validator, /validatePng\(path\.join\(root,file\),expectedWidth,expectedHeight,new Set\(\[2,6\]\)\)/);
+  assert.match(validator, /maxOutputLength:expectedLength/);
+  assert.doesNotMatch(validator, /const size=pngSize\(path\.join\(root,file\)\),back=/);
+});
+
+test("cards construct responsive chrome in QML around illustration-only assets", () => {
+  const panel = fs.readFileSync(path.join(root, "Panel.qml"), "utf8");
+  const cardFace = fs.readFileSync(path.join(root, "components/CardFace.qml"), "utf8");
+  const card = fs.readFileSync(path.join(root, "components/ArcanaCard.qml"), "utf8");
+  const validator = fs.readFileSync(path.join(root, "tests/validate-release.js"), "utf8");
+
+  assert.match(card, /property var cardData/);
+  assert.match(card, /readonly property bool compact/);
+  assert.match(card, /assets\/card-art/);
+  assert.match(card, /ThemeCardImage\s*\{/);
+  for (const field of ["rankLabel", "domainLabel", "coordinateLabel", "keywordLabel"])
+    assert.match(card, new RegExp(`readonly property string ${field}`));
+  assert.match(card, /cardData\.title/);
+  assert.match(card, /cardData\.systemTitle/);
+  assert.match(card, /visible:\s*!root\.compact/);
+  assert.match(cardFace, /ArcanaCard\s*\{/);
+  assert.match(panel, /ArcanaCard\s*\{/);
+  assert.doesNotMatch(panel, /ThemeCardImage\s*\{/);
+  assert.match(validator, /expectedWidth=back\?600:536,expectedHeight=back\?1050:786/);
+  assert.match(validator, /assets\/card-art/);
+});
+
+test("card typography preserves readable secondary hierarchy at compact and inspection sizes", () => {
+  const card = fs.readFileSync(path.join(root, "components/ArcanaCard.qml"), "utf8");
+
+  assert.match(card, /readonly property int detailPixelSize:\s*root\.compact \? 9 : Math\.max\(12,/);
+  assert.match(card, /readonly property int systemPixelSize:\s*root\.compact \? 10 : Math\.max\(13,/);
+  assert.match(card, /readonly property int microPixelSize:\s*Math\.max\(9,/);
+  assert.match(card, /readonly property string displayDomainLabel/);
+  assert.match(card, /return card\.arcana === "major" \? "MAJOR ARCANA" : root\.domainLabel/);
+  assert.match(card, /minimumPixelSize:\s*root\.compact \? 11 : 16/);
+  assert.doesNotMatch(card, /font\.pixelSize:\s*root\.compact \? [78]\b/);
 });

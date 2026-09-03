@@ -15,7 +15,7 @@
       "element": "air",
       "title": "The Fool",
       "systemTitle": "First Boot",
-      "image": "assets/cards/01-major-arcana-00-the-fool.png",
+      "image": "assets/card-art/01-major-arcana-00-the-fool.png",
       "traditional": {
         "core": "Themes of innocence, new beginnings and free spirit.",
         "uprightKeywords": [
@@ -76,7 +76,7 @@
       "element": "spirit",
       "title": "The Magician",
       "systemTitle": "The Operator",
-      "image": "assets/cards/02-major-arcana-01-the-magician.png",
+      "image": "assets/card-art/02-major-arcana-01-the-magician.png",
       "traditional": {
         "core": "Themes of willpower, desire, creation and manifestation.",
         "uprightKeywords": [
@@ -139,7 +139,7 @@
       "element": "spirit",
       "title": "The High Priestess",
       "systemTitle": "Hidden Config",
-      "image": "assets/cards/03-major-arcana-02-the-high-priestess.png",
+      "image": "assets/card-art/03-major-arcana-02-the-high-priestess.png",
       "traditional": {
         "core": "Themes of intuitive, unconscious and inner voice.",
         "uprightKeywords": [
@@ -200,7 +200,7 @@
       "element": "spirit",
       "title": "The Empress",
       "systemTitle": "Generative System",
-      "image": "assets/cards/04-major-arcana-03-the-empress.png",
+      "image": "assets/card-art/04-major-arcana-03-the-empress.png",
       "traditional": {
         "core": "Themes of motherhood, fertility and nature.",
         "uprightKeywords": [
@@ -263,7 +263,7 @@
       "element": "spirit",
       "title": "The Emperor",
       "systemTitle": "Window Rules",
-      "image": "assets/cards/05-major-arcana-04-the-emperor.png",
+      "image": "assets/card-art/05-major-arcana-04-the-emperor.png",
       "traditional": {
         "core": "Themes of authority, structure, control and fatherhood.",
         "uprightKeywords": [
@@ -326,7 +326,7 @@
       "element": "spirit",
       "title": "The Hierophant",
       "systemTitle": "Established Workflow",
-      "image": "assets/cards/06-major-arcana-05-the-hierophant.png",
+      "image": "assets/card-art/06-major-arcana-05-the-hierophant.png",
       "traditional": {
         "core": "Themes of tradition, conformity, morality and ethics.",
         "uprightKeywords": [
@@ -389,7 +389,7 @@
       "element": "air",
       "title": "The Lovers",
       "systemTitle": "Alignment",
-      "image": "assets/cards/07-major-arcana-06-the-lovers.png",
+      "image": "assets/card-art/07-major-arcana-06-the-lovers.png",
       "traditional": {
         "core": "Themes of partnerships, duality and union.",
         "uprightKeywords": [
@@ -450,7 +450,7 @@
       "element": "water",
       "title": "The Chariot",
       "systemTitle": "Keyboard Momentum",
-      "image": "assets/cards/08-major-arcana-07-the-chariot.png",
+      "image": "assets/card-art/08-major-arcana-07-the-chariot.png",
       "traditional": {
         "core": "Themes of direction, control and willpower.",
         "uprightKeywords": [
@@ -511,7 +511,7 @@
       "element": "spirit",
       "title": "Strength",
       "systemTitle": "Controlled Power",
-      "image": "assets/cards/09-major-arcana-08-strength.png",
+      "image": "assets/card-art/09-major-arcana-08-strength.png",
       "traditional": {
         "core": "Themes of inner strength, bravery, compassion and focus.",
         "uprightKeywords": [
@@ -574,7 +574,7 @@
       "element": "earth",
       "title": "The Hermit",
       "systemTitle": "Focus Mode",
-      "image": "assets/cards/10-major-arcana-09-the-hermit.png",
+      "image": "assets/card-art/10-major-arcana-09-the-hermit.png",
       "traditional": {
         "core": "Themes of contemplation, search for truth and inner guidance.",
         "uprightKeywords": [
@@ -635,7 +635,7 @@
       "element": "spirit",
       "title": "Wheel Of Fortune",
       "systemTitle": "Update Cycle",
-      "image": "assets/cards/11-major-arcana-10-wheel-of-fortune.png",
+      "image": "assets/card-art/11-major-arcana-10-wheel-of-fortune.png",
       "traditional": {
         "core": "Themes of change, cycles and inevitable fate.",
         "uprightKeywords": [
@@ -696,7 +696,7 @@
       "element": "air",
       "title": "Justice",
       "systemTitle": "Permissions",
-      "image": "assets/cards/12-major-arcana-11-justice.png",
+      "image": "assets/card-art/12-major-arcana-11-justice.png",
       "traditional": {
         "core": "Themes of cause and effect, clarity and truth.",
         "uprightKeywords": [
@@ -757,7 +757,7 @@
       "element": "spirit",
       "title": "The Hanged Man",
       "systemTitle": "Suspended Process",
-      "image": "assets/cards/13-major-arcana-12-the-hanged-man.png",
+      "image": "assets/card-art/13-major-arcana-12-the-hanged-man.png",
       "traditional": {
         "core": "Themes of sacrifice, release and martyrdom.",
         "uprightKeywords": [
@@ -818,7 +818,7 @@
       "element": "water",
       "title": "Death",
       "systemTitle": "Terminate / Restart",
-      "image": "assets/cards/14-major-arcana-13-death.png",
+      "image": "assets/card-art/14-major-arcana-13-death.png",
       "traditional": {
         "core": "Themes of end of cycle, beginnings, change and metamorphosis.",
         "uprightKeywords": [
@@ -883,7 +883,7 @@
       "element": "fire",
       "title": "Temperance",
       "systemTitle": "Integration",
-      "image": "assets/cards/15-major-arcana-14-temperance.png",
+      "image": "assets/card-art/15-major-arcana-14-temperance.png",
       "traditional": {
         "core": "Themes of middle path, patience and finding meaning.",
         "uprightKeywords": [
@@ -944,7 +944,7 @@
       "element": "earth",
       "title": "The Devil",
       "systemTitle": "Dependency Loop",
-      "image": "assets/cards/16-major-arcana-15-the-devil.png",
+      "image": "assets/card-art/16-major-arcana-15-the-devil.png",
       "traditional": {
         "core": "Themes of addiction, materialism and playfulness.",
         "uprightKeywords": [
@@ -1005,7 +1005,7 @@
       "element": "spirit",
       "title": "The Tower",
       "systemTitle": "System Failure",
-      "image": "assets/cards/17-major-arcana-16-the-tower.png",
+      "image": "assets/card-art/17-major-arcana-16-the-tower.png",
       "traditional": {
         "core": "Themes of sudden upheaval, broken pride and disaster.",
         "uprightKeywords": [
@@ -1067,7 +1067,7 @@
       "element": "air",
       "title": "The Star",
       "systemTitle": "Recovery State",
-      "image": "assets/cards/18-major-arcana-17-the-star.png",
+      "image": "assets/card-art/18-major-arcana-17-the-star.png",
       "traditional": {
         "core": "Themes of hope, faith and rejuvenation.",
         "uprightKeywords": [
@@ -1128,7 +1128,7 @@
       "element": "water",
       "title": "The Moon",
       "systemTitle": "Hidden Processes",
-      "image": "assets/cards/19-major-arcana-18-the-moon.png",
+      "image": "assets/card-art/19-major-arcana-18-the-moon.png",
       "traditional": {
         "core": "Themes of unconscious, illusions and intuition.",
         "uprightKeywords": [
@@ -1189,7 +1189,7 @@
       "element": "fire",
       "title": "The Sun",
       "systemTitle": "Coherent System",
-      "image": "assets/cards/20-major-arcana-19-the-sun.png",
+      "image": "assets/card-art/20-major-arcana-19-the-sun.png",
       "traditional": {
         "core": "Themes of joy, success, celebration and positivity.",
         "uprightKeywords": [
@@ -1252,7 +1252,7 @@
       "element": "spirit",
       "title": "Judgement",
       "systemTitle": "System Call",
-      "image": "assets/cards/21-major-arcana-20-judgement.png",
+      "image": "assets/card-art/21-major-arcana-20-judgement.png",
       "traditional": {
         "core": "Themes of reflection, reckoning and awakening.",
         "uprightKeywords": [
@@ -1313,7 +1313,7 @@
       "element": "spirit",
       "title": "The World",
       "systemTitle": "Complete Environment",
-      "image": "assets/cards/22-major-arcana-21-the-world.png",
+      "image": "assets/card-art/22-major-arcana-21-the-world.png",
       "traditional": {
         "core": "Themes of fulfillment, harmony and completion.",
         "uprightKeywords": [
@@ -1372,7 +1372,7 @@
       "element": "fire",
       "title": "Ace Of Wands",
       "systemTitle": "Ignition Point",
-      "image": "assets/cards/23-wands-01-ace-of-wands.png",
+      "image": "assets/card-art/23-wands-01-ace-of-wands.png",
       "traditional": {
         "core": "Themes of creation, willpower, inspiration and desire.",
         "uprightKeywords": [
@@ -1435,7 +1435,7 @@
       "element": "fire",
       "title": "Two Of Wands",
       "systemTitle": "Vector Choice",
-      "image": "assets/cards/24-wands-02-two-of-wands.png",
+      "image": "assets/card-art/24-wands-02-two-of-wands.png",
       "traditional": {
         "core": "Themes of planning, making decisions and leaving home.",
         "uprightKeywords": [
@@ -1496,7 +1496,7 @@
       "element": "fire",
       "title": "Three Of Wands",
       "systemTitle": "Launch Sequence",
-      "image": "assets/cards/25-wands-03-three-of-wands.png",
+      "image": "assets/card-art/25-wands-03-three-of-wands.png",
       "traditional": {
         "core": "Themes of looking ahead, expansion and rapid growth.",
         "uprightKeywords": [
@@ -1557,7 +1557,7 @@
       "element": "fire",
       "title": "Four Of Wands",
       "systemTitle": "Stable Build",
-      "image": "assets/cards/26-wands-04-four-of-wands.png",
+      "image": "assets/card-art/26-wands-04-four-of-wands.png",
       "traditional": {
         "core": "Themes of community, home and celebration.",
         "uprightKeywords": [
@@ -1618,7 +1618,7 @@
       "element": "fire",
       "title": "Five Of Wands",
       "systemTitle": "Competing Processes",
-      "image": "assets/cards/27-wands-05-five-of-wands.png",
+      "image": "assets/card-art/27-wands-05-five-of-wands.png",
       "traditional": {
         "core": "Themes of competition, rivalry and conflict.",
         "uprightKeywords": [
@@ -1677,7 +1677,7 @@
       "element": "fire",
       "title": "Six Of Wands",
       "systemTitle": "Successful Deploy",
-      "image": "assets/cards/28-wands-06-six-of-wands.png",
+      "image": "assets/card-art/28-wands-06-six-of-wands.png",
       "traditional": {
         "core": "Themes of victory, success and public reward.",
         "uprightKeywords": [
@@ -1738,7 +1738,7 @@
       "element": "fire",
       "title": "Seven Of Wands",
       "systemTitle": "Defend Position",
-      "image": "assets/cards/29-wands-07-seven-of-wands.png",
+      "image": "assets/card-art/29-wands-07-seven-of-wands.png",
       "traditional": {
         "core": "Themes of perseverance, defensive and maintaining control.",
         "uprightKeywords": [
@@ -1799,7 +1799,7 @@
       "element": "fire",
       "title": "Eight Of Wands",
       "systemTitle": "Rapid Execution",
-      "image": "assets/cards/30-wands-08-eight-of-wands.png",
+      "image": "assets/card-art/30-wands-08-eight-of-wands.png",
       "traditional": {
         "core": "Themes of rapid action, movement and quick decisions.",
         "uprightKeywords": [
@@ -1860,7 +1860,7 @@
       "element": "fire",
       "title": "Nine Of Wands",
       "systemTitle": "Persistent Process",
-      "image": "assets/cards/31-wands-09-nine-of-wands.png",
+      "image": "assets/card-art/31-wands-09-nine-of-wands.png",
       "traditional": {
         "core": "Themes of resilience, grit and last stand.",
         "uprightKeywords": [
@@ -1921,7 +1921,7 @@
       "element": "fire",
       "title": "Ten Of Wands",
       "systemTitle": "Workload Saturation",
-      "image": "assets/cards/32-wands-10-ten-of-wands.png",
+      "image": "assets/card-art/32-wands-10-ten-of-wands.png",
       "traditional": {
         "core": "Themes of accomplishment, responsibility and burden.",
         "uprightKeywords": [
@@ -1982,7 +1982,7 @@
       "element": "fire",
       "title": "Page Of Wands",
       "systemTitle": "Spark / Explorer",
-      "image": "assets/cards/33-wands-page-of-wands.png",
+      "image": "assets/card-art/33-wands-page-of-wands.png",
       "traditional": {
         "core": "Themes of exploration, excitement and freedom.",
         "uprightKeywords": [
@@ -2043,7 +2043,7 @@
       "element": "fire",
       "title": "Knight Of Wands",
       "systemTitle": "Launcher",
-      "image": "assets/cards/34-wands-knight-of-wands.png",
+      "image": "assets/card-art/34-wands-knight-of-wands.png",
       "traditional": {
         "core": "Themes of action, adventure and fearlessness.",
         "uprightKeywords": [
@@ -2104,7 +2104,7 @@
       "element": "fire",
       "title": "Queen Of Wands",
       "systemTitle": "Creative Integrator",
-      "image": "assets/cards/35-wands-queen-of-wands.png",
+      "image": "assets/card-art/35-wands-queen-of-wands.png",
       "traditional": {
         "core": "Themes of courage, determination and joy.",
         "uprightKeywords": [
@@ -2165,7 +2165,7 @@
       "element": "fire",
       "title": "King Of Wands",
       "systemTitle": "Director Of Will",
-      "image": "assets/cards/36-wands-king-of-wands.png",
+      "image": "assets/card-art/36-wands-king-of-wands.png",
       "traditional": {
         "core": "Themes of big picture, leader and overcoming challenges.",
         "uprightKeywords": [
@@ -2226,7 +2226,7 @@
       "element": "water",
       "title": "Ace Of Cups",
       "systemTitle": "Open Signal",
-      "image": "assets/cards/37-cups-01-ace-of-cups.png",
+      "image": "assets/card-art/37-cups-01-ace-of-cups.png",
       "traditional": {
         "core": "Themes of new feelings, spirituality and intuition.",
         "uprightKeywords": [
@@ -2287,7 +2287,7 @@
       "element": "water",
       "title": "Two Of Cups",
       "systemTitle": "Reciprocal Link",
-      "image": "assets/cards/38-cups-02-two-of-cups.png",
+      "image": "assets/card-art/38-cups-02-two-of-cups.png",
       "traditional": {
         "core": "Themes of unity, partnership and connection.",
         "uprightKeywords": [
@@ -2348,7 +2348,7 @@
       "element": "water",
       "title": "Three Of Cups",
       "systemTitle": "Shared Channel",
-      "image": "assets/cards/39-cups-03-three-of-cups.png",
+      "image": "assets/card-art/39-cups-03-three-of-cups.png",
       "traditional": {
         "core": "Themes of friendship, community and happiness.",
         "uprightKeywords": [
@@ -2409,7 +2409,7 @@
       "element": "water",
       "title": "Four Of Cups",
       "systemTitle": "Stable Bond",
-      "image": "assets/cards/40-cups-04-four-of-cups.png",
+      "image": "assets/card-art/40-cups-04-four-of-cups.png",
       "traditional": {
         "core": "Themes of apathy, contemplation and disconnectedness.",
         "uprightKeywords": [
@@ -2470,7 +2470,7 @@
       "element": "water",
       "title": "Five Of Cups",
       "systemTitle": "Disappointment",
-      "image": "assets/cards/41-cups-05-five-of-cups.png",
+      "image": "assets/card-art/41-cups-05-five-of-cups.png",
       "traditional": {
         "core": "Themes of loss, grief and self-pity.",
         "uprightKeywords": [
@@ -2531,7 +2531,7 @@
       "element": "water",
       "title": "Six Of Cups",
       "systemTitle": "Recognition",
-      "image": "assets/cards/42-cups-06-six-of-cups.png",
+      "image": "assets/card-art/42-cups-06-six-of-cups.png",
       "traditional": {
         "core": "Themes of familiarity, happy memories and healing.",
         "uprightKeywords": [
@@ -2592,7 +2592,7 @@
       "element": "water",
       "title": "Seven Of Cups",
       "systemTitle": "Imagined Options",
-      "image": "assets/cards/43-cups-07-seven-of-cups.png",
+      "image": "assets/card-art/43-cups-07-seven-of-cups.png",
       "traditional": {
         "core": "Themes of searching for purpose, choices and daydreaming.",
         "uprightKeywords": [
@@ -2653,7 +2653,7 @@
       "element": "water",
       "title": "Eight Of Cups",
       "systemTitle": "Departure",
-      "image": "assets/cards/44-cups-08-eight-of-cups.png",
+      "image": "assets/card-art/44-cups-08-eight-of-cups.png",
       "traditional": {
         "core": "Themes of walking away, disillusionment and leaving behind.",
         "uprightKeywords": [
@@ -2714,7 +2714,7 @@
       "element": "water",
       "title": "Nine Of Cups",
       "systemTitle": "Fulfilled Signal",
-      "image": "assets/cards/45-cups-09-nine-of-cups.png",
+      "image": "assets/card-art/45-cups-09-nine-of-cups.png",
       "traditional": {
         "core": "Themes of satisfaction, emotional stability and luxury.",
         "uprightKeywords": [
@@ -2775,7 +2775,7 @@
       "element": "water",
       "title": "Ten Of Cups",
       "systemTitle": "Connected Community",
-      "image": "assets/cards/46-cups-10-ten-of-cups.png",
+      "image": "assets/card-art/46-cups-10-ten-of-cups.png",
       "traditional": {
         "core": "Themes of inner happiness, fulfillment and dreams coming true.",
         "uprightKeywords": [
@@ -2836,7 +2836,7 @@
       "element": "water",
       "title": "Page Of Cups",
       "systemTitle": "Signal Dreamer",
-      "image": "assets/cards/47-cups-page-of-cups.png",
+      "image": "assets/card-art/47-cups-page-of-cups.png",
       "traditional": {
         "core": "Themes of happy surprise, dreamer and sensitivity.",
         "uprightKeywords": [
@@ -2897,7 +2897,7 @@
       "element": "water",
       "title": "Knight Of Cups",
       "systemTitle": "The Messenger",
-      "image": "assets/cards/48-cups-knight-of-cups.png",
+      "image": "assets/card-art/48-cups-knight-of-cups.png",
       "traditional": {
         "core": "Themes of following the heart, idealist and romantic.",
         "uprightKeywords": [
@@ -2956,7 +2956,7 @@
       "element": "water",
       "title": "Queen Of Cups",
       "systemTitle": "The Listener",
-      "image": "assets/cards/49-cups-queen-of-cups.png",
+      "image": "assets/card-art/49-cups-queen-of-cups.png",
       "traditional": {
         "core": "Themes of compassion, calm and comfort.",
         "uprightKeywords": [
@@ -3017,7 +3017,7 @@
       "element": "water",
       "title": "King Of Cups",
       "systemTitle": "Emotional Steward",
-      "image": "assets/cards/50-cups-king-of-cups.png",
+      "image": "assets/card-art/50-cups-king-of-cups.png",
       "traditional": {
         "core": "Themes of compassion, control and balance.",
         "uprightKeywords": [
@@ -3078,7 +3078,7 @@
       "element": "air",
       "title": "Ace Of Swords",
       "systemTitle": "Single Decision",
-      "image": "assets/cards/51-swords-01-ace-of-swords.png",
+      "image": "assets/card-art/51-swords-01-ace-of-swords.png",
       "traditional": {
         "core": "Themes of breakthrough, clarity and sharp mind.",
         "uprightKeywords": [
@@ -3139,7 +3139,7 @@
       "element": "air",
       "title": "Two Of Swords",
       "systemTitle": "Branch Lock",
-      "image": "assets/cards/52-swords-02-two-of-swords.png",
+      "image": "assets/card-art/52-swords-02-two-of-swords.png",
       "traditional": {
         "core": "Themes of difficult choices, indecision and stalemate.",
         "uprightKeywords": [
@@ -3200,7 +3200,7 @@
       "element": "air",
       "title": "Three Of Swords",
       "systemTitle": "Merge Conflict",
-      "image": "assets/cards/53-swords-03-three-of-swords.png",
+      "image": "assets/card-art/53-swords-03-three-of-swords.png",
       "traditional": {
         "core": "Themes of heartbreak, suffering and grief.",
         "uprightKeywords": [
@@ -3261,7 +3261,7 @@
       "element": "air",
       "title": "Four Of Swords",
       "systemTitle": "Suspended Process",
-      "image": "assets/cards/54-swords-04-four-of-swords.png",
+      "image": "assets/card-art/54-swords-04-four-of-swords.png",
       "traditional": {
         "core": "Themes of rest, restoration and contemplation.",
         "uprightKeywords": [
@@ -3322,7 +3322,7 @@
       "element": "air",
       "title": "Five Of Swords",
       "systemTitle": "Hostile Fork",
-      "image": "assets/cards/55-swords-05-five-of-swords.png",
+      "image": "assets/card-art/55-swords-05-five-of-swords.png",
       "traditional": {
         "core": "Themes of unbridled ambition, win at all costs and sneakiness.",
         "uprightKeywords": [
@@ -3383,7 +3383,7 @@
       "element": "air",
       "title": "Six Of Swords",
       "systemTitle": "Safe Migration",
-      "image": "assets/cards/56-swords-06-six-of-swords.png",
+      "image": "assets/card-art/56-swords-06-six-of-swords.png",
       "traditional": {
         "core": "Themes of transition, leaving behind and moving on.",
         "uprightKeywords": [
@@ -3444,7 +3444,7 @@
       "element": "air",
       "title": "Seven Of Swords",
       "systemTitle": "Privilege Escalation",
-      "image": "assets/cards/57-swords-07-seven-of-swords.png",
+      "image": "assets/card-art/57-swords-07-seven-of-swords.png",
       "traditional": {
         "core": "Themes of deception, trickery and tactics and strategy.",
         "uprightKeywords": [
@@ -3505,7 +3505,7 @@
       "element": "air",
       "title": "Eight Of Swords",
       "systemTitle": "Permission Denied",
-      "image": "assets/cards/58-swords-08-eight-of-swords.png",
+      "image": "assets/card-art/58-swords-08-eight-of-swords.png",
       "traditional": {
         "core": "Themes of imprisonment, entrapment and self-victimization.",
         "uprightKeywords": [
@@ -3566,7 +3566,7 @@
       "element": "air",
       "title": "Nine Of Swords",
       "systemTitle": "Recursive Error",
-      "image": "assets/cards/59-swords-09-nine-of-swords.png",
+      "image": "assets/card-art/59-swords-09-nine-of-swords.png",
       "traditional": {
         "core": "Themes of anxiety, hopelessness and trauma.",
         "uprightKeywords": [
@@ -3627,7 +3627,7 @@
       "element": "air",
       "title": "Ten Of Swords",
       "systemTitle": "Fatal Exception",
-      "image": "assets/cards/60-swords-10-ten-of-swords.png",
+      "image": "assets/card-art/60-swords-10-ten-of-swords.png",
       "traditional": {
         "core": "Themes of failure, collapse and defeat.",
         "uprightKeywords": [
@@ -3688,7 +3688,7 @@
       "element": "air",
       "title": "Page Of Swords",
       "systemTitle": "The Analyst",
-      "image": "assets/cards/61-swords-page-of-swords.png",
+      "image": "assets/card-art/61-swords-page-of-swords.png",
       "traditional": {
         "core": "Themes of curiosity, restlessness and mental energy.",
         "uprightKeywords": [
@@ -3749,7 +3749,7 @@
       "element": "air",
       "title": "Knight Of Swords",
       "systemTitle": "The Debugger",
-      "image": "assets/cards/62-swords-knight-of-swords.png",
+      "image": "assets/card-art/62-swords-knight-of-swords.png",
       "traditional": {
         "core": "Themes of action, impulsiveness and defending beliefs.",
         "uprightKeywords": [
@@ -3810,7 +3810,7 @@
       "element": "air",
       "title": "Queen Of Swords",
       "systemTitle": "The Arbiter",
-      "image": "assets/cards/63-swords-queen-of-swords.png",
+      "image": "assets/card-art/63-swords-queen-of-swords.png",
       "traditional": {
         "core": "Themes of complexity, perceptiveness and clear mindedness.",
         "uprightKeywords": [
@@ -3871,7 +3871,7 @@
       "element": "air",
       "title": "King Of Swords",
       "systemTitle": "Architect Of Logic",
-      "image": "assets/cards/64-swords-king-of-swords.png",
+      "image": "assets/card-art/64-swords-king-of-swords.png",
       "traditional": {
         "core": "Themes of head over heart, discipline and truth.",
         "uprightKeywords": [
@@ -3932,7 +3932,7 @@
       "element": "earth",
       "title": "Ace Of Pentacles",
       "systemTitle": "Seed Package",
-      "image": "assets/cards/65-pentacles-01-ace-of-pentacles.png",
+      "image": "assets/card-art/65-pentacles-01-ace-of-pentacles.png",
       "traditional": {
         "core": "Themes of opportunity, prosperity and new venture.",
         "uprightKeywords": [
@@ -3993,7 +3993,7 @@
       "element": "earth",
       "title": "Two Of Pentacles",
       "systemTitle": "Resource Balance",
-      "image": "assets/cards/66-pentacles-02-two-of-pentacles.png",
+      "image": "assets/card-art/66-pentacles-02-two-of-pentacles.png",
       "traditional": {
         "core": "Themes of balancing decisions, priorities and adapting to change.",
         "uprightKeywords": [
@@ -4054,7 +4054,7 @@
       "element": "earth",
       "title": "Three Of Pentacles",
       "systemTitle": "Collaborative Build",
-      "image": "assets/cards/67-pentacles-03-three-of-pentacles.png",
+      "image": "assets/card-art/67-pentacles-03-three-of-pentacles.png",
       "traditional": {
         "core": "Themes of teamwork, collaboration and building.",
         "uprightKeywords": [
@@ -4115,7 +4115,7 @@
       "element": "earth",
       "title": "Four Of Pentacles",
       "systemTitle": "Locked State",
-      "image": "assets/cards/68-pentacles-04-four-of-pentacles.png",
+      "image": "assets/card-art/68-pentacles-04-four-of-pentacles.png",
       "traditional": {
         "core": "Themes of conservation, frugality and security.",
         "uprightKeywords": [
@@ -4176,7 +4176,7 @@
       "element": "earth",
       "title": "Five Of Pentacles",
       "systemTitle": "Resource Scarcity",
-      "image": "assets/cards/69-pentacles-05-five-of-pentacles.png",
+      "image": "assets/card-art/69-pentacles-05-five-of-pentacles.png",
       "traditional": {
         "core": "Themes of need, poverty and insecurity.",
         "uprightKeywords": [
@@ -4237,7 +4237,7 @@
       "element": "earth",
       "title": "Six Of Pentacles",
       "systemTitle": "Allocation",
-      "image": "assets/cards/70-pentacles-06-six-of-pentacles.png",
+      "image": "assets/card-art/70-pentacles-06-six-of-pentacles.png",
       "traditional": {
         "core": "Themes of charity, generosity and sharing.",
         "uprightKeywords": [
@@ -4298,7 +4298,7 @@
       "element": "earth",
       "title": "Seven Of Pentacles",
       "systemTitle": "Patient Deployment",
-      "image": "assets/cards/71-pentacles-07-seven-of-pentacles.png",
+      "image": "assets/card-art/71-pentacles-07-seven-of-pentacles.png",
       "traditional": {
         "core": "Themes of hard work, perseverance and diligence.",
         "uprightKeywords": [
@@ -4359,7 +4359,7 @@
       "element": "earth",
       "title": "Eight Of Pentacles",
       "systemTitle": "Repeated Craft",
-      "image": "assets/cards/72-pentacles-08-eight-of-pentacles.png",
+      "image": "assets/card-art/72-pentacles-08-eight-of-pentacles.png",
       "traditional": {
         "core": "Themes of apprenticeship, passion and high standards.",
         "uprightKeywords": [
@@ -4420,7 +4420,7 @@
       "element": "earth",
       "title": "Nine Of Pentacles",
       "systemTitle": "Self-Sustaining System",
-      "image": "assets/cards/73-pentacles-09-nine-of-pentacles.png",
+      "image": "assets/card-art/73-pentacles-09-nine-of-pentacles.png",
       "traditional": {
         "core": "Themes of fruits of labor, rewards and luxury.",
         "uprightKeywords": [
@@ -4481,7 +4481,7 @@
       "element": "earth",
       "title": "Ten Of Pentacles",
       "systemTitle": "Durable Inheritance",
-      "image": "assets/cards/74-pentacles-10-ten-of-pentacles.png",
+      "image": "assets/card-art/74-pentacles-10-ten-of-pentacles.png",
       "traditional": {
         "core": "Themes of legacy, culmination and inheritance.",
         "uprightKeywords": [
@@ -4542,7 +4542,7 @@
       "element": "earth",
       "title": "Page Of Pentacles",
       "systemTitle": "Apprentice Package",
-      "image": "assets/cards/75-pentacles-page-of-pentacles.png",
+      "image": "assets/card-art/75-pentacles-page-of-pentacles.png",
       "traditional": {
         "core": "Themes of ambition, desire and diligence.",
         "uprightKeywords": [
@@ -4603,7 +4603,7 @@
       "element": "earth",
       "title": "Knight Of Pentacles",
       "systemTitle": "Methodical Deployment",
-      "image": "assets/cards/76-pentacles-knight-of-pentacles.png",
+      "image": "assets/card-art/76-pentacles-knight-of-pentacles.png",
       "traditional": {
         "core": "Themes of efficiency, hard work and responsibility.",
         "uprightKeywords": [
@@ -4664,7 +4664,7 @@
       "element": "earth",
       "title": "Queen Of Pentacles",
       "systemTitle": "Material Care",
-      "image": "assets/cards/77-pentacles-queen-of-pentacles.png",
+      "image": "assets/card-art/77-pentacles-queen-of-pentacles.png",
       "traditional": {
         "core": "Themes of practicality, creature comforts and financial security.",
         "uprightKeywords": [
@@ -4725,7 +4725,7 @@
       "element": "earth",
       "title": "King Of Pentacles",
       "systemTitle": "System Stewardship",
-      "image": "assets/cards/78-pentacles-king-of-pentacles.png",
+      "image": "assets/card-art/78-pentacles-king-of-pentacles.png",
       "traditional": {
         "core": "Themes of abundance, prosperity and security.",
         "uprightKeywords": [

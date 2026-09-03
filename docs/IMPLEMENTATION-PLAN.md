@@ -95,7 +95,7 @@ VISUAL-GRAMMAR.md
 INTERPRETATION-RESEARCH-AND-SPEC.md
 ```
 
-The plugin consumes optimized `600×1050` fronts and card back so the `480×840` inspection view and scaled card surfaces never exceed the packaged source resolution. The archival `1200×2100` cards remain outside the runtime package. Decoded image memory is substantially larger than the compressed PNG package; compositor mipmaps, effect render targets, cache duplication, and allocator overhead can increase live use further.
+The plugin consumes cropped `536×786` front illustration plates plus a `600×1050` reversible-back artwork. Quickshell reconstructs each front’s 4:7 frame, rail, typography, metadata, and decorative chrome at runtime, so those UI elements remain sharp at every supported panel scale and in the `480×840` inspection view. The archival `1200×2100` composed cards remain outside the runtime package. Decoded image memory is substantially larger than the compressed PNG package; compositor mipmaps, effect render targets, cache duplication, and allocator overhead can increase live use further.
 
 Current complete-deck verification:
 
@@ -326,7 +326,7 @@ Validation requirements:
 
 - exactly 78 records;
 - unique card, claim, prompt, source, and image IDs;
-- all image files exist and plugin fronts are `600×1050`;
+- all front illustration files exist at `536×786`, the back artwork remains `600×1050`, and QML supplies the 4:7 card chrome;
 - one valid card back;
 - traditional and Omarchy layers exist for every card;
 - every card supports all three default positions;
@@ -413,7 +413,7 @@ Write atomically after committed actions, not during animations. Bound history b
 - Use a service singleton for global state, not one draw engine per monitor.
 - Do not retain stale screen or panel references after destruction.
 - Use shared `qs.Ui` and `qs.Commons` components and semantic color/style tokens.
-- Display canonical card PNGs intact; do not crop out their deterministic frames.
+- Preserve each canonical illustration crop and semantic-mask registration exactly; construct the surrounding deterministic frame and metadata chrome in QML.
 - Use plain text for all dynamic interpretation strings.
 - Provide a reduced-motion path using opacity or immediate reveal.
 - Avoid shaders, particles, full-screen blur, or continuous animation.
@@ -492,9 +492,10 @@ omarchy plugin validate .
 
 - Create: `tools/build_deck.py`
 - Create: `assets/deck.json`
-- Create: `assets/card-back.png`
-- Create: `assets/cards/*.png`
-- Create: `tests/test_assets.py`
+- Create: `assets/card-art/card-back.png`
+- Create: `assets/card-art/*.png`
+- Create: `assets/card-art-masks/{primary,secondary,fault}/*.png`
+- Create: `components/ArcanaCard.qml`
 - Create: `tests/test_deck.py`
 
 **Tests first:** Assert exact count, dimensions, path safety, required fields, unique IDs, unique front hashes, back presence, no symlinks, valid provenance, distinct traditional/Omarchy layers, all default position transforms, bounded reversal modes, and forbidden-language checks.

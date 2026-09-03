@@ -13,12 +13,6 @@ Column {
   property color artFault: "#f15b4a"
   property real flipAngle: revealed ? 180 : 0
   readonly property bool faceVisible: flipAngle >= 90
-  readonly property string artworkFilename: {
-    if (root.flipAngle < 90) return "card-back.png"
-    if (!root.itemData || !root.itemData.card || !root.itemData.card.image) return ""
-    var parts = String(root.itemData.card.image).split("/")
-    return parts[parts.length - 1]
-  }
   signal revealRequested()
   signal inspectRequested()
 
@@ -79,25 +73,20 @@ Column {
         angle: root.flipAngle < 90 ? root.flipAngle : root.flipAngle - 180
       }
 
-      ThemeCardImage {
+      ArcanaCard {
         anchors.fill: parent
         anchors.margins: 3
-        source: root.flipAngle < 90
-          ? Qt.resolvedUrl("../assets/cards/card-back.png")
-          : (root.itemData ? Qt.resolvedUrl("../" + root.itemData.card.image) : "")
-        primaryMaskSource: root.artworkFilename
-          ? Qt.resolvedUrl("../assets/card-masks/primary/" + root.artworkFilename)
-          : ""
-        secondaryMaskSource: root.artworkFilename
-          ? Qt.resolvedUrl("../assets/card-masks/secondary/" + root.artworkFilename)
-          : ""
-        faultMaskSource: root.artworkFilename
-          ? Qt.resolvedUrl("../assets/card-masks/fault/" + root.artworkFilename)
-          : ""
+        cardData: root.itemData ? root.itemData.card : null
+        showBack: root.flipAngle < 90
+        reversed: root.flipAngle >= 90 && root.itemData && root.itemData.orientation === "reversed"
+        backgroundColor: "#07090b"
+        frameColor: "#273139"
+        artFrameColor: "#36434b"
+        inkColor: "#e4e0d6"
+        mutedColor: "#899a9c"
         primaryColor: root.artPrimary
         secondaryColor: root.artSecondary
         faultColor: root.artFault
-        rotation: root.flipAngle >= 90 && root.itemData && root.itemData.orientation === "reversed" ? 180 : 0
       }
 
       Rectangle {
@@ -134,34 +123,6 @@ Column {
     font.letterSpacing: 1.4
     horizontalAlignment: Text.AlignHCenter
     textFormat: Text.PlainText
-  }
-
-  Text {
-    width: parent.width
-    text: root.faceVisible && root.itemData ? root.itemData.card.title.toUpperCase() : "CLICK / ENTER TO REVEAL"
-    color: root.faceVisible ? "#e4e0d6" : "#62d6df"
-    font.family: "monospace"
-    font.pixelSize: root.faceVisible ? 12 : 9
-    font.bold: true
-    font.letterSpacing: root.faceVisible ? 0 : 0.8
-    horizontalAlignment: Text.AlignHCenter
-    elide: Text.ElideRight
-    textFormat: Text.PlainText
-    Behavior on color { ColorAnimation { duration: 180 } }
-  }
-
-  Text {
-    width: parent.width
-    text: root.faceVisible && root.itemData ? root.itemData.card.systemTitle.toUpperCase() : "ORDER SURROUNDING MYSTERY"
-    color: "#b89b61"
-    opacity: root.faceVisible ? 1 : 0.62
-    font.family: "monospace"
-    font.pixelSize: 9
-    font.letterSpacing: 0.7
-    horizontalAlignment: Text.AlignHCenter
-    elide: Text.ElideRight
-    textFormat: Text.PlainText
-    Behavior on opacity { NumberAnimation { duration: 180 } }
   }
 
   Text {

@@ -31,27 +31,27 @@ test("every card has authored semantic layers, provenance, and a packaged image"
     assert.ok(card.reflection.endsWith("?"), card.id + " reflection");
     assert.ok(card.sources.includes("omarchy-guide"), card.id + " source");
     assert.equal(path.posix.normalize(card.image), card.image);
-    assert.equal(card.image.startsWith("assets/cards/"), true);
+    assert.equal(card.image.startsWith("assets/card-art/"), true);
     assert.equal(fs.existsSync(path.join(root,card.image)), true, card.image);
   }
 });
 
-test("the reversible back is packaged at shell resolution", () => {
-  assert.equal(fs.existsSync(path.join(root,"assets/cards/card-back.png")),true);
+test("the reversible back is packaged as artwork", () => {
+  assert.equal(fs.existsSync(path.join(root,"assets/card-art/card-back.png")),true);
 });
 
-test("every card and back package three semantic spot-color masks", () => {
+test("every illustration and back package three semantic spot-color masks", () => {
   const names=[...deck.cards.map(card => path.basename(card.image)),"card-back.png"];
   for (const role of ["primary","secondary","fault"]) {
     for (const name of names) {
-      const file=path.join(root,"assets/card-masks",role,name);
+      const file=path.join(root,"assets/card-art-masks",role,name);
       assert.equal(fs.existsSync(file),true,path.relative(root,file));
     }
   }
 });
 
 test("fault masks declare the exact sparse semantic coverage", () => {
-  const contract = JSON.parse(fs.readFileSync(path.join(root, "assets/card-masks/fault-contract.json"), "utf8"));
+  const contract = JSON.parse(fs.readFileSync(path.join(root, "assets/card-art-masks/fault-contract.json"), "utf8"));
   assert.deepEqual(contract.active, [
     "14-major-arcana-13-death.png",
     "16-major-arcana-15-the-devil.png",

@@ -311,7 +311,7 @@ Source quotations should generally remain in research files, not runtime prose.
   "omarchyTitle": "Private Workspace",
   "suit": null,
   "element": "earth",
-  "image": "assets/cards/major-09-hermit.png",
+  "image": "assets/card-art/major-09-hermit.png",
   "coreThemes": ["solitude", "discernment", "inner guidance"],
   "imagery": [
     {

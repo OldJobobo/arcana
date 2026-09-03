@@ -25,7 +25,9 @@ First complete alpha candidate.
 
 ### Changed
 
-- Raised all packaged card bases and semantic color masks from `300×525` to `600×1050`, eliminating source upscaling in the large inspection view and at the supported panel scales
+- Rebuilt card presentation around a reusable Quickshell `ArcanaCard` component: QML now renders the frame, rail, rank, domain, coordinate, keywords, title, system title, and responsive decorative chrome
+- Replaced rasterized full-card fronts with cropped `536×786` illustration-only plates and identically cropped semantic masks; compact cards omit nonessential microtext while inspection cards expose the complete live metadata
+- Preserved the reversible back as a `600×1050` themed artwork while front illustrations and masks use the cropped `536×786` runtime contract
 - Made runtime semantic masks pixel-disjoint and added release validation that rejects overlapping color roles
 - Hardened release validation with exact mask inventories and bounded, CRC-checked, fail-closed PNG decoding
 

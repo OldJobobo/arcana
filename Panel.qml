@@ -20,11 +20,6 @@ Item {
   property bool cardsComplete: true
   property bool inspectionOpen: false
   property var inspectionItem: null
-  readonly property string inspectionArtworkFilename: {
-    if (!inspectionItem || !inspectionItem.card || !inspectionItem.card.image) return ""
-    var parts = String(inspectionItem.card.image).split("/")
-    return parts[parts.length - 1]
-  }
   property real inspectionProgress: 0
   readonly property var reading: service ? service.currentReading : null
   readonly property int readingRevision: service ? service.readingRevision : 0
@@ -623,15 +618,17 @@ Item {
                   width: root.reading && root.reading.cards && root.reading.cards.length === 3 ? 558 : 330
                   height: parent.height
 
-                  ThemeCardImage {
+                  ArcanaCard {
                     visible: !root.reading
                     anchors.centerIn: parent
                     width: 220
                     height: 385
-                    source: Qt.resolvedUrl("assets/cards/card-back.png")
-                    primaryMaskSource: Qt.resolvedUrl("assets/card-masks/primary/card-back.png")
-                    secondaryMaskSource: Qt.resolvedUrl("assets/card-masks/secondary/card-back.png")
-                    faultMaskSource: Qt.resolvedUrl("assets/card-masks/fault/card-back.png")
+                    showBack: true
+                    backgroundColor: root.graphite
+                    frameColor: root.panelBorder
+                    artFrameColor: root.panelBorder
+                    inkColor: root.ivory
+                    mutedColor: root.muted
                     primaryColor: root.artPrimary
                     secondaryColor: root.artSecondary
                     faultColor: root.artFault
@@ -955,23 +952,20 @@ Item {
               color: "#a6000000"
             }
 
-            ThemeCardImage {
+            ArcanaCard {
               anchors.fill: parent
               anchors.margins: 4
-              source: root.inspectionItem ? Qt.resolvedUrl(root.inspectionItem.card.image) : ""
-              primaryMaskSource: root.inspectionArtworkFilename
-                ? Qt.resolvedUrl("assets/card-masks/primary/" + root.inspectionArtworkFilename)
-                : ""
-              secondaryMaskSource: root.inspectionArtworkFilename
-                ? Qt.resolvedUrl("assets/card-masks/secondary/" + root.inspectionArtworkFilename)
-                : ""
-              faultMaskSource: root.inspectionArtworkFilename
-                ? Qt.resolvedUrl("assets/card-masks/fault/" + root.inspectionArtworkFilename)
-                : ""
+              cardData: root.inspectionItem ? root.inspectionItem.card : null
+              showBack: false
+              reversed: root.inspectionItem && root.inspectionItem.orientation === "reversed"
+              backgroundColor: "#07090b"
+              frameColor: "#273139"
+              artFrameColor: "#36434b"
+              inkColor: "#e4e0d6"
+              mutedColor: "#899a9c"
               primaryColor: root.artPrimary
               secondaryColor: root.artSecondary
               faultColor: root.artFault
-              rotation: root.inspectionItem && root.inspectionItem.orientation === "reversed" ? 180 : 0
             }
 
             MouseArea {

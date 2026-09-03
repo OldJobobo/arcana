@@ -6,7 +6,7 @@ Omarchy Arcana is a standalone Omarchy Quattro/Quickshell plugin that turns a co
 
 ## Alpha capabilities
 
-- Complete 78-card deck with reversible back at high-density shell resolution (`600×1050`, 4:7)
+- Complete 78-card deck with `536×786` illustration plates, a reversible-back artwork, and resolution-independent QML card chrome
 - Stable local-date daily draw
 - Repeatable free draws
 - Three-card `Context / Friction / Doorway` spread drawn without replacement
@@ -57,7 +57,7 @@ Middle-clicking the bar sigil performs a free draw without opening the panel; le
 
 ## State and trust boundary
 
-State is stored in `${XDG_STATE_HOME:-~/.local/state}/omarchy/omarchy-arcana.json`. The plugin stores only current daily selection, last reading, draw counter, and local preferences, including panel scale and color mode. Both preferences persist across panel close, plugin reload, and shell restart. On smaller displays the rendered size fits within the available output without changing the saved scale. `SYSTEM` color mode follows Quattro’s live popup, text, accent, muted, border, and urgent roles. Card silhouettes, ivory fields, linework, typography, identity, orientation, and reading state remain fixed; only packaged primary, secondary, and fault spot-color masks respond to the selected color mode. Low-contrast system colors fall back deterministically to the ARCANA signal palette. Fault coverage is intentionally sparse: nine cards carry fault pixels for meaningful failure, conflict, warning, or destructive states, while the other 70 images retain transparent fault layers so every image uses the same three-mask renderer. The exact set is declared in `assets/card-masks/fault-contract.json` and enforced by the release validator. The plugin does not read arbitrary files, shell history, environment dumps, vault content, credentials, or unrelated state.
+State is stored in `${XDG_STATE_HOME:-~/.local/state}/omarchy/omarchy-arcana.json`. The plugin stores only current daily selection, last reading, draw counter, and local preferences, including panel scale and color mode. Both preferences persist across panel close, plugin reload, and shell restart. On smaller displays the rendered size fits within the available output without changing the saved scale. `SYSTEM` color mode follows Quattro’s live popup, text, accent, muted, border, and urgent roles. Card silhouettes, ivory fields, linework, typography, identity, orientation, and reading state remain fixed; only packaged primary, secondary, and fault spot-color masks respond to the selected color mode. Low-contrast system colors fall back deterministically to the ARCANA signal palette. Fault coverage is intentionally sparse: nine cards carry fault pixels for meaningful failure, conflict, warning, or destructive states, while the other 70 images retain transparent fault layers so every image uses the same three-mask renderer. The exact set is declared in `assets/card-art-masks/fault-contract.json` and enforced by the release validator. The plugin does not read arbitrary files, shell history, environment dumps, vault content, credentials, or unrelated state.
 
 The agent handoff contains only the current reading and an optional, clearly delimited user question. It uses argument-array process launch through:
 

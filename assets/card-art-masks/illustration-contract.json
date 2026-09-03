@@ -1,0 +1,22 @@
+{
+  "frontSize": [
+    536,
+    786
+  ],
+  "backSize": [
+    600,
+    1050
+  ],
+  "transparentPrimary": [
+    "14-major-arcana-13-death.png",
+    "57-swords-07-seven-of-swords.png",
+    "63-swords-queen-of-swords.png",
+    "66-pentacles-02-two-of-pentacles.png",
+    "67-pentacles-03-three-of-pentacles.png",
+    "70-pentacles-06-six-of-pentacles.png",
+    "75-pentacles-page-of-pentacles.png",
+    "76-pentacles-knight-of-pentacles.png",
+    "78-pentacles-king-of-pentacles.png"
+  ],
+  "transparentSecondary": []
+}

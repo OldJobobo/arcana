@@ -8,12 +8,11 @@ const failures=[];
 function fail(message){failures.push(message)}
 function readJson(file){return JSON.parse(fs.readFileSync(path.join(root,file),"utf8"))}
 function walk(dir,out=[]){for(const name of fs.readdirSync(dir)){const p=path.join(dir,name);const st=fs.lstatSync(p);if(st.isSymbolicLink())fail("symlink: "+path.relative(root,p));else if(st.isDirectory())walk(p,out);else out.push(p)}return out}
-function pngSize(file){const b=fs.readFileSync(file);if(b.length<24||b.toString("hex",0,8)!=="89504e470d0a1a0a")return null;return [b.readUInt32BE(16),b.readUInt32BE(20)]}
 function paeth(left,above,upperLeft){const p=left+above-upperLeft;const pa=Math.abs(p-left),pb=Math.abs(p-above),pc=Math.abs(p-upperLeft);return pa<=pb&&pa<=pc?left:pb<=pc?above:upperLeft}
-function pngAlpha(file){
+function validatePng(file,expectedWidth,expectedHeight,allowedColorTypes){
  const b=fs.readFileSync(file);
  if(b.length<33||b.toString("hex",0,8)!=="89504e470d0a1a0a")throw new Error("invalid PNG signature");
- const idat=[];let offset=8,chunkIndex=0,sawIhdr=false,sawIdat=false,idatClosed=false,sawIend=false,width=0,height=0;
+ const idat=[];let offset=8,chunkIndex=0,sawIhdr=false,sawIdat=false,idatClosed=false,sawIend=false,width=0,height=0,channels=0;
  while(offset<b.length){
   if(offset+12>b.length)throw new Error("truncated PNG chunk header");
   const length=b.readUInt32BE(offset),typeBytes=b.subarray(offset+4,offset+8),type=typeBytes.toString("ascii");
@@ -25,8 +24,9 @@ function pngAlpha(file){
   if(type==="IHDR"){
    if(sawIhdr||length!==13)throw new Error("invalid IHDR");
    sawIhdr=true;width=data.readUInt32BE(0);height=data.readUInt32BE(4);
-   if(!width||!height||data[8]!==8||data[9]!==6||data[10]!==0||data[11]!==0||data[12]!==0)throw new Error("expected non-interlaced 8-bit RGBA PNG");
-   if(width!==600||height!==1050)throw new Error("expected 600x1050 mask dimensions");
+   const bitDepth=data[8],colorType=data[9];channels=colorType===2?3:colorType===6?4:0;
+   if(!width||!height||bitDepth!==8||!allowedColorTypes.has(colorType)||!channels||data[10]!==0||data[11]!==0||data[12]!==0)throw new Error("unexpected PNG encoding");
+   if(width!==expectedWidth||height!==expectedHeight)throw new Error("unexpected PNG dimensions");
   }else if(type==="IDAT"){
    if(!sawIhdr||idatClosed)throw new Error("invalid IDAT ordering");
    sawIdat=true;idat.push(data);
@@ -38,16 +38,22 @@ function pngAlpha(file){
  }
  if(!sawIend)throw new Error("missing IEND");
  if(offset!==b.length)throw new Error("trailing bytes after IEND");
- const stride=width*4,expectedLength=height*(stride+1);
+ const stride=width*channels,expectedLength=height*(stride+1);
  const raw=zlib.inflateSync(Buffer.concat(idat),{maxOutputLength:expectedLength});
  if(raw.length!==expectedLength)throw new Error("unexpected inflated PNG length");
+ for(let row=0;row<height;row++)if(raw[row*(stride+1)]>4)throw new Error("unsupported PNG filter");
+ return {raw,width,height,channels,stride};
+}
+function pngAlpha(file,expectedWidth,expectedHeight){
+ const png=validatePng(file,expectedWidth,expectedHeight,new Set([6]));
+ const {raw,width,height,channels,stride}=png;
  const alpha=Buffer.alloc(width*height);let position=0,previous=Buffer.alloc(stride);
  for(let row=0;row<height;row++){
   const filter=raw[position++],current=Buffer.alloc(stride);
   for(let index=0;index<stride;index++){
-   const encoded=raw[position++],left=index>=4?current[index-4]:0,above=previous[index],upperLeft=index>=4?previous[index-4]:0;
+   const encoded=raw[position++],left=index>=channels?current[index-channels]:0,above=previous[index],upperLeft=index>=channels?previous[index-channels]:0;
    let value;if(filter===0)value=encoded;else if(filter===1)value=encoded+left;else if(filter===2)value=encoded+above;else if(filter===3)value=encoded+Math.floor((left+above)/2);else if(filter===4)value=encoded+paeth(left,above,upperLeft);else throw new Error("unsupported PNG filter");
-   current[index]=value&255;if(index%4===3)alpha[row*width+(index-3)/4]=current[index];
+   current[index]=value&255;if(index%channels===channels-1)alpha[row*width+(index-(channels-1))/channels]=current[index];
   }
   previous=current;
  }
@@ -74,16 +80,20 @@ for(const c of deck.cards){
  if(!c.orientationModes.length)fail("missing reversal modes on "+c.id)
  if(!c.observed.length)fail("missing observed details on "+c.id)
 }
-const pngs=rel.filter(x=>x.startsWith("assets/cards/")&&x.endsWith(".png"))
-if(pngs.length!==79)fail("expected 79 runtime PNGs, got "+pngs.length)
-for(const file of pngs){const size=pngSize(path.join(root,file));if(!size||size[0]!==600||size[1]!==1050)fail("wrong PNG dimensions: "+file+" "+String(size))}
+const pngs=rel.filter(x=>x.startsWith("assets/card-art/")&&x.endsWith(".png"))
+if(pngs.length!==79)fail("expected 79 card artwork PNGs, got "+pngs.length)
+for(const file of pngs){
+ const back=path.basename(file)==="card-back.png",expectedWidth=back?600:536,expectedHeight=back?1050:786;
+ try{validatePng(path.join(root,file),expectedWidth,expectedHeight,new Set([2,6]))}
+ catch(error){fail("invalid artwork PNG: "+file+" "+error.message)}
+}
 const baseNames=pngs.map(file=>path.basename(file)).sort();
-const maskPngs=rel.filter(x=>x.startsWith("assets/card-masks/")&&x.endsWith(".png"))
+const maskPngs=rel.filter(x=>x.startsWith("assets/card-art-masks/")&&x.endsWith(".png"))
 if(maskPngs.length!==237)fail("expected 237 runtime mask PNGs, got "+maskPngs.length)
 const roles=["primary","secondary","fault"],rolePaths={},visibleMasks={primary:[],secondary:[],fault:[]};
 let inventoriesAligned=true;
 for(const role of roles){
- const roleMasks=maskPngs.filter(x=>x.startsWith("assets/card-masks/"+role+"/"));
+ const roleMasks=maskPngs.filter(x=>x.startsWith("assets/card-art-masks/"+role+"/"));
  const roleNames=roleMasks.map(file=>path.basename(file)).sort();
  if(JSON.stringify(roleNames)!==JSON.stringify(baseNames)){
   fail(role+" mask basename inventory does not exactly match card PNGs");
@@ -94,12 +104,11 @@ for(const role of roles){
 let overlappingMaskPixels=0;
 if(inventoriesAligned){
  for(const name of baseNames){
-  const masks=[];
+  const masks=[],back=name==="card-back.png",expectedWidth=back?600:536,expectedHeight=back?1050:786;
   for(const role of roles){
-   const file=rolePaths[role].get(name),size=pngSize(path.join(root,file));
-   if(!size||size[0]!==600||size[1]!==1050)fail("wrong mask dimensions: "+file+" "+String(size));
+   const file=rolePaths[role].get(name);
    try{
-    const alpha=pngAlpha(path.join(root,file));masks.push(alpha);
+    const alpha=pngAlpha(path.join(root,file),expectedWidth,expectedHeight);masks.push(alpha);
     if(alpha.some(value=>value!==0))visibleMasks[role].push(name);
    }catch(error){fail("invalid mask pixels: "+file+" "+error.message);masks.push(null)}
   }
@@ -109,9 +118,14 @@ if(inventoriesAligned){
  }
 }
 if(overlappingMaskPixels!==0)fail("semantic masks overlap at "+overlappingMaskPixels+" pixels")
-if(visibleMasks.primary.length!==79)fail("all 79 primary masks must contain visible pixels")
-if(visibleMasks.secondary.length!==79)fail("all 79 secondary masks must contain visible pixels")
-const faultContract=readJson("assets/card-masks/fault-contract.json");
+const illustrationContract=readJson("assets/card-art-masks/illustration-contract.json");
+if(JSON.stringify(illustrationContract.frontSize)!==JSON.stringify([536,786])||JSON.stringify(illustrationContract.backSize)!==JSON.stringify([600,1050]))fail("illustration-contract dimensions do not match runtime contract")
+for(const role of ["primary","secondary"]){
+ const transparent=baseNames.filter(name=>!visibleMasks[role].includes(name));
+ const expected=[...illustrationContract[role==="primary"?"transparentPrimary":"transparentSecondary"]].sort();
+ if(JSON.stringify(transparent)!==JSON.stringify(expected))fail(role+" transparent masks do not match illustration-contract.json");
+}
+const faultContract=readJson("assets/card-art-masks/fault-contract.json");
 const expectedFaultMasks=[...faultContract.active].sort();
 if(JSON.stringify(visibleMasks.fault)!==JSON.stringify(expectedFaultMasks))fail("fault mask coverage does not match fault-contract.json")
 if(79-visibleMasks.fault.length!==faultContract.transparentCount)fail("fault transparentCount does not match mask pixels")
