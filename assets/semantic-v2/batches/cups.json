@@ -1,0 +1,3877 @@
+{
+  "schemaVersion": 2,
+  "deckId": "arcana-v2-cups-candidate",
+  "deckTitle": "Arcana Semantic v2 Cups Candidate",
+  "methodVersion": "arcana-composer-v2",
+  "sources": {
+    "schemaVersion": 2,
+    "sources": [
+      {
+        "id": "waite-pkt",
+        "author": "A. E. Waite",
+        "title": "The Pictorial Key to the Tarot",
+        "url": "https://sacred-texts.com/tarot/pkt/index.htm",
+        "tradition": "rws",
+        "publicationYear": 1911,
+        "licenseStatus": "public-domain",
+        "use": [
+          "historical-description",
+          "upright",
+          "reversed"
+        ]
+      },
+      {
+        "id": "vault-keywords",
+        "author": null,
+        "title": "Tarot Card Meanings — 78 Cards",
+        "url": null,
+        "tradition": "rws",
+        "publicationYear": null,
+        "licenseStatus": "private-reference",
+        "use": [
+          "upright",
+          "reversed"
+        ]
+      },
+      {
+        "id": "omarchy-guide",
+        "author": "OldJobobo",
+        "title": "Arcana Major and Minor Guides",
+        "url": null,
+        "tradition": "arcana",
+        "publicationYear": 2026,
+        "licenseStatus": "original-work",
+        "use": [
+          "omarchy",
+          "system-title"
+        ]
+      },
+      {
+        "id": "arcana-artwork",
+        "author": "OldJobobo",
+        "title": "Arcana Packaged Artwork",
+        "url": null,
+        "tradition": "arcana",
+        "publicationYear": 2026,
+        "licenseStatus": "original-work",
+        "use": [
+          "imagery"
+        ]
+      },
+      {
+        "id": "arcana-structural",
+        "author": null,
+        "title": "Arcana Structural Conventions v2",
+        "url": null,
+        "tradition": "golden-dawn-structural",
+        "publicationYear": 2026,
+        "licenseStatus": "structural-convention",
+        "use": [
+          "position",
+          "relationship",
+          "pattern"
+        ]
+      }
+    ]
+  },
+  "cards": [
+    {
+      "schemaVersion": 2,
+      "id": "cups-01-ace",
+      "order": 37,
+      "arcana": "minor",
+      "number": 1,
+      "rank": "ace",
+      "title": "Ace Of Cups",
+      "omarchyTitle": "Open Signal",
+      "suit": "cups",
+      "element": "water",
+      "image": "assets/card-art/37-cups-01-ace-of-cups.png",
+      "coreThemes": [
+        "beginning",
+        "connection",
+        "intuition"
+      ],
+      "imagery": [
+        {
+          "id": "cups-01-ace.image.primary",
+          "detail": "A solitary figure approaches an oversized cup centered on concentric floor rings while segmented wall panels face inward from both sides.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "cups-01-ace.core",
+          "text": "The Ace of Cups opens a fresh current of feeling, receptivity, and intuitive connection before its eventual form is known.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "connection"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-01-ace.omarchy",
+          "text": "Open Signal brings a new emotional channel online and invites careful reception before assigning it a permanent route.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "connection",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-01-ace.position.single",
+          "text": "Notice the newly available feeling without requiring it to arrive fully explained.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "connection",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-01-ace.position.context",
+          "text": "An unfilled emotional opening is widening the range of connection possible in the present situation.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "connection",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-01-ace.position.friction",
+          "text": "Protective caution contains an emerging response that needs enough room to be recognized.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "connection",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-01-ace.position.doorway",
+          "text": "Give the emerging response a simple form—a name, gesture, or private note—without forcing its outcome.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "connection",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-01-ace.reversal.blocked",
+          "text": "A genuine emotional current meets a barrier that keeps expression and reception apart.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "connection",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-01-ace.reversal.reduced",
+          "text": "The capacity for connection is limited right now, so a small honest response carries more value than intensity.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "connection",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-01-ace.reversal.traditional-reversed",
+          "text": "Emptiness or constrained expression interrupts the promise of emotional renewal.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "connection",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "blocked": [
+          "cups-01-ace.reversal.blocked"
+        ],
+        "reduced": [
+          "cups-01-ace.reversal.reduced"
+        ],
+        "traditional_reversed": [
+          "cups-01-ace.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "cups-01-ace.position.single"
+        ],
+        "context": [
+          "cups-01-ace.position.context"
+        ],
+        "friction": [
+          "cups-01-ace.position.friction"
+        ],
+        "doorway": [
+          "cups-01-ace.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "cups-01-ace.prompt.opening",
+          "text": "What feeling has appeared before you have found language or plans for it?",
+          "themes": [
+            "beginning",
+            "intuition"
+          ]
+        },
+        {
+          "id": "cups-01-ace.prompt.container",
+          "text": "What modest container would let this new connection develop without pressure?",
+          "themes": [
+            "connection",
+            "boundary"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "cups-01-ace.prompt.opening",
+        "cups-01-ace.prompt.container"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "cups-02-two",
+      "order": 38,
+      "arcana": "minor",
+      "number": 2,
+      "rank": "two",
+      "title": "Two Of Cups",
+      "omarchyTitle": "Reciprocal Link",
+      "suit": "cups",
+      "element": "water",
+      "image": "assets/card-art/38-cups-02-two-of-cups.png",
+      "coreThemes": [
+        "connection",
+        "exchange",
+        "collaboration"
+      ],
+      "imagery": [
+        {
+          "id": "cups-02-two.image.primary",
+          "detail": "Two seated figures face one another with a cup in each hand as paired dotted waveforms arc between their separate worktables.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "cups-02-two.core",
+          "text": "The Two of Cups centers mutual recognition: connection deepens when a freely given offer receives a free response.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "exchange"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-02-two.omarchy",
+          "text": "Reciprocal Link opens a two-way channel where both endpoints can send, receive, and revise.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "exchange",
+            "collaboration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-02-two.position.single",
+          "text": "Examine whether attention, disclosure, and choice are moving in both directions.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "exchange",
+            "collaboration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-02-two.position.context",
+          "text": "A reciprocal bond or negotiated alliance is shaping what can be built together.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "exchange",
+            "collaboration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-02-two.position.friction",
+          "text": "Unequal participation is making apparent agreement harder to trust or sustain.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "exchange",
+            "collaboration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-02-two.position.doorway",
+          "text": "State one need plainly, invite the other perspective, and leave space for an answer that differs.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "exchange",
+            "collaboration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-02-two.reversal.distorted",
+          "text": "The exchange looks mutual on the surface while power, attention, or effort travels mainly one way.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "exchange",
+            "collaboration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-02-two.reversal.unavailable",
+          "text": "A desired point of connection cannot currently offer the reciprocity the bond requires.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "exchange",
+            "collaboration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-02-two.reversal.traditional-reversed",
+          "text": "Miscommunication or imbalance strains a partnership that depends on genuine mutual regard.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "exchange",
+            "collaboration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "distorted": [
+          "cups-02-two.reversal.distorted"
+        ],
+        "unavailable": [
+          "cups-02-two.reversal.unavailable"
+        ],
+        "traditional_reversed": [
+          "cups-02-two.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "cups-02-two.position.single"
+        ],
+        "context": [
+          "cups-02-two.position.context"
+        ],
+        "friction": [
+          "cups-02-two.position.friction"
+        ],
+        "doorway": [
+          "cups-02-two.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "cups-02-two.prompt.reciprocity",
+          "text": "Where is the exchange balanced, and where is one side carrying the link?",
+          "themes": [
+            "connection",
+            "exchange"
+          ]
+        },
+        {
+          "id": "cups-02-two.prompt.terms",
+          "text": "What could each participant name clearly enough to make collaboration voluntary?",
+          "themes": [
+            "collaboration",
+            "clarity"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "cups-02-two.prompt.reciprocity",
+        "cups-02-two.prompt.terms"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "cups-03-three",
+      "order": 39,
+      "arcana": "minor",
+      "number": 3,
+      "rank": "three",
+      "title": "Three Of Cups",
+      "omarchyTitle": "Shared Channel",
+      "suit": "cups",
+      "element": "water",
+      "image": "assets/card-art/39-cups-03-three-of-cups.png",
+      "coreThemes": [
+        "collaboration",
+        "connection",
+        "exchange"
+      ],
+      "imagery": [
+        {
+          "id": "cups-03-three.image.primary",
+          "detail": "Three figures occupy the points of a bright triangular table, each operating a round console joined to the others by pulsing lines.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "cups-03-three.core",
+          "text": "The Three of Cups celebrates companionship, shared pleasure, and the support that becomes available within a trusted circle.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "collaboration",
+            "connection"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-03-three.omarchy",
+          "text": "Shared Channel routes distinct contributions through a common surface so that recognition can circulate among the group.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "connection",
+            "exchange"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-03-three.position.single",
+          "text": "Identify the community in which participation restores rather than spends your capacity.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "collaboration",
+            "connection",
+            "exchange"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-03-three.position.context",
+          "text": "Collective warmth and informal cooperation are giving the situation resilience beyond individual effort.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "collaboration",
+            "connection",
+            "exchange"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-03-three.position.friction",
+          "text": "Group belonging is becoming noisy enough to obscure boundaries, excluded voices, or the purpose of gathering.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "collaboration",
+            "connection",
+            "exchange"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-03-three.position.doorway",
+          "text": "Make room for a specific act of appreciation that lets each contribution be seen without ranking it.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "collaboration",
+            "connection",
+            "exchange"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-03-three.reversal.excessive",
+          "text": "Social energy has tipped into overextension, distraction, or talk that weakens trust.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "collaboration",
+            "connection",
+            "exchange"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-03-three.reversal.private",
+          "text": "The wish for companionship remains present but is being held outside the shared circle.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "collaboration",
+            "connection",
+            "exchange"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-03-three.reversal.traditional-reversed",
+          "text": "Isolation, overindulgence, or careless speech disrupts the fellowship this card ordinarily celebrates.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "collaboration",
+            "connection",
+            "exchange"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "excessive": [
+          "cups-03-three.reversal.excessive"
+        ],
+        "private": [
+          "cups-03-three.reversal.private"
+        ],
+        "traditional_reversed": [
+          "cups-03-three.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "cups-03-three.position.single"
+        ],
+        "context": [
+          "cups-03-three.position.context"
+        ],
+        "friction": [
+          "cups-03-three.position.friction"
+        ],
+        "doorway": [
+          "cups-03-three.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "cups-03-three.prompt.circle",
+          "text": "Which circle lets you contribute and receive without performing belonging?",
+          "themes": [
+            "connection",
+            "collaboration"
+          ]
+        },
+        {
+          "id": "cups-03-three.prompt.appreciation",
+          "text": "Whose specific contribution deserves to be acknowledged while the group is together?",
+          "themes": [
+            "exchange",
+            "attention"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "cups-03-three.prompt.circle",
+        "cups-03-three.prompt.appreciation"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "cups-04-four",
+      "order": 40,
+      "arcana": "minor",
+      "number": 4,
+      "rank": "four",
+      "title": "Four Of Cups",
+      "omarchyTitle": "Stable Bond",
+      "suit": "cups",
+      "element": "water",
+      "image": "assets/card-art/40-cups-04-four-of-cups.png",
+      "coreThemes": [
+        "attention",
+        "solitude",
+        "opportunity"
+      ],
+      "imagery": [
+        {
+          "id": "cups-04-four.image.primary",
+          "detail": "A seated figure faces a large blank central panel while four separate cup displays form a wired perimeter around the chair.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "cups-04-four.core",
+          "text": "The Four of Cups pauses emotional participation, allowing contemplation while risking indifference to a meaningful offer.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "solitude"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-04-four.omarchy",
+          "text": "Stable Bond holds four known channels at the perimeter, yet the idle central workspace reveals that connection alone does not create engagement.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "solitude",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-04-four.position.single",
+          "text": "Distinguish restorative disengagement from the numb repetition of options already dismissed.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "attention",
+            "solitude",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-04-four.position.context",
+          "text": "Attention has withdrawn from available invitations and is turning toward an unresolved inner measure.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "attention",
+            "solitude",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-04-four.position.friction",
+          "text": "Familiar dissatisfaction is filtering out possibilities before they receive a fair encounter.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "attention",
+            "solitude",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-04-four.position.doorway",
+          "text": "Revisit one overlooked offer with a fresh criterion rather than demanding immediate enthusiasm.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "attention",
+            "solitude",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-04-four.reversal.blocked",
+          "text": "An available exchange is blocked because disengagement currently seems safer than response.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "solitude",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-04-four.reversal.recovering",
+          "text": "Emotional responsiveness is returning after a period of detachment or saturation.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "solitude",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-04-four.reversal.traditional-reversed",
+          "text": "New awareness interrupts apathy and makes deliberate re-engagement possible.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "solitude",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "blocked": [
+          "cups-04-four.reversal.blocked"
+        ],
+        "recovering": [
+          "cups-04-four.reversal.recovering"
+        ],
+        "traditional_reversed": [
+          "cups-04-four.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "cups-04-four.position.single"
+        ],
+        "context": [
+          "cups-04-four.position.context"
+        ],
+        "friction": [
+          "cups-04-four.position.friction"
+        ],
+        "doorway": [
+          "cups-04-four.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "cups-04-four.prompt.pause",
+          "text": "What is this pause protecting, and what has it stopped you from noticing?",
+          "themes": [
+            "solitude",
+            "attention"
+          ]
+        },
+        {
+          "id": "cups-04-four.prompt.offer",
+          "text": "Which familiar option would look different under a newly chosen measure?",
+          "themes": [
+            "opportunity",
+            "perspective"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "cups-04-four.prompt.pause",
+        "cups-04-four.prompt.offer"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "cups-05-five",
+      "order": 41,
+      "arcana": "minor",
+      "number": 5,
+      "rank": "five",
+      "title": "Five Of Cups",
+      "omarchyTitle": "Disappointment",
+      "suit": "cups",
+      "element": "water",
+      "image": "assets/card-art/41-cups-05-five-of-cups.png",
+      "coreThemes": [
+        "grief",
+        "attention",
+        "recovery"
+      ],
+      "imagery": [
+        {
+          "id": "cups-05-five.image.primary",
+          "detail": "A bowed figure sits among fallen panels showing cracked cups, while two upright screens with intact cups remain visible behind them.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "cups-05-five.core",
+          "text": "The Five of Cups gives grief its proper weight while keeping surviving connection within the wider field.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "grief",
+            "attention"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-05-five.omarchy",
+          "text": "Disappointment fills the foreground with failed cup displays, though two intact channels remain beyond the wreckage.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "attention",
+            "recovery"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-05-five.position.single",
+          "text": "Honor the specific loss without allowing it to account for everything that remains.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "grief",
+            "attention",
+            "recovery"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-05-five.position.context",
+          "text": "A rupture or unmet hope is concentrating attention on what cannot be restored in its former shape.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "grief",
+            "attention",
+            "recovery"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-05-five.position.friction",
+          "text": "Pain is narrowing perception until available support becomes difficult to register.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "grief",
+            "attention",
+            "recovery"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-05-five.position.doorway",
+          "text": "Name what is gone, then turn toward one intact resource without using it to cancel the grief.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "grief",
+            "attention",
+            "recovery"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-05-five.reversal.recovering",
+          "text": "Grief is becoming more mobile, allowing contact with support and possibility to return.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "grief",
+            "attention",
+            "recovery"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-05-five.reversal.released",
+          "text": "Attachment to the lost form is loosening enough for a different future to be considered.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "grief",
+            "attention",
+            "recovery"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-05-five.reversal.traditional-reversed",
+          "text": "Acceptance begins when sorrow is acknowledged and attention can gradually include what survived.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "grief",
+            "attention",
+            "recovery"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "recovering": [
+          "cups-05-five.reversal.recovering"
+        ],
+        "released": [
+          "cups-05-five.reversal.released"
+        ],
+        "traditional_reversed": [
+          "cups-05-five.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "cups-05-five.position.single"
+        ],
+        "context": [
+          "cups-05-five.position.context"
+        ],
+        "friction": [
+          "cups-05-five.position.friction"
+        ],
+        "doorway": [
+          "cups-05-five.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "cups-05-five.prompt.loss",
+          "text": "What exactly has been lost, apart from everything the loss now seems to color?",
+          "themes": [
+            "grief",
+            "clarity"
+          ]
+        },
+        {
+          "id": "cups-05-five.prompt.remaining",
+          "text": "Which intact support can stand beside the grief without being asked to erase it?",
+          "themes": [
+            "recovery",
+            "connection"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "cups-05-five.prompt.loss",
+        "cups-05-five.prompt.remaining"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "cups-06-six",
+      "order": 42,
+      "arcana": "minor",
+      "number": 6,
+      "rank": "six",
+      "title": "Six Of Cups",
+      "omarchyTitle": "Recognition",
+      "suit": "cups",
+      "element": "water",
+      "image": "assets/card-art/42-cups-06-six-of-cups.png",
+      "coreThemes": [
+        "connection",
+        "perspective",
+        "recovery"
+      ],
+      "imagery": [
+        {
+          "id": "cups-06-six.image.primary",
+          "detail": "Two figures stand beside an open case holding six cups while translucent panels behind them display several furnished workspaces.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "cups-06-six.core",
+          "text": "The Six of Cups returns to memory, familiarity, and uncomplicated generosity as resources for healing in the present.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-06-six.omarchy",
+          "text": "Recognition opens an archive of familiar rooms and recovered signals, inviting retrieval without restoring an obsolete state wholesale.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "perspective",
+            "recovery"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-06-six.position.single",
+          "text": "Ask which memory offers a living resource rather than only a refuge from current complexity.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "perspective",
+            "recovery"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-06-six.position.context",
+          "text": "A familiar person, practice, or atmosphere is reconnecting the present with an earlier source of ease.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "perspective",
+            "recovery"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-06-six.position.friction",
+          "text": "Nostalgia is editing the archive, preserving comfort while omitting the conditions that also belonged to it.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "perspective",
+            "recovery"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-06-six.position.doorway",
+          "text": "Carry one sustaining quality from the past into a form suited to present needs.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "perspective",
+            "recovery"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-06-six.reversal.released",
+          "text": "The past is loosening its claim on the present, making independent movement easier.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "perspective",
+            "recovery"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-06-six.reversal.misdirected",
+          "text": "A polished memory is guiding current choices without enough attention to what has changed.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "perspective",
+            "recovery"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-06-six.reversal.traditional-reversed",
+          "text": "Growth requires leaving an idealized past behind while retaining the insight it can still offer.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "perspective",
+            "recovery"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "released": [
+          "cups-06-six.reversal.released"
+        ],
+        "misdirected": [
+          "cups-06-six.reversal.misdirected"
+        ],
+        "traditional_reversed": [
+          "cups-06-six.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "cups-06-six.position.single"
+        ],
+        "context": [
+          "cups-06-six.position.context"
+        ],
+        "friction": [
+          "cups-06-six.position.friction"
+        ],
+        "doorway": [
+          "cups-06-six.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "cups-06-six.prompt.archive",
+          "text": "Which remembered quality remains useful even if the old setting cannot return?",
+          "themes": [
+            "perspective",
+            "recovery"
+          ]
+        },
+        {
+          "id": "cups-06-six.prompt.update",
+          "text": "How could that familiar source of care be translated for who you are now?",
+          "themes": [
+            "connection",
+            "change"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "cups-06-six.prompt.archive",
+        "cups-06-six.prompt.update"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "cups-07-seven",
+      "order": 43,
+      "arcana": "minor",
+      "number": 7,
+      "rank": "seven",
+      "title": "Seven Of Cups",
+      "omarchyTitle": "Imagined Options",
+      "suit": "cups",
+      "element": "water",
+      "image": "assets/card-art/43-cups-07-seven-of-cups.png",
+      "coreThemes": [
+        "ambiguity",
+        "discernment",
+        "opportunity"
+      ],
+      "imagery": [
+        {
+          "id": "cups-07-seven.image.primary",
+          "detail": "Seven cup-shaped projectors ring a circular mechanism above a figure at a control desk, casting overlapping silhouettes and divergent beams.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "cups-07-seven.core",
+          "text": "The Seven of Cups multiplies imagined possibilities, mixing genuine aspiration with projection, distraction, and uncertain value.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "ambiguity",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-07-seven.omarchy",
+          "text": "Imagined Options renders seven attractive outputs at once, but the crowded display withholds the evidence needed to select a route.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "discernment",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-07-seven.position.single",
+          "text": "Separate possibilities that can be tested from fantasies that remain appealing because they make no demands.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "ambiguity",
+            "discernment",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-07-seven.position.context",
+          "text": "Competing images of what could be are expanding choice while reducing practical clarity.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "ambiguity",
+            "discernment",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-07-seven.position.friction",
+          "text": "Projection is giving each option emotional force without revealing its cost, fit, or feasibility.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "ambiguity",
+            "discernment",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-07-seven.position.doorway",
+          "text": "Choose one possibility to investigate through a concrete fact, constraint, or reversible trial.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "ambiguity",
+            "discernment",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-07-seven.reversal.distorted",
+          "text": "Desire is altering the apparent value of the options until preference resembles evidence.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "ambiguity",
+            "discernment",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-07-seven.reversal.misdirected",
+          "text": "Attention is moving among vivid alternatives instead of serving the purpose that prompted the choice.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "ambiguity",
+            "discernment",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-07-seven.reversal.traditional-reversed",
+          "text": "Confusion or diversion persists until unrealistic options are narrowed by clearer priorities.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "ambiguity",
+            "discernment",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "distorted": [
+          "cups-07-seven.reversal.distorted"
+        ],
+        "misdirected": [
+          "cups-07-seven.reversal.misdirected"
+        ],
+        "traditional_reversed": [
+          "cups-07-seven.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "cups-07-seven.position.single"
+        ],
+        "context": [
+          "cups-07-seven.position.context"
+        ],
+        "friction": [
+          "cups-07-seven.position.friction"
+        ],
+        "doorway": [
+          "cups-07-seven.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "cups-07-seven.prompt.desire",
+          "text": "Which option attracts you through its reality, and which through the experience it lets you imagine?",
+          "themes": [
+            "ambiguity",
+            "discernment"
+          ]
+        },
+        {
+          "id": "cups-07-seven.prompt.test",
+          "text": "What single piece of evidence would meaningfully narrow this field?",
+          "themes": [
+            "opportunity",
+            "clarity"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "cups-07-seven.prompt.desire",
+        "cups-07-seven.prompt.test"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "cups-08-eight",
+      "order": 44,
+      "arcana": "minor",
+      "number": 8,
+      "rank": "eight",
+      "title": "Eight Of Cups",
+      "omarchyTitle": "Departure",
+      "suit": "cups",
+      "element": "water",
+      "image": "assets/card-art/44-cups-08-eight-of-cups.png",
+      "coreThemes": [
+        "change",
+        "discernment",
+        "release"
+      ],
+      "imagery": [
+        {
+          "id": "cups-08-eight.image.primary",
+          "detail": "Eight linked vessels span the floor; one figure drains a line at a wall control while another walks through a bright doorway.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "cups-08-eight.core",
+          "text": "The Eight of Cups leaves an emotionally invested situation when its remaining form can no longer answer a deeper need.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-08-eight.omarchy",
+          "text": "Departure shuts down a circuit that still contains resources, accepting incomplete recovery in order to seek a more coherent route.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "discernment",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-08-eight.position.single",
+          "text": "Clarify whether leaving protects a deeper value or merely postpones a recurring encounter.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "discernment",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-08-eight.position.context",
+          "text": "A once-meaningful arrangement has reached the point where continued investment no longer restores alignment.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "discernment",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-08-eight.position.friction",
+          "text": "Known disappointment and fear of the unknown are holding the threshold in opposite directions.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "discernment",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-08-eight.position.doorway",
+          "text": "Identify what must be closed responsibly, what can be carried forward, and the first destination beyond the exit.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "discernment",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-08-eight.reversal.blocked",
+          "text": "Recognition that the situation is finished has not yet translated into permission to leave.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "discernment",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-08-eight.reversal.reconsidered",
+          "text": "The impulse to depart needs another look at motive, unfinished responsibility, and the value still present.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "discernment",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-08-eight.reversal.traditional-reversed",
+          "text": "Avoidance or fear of loss prolongs attachment to a situation whose emotional return has diminished.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "discernment",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "blocked": [
+          "cups-08-eight.reversal.blocked"
+        ],
+        "reconsidered": [
+          "cups-08-eight.reversal.reconsidered"
+        ],
+        "traditional_reversed": [
+          "cups-08-eight.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "cups-08-eight.position.single"
+        ],
+        "context": [
+          "cups-08-eight.position.context"
+        ],
+        "friction": [
+          "cups-08-eight.position.friction"
+        ],
+        "doorway": [
+          "cups-08-eight.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "cups-08-eight.prompt.threshold",
+          "text": "What has become clear enough that staying now carries its own cost?",
+          "themes": [
+            "change",
+            "discernment"
+          ]
+        },
+        {
+          "id": "cups-08-eight.prompt.closure",
+          "text": "What deserves responsible closure before you cross the threshold?",
+          "themes": [
+            "release",
+            "boundary"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "cups-08-eight.prompt.threshold",
+        "cups-08-eight.prompt.closure"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "cups-09-nine",
+      "order": 45,
+      "arcana": "minor",
+      "number": 9,
+      "rank": "nine",
+      "title": "Nine Of Cups",
+      "omarchyTitle": "Fulfilled Signal",
+      "suit": "cups",
+      "element": "water",
+      "image": "assets/card-art/45-cups-09-nine-of-cups.png",
+      "coreThemes": [
+        "attention",
+        "integration",
+        "stability"
+      ],
+      "imagery": [
+        {
+          "id": "cups-09-nine.image.primary",
+          "detail": "A seated operator adjusts a central console while nine large horn-shaped receivers surround the station on radiating lines.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "cups-09-nine.core",
+          "text": "The Nine of Cups marks personal satisfaction, the capacity to receive pleasure, and a wish recognized as enough for the moment.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "integration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-09-nine.omarchy",
+          "text": "Fulfilled Signal places the operator inside nine converging receivers, asking whether abundant confirmation has been consciously integrated.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "integration",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-09-nine.position.single",
+          "text": "Take an honest inventory of what feels sufficient before pursuing the next improvement.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "attention",
+            "integration",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-09-nine.position.context",
+          "text": "A desired result or comfortable condition is available to be received and appreciated on its own terms.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "attention",
+            "integration",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-09-nine.position.friction",
+          "text": "Accumulated confirmation is becoming self-enclosure, making comfort less responsive to wider needs.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "attention",
+            "integration",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-09-nine.position.doorway",
+          "text": "Name the fulfillment precisely, enjoy it without apology, and notice what stewardship it now requires.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "attention",
+            "integration",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-09-nine.reversal.excessive",
+          "text": "Comfort has become self-satisfaction that resists feedback and narrows connection.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "integration",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-09-nine.reversal.unavailable",
+          "text": "The desired result is present externally, yet the capacity to register enoughness remains out of reach.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "integration",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-09-nine.reversal.traditional-reversed",
+          "text": "Dissatisfaction persists when display, appetite, or private emptiness substitutes for felt contentment.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "integration",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "excessive": [
+          "cups-09-nine.reversal.excessive"
+        ],
+        "unavailable": [
+          "cups-09-nine.reversal.unavailable"
+        ],
+        "traditional_reversed": [
+          "cups-09-nine.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "cups-09-nine.position.single"
+        ],
+        "context": [
+          "cups-09-nine.position.context"
+        ],
+        "friction": [
+          "cups-09-nine.position.friction"
+        ],
+        "doorway": [
+          "cups-09-nine.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "cups-09-nine.prompt.enough",
+          "text": "What is genuinely enough in this moment, even if it is not permanent?",
+          "themes": [
+            "attention",
+            "stability"
+          ]
+        },
+        {
+          "id": "cups-09-nine.prompt.stewardship",
+          "text": "How might receiving this satisfaction change the way you care for what follows?",
+          "themes": [
+            "integration",
+            "connection"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "cups-09-nine.prompt.enough",
+        "cups-09-nine.prompt.stewardship"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "cups-10-ten",
+      "order": 46,
+      "arcana": "minor",
+      "number": 10,
+      "rank": "ten",
+      "title": "Ten Of Cups",
+      "omarchyTitle": "Connected Community",
+      "suit": "cups",
+      "element": "water",
+      "image": "assets/card-art/46-cups-10-ten-of-cups.png",
+      "coreThemes": [
+        "collaboration",
+        "connection",
+        "stability"
+      ],
+      "imagery": [
+        {
+          "id": "cups-10-ten.image.primary",
+          "detail": "Many figures work and converse along two broad shared benches, with varied cups linked beneath them by one continuous circuit.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "cups-10-ten.core",
+          "text": "The Ten of Cups extends fulfillment into shared belonging sustained through enduring bonds.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "collaboration",
+            "connection"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-10-ten.omarchy",
+          "text": "Connected Community links distinct vessels beneath common worktables, making durable infrastructure from participation.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "connection",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-10-ten.position.single",
+          "text": "Consider which shared practices make belonging tangible beyond an ideal picture of harmony.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "collaboration",
+            "connection",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-10-ten.position.context",
+          "text": "A network of mutual care and participation is providing continuity across different lives and tasks.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "collaboration",
+            "connection",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-10-ten.position.friction",
+          "text": "The image of perfect togetherness is leaving too little room for disagreement, difference, or changing needs.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "collaboration",
+            "connection",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-10-ten.position.doorway",
+          "text": "Strengthen one repeatable practice through which the community can exchange care and repair strain.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "collaboration",
+            "connection",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-10-ten.reversal.distorted",
+          "text": "The appearance of harmony is being maintained at the expense of honest difference or needed repair.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "collaboration",
+            "connection",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-10-ten.reversal.unavailable",
+          "text": "Desired belonging lacks the shared participation or safety needed to become dependable.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "collaboration",
+            "connection",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-10-ten.reversal.traditional-reversed",
+          "text": "Disconnection and unmet expectations strain the bonds that normally sustain collective fulfillment.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "collaboration",
+            "connection",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "distorted": [
+          "cups-10-ten.reversal.distorted"
+        ],
+        "unavailable": [
+          "cups-10-ten.reversal.unavailable"
+        ],
+        "traditional_reversed": [
+          "cups-10-ten.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "cups-10-ten.position.single"
+        ],
+        "context": [
+          "cups-10-ten.position.context"
+        ],
+        "friction": [
+          "cups-10-ten.position.friction"
+        ],
+        "doorway": [
+          "cups-10-ten.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "cups-10-ten.prompt.practice",
+          "text": "Which repeated act makes this community feel dependable rather than merely ideal?",
+          "themes": [
+            "stability",
+            "connection"
+          ]
+        },
+        {
+          "id": "cups-10-ten.prompt.difference",
+          "text": "Where could honest difference be included without threatening belonging?",
+          "themes": [
+            "collaboration",
+            "courage"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "cups-10-ten.prompt.practice",
+        "cups-10-ten.prompt.difference"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "cups-11-page",
+      "order": 47,
+      "arcana": "minor",
+      "number": 11,
+      "rank": "page",
+      "title": "Page Of Cups",
+      "omarchyTitle": "Signal Dreamer",
+      "suit": "cups",
+      "element": "water",
+      "image": "assets/card-art/47-cups-page-of-cups.png",
+      "coreThemes": [
+        "attention",
+        "beginning",
+        "intuition"
+      ],
+      "imagery": [
+        {
+          "id": "cups-11-page.image.primary",
+          "detail": "A kneeling figure lifts a faceted glowing vessel as a winding signal descends toward it through concentric arcs above a low console.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "cups-11-page.core",
+          "text": "The Page of Cups receives unexpected feeling and imaginative messages with sensitivity, curiosity, and room for surprise.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "beginning"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-11-page.omarchy",
+          "text": "Signal Dreamer catches an unusual transmission in a delicate vessel, preserving wonder while its source and meaning remain unverified.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "beginning",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-11-page.position.single",
+          "text": "Attend to the surprising response without turning first impressions into a settled story.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "attention",
+            "beginning",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-11-page.position.context",
+          "text": "An unfamiliar emotional or imaginative signal is asking for receptive, beginner-level attention.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "attention",
+            "beginning",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-11-page.position.friction",
+          "text": "Sensitivity is absorbing suggestion faster than experience can sort insight from projection.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "attention",
+            "beginning",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-11-page.position.doorway",
+          "text": "Record the impression, ask a gentle clarifying question, and wait for corroborating experience.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "attention",
+            "beginning",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-11-page.reversal.developing",
+          "text": "Emotional fluency is still forming, so surprise may be difficult to name or regulate.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "beginning",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-11-page.reversal.distorted",
+          "text": "An ambiguous impression is acquiring certainty and significance beyond the available evidence.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "beginning",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-11-page.reversal.traditional-reversed",
+          "text": "Insecurity or untested fantasy makes an emotional message harder to receive with proportion.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "beginning",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-11-page.court.person",
+          "text": "Someone receptive and imaginative may notice an emerging feeling before others have language for it.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "beginning",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-11-page.court.role",
+          "text": "The listener for new signals can preserve ambiguity long enough for meaning to develop.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "beginning",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-11-page.court.approach",
+          "text": "Meet surprise with curiosity, record the impression, and remain willing to revise it.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "beginning",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "developing": [
+          "cups-11-page.reversal.developing"
+        ],
+        "distorted": [
+          "cups-11-page.reversal.distorted"
+        ],
+        "traditional_reversed": [
+          "cups-11-page.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "cups-11-page.position.single"
+        ],
+        "context": [
+          "cups-11-page.position.context"
+        ],
+        "friction": [
+          "cups-11-page.position.friction"
+        ],
+        "doorway": [
+          "cups-11-page.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "cups-11-page.prompt.surprise",
+          "text": "What has surprised you emotionally before you could decide what it means?",
+          "themes": [
+            "attention",
+            "intuition"
+          ]
+        },
+        {
+          "id": "cups-11-page.prompt.curiosity",
+          "text": "Which gentle question would keep curiosity open without feeding a fantasy?",
+          "themes": [
+            "beginning",
+            "clarity"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "cups-11-page.prompt.surprise",
+        "cups-11-page.prompt.curiosity"
+      ],
+      "courtModes": {
+        "person": [
+          "cups-11-page.court.person"
+        ],
+        "role": [
+          "cups-11-page.court.role"
+        ],
+        "approach": [
+          "cups-11-page.court.approach"
+        ]
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "id": "cups-12-knight",
+      "order": 48,
+      "arcana": "minor",
+      "number": 12,
+      "rank": "knight",
+      "title": "Knight Of Cups",
+      "omarchyTitle": "The Messenger",
+      "suit": "cups",
+      "element": "water",
+      "image": "assets/card-art/48-cups-knight-of-cups.png",
+      "coreThemes": [
+        "connection",
+        "exchange",
+        "initiative"
+      ],
+      "imagery": [
+        {
+          "id": "cups-12-knight.image.primary",
+          "detail": "One figure walks toward another carrying a luminous cube across a narrow platform divided by a tall segmented interface.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "cups-12-knight.core",
+          "text": "The Knight of Cups advances through invitation, imagination, and emotionally meaningful offers that seek a genuine response.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "exchange"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-12-knight.omarchy",
+          "text": "The Messenger carries a bright packet across a boundary, making connection possible without presuming the receiving endpoint.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "exchange",
+            "initiative"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-12-knight.position.single",
+          "text": "Assess whether the offer honors both sincere feeling and the recipient’s freedom to respond.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "exchange",
+            "initiative"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-12-knight.position.context",
+          "text": "An invitation, proposal, or ideal is moving from private intention toward relational exchange.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "exchange",
+            "initiative"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-12-knight.position.friction",
+          "text": "The beauty of the imagined response is eclipsing information about how the offer may actually land.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "exchange",
+            "initiative"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-12-knight.position.doorway",
+          "text": "Make the invitation concrete, bounded, and easy to accept, decline, or reshape.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "exchange",
+            "initiative"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-12-knight.reversal.misdirected",
+          "text": "The gesture is serving an idealized narrative more than the relationship available in front of it.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "exchange",
+            "initiative"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-12-knight.reversal.delayed",
+          "text": "A sincere approach needs clearer terms or more receptive conditions before it can move forward.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "exchange",
+            "initiative"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-12-knight.reversal.traditional-reversed",
+          "text": "Mood, disappointment, or unrealistic expectation diverts an offer from honest exchange.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "exchange",
+            "initiative"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-12-knight.court.person",
+          "text": "Someone expressive and ideal-driven may arrive ready to carry a heartfelt offer into action.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "exchange",
+            "initiative"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-12-knight.court.role",
+          "text": "The envoy role translates private feeling into an invitation another participant can freely answer.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "exchange",
+            "initiative"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-12-knight.court.approach",
+          "text": "Lead with sincerity, define the offer, and adjust gracefully to the response received.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "exchange",
+            "initiative"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "misdirected": [
+          "cups-12-knight.reversal.misdirected"
+        ],
+        "delayed": [
+          "cups-12-knight.reversal.delayed"
+        ],
+        "traditional_reversed": [
+          "cups-12-knight.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "cups-12-knight.position.single"
+        ],
+        "context": [
+          "cups-12-knight.position.context"
+        ],
+        "friction": [
+          "cups-12-knight.position.friction"
+        ],
+        "doorway": [
+          "cups-12-knight.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "cups-12-knight.prompt.offer",
+          "text": "What are you truly offering, apart from the response you hope it produces?",
+          "themes": [
+            "exchange",
+            "clarity"
+          ]
+        },
+        {
+          "id": "cups-12-knight.prompt.freedom",
+          "text": "How can the invitation leave another participant genuine room to answer?",
+          "themes": [
+            "connection",
+            "agency"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "cups-12-knight.prompt.offer",
+        "cups-12-knight.prompt.freedom"
+      ],
+      "courtModes": {
+        "person": [
+          "cups-12-knight.court.person"
+        ],
+        "role": [
+          "cups-12-knight.court.role"
+        ],
+        "approach": [
+          "cups-12-knight.court.approach"
+        ]
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "id": "cups-13-queen",
+      "order": 49,
+      "arcana": "minor",
+      "number": 13,
+      "rank": "queen",
+      "title": "Queen Of Cups",
+      "omarchyTitle": "The Listener",
+      "suit": "cups",
+      "element": "water",
+      "image": "assets/card-art/49-cups-queen-of-cups.png",
+      "coreThemes": [
+        "attention",
+        "boundary",
+        "intuition"
+      ],
+      "imagery": [
+        {
+          "id": "cups-13-queen.image.primary",
+          "detail": "A seated figure studies several circular waveform displays inside a dark crescent frame while bright streams enter and leave the console array.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "cups-13-queen.core",
+          "text": "The Queen of Cups holds compassionate attention and intuitive depth within boundaries strong enough to contain complex feeling.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "boundary"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-13-queen.omarchy",
+          "text": "The Listener monitors layered waveforms inside a protected crescent, receiving subtle currents without merging every channel.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "boundary",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-13-queen.position.single",
+          "text": "Listen beneath the obvious account while keeping interpretation separate from direct observation.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "attention",
+            "boundary",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-13-queen.position.context",
+          "text": "Quiet receptivity and emotional containment are making complexity easier to approach without force.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "attention",
+            "boundary",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-13-queen.position.friction",
+          "text": "Care is crossing its own limits, turning attunement into over-identification or unspoken depletion.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "attention",
+            "boundary",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-13-queen.position.doorway",
+          "text": "Create a protected listening interval, reflect what was heard, and keep responsibility in its proper place.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "attention",
+            "boundary",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-13-queen.reversal.excessive",
+          "text": "Compassion has exceeded its container, making another concern consume attention needed for self-direction.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "boundary",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-13-queen.reversal.unavailable",
+          "text": "The inward quiet required for intuitive listening cannot currently be reached or maintained.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "boundary",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-13-queen.reversal.traditional-reversed",
+          "text": "Insecurity or self-erasure disturbs compassionate judgment and encourages dependence on external reassurance.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "boundary",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-13-queen.court.person",
+          "text": "Someone deeply receptive may offer calm attention while remaining responsible for their own limits.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "boundary",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-13-queen.court.role",
+          "text": "The containing role makes space for complex feeling without taking ownership of another participant’s work.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "boundary",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-13-queen.court.approach",
+          "text": "Listen for nuance, reflect carefully, and separate empathy from obligation.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "boundary",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "excessive": [
+          "cups-13-queen.reversal.excessive"
+        ],
+        "unavailable": [
+          "cups-13-queen.reversal.unavailable"
+        ],
+        "traditional_reversed": [
+          "cups-13-queen.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "cups-13-queen.position.single"
+        ],
+        "context": [
+          "cups-13-queen.position.context"
+        ],
+        "friction": [
+          "cups-13-queen.position.friction"
+        ],
+        "doorway": [
+          "cups-13-queen.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "cups-13-queen.prompt.listening",
+          "text": "What can be heard more accurately when you stop trying to fix it?",
+          "themes": [
+            "attention",
+            "intuition"
+          ]
+        },
+        {
+          "id": "cups-13-queen.prompt.limit",
+          "text": "Which boundary would let care remain generous instead of depleting?",
+          "themes": [
+            "boundary",
+            "connection"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "cups-13-queen.prompt.listening",
+        "cups-13-queen.prompt.limit"
+      ],
+      "courtModes": {
+        "person": [
+          "cups-13-queen.court.person"
+        ],
+        "role": [
+          "cups-13-queen.court.role"
+        ],
+        "approach": [
+          "cups-13-queen.court.approach"
+        ]
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "id": "cups-14-king",
+      "order": 50,
+      "arcana": "minor",
+      "number": 14,
+      "rank": "king",
+      "title": "King Of Cups",
+      "omarchyTitle": "Emotional Steward",
+      "suit": "cups",
+      "element": "water",
+      "image": "assets/card-art/50-cups-king-of-cups.png",
+      "coreThemes": [
+        "integration",
+        "leadership",
+        "stability"
+      ],
+      "imagery": [
+        {
+          "id": "cups-14-king.image.primary",
+          "detail": "A lone figure stands at an elevated control platform where two broad streams branch in opposite directions, while three aligned cables descend below.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "cups-14-king.core",
+          "text": "The King of Cups integrates strong feeling with steady judgment, offering compassionate leadership without emotional suppression.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "integration",
+            "leadership"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-14-king.omarchy",
+          "text": "Emotional Steward governs competing currents from a stable console, balancing input and response before routing power onward.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "leadership",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-14-king.position.single",
+          "text": "Hold emotional truth and practical responsibility together without allowing either to cancel the other.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "integration",
+            "leadership",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-14-king.position.context",
+          "text": "Steady regulation is helping intense or conflicting currents remain workable within a larger responsibility.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "integration",
+            "leadership",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-14-king.position.friction",
+          "text": "Composure has hardened into distance, or unacknowledged emotion is quietly steering decisions.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "integration",
+            "leadership",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-14-king.position.doorway",
+          "text": "Name the current, choose the governing value, and respond at a scale the whole system can sustain.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "integration",
+            "leadership",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-14-king.reversal.distorted",
+          "text": "Emotional authority is being used to manipulate the current or to present detachment as balance.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "integration",
+            "leadership",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-14-king.reversal.blocked",
+          "text": "Control is preventing emotional information from reaching judgment, leaving apparent calm without integration.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "integration",
+            "leadership",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-14-king.reversal.traditional-reversed",
+          "text": "Coldness, volatility, or unreliable counsel appears when emotional power loses accountable balance.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "integration",
+            "leadership",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-14-king.court.person",
+          "text": "Someone emotionally steady may help strong currents become discussable without denying their force.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "integration",
+            "leadership",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-14-king.court.role",
+          "text": "The stewardship role balances care, limits, and consequence when a response affects the wider field.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "integration",
+            "leadership",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-14-king.court.approach",
+          "text": "Acknowledge the emotional current, anchor in shared values, and choose a proportionate response.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "integration",
+            "leadership",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "distorted": [
+          "cups-14-king.reversal.distorted"
+        ],
+        "blocked": [
+          "cups-14-king.reversal.blocked"
+        ],
+        "traditional_reversed": [
+          "cups-14-king.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "cups-14-king.position.single"
+        ],
+        "context": [
+          "cups-14-king.position.context"
+        ],
+        "friction": [
+          "cups-14-king.position.friction"
+        ],
+        "doorway": [
+          "cups-14-king.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "cups-14-king.prompt.current",
+          "text": "Which emotional current needs recognition before it can be governed rather than obeyed?",
+          "themes": [
+            "integration",
+            "attention"
+          ]
+        },
+        {
+          "id": "cups-14-king.prompt.response",
+          "text": "What response would remain compassionate and accountable under sustained pressure?",
+          "themes": [
+            "leadership",
+            "stability"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "cups-14-king.prompt.current",
+        "cups-14-king.prompt.response"
+      ],
+      "courtModes": {
+        "person": [
+          "cups-14-king.court.person"
+        ],
+        "role": [
+          "cups-14-king.court.role"
+        ],
+        "approach": [
+          "cups-14-king.court.approach"
+        ]
+      }
+    }
+  ]
+}

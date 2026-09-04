@@ -44,13 +44,76 @@ test("dynamic agent prompts use a Process argv array and never bar.run interpola
   assert.doesNotMatch(qml, /bash\s+-lc/);
 });
 
-test("Quattro file and adapter graphs are normalized before entering pure JS", () => {
-  const qml = fs.readFileSync(path.join(root, "ArcanaService.qml"), "utf8");
-  assert.match(qml, /JSON\.parse\(deckStore\.text\(\) \|\| "\{\}"\)/);
-  assert.match(qml, /JSON\.parse\(JSON\.stringify\(root\.cards \|\| \[\]\)\)/);
-  assert.match(qml, /var normalizedDeck = deckSnapshot\(\)/);
-  assert.match(qml, /Arcana\.draw\(normalizedDeck,/);
-  assert.match(qml, /Arcana\.compose\(deckSnapshot\(\), selectionSnapshot\(selection\)/);
+test("Quattro service cuts over atomically to validated semantic-v2 assets", () => {
+  const qml = fs.readFileSync(path.join(root,"ArcanaService.qml"),"utf8");
+  assert.match(qml,/assets\/semantic-v2\/cards\.json/);
+  assert.match(qml,/assets\/spreads\.json/);
+  assert.match(qml,/Interpretation\.validateCatalog\(deckSnapshot\(\), spreadSnapshot\(\)\)/);
+  assert.match(qml,/Interpretation\.migrateState/);
+  assert.match(qml,/Arcana\.drawV2/);
+  assert.match(qml,/Interpretation\.interpret/);
+  assert.match(qml,/Interpretation\.toPanelReading/);
+  assert.match(qml,/Interpretation\.buildHandoff/);
+  assert.doesNotMatch(qml,/Arcana\.compose|Arcana\.buildHandoff|Arcana\.draw\(/);
+});
+
+test("copy and agent handoff use bounded semantic projections without shell interpolation", () => {
+  const qml=fs.readFileSync(path.join(root,"ArcanaService.qml"),"utf8");
+  const panel=fs.readFileSync(path.join(root,"Panel.qml"),"utf8");
+  assert.match(qml,/Interpretation\.copyReading/);
+  assert.match(qml,/lastCopyArgv = \["wl-copy", text\]/);
+  assert.match(qml,/copyProcess\.command = lastCopyArgv/);
+  assert.match(qml,/\["omarchy", "agent", "prompt", root\.agentPacket\]/);
+  assert.match(panel,/Qt\.Key_C/);
+  assert.match(panel,/C  Copy/);
+  assert.doesNotMatch(qml,/bash\s+-lc|sh\s+-c/);
+});
+
+test("question submission recomposes before producing the exact preview and argv packet", () => {
+  const qml=fs.readFileSync(path.join(root,"ArcanaService.qml"),"utf8");
+  const recompose=qml.indexOf("function recomposeWithQuestion(question)");
+  const prepare=qml.indexOf("function prepareAgent(question)");
+  const guard=qml.indexOf("!recomposeWithQuestion(question)",prepare);
+  const serialize=qml.indexOf("Interpretation.buildHandoff",prepare);
+  assert.ok(recompose >= 0 && prepare > recompose);
+  assert.ok(guard > prepare && serialize > guard);
+  assert.match(qml,/currentSemanticReading\.cards\.map/);
+  assert.match(qml,/currentReading = Interpretation\.toPanelReading/);
+  assert.match(qml,/stateAdapter\.lastReading = reading/);
+  assert.match(qml,/agentPacket = Interpretation\.buildHandoff/);
+  assert.match(qml,/lastAgentArgv = \["omarchy", "agent", "prompt", root\.agentPacket\]/);
+  assert.match(qml,/agentLaunch\.command = lastAgentArgv/);
+});
+
+test("state migration precedes restoration and gates every draw", () => {
+  const qml=fs.readFileSync(path.join(root,"ArcanaService.qml"),"utf8");
+  const migration=qml.indexOf("Interpretation.migrateState");
+  const restore=qml.indexOf("currentSemanticReading = migrated.lastReading");
+  assert.ok(migration >= 0 && restore > migration);
+  assert.match(qml,/readonly property bool ready: semanticReady && cards\.length === 78 && stateMigrationApplied/);
+  assert.match(qml,/property int schemaVersion: 2/);
+  assert.match(qml,/property var lastReadingSelection: \[\]/);
+  assert.doesNotMatch(qml,/lastReading\.schemaVersion === 1/);
+});
+
+test("entropy failure cannot fall back to wall-clock or persist a draw", () => {
+  const qml=fs.readFileSync(path.join(root,"ArcanaService.qml"),"utf8");
+  assert.match(qml,/function failPendingDraw\(\)/);
+  assert.match(qml,/if \(entropy === ""\) \{ failPendingDraw\(\); return \}/);
+  assert.match(qml,/if \(exitCode === 0\) root\.finishEntropy\(root\.pendingEntropy\)/);
+  assert.match(qml,/else root\.failPendingDraw\(\)/);
+  assert.doesNotMatch(qml,/Date\.now\(\)/);
+});
+
+test("panel concise and expanded views share one reading without developer metadata", () => {
+  const panel=fs.readFileSync(path.join(root,"Panel.qml"),"utf8");
+  assert.match(panel,/property bool expandedReading/);
+  assert.match(panel,/reading\.utterances\.expanded/);
+  assert.match(panel,/reading\.utterances\.concise/);
+  assert.match(panel,/Qt\.Key_E/);
+  assert.match(panel,/E  Compact/);
+  assert.doesNotMatch(panel,/evidenceText|methodVersion|evidenceSummary|provenanceSummary/);
+  assert.doesNotMatch(panel,/reading\.synthesis \+ "\\n\\n"/);
 });
 
 test("repository contains release documentation and no executable helper", () => {
@@ -87,8 +150,8 @@ test("theme colors toggle between Arcana identity and live system roles", () => 
   assert.match(panel, /Color\.popups\.text/);
   assert.match(panel, /Color\.accent/);
   assert.match(panel, /Qt\.Key_T/);
-  assert.match(panel, /COLORS.*ARCANA/s);
-  assert.match(panel, /COLORS.*SYSTEM/s);
+  assert.match(panel, /Colors.*Arcana/s);
+  assert.match(panel, /Colors.*System/s);
 });
 
 test("system artwork colors use deterministic card-scale contrast fallbacks", () => {
@@ -130,7 +193,7 @@ test("motion is perceptible, bounded, state-driven, and never loops", () => {
   assert.ok(durations.every(duration => duration <= 450), durations.join(","));
 });
 
-test("agent preview reserves its action row above the persistent footer", () => {
+test("agent preview keeps its action row inside the panel", () => {
   const panel = fs.readFileSync(path.join(root, "Panel.qml"), "utf8");
   assert.match(panel, /id:\s*agentActions/);
   assert.match(panel, /height:\s*Math\.max\(120,\s*parent\.height\s*-\s*y\s*-\s*agentActions\.height\s*-\s*parent\.spacing\s*-\s*18\)/);
@@ -147,7 +210,7 @@ test("new cards are keyboard-accessible physical reveals", () => {
   assert.match(panel, /function revealCard/);
   assert.match(panel, /id:\s*readingRevealDelay/);
   assert.match(panel, /interval:\s*420/);
-  assert.match(panel, /REVEAL ALL|REVEAL THE CARD/);
+  assert.match(panel, /Reveal all three cards|Reveal the card/);
   assert.match(card, /signal revealRequested/);
   assert.match(card, /activeFocusOnTab:\s*true/);
   assert.match(card, /showBack:\s*root\.flipAngle\s*<\s*90/);
@@ -170,7 +233,7 @@ test("revealed cards open a bounded keyboard-accessible inspection view", () => 
   assert.match(panel, /id:\s*inspectionLayer/);
   assert.match(panel, /root\.inspectionOpen \? 0 : frameBounds\.x/);
   assert.match(panel, /Math\.min\(480/);
-  assert.match(panel, /CLICK \/ ENTER \/ ESC TO RETURN/);
+  assert.match(panel, /Click, Enter, or Esc to return/);
   assert.match(panel, /event\.accepted = true/);
   assert.doesNotMatch(panel, /inspection.*Animation\.Infinite/i);
 });
@@ -242,9 +305,8 @@ test("card typography preserves readable secondary hierarchy at compact and insp
 
   assert.match(card, /readonly property int detailPixelSize:\s*root\.compact \? 9 : Math\.max\(12,/);
   assert.match(card, /readonly property int systemPixelSize:\s*root\.compact \? 10 : Math\.max\(13,/);
-  assert.match(card, /readonly property int microPixelSize:\s*Math\.max\(9,/);
   assert.match(card, /readonly property string displayDomainLabel/);
-  assert.match(card, /return card\.arcana === "major" \? "MAJOR ARCANA" : root\.domainLabel/);
+  assert.match(card, /return card\.arcana === "major" \? "Major arcana" : root\.domainLabel/);
   assert.match(card, /minimumPixelSize:\s*root\.compact \? 11 : 16/);
   assert.doesNotMatch(card, /font\.pixelSize:\s*root\.compact \? [78]\b/);
 });

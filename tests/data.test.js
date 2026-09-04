@@ -6,33 +6,32 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const root = path.resolve(__dirname, "..");
-const deck = JSON.parse(fs.readFileSync(path.join(root,"assets/cards.json"),"utf8"));
+const Interpretation = require("../src/Interpretation");
+const deck = JSON.parse(fs.readFileSync(path.join(root,"assets/semantic-v2/cards.json"),"utf8"));
+const spreads = JSON.parse(fs.readFileSync(path.join(root,"assets/spreads.json"),"utf8"));
 
-test("semantic deck contains the complete canonical 78-card structure", () => {
-  assert.equal(deck.schemaVersion, 1);
-  assert.equal(deck.methodVersion, "composer-v1");
+test("production semantic-v2 deck contains the complete canonical 78-card structure", () => {
+  assert.doesNotThrow(() => Interpretation.validateCatalog(deck,spreads));
+  assert.equal(deck.schemaVersion, 2);
+  assert.equal(deck.methodVersion, "arcana-composer-v2");
   assert.equal(deck.cards.length, 78);
   assert.equal(new Set(deck.cards.map(c => c.id)).size, 78);
-  assert.deepEqual(
-    Object.fromEntries(["major","wands","cups","swords","pentacles"].map(k => [k,deck.cards.filter(c => c.arcana === k || c.suit === k).length])),
-    {major:22,wands:14,cups:14,swords:14,pentacles:14}
-  );
+  assert.deepEqual(Object.fromEntries(["major","wands","cups","swords","pentacles"].map(k => [k,deck.cards.filter(c => c.arcana === k || c.suit === k).length])),{major:22,wands:14,cups:14,swords:14,pentacles:14});
 });
 
-test("every card has authored semantic layers, provenance, and a packaged image", () => {
+test("every production card has authored v2 semantics, provenance, and packaged artwork", () => {
   for (const card of deck.cards) {
-    assert.ok(card.id && card.title && card.systemTitle, card.id);
-    assert.ok(card.traditional.core.length >= 12, card.id + " traditional core");
-    assert.ok(card.traditional.uprightKeywords.length >= 3, card.id + " upright");
-    assert.ok(card.traditional.reversedKeywords.length >= 2, card.id + " reversed");
-    assert.ok(card.omarchy.systemLens.length >= 20, card.id + " system lens");
-    assert.ok(card.orientationModes.length >= 1, card.id + " orientation modes");
-    assert.ok(card.observed.length >= 2, card.id + " observed details");
-    assert.ok(card.reflection.endsWith("?"), card.id + " reflection");
-    assert.ok(card.sources.includes("omarchy-guide"), card.id + " source");
-    assert.equal(path.posix.normalize(card.image), card.image);
-    assert.equal(card.image.startsWith("assets/card-art/"), true);
-    assert.equal(fs.existsSync(path.join(root,card.image)), true, card.image);
+    assert.ok(card.id && card.title && card.omarchyTitle,card.id);
+    assert.ok(card.coreThemes.length >= 2,card.id + " themes");
+    assert.ok(card.imagery.length >= 1,card.id + " imagery");
+    assert.ok(card.claims.length >= 6,card.id + " claims");
+    assert.ok(Object.keys(card.reversalModes).length >= 2,card.id + " reversal modes");
+    assert.ok(card.reflectionPrompts.length >= 1,card.id + " reflection prompts");
+    assert.ok(card.claims.every(claim => claim.provenanceKind && claim.sourceRefs.length),card.id + " claim provenance");
+    assert.equal(Object.prototype.hasOwnProperty.call(card,"orientationModes"),false,card.id + " legacy modes");
+    assert.equal(path.posix.normalize(card.image),card.image);
+    assert.equal(card.image.startsWith("assets/card-art/"),true);
+    assert.equal(fs.existsSync(path.join(root,card.image)),true,card.image);
   }
 });
 

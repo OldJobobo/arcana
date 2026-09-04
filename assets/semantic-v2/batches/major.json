@@ -1,0 +1,5625 @@
+{
+  "schemaVersion": 2,
+  "deckId": "arcana-v2-major-candidate",
+  "deckTitle": "Arcana Semantic v2 Major Arcana Candidate",
+  "methodVersion": "arcana-composer-v2",
+  "sources": {
+    "schemaVersion": 2,
+    "sources": [
+      {
+        "id": "waite-pkt",
+        "author": "A. E. Waite",
+        "title": "The Pictorial Key to the Tarot",
+        "url": "https://sacred-texts.com/tarot/pkt/index.htm",
+        "tradition": "rws",
+        "publicationYear": 1911,
+        "licenseStatus": "public-domain",
+        "use": [
+          "historical-description",
+          "upright",
+          "reversed"
+        ]
+      },
+      {
+        "id": "vault-keywords",
+        "author": null,
+        "title": "Tarot Card Meanings — 78 Cards",
+        "url": null,
+        "tradition": "rws",
+        "publicationYear": null,
+        "licenseStatus": "private-reference",
+        "use": [
+          "upright",
+          "reversed"
+        ]
+      },
+      {
+        "id": "omarchy-guide",
+        "author": "OldJobobo",
+        "title": "Arcana Major and Minor Guides",
+        "url": null,
+        "tradition": "arcana",
+        "publicationYear": 2026,
+        "licenseStatus": "original-work",
+        "use": [
+          "omarchy",
+          "system-title"
+        ]
+      },
+      {
+        "id": "arcana-artwork",
+        "author": "OldJobobo",
+        "title": "Arcana Packaged Artwork",
+        "url": null,
+        "tradition": "arcana",
+        "publicationYear": 2026,
+        "licenseStatus": "original-work",
+        "use": [
+          "imagery"
+        ]
+      },
+      {
+        "id": "arcana-structural",
+        "author": null,
+        "title": "Arcana Structural Conventions v2",
+        "url": null,
+        "tradition": "golden-dawn-structural",
+        "publicationYear": 2026,
+        "licenseStatus": "structural-convention",
+        "use": [
+          "position",
+          "relationship",
+          "pattern"
+        ]
+      }
+    ]
+  },
+  "cards": [
+    {
+      "schemaVersion": 2,
+      "id": "major-00-the-fool",
+      "order": 1,
+      "arcana": "major",
+      "number": 0,
+      "rank": "0",
+      "title": "The Fool",
+      "omarchyTitle": "First Boot",
+      "suit": null,
+      "element": "air",
+      "image": "assets/card-art/01-major-arcana-00-the-fool.png",
+      "coreThemes": [
+        "beginning",
+        "opportunity",
+        "risk"
+      ],
+      "imagery": [
+        {
+          "id": "major-00-the-fool.image.primary",
+          "detail": "A silhouetted figure steps across scattered rectangular panels toward a small isolated diamond in the dark field.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-00-the-fool.core",
+          "text": "The Fool holds the openness of a beginning alongside the risk of moving without complete knowledge.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-00-the-fool.omarchy",
+          "text": "First Boot favors exploratory entry while keeping a clear route back from an unstable configuration.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "opportunity",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-00-the-fool.position.single",
+          "text": "Consider where direct experience could teach more than another round of preparation.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "opportunity",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-00-the-fool.position.context",
+          "text": "An unformed opening gives the present situation both possibility and exposure.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "opportunity",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-00-the-fool.position.friction",
+          "text": "Readiness for discovery is competing with the need to notice avoidable hazards.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "opportunity",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-00-the-fool.position.doorway",
+          "text": "Choose a modest, reversible experiment that lets the unfamiliar terrain answer back.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "opportunity",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-00-the-fool.reversal.excessive",
+          "text": "Curiosity has accelerated beyond the attention needed to protect what matters.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "opportunity",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-00-the-fool.reversal.developing",
+          "text": "The impulse to begin is present, though confidence may need a smaller point of entry.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "opportunity",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-00-the-fool.reversal.traditional-reversed",
+          "text": "Poor preparation or careless movement is obscuring the promise of a fresh start.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "opportunity",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "excessive": [
+          "major-00-the-fool.reversal.excessive"
+        ],
+        "developing": [
+          "major-00-the-fool.reversal.developing"
+        ],
+        "traditional_reversed": [
+          "major-00-the-fool.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-00-the-fool.position.single"
+        ],
+        "context": [
+          "major-00-the-fool.position.context"
+        ],
+        "friction": [
+          "major-00-the-fool.position.friction"
+        ],
+        "doorway": [
+          "major-00-the-fool.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-00-the-fool.prompt.first-step",
+          "text": "What is the smallest unfamiliar step that could produce useful evidence?",
+          "themes": [
+            "beginning",
+            "opportunity"
+          ]
+        },
+        {
+          "id": "major-00-the-fool.prompt.safeguard",
+          "text": "Which safeguard would make exploration freer rather than more constrained?",
+          "themes": [
+            "risk",
+            "agency"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-00-the-fool.prompt.first-step",
+        "major-00-the-fool.prompt.safeguard"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "major-01-the-magician",
+      "order": 2,
+      "arcana": "major",
+      "number": 1,
+      "rank": "1",
+      "title": "The Magician",
+      "omarchyTitle": "The Operator",
+      "suit": null,
+      "element": "spirit",
+      "image": "assets/card-art/02-major-arcana-01-the-magician.png",
+      "coreThemes": [
+        "agency",
+        "skill",
+        "focus"
+      ],
+      "imagery": [
+        {
+          "id": "major-01-the-magician.image.primary",
+          "detail": "A central figure raises one arm to a horizontal control strip while panels display a key, a cylinder, a tool, and a disk mechanism.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-01-the-magician.core",
+          "text": "The Magician joins intention, available means, and practiced attention into effective action.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "agency",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-01-the-magician.omarchy",
+          "text": "The Operator translates a chosen aim into commands that the current environment can actually execute.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "skill",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-01-the-magician.position.single",
+          "text": "Inventory the tools already within reach and name the purpose they could serve together.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "agency",
+            "skill",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-01-the-magician.position.context",
+          "text": "Capability is available here, but its value depends on deliberate coordination.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "agency",
+            "skill",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-01-the-magician.position.friction",
+          "text": "Technical fluency may be masking a scattered aim or an attempt to force appearances.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "agency",
+            "skill",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-01-the-magician.position.doorway",
+          "text": "Define one observable result, then arrange the necessary tools around that result.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "agency",
+            "skill",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-01-the-magician.reversal.blocked",
+          "text": "The means are present, yet agency cannot find a workable channel for expression.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "agency",
+            "skill",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-01-the-magician.reversal.misdirected",
+          "text": "Considerable skill is serving a distraction rather than the stated purpose.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "agency",
+            "skill",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-01-the-magician.reversal.traditional-reversed",
+          "text": "Manipulation, sleight, or unused ability may be weakening trust in the work.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "agency",
+            "skill",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "blocked": [
+          "major-01-the-magician.reversal.blocked"
+        ],
+        "misdirected": [
+          "major-01-the-magician.reversal.misdirected"
+        ],
+        "traditional_reversed": [
+          "major-01-the-magician.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-01-the-magician.position.single"
+        ],
+        "context": [
+          "major-01-the-magician.position.context"
+        ],
+        "friction": [
+          "major-01-the-magician.position.friction"
+        ],
+        "doorway": [
+          "major-01-the-magician.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-01-the-magician.prompt.means",
+          "text": "Which existing resource has not yet been connected to a clear intention?",
+          "themes": [
+            "agency",
+            "skill"
+          ]
+        },
+        {
+          "id": "major-01-the-magician.prompt.result",
+          "text": "What concrete result would show that ability and purpose are aligned?",
+          "themes": [
+            "focus",
+            "clarity"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-01-the-magician.prompt.means",
+        "major-01-the-magician.prompt.result"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "major-02-the-high-priestess",
+      "order": 3,
+      "arcana": "major",
+      "number": 2,
+      "rank": "2",
+      "title": "The High Priestess",
+      "omarchyTitle": "Hidden Config",
+      "suit": null,
+      "element": "spirit",
+      "image": "assets/card-art/03-major-arcana-02-the-high-priestess.png",
+      "coreThemes": [
+        "intuition",
+        "attention",
+        "solitude"
+      ],
+      "imagery": [
+        {
+          "id": "major-02-the-high-priestess.image.primary",
+          "detail": "A seated figure divided into light and dark halves holds a circuit diagram between a sparse schematic field and a dense network field.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-02-the-high-priestess.core",
+          "text": "The High Priestess protects knowledge that emerges through quiet attention before it can be fully explained.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "intuition",
+            "ambiguity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-02-the-high-priestess.omarchy",
+          "text": "Hidden Config asks for inspection below the visible interface before changing the apparent state.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "ambiguity",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-02-the-high-priestess.position.single",
+          "text": "Let incomplete information remain open long enough for a subtler pattern to register.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "intuition",
+            "ambiguity",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-02-the-high-priestess.position.context",
+          "text": "An important layer of the situation is indirect, private, or not yet articulated.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "intuition",
+            "ambiguity",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-02-the-high-priestess.position.friction",
+          "text": "Pressure for immediate clarity could flatten a distinction that is still forming.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "intuition",
+            "ambiguity",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-02-the-high-priestess.position.doorway",
+          "text": "Make a quiet container for what is not ready to be spoken, and notice what deepens without forcing disclosure.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "intuition",
+            "ambiguity",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-02-the-high-priestess.reversal.unavailable",
+          "text": "The quiet needed for intuitive discernment is currently difficult to access.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "intuition",
+            "ambiguity",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-02-the-high-priestess.reversal.internalized",
+          "text": "Understanding is active beneath the surface but has not taken communicable form.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "intuition",
+            "ambiguity",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-02-the-high-priestess.reversal.traditional-reversed",
+          "text": "Noise, disconnection from inner signals, or concealed material is clouding judgment.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "intuition",
+            "ambiguity",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "unavailable": [
+          "major-02-the-high-priestess.reversal.unavailable"
+        ],
+        "internalized": [
+          "major-02-the-high-priestess.reversal.internalized"
+        ],
+        "traditional_reversed": [
+          "major-02-the-high-priestess.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-02-the-high-priestess.position.single"
+        ],
+        "context": [
+          "major-02-the-high-priestess.position.context"
+        ],
+        "friction": [
+          "major-02-the-high-priestess.position.friction"
+        ],
+        "doorway": [
+          "major-02-the-high-priestess.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-02-the-high-priestess.prompt.signal",
+          "text": "What subtle observation keeps returning without yet becoming a conclusion?",
+          "themes": [
+            "intuition",
+            "attention"
+          ]
+        },
+        {
+          "id": "major-02-the-high-priestess.prompt.layers",
+          "text": "What becomes clearer when it is held privately for one more interval?",
+          "themes": [
+            "solitude",
+            "discernment"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-02-the-high-priestess.prompt.signal",
+        "major-02-the-high-priestess.prompt.layers"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "major-03-the-empress",
+      "order": 4,
+      "arcana": "major",
+      "number": 3,
+      "rank": "3",
+      "title": "The Empress",
+      "omarchyTitle": "Generative System",
+      "suit": null,
+      "element": "spirit",
+      "image": "assets/card-art/04-major-arcana-03-the-empress.png",
+      "coreThemes": [
+        "connection",
+        "beginning",
+        "resilience"
+      ],
+      "imagery": [
+        {
+          "id": "major-03-the-empress.image.primary",
+          "detail": "A kneeling figure tends a small sprout whose branching stems connect to nine distinct interface panels overhead.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-03-the-empress.core",
+          "text": "The Empress represents sustained nurture, generative abundance, and conditions in which life can develop.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "beginning"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-03-the-empress.omarchy",
+          "text": "Generative System invests in the supporting environment from which many useful processes can grow.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "beginning",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-03-the-empress.position.single",
+          "text": "Notice what is asking for patient cultivation rather than extraction or acceleration.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "beginning",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-03-the-empress.position.context",
+          "text": "Growth depends on the quality of care, material support, and connection around it.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "beginning",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-03-the-empress.position.friction",
+          "text": "Generosity may be exceeding capacity, or a developing effort may lack steady nourishment.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "beginning",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-03-the-empress.position.doorway",
+          "text": "Strengthen the conditions that feed the work before demanding a larger yield from it.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "beginning",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-03-the-empress.reversal.reduced",
+          "text": "Resources for growth are running thin and need replenishment before further expansion.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "beginning",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-03-the-empress.reversal.excessive",
+          "text": "Care has become so encompassing that it leaves too little room for independent development.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "beginning",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-03-the-empress.reversal.traditional-reversed",
+          "text": "Creative depletion, overdependence, or neglected support is limiting what can flourish.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "beginning",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "reduced": [
+          "major-03-the-empress.reversal.reduced"
+        ],
+        "excessive": [
+          "major-03-the-empress.reversal.excessive"
+        ],
+        "traditional_reversed": [
+          "major-03-the-empress.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-03-the-empress.position.single"
+        ],
+        "context": [
+          "major-03-the-empress.position.context"
+        ],
+        "friction": [
+          "major-03-the-empress.position.friction"
+        ],
+        "doorway": [
+          "major-03-the-empress.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-03-the-empress.prompt.conditions",
+          "text": "What surrounding condition most directly helps this work take root?",
+          "themes": [
+            "beginning",
+            "resilience"
+          ]
+        },
+        {
+          "id": "major-03-the-empress.prompt.capacity",
+          "text": "Where could care become more sustainable through a clearer limit?",
+          "themes": [
+            "connection",
+            "boundary"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-03-the-empress.prompt.conditions",
+        "major-03-the-empress.prompt.capacity"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "major-04-the-emperor",
+      "order": 5,
+      "arcana": "major",
+      "number": 4,
+      "rank": "4",
+      "title": "The Emperor",
+      "omarchyTitle": "Window Rules",
+      "suit": null,
+      "element": "spirit",
+      "image": "assets/card-art/05-major-arcana-04-the-emperor.png",
+      "coreThemes": [
+        "boundary",
+        "discipline",
+        "leadership",
+        "stability"
+      ],
+      "imagery": [
+        {
+          "id": "major-04-the-emperor.image.primary",
+          "detail": "A standing figure holds a rectangular frame against a tall architectural grid of dark and light bays.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-04-the-emperor.core",
+          "text": "The Emperor gives durable form to responsibility through structure, limits, and accountable direction.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "discipline"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-04-the-emperor.omarchy",
+          "text": "Window Rules define predictable boundaries so each process can operate without overrunning the whole environment.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "leadership",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-04-the-emperor.position.single",
+          "text": "Identify the rule or responsibility that needs explicit ownership.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "boundary",
+            "discipline",
+            "leadership",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-04-the-emperor.position.context",
+          "text": "Order, governance, and a demand for reliable structure shape the matter at hand.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "boundary",
+            "discipline",
+            "leadership",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-04-the-emperor.position.friction",
+          "text": "A protective framework may be hardening into control that no longer serves its purpose.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "boundary",
+            "discipline",
+            "leadership",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-04-the-emperor.position.doorway",
+          "text": "Set one intelligible boundary, assign its steward, and state how it can be reviewed.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "boundary",
+            "discipline",
+            "leadership",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-04-the-emperor.reversal.excessive",
+          "text": "Authority is occupying more space than the stability it was meant to protect.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "discipline",
+            "leadership",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-04-the-emperor.reversal.blocked",
+          "text": "Needed leadership is constrained by unclear scope or responsibility without mandate.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "discipline",
+            "leadership",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-04-the-emperor.reversal.traditional-reversed",
+          "text": "Rigidity, domination, or refusal of responsibility is undermining sound order.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "discipline",
+            "leadership",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "excessive": [
+          "major-04-the-emperor.reversal.excessive"
+        ],
+        "blocked": [
+          "major-04-the-emperor.reversal.blocked"
+        ],
+        "traditional_reversed": [
+          "major-04-the-emperor.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-04-the-emperor.position.single"
+        ],
+        "context": [
+          "major-04-the-emperor.position.context"
+        ],
+        "friction": [
+          "major-04-the-emperor.position.friction"
+        ],
+        "doorway": [
+          "major-04-the-emperor.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-04-the-emperor.prompt.rule",
+          "text": "Which boundary would make responsibility easier to understand?",
+          "themes": [
+            "boundary",
+            "clarity"
+          ]
+        },
+        {
+          "id": "major-04-the-emperor.prompt.review",
+          "text": "How could a necessary rule remain open to evidence and revision?",
+          "themes": [
+            "discipline",
+            "stability"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-04-the-emperor.prompt.rule",
+        "major-04-the-emperor.prompt.review"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "major-05-the-hierophant",
+      "order": 6,
+      "arcana": "major",
+      "number": 5,
+      "rank": "5",
+      "title": "The Hierophant",
+      "omarchyTitle": "Established Workflow",
+      "suit": null,
+      "element": "spirit",
+      "image": "assets/card-art/06-major-arcana-05-the-hierophant.png",
+      "coreThemes": [
+        "guidance",
+        "discipline",
+        "integration"
+      ],
+      "imagery": [
+        {
+          "id": "major-05-the-hierophant.image.primary",
+          "detail": "An operator works at an upper console while a branching route divides toward two figures at separate lower workstations.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-05-the-hierophant.core",
+          "text": "The Hierophant carries tested teaching, shared practice, and participation in an inherited tradition.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "guidance",
+            "discipline"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-05-the-hierophant.omarchy",
+          "text": "Established Workflow treats convention as documented guidance to understand before customizing it.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "discipline",
+            "integration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-05-the-hierophant.position.single",
+          "text": "Ask which established practice contains knowledge worth learning firsthand.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "guidance",
+            "discipline",
+            "integration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-05-the-hierophant.position.context",
+          "text": "The situation is shaped by standards, instruction, or membership in a larger practice.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "guidance",
+            "discipline",
+            "integration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-05-the-hierophant.position.friction",
+          "text": "Compliance without understanding and novelty without grounding offer equally thin guidance.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "guidance",
+            "discipline",
+            "integration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-05-the-hierophant.position.doorway",
+          "text": "Trace the reason behind the convention, then adapt only the part that obstructs the purpose.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "guidance",
+            "discipline",
+            "integration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-05-the-hierophant.reversal.excessive",
+          "text": "Procedure is being treated as an end in itself rather than support for shared work.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "guidance",
+            "discipline",
+            "integration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-05-the-hierophant.reversal.reconsidered",
+          "text": "An inherited method is ready for careful review against present needs.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "guidance",
+            "discipline",
+            "integration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-05-the-hierophant.reversal.traditional-reversed",
+          "text": "Defiance, unconventional practice, or a break with consensus is changing the available path.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "guidance",
+            "discipline",
+            "integration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "excessive": [
+          "major-05-the-hierophant.reversal.excessive"
+        ],
+        "reconsidered": [
+          "major-05-the-hierophant.reversal.reconsidered"
+        ],
+        "traditional_reversed": [
+          "major-05-the-hierophant.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-05-the-hierophant.position.single"
+        ],
+        "context": [
+          "major-05-the-hierophant.position.context"
+        ],
+        "friction": [
+          "major-05-the-hierophant.position.friction"
+        ],
+        "doorway": [
+          "major-05-the-hierophant.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-05-the-hierophant.prompt.inheritance",
+          "text": "What useful knowledge is embedded in the practice you inherited?",
+          "themes": [
+            "guidance",
+            "discipline"
+          ]
+        },
+        {
+          "id": "major-05-the-hierophant.prompt.revision",
+          "text": "Which convention can be questioned without discarding its hard-won lesson?",
+          "themes": [
+            "integration",
+            "discernment"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-05-the-hierophant.prompt.inheritance",
+        "major-05-the-hierophant.prompt.revision"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "major-06-the-lovers",
+      "order": 7,
+      "arcana": "major",
+      "number": 6,
+      "rank": "6",
+      "title": "The Lovers",
+      "omarchyTitle": "Alignment",
+      "suit": null,
+      "element": "air",
+      "image": "assets/card-art/07-major-arcana-06-the-lovers.png",
+      "coreThemes": [
+        "connection",
+        "exchange",
+        "agency"
+      ],
+      "imagery": [
+        {
+          "id": "major-06-the-lovers.image.primary",
+          "detail": "Two facing figures hold different connector forms into opposite sides of a central stacked device beneath a shared waveform.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-06-the-lovers.core",
+          "text": "The Lovers center meaningful union and the value-based choice required to enter it honestly.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "exchange"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-06-the-lovers.omarchy",
+          "text": "Alignment begins when distinct participants declare what must remain compatible across their connection.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "exchange",
+            "agency"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-06-the-lovers.position.single",
+          "text": "Name the value that needs to guide both the bond and the choice before you.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "exchange",
+            "agency"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-06-the-lovers.position.context",
+          "text": "Mutual exchange or a consequential alignment is organizing the present question.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "exchange",
+            "agency"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-06-the-lovers.position.friction",
+          "text": "Attraction or agreement may be concealing a mismatch in values, terms, or consent.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "exchange",
+            "agency"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-06-the-lovers.position.doorway",
+          "text": "Make the terms of connection explicit and preserve room for each participant to choose.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "exchange",
+            "agency"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-06-the-lovers.reversal.blocked",
+          "text": "Connection is desired, but an unresolved incompatibility prevents genuine exchange.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "exchange",
+            "agency"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-06-the-lovers.reversal.misdirected",
+          "text": "The effort to preserve harmony is drawing attention away from a necessary choice.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "exchange",
+            "agency"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-06-the-lovers.reversal.traditional-reversed",
+          "text": "Disharmony, divided values, or an imbalanced agreement is weakening the union.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "exchange",
+            "agency"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "blocked": [
+          "major-06-the-lovers.reversal.blocked"
+        ],
+        "misdirected": [
+          "major-06-the-lovers.reversal.misdirected"
+        ],
+        "traditional_reversed": [
+          "major-06-the-lovers.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-06-the-lovers.position.single"
+        ],
+        "context": [
+          "major-06-the-lovers.position.context"
+        ],
+        "friction": [
+          "major-06-the-lovers.position.friction"
+        ],
+        "doorway": [
+          "major-06-the-lovers.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-06-the-lovers.prompt.value",
+          "text": "Which value should remain intact regardless of the choice made?",
+          "themes": [
+            "agency",
+            "clarity"
+          ]
+        },
+        {
+          "id": "major-06-the-lovers.prompt.terms",
+          "text": "What agreement needs to be spoken plainly for connection to stay mutual?",
+          "themes": [
+            "connection",
+            "exchange"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-06-the-lovers.prompt.value",
+        "major-06-the-lovers.prompt.terms"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "major-07-the-chariot",
+      "order": 8,
+      "arcana": "major",
+      "number": 7,
+      "rank": "7",
+      "title": "The Chariot",
+      "omarchyTitle": "Keyboard Momentum",
+      "suit": null,
+      "element": "water",
+      "image": "assets/card-art/08-major-arcana-07-the-chariot.png",
+      "coreThemes": [
+        "agency",
+        "momentum",
+        "discipline"
+      ],
+      "imagery": [
+        {
+          "id": "major-07-the-chariot.image.primary",
+          "detail": "A leaning figure pushes along a long control rail as angular forms stream to the right across two parallel tracks.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-07-the-chariot.core",
+          "text": "The Chariot directs competing forces through disciplined intention toward purposeful movement.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "agency",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-07-the-chariot.omarchy",
+          "text": "Keyboard Momentum coordinates active processes before speed multiplies their differences.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "momentum",
+            "discipline"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-07-the-chariot.position.single",
+          "text": "Choose the direction that deserves concentrated effort rather than motion for its own sake.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "agency",
+            "momentum",
+            "discipline"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-07-the-chariot.position.context",
+          "text": "Strong drive and available momentum are pressing the situation forward.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "agency",
+            "momentum",
+            "discipline"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-07-the-chariot.position.friction",
+          "text": "Acceleration is exposing forces that have not yet been brought under common direction.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "agency",
+            "momentum",
+            "discipline"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-07-the-chariot.position.doorway",
+          "text": "Align the competing inputs, define the route, and increase speed only after control improves.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "agency",
+            "momentum",
+            "discipline"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-07-the-chariot.reversal.misdirected",
+          "text": "Energy is moving quickly toward an aim that no longer matches the chosen direction.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "agency",
+            "momentum",
+            "discipline"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-07-the-chariot.reversal.excessive",
+          "text": "Forward pressure has become aggressive enough to reduce control and responsiveness.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "agency",
+            "momentum",
+            "discipline"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-07-the-chariot.reversal.traditional-reversed",
+          "text": "Scattered direction, poor control, or forceful overreach is disrupting progress.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "agency",
+            "momentum",
+            "discipline"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "misdirected": [
+          "major-07-the-chariot.reversal.misdirected"
+        ],
+        "excessive": [
+          "major-07-the-chariot.reversal.excessive"
+        ],
+        "traditional_reversed": [
+          "major-07-the-chariot.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-07-the-chariot.position.single"
+        ],
+        "context": [
+          "major-07-the-chariot.position.context"
+        ],
+        "friction": [
+          "major-07-the-chariot.position.friction"
+        ],
+        "doorway": [
+          "major-07-the-chariot.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-07-the-chariot.prompt.direction",
+          "text": "What single direction could organize the energy already in motion?",
+          "themes": [
+            "agency",
+            "focus"
+          ]
+        },
+        {
+          "id": "major-07-the-chariot.prompt.control",
+          "text": "Which competing force needs coordination before the pace increases?",
+          "themes": [
+            "discipline",
+            "momentum"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-07-the-chariot.prompt.direction",
+        "major-07-the-chariot.prompt.control"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "major-08-strength",
+      "order": 9,
+      "arcana": "major",
+      "number": 8,
+      "rank": "8",
+      "title": "Strength",
+      "omarchyTitle": "Controlled Power",
+      "suit": null,
+      "element": "spirit",
+      "image": "assets/card-art/09-major-arcana-08-strength.png",
+      "coreThemes": [
+        "courage",
+        "resilience",
+        "discipline"
+      ],
+      "imagery": [
+        {
+          "id": "major-08-strength.image.primary",
+          "detail": "A crouched figure adjusts a concentric mechanism held between two large interlocking dark toothed arcs.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-08-strength.core",
+          "text": "Strength meets powerful instinct with patience, courage, and steady self-command rather than brute force.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "courage",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-08-strength.omarchy",
+          "text": "Controlled Power regulates an intense process without destroying the capacity that makes it useful.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "resilience",
+            "discipline"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-08-strength.position.single",
+          "text": "Bring calm, sustained attention to the force that seems hardest to handle.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "courage",
+            "resilience",
+            "discipline"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-08-strength.position.context",
+          "text": "The matter calls for endurance and measured influence rather than domination.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "courage",
+            "resilience",
+            "discipline"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-08-strength.position.friction",
+          "text": "Self-restraint may be confused with suppression, or confidence may be running low.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "courage",
+            "resilience",
+            "discipline"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-08-strength.position.doorway",
+          "text": "Use the least forceful intervention that still creates a stable response.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "courage",
+            "resilience",
+            "discipline"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-08-strength.reversal.reduced",
+          "text": "Available courage feels smaller than the challenge, though it has not disappeared.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "courage",
+            "resilience",
+            "discipline"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-08-strength.reversal.internalized",
+          "text": "Considerable effort is going into containing intensity before it becomes visible.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "courage",
+            "resilience",
+            "discipline"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-08-strength.reversal.traditional-reversed",
+          "text": "Self-doubt, faltering resolve, or poorly governed force is diminishing steadiness.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "courage",
+            "resilience",
+            "discipline"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "reduced": [
+          "major-08-strength.reversal.reduced"
+        ],
+        "internalized": [
+          "major-08-strength.reversal.internalized"
+        ],
+        "traditional_reversed": [
+          "major-08-strength.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-08-strength.position.single"
+        ],
+        "context": [
+          "major-08-strength.position.context"
+        ],
+        "friction": [
+          "major-08-strength.position.friction"
+        ],
+        "doorway": [
+          "major-08-strength.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-08-strength.prompt.gentleness",
+          "text": "Where could a gentler form of influence prove more effective than pressure?",
+          "themes": [
+            "courage",
+            "discipline"
+          ]
+        },
+        {
+          "id": "major-08-strength.prompt.reserve",
+          "text": "What evidence of resilience remains available, even at reduced capacity?",
+          "themes": [
+            "resilience",
+            "attention"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-08-strength.prompt.gentleness",
+        "major-08-strength.prompt.reserve"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "major-09-the-hermit",
+      "order": 10,
+      "arcana": "major",
+      "number": 9,
+      "rank": "9",
+      "title": "The Hermit",
+      "omarchyTitle": "Focus Mode",
+      "suit": null,
+      "element": "earth",
+      "image": "assets/card-art/10-major-arcana-09-the-hermit.png",
+      "coreThemes": [
+        "solitude",
+        "discernment",
+        "focus"
+      ],
+      "imagery": [
+        {
+          "id": "major-09-the-hermit.image.primary",
+          "detail": "A seated figure faces one illuminated application window within a broad, nearly empty dark field.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-09-the-hermit.core",
+          "text": "The Hermit withdraws from noise so reflection and inner guidance can become more precise.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "solitude",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-09-the-hermit.omarchy",
+          "text": "Focus Mode reduces the active environment until the essential signal stands apart from distraction.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "discernment",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-09-the-hermit.position.single",
+          "text": "Protect enough distance to hear what sustained inquiry is revealing.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "solitude",
+            "discernment",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-09-the-hermit.position.context",
+          "text": "Solitude, review, or a deliberate reduction of demands is shaping this phase.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "solitude",
+            "discernment",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-09-the-hermit.position.friction",
+          "text": "Useful retreat could be slipping into isolation, or interruption may be preventing depth.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "solitude",
+            "discernment",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-09-the-hermit.position.doorway",
+          "text": "Create a bounded interval for concentrated inquiry and return with one tested insight.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "solitude",
+            "discernment",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-09-the-hermit.reversal.excessive",
+          "text": "Solitude has extended beyond reflection into disconnection from useful exchange.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "solitude",
+            "discernment",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-09-the-hermit.reversal.private",
+          "text": "The inquiry is productive but not yet ready to be shared beyond its protected setting.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "solitude",
+            "discernment",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-09-the-hermit.reversal.traditional-reversed",
+          "text": "Isolation, loneliness, or loss of inner direction is obscuring the purpose of retreat.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "solitude",
+            "discernment",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "excessive": [
+          "major-09-the-hermit.reversal.excessive"
+        ],
+        "private": [
+          "major-09-the-hermit.reversal.private"
+        ],
+        "traditional_reversed": [
+          "major-09-the-hermit.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-09-the-hermit.position.single"
+        ],
+        "context": [
+          "major-09-the-hermit.position.context"
+        ],
+        "friction": [
+          "major-09-the-hermit.position.friction"
+        ],
+        "doorway": [
+          "major-09-the-hermit.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-09-the-hermit.prompt.quiet",
+          "text": "What becomes easier to distinguish when competing demands are reduced?",
+          "themes": [
+            "solitude",
+            "discernment"
+          ]
+        },
+        {
+          "id": "major-09-the-hermit.prompt.return",
+          "text": "What insight could be tested when you re-enter the wider conversation?",
+          "themes": [
+            "focus",
+            "connection"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-09-the-hermit.prompt.quiet",
+        "major-09-the-hermit.prompt.return"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "major-10-wheel-of-fortune",
+      "order": 11,
+      "arcana": "major",
+      "number": 10,
+      "rank": "10",
+      "title": "Wheel Of Fortune",
+      "omarchyTitle": "Update Cycle",
+      "suit": null,
+      "element": "spirit",
+      "image": "assets/card-art/11-major-arcana-10-wheel-of-fortune.png",
+      "coreThemes": [
+        "change",
+        "opportunity",
+        "resilience"
+      ],
+      "imagery": [
+        {
+          "id": "major-10-wheel-of-fortune.image.primary",
+          "detail": "Three figures occupy different points of a large circular interface whose concentric rings are marked by arrows and shifting segments.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-10-wheel-of-fortune.core",
+          "text": "The Wheel of Fortune marks changing conditions, recurring cycles, and turns that exceed individual control.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-10-wheel-of-fortune.omarchy",
+          "text": "Update Cycle preserves recoverable state while versions and dependencies move through change.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "opportunity",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-10-wheel-of-fortune.position.single",
+          "text": "Distinguish what is turning on its own from what still permits a useful response.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "opportunity",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-10-wheel-of-fortune.position.context",
+          "text": "A larger cycle is changing the conditions under which earlier choices were made.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "opportunity",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-10-wheel-of-fortune.position.friction",
+          "text": "Attempts to freeze the current phase may reduce adaptability without stopping the turn.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "opportunity",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-10-wheel-of-fortune.position.doorway",
+          "text": "Prepare for variation by protecting essentials and using the opening the new cycle provides.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "opportunity",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-10-wheel-of-fortune.reversal.delayed",
+          "text": "A recognized turn is arriving unevenly, leaving old and new conditions in overlap.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "opportunity",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-10-wheel-of-fortune.reversal.reconsidered",
+          "text": "The familiar response to this cycle deserves review before it is repeated.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "opportunity",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-10-wheel-of-fortune.reversal.traditional-reversed",
+          "text": "Resistance to change, disrupted rhythm, or a difficult turn is testing adaptability.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "opportunity",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "delayed": [
+          "major-10-wheel-of-fortune.reversal.delayed"
+        ],
+        "reconsidered": [
+          "major-10-wheel-of-fortune.reversal.reconsidered"
+        ],
+        "traditional_reversed": [
+          "major-10-wheel-of-fortune.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-10-wheel-of-fortune.position.single"
+        ],
+        "context": [
+          "major-10-wheel-of-fortune.position.context"
+        ],
+        "friction": [
+          "major-10-wheel-of-fortune.position.friction"
+        ],
+        "doorway": [
+          "major-10-wheel-of-fortune.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-10-wheel-of-fortune.prompt.cycle",
+          "text": "Which part of the current pattern has appeared in an earlier cycle?",
+          "themes": [
+            "change",
+            "discernment"
+          ]
+        },
+        {
+          "id": "major-10-wheel-of-fortune.prompt.adapt",
+          "text": "What can be made more resilient without trying to control every variable?",
+          "themes": [
+            "resilience",
+            "agency"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-10-wheel-of-fortune.prompt.cycle",
+        "major-10-wheel-of-fortune.prompt.adapt"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "major-11-justice",
+      "order": 12,
+      "arcana": "major",
+      "number": 11,
+      "rank": "11",
+      "title": "Justice",
+      "omarchyTitle": "Permissions",
+      "suit": null,
+      "element": "air",
+      "image": "assets/card-art/12-major-arcana-11-justice.png",
+      "coreThemes": [
+        "truth",
+        "clarity",
+        "exchange",
+        "boundary"
+      ],
+      "imagery": [
+        {
+          "id": "major-11-justice.image.primary",
+          "detail": "A central figure holds a small square in one hand and a stack of panels in the other between two balanced workstations.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-11-justice.core",
+          "text": "Justice weighs evidence, consequence, and responsibility in search of a fair proportion.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "truth",
+            "clarity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-11-justice.omarchy",
+          "text": "Permissions pairs every grant of access with visible scope, accountability, and consequence.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "exchange",
+            "boundary"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-11-justice.position.single",
+          "text": "Examine the evidence and the standard being used to weigh it.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "truth",
+            "clarity",
+            "exchange",
+            "boundary"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-11-justice.position.context",
+          "text": "Questions of fairness, accountability, or proportion define the current frame.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "truth",
+            "clarity",
+            "exchange",
+            "boundary"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-11-justice.position.friction",
+          "text": "A preferred conclusion may be receiving more weight than the record supports.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "truth",
+            "clarity",
+            "exchange",
+            "boundary"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-11-justice.position.doorway",
+          "text": "Clarify the rule, include the relevant evidence, and accept responsibility for the resulting choice.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "truth",
+            "clarity",
+            "exchange",
+            "boundary"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-11-justice.reversal.distorted",
+          "text": "The standard is being applied unevenly or bent around a favored result.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "truth",
+            "clarity",
+            "exchange",
+            "boundary"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-11-justice.reversal.reconsidered",
+          "text": "A judgment needs review because important evidence or consequence was omitted.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "truth",
+            "clarity",
+            "exchange",
+            "boundary"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-11-justice.reversal.traditional-reversed",
+          "text": "Unfairness, evasion of accountability, or dishonesty is disturbing the balance.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "truth",
+            "clarity",
+            "exchange",
+            "boundary"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "distorted": [
+          "major-11-justice.reversal.distorted"
+        ],
+        "reconsidered": [
+          "major-11-justice.reversal.reconsidered"
+        ],
+        "traditional_reversed": [
+          "major-11-justice.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-11-justice.position.single"
+        ],
+        "context": [
+          "major-11-justice.position.context"
+        ],
+        "friction": [
+          "major-11-justice.position.friction"
+        ],
+        "doorway": [
+          "major-11-justice.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-11-justice.prompt.standard",
+          "text": "What standard are you applying, and does it hold across the whole situation?",
+          "themes": [
+            "truth",
+            "clarity"
+          ]
+        },
+        {
+          "id": "major-11-justice.prompt.account",
+          "text": "Which consequence or responsibility needs fuller weight in your assessment?",
+          "themes": [
+            "exchange",
+            "boundary"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-11-justice.prompt.standard",
+        "major-11-justice.prompt.account"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "major-12-the-hanged-man",
+      "order": 13,
+      "arcana": "major",
+      "number": 12,
+      "rank": "12",
+      "title": "The Hanged Man",
+      "omarchyTitle": "Suspended Process",
+      "suit": null,
+      "element": "spirit",
+      "image": "assets/card-art/13-major-arcana-12-the-hanged-man.png",
+      "coreThemes": [
+        "perspective",
+        "release",
+        "rest"
+      ],
+      "imagery": [
+        {
+          "id": "major-12-the-hanged-man.image.primary",
+          "detail": "An inverted figure hangs inside an upper window while several smaller figures continue ordinary tasks across the lower floor.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-12-the-hanged-man.core",
+          "text": "Willing suspension, surrender, and a pause in ordinary action can reveal another perspective.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "perspective",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-12-the-hanged-man.omarchy",
+          "text": "Suspended Process stops routine execution long enough to reveal what constant activity overlooks.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "release",
+            "rest"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-12-the-hanged-man.position.single",
+          "text": "Allow the question to be viewed from the position that usual momentum excludes.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "perspective",
+            "release",
+            "rest"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-12-the-hanged-man.position.context",
+          "text": "Progress is suspended while a change of perspective or voluntary release develops.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "perspective",
+            "release",
+            "rest"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-12-the-hanged-man.position.friction",
+          "text": "The pause may be resisted as wasted time, or sacrifice may continue without insight.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "perspective",
+            "release",
+            "rest"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-12-the-hanged-man.position.doorway",
+          "text": "Stop one habitual action and observe what becomes visible from the altered vantage.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "perspective",
+            "release",
+            "rest"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-12-the-hanged-man.reversal.delayed",
+          "text": "Suspension continues without yet yielding the perspective needed to move differently.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "perspective",
+            "release",
+            "rest"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-12-the-hanged-man.reversal.excessive",
+          "text": "Waiting or self-denial has outlived the insight it was meant to create.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "perspective",
+            "release",
+            "rest"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-12-the-hanged-man.reversal.traditional-reversed",
+          "text": "Stalling, needless sacrifice, or refusal to yield is emptying the pause of meaning.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "perspective",
+            "release",
+            "rest"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "delayed": [
+          "major-12-the-hanged-man.reversal.delayed"
+        ],
+        "excessive": [
+          "major-12-the-hanged-man.reversal.excessive"
+        ],
+        "traditional_reversed": [
+          "major-12-the-hanged-man.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-12-the-hanged-man.position.single"
+        ],
+        "context": [
+          "major-12-the-hanged-man.position.context"
+        ],
+        "friction": [
+          "major-12-the-hanged-man.position.friction"
+        ],
+        "doorway": [
+          "major-12-the-hanged-man.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-12-the-hanged-man.prompt.vantage",
+          "text": "What assumption changes when the situation is viewed from its least familiar angle?",
+          "themes": [
+            "perspective",
+            "ambiguity"
+          ]
+        },
+        {
+          "id": "major-12-the-hanged-man.prompt.pause",
+          "text": "Which habitual action could pause long enough to expose a hidden tradeoff?",
+          "themes": [
+            "rest",
+            "release"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-12-the-hanged-man.prompt.vantage",
+        "major-12-the-hanged-man.prompt.pause"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "major-13-death",
+      "order": 14,
+      "arcana": "major",
+      "number": 13,
+      "rank": "13",
+      "title": "Death",
+      "omarchyTitle": "Terminate / Restart",
+      "suit": null,
+      "element": "water",
+      "image": "assets/card-art/14-major-arcana-13-death.png",
+      "coreThemes": [
+        "change",
+        "release",
+        "beginning"
+      ],
+      "imagery": [
+        {
+          "id": "major-13-death.image.primary",
+          "detail": "A figure crosses a slanted line carrying a cable toward a separated intact platform while rectangular panels fracture below.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-13-death.core",
+          "text": "Death closes an exhausted form so transformation and a new cycle can begin.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-13-death.omarchy",
+          "text": "Terminate / Restart ends the process that cannot remain coherent before initializing another session.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "release",
+            "beginning"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-13-death.position.single",
+          "text": "Identify what has completed its function and no longer needs preservation.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "release",
+            "beginning"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-13-death.position.context",
+          "text": "An ending or irreversible transition is reorganizing the available landscape.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "release",
+            "beginning"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-13-death.position.friction",
+          "text": "Attachment to the previous form is delaying the release required by the change.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "release",
+            "beginning"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-13-death.position.doorway",
+          "text": "Close the finished cycle deliberately, retain its useful learning, and clear space for what follows.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "release",
+            "beginning"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-13-death.reversal.blocked",
+          "text": "A necessary ending is recognized but cannot yet pass through its final closure.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "release",
+            "beginning"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-13-death.reversal.released",
+          "text": "The grip on an expired form is loosening, making transition more workable.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "release",
+            "beginning"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-13-death.reversal.traditional-reversed",
+          "text": "Clinging, stagnation, or fear of change is prolonging what has already run its course.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "release",
+            "beginning"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "blocked": [
+          "major-13-death.reversal.blocked"
+        ],
+        "released": [
+          "major-13-death.reversal.released"
+        ],
+        "traditional_reversed": [
+          "major-13-death.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-13-death.position.single"
+        ],
+        "context": [
+          "major-13-death.position.context"
+        ],
+        "friction": [
+          "major-13-death.position.friction"
+        ],
+        "doorway": [
+          "major-13-death.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-13-death.prompt.ending",
+          "text": "What has fulfilled its purpose even if its ending remains uncomfortable?",
+          "themes": [
+            "change",
+            "release"
+          ]
+        },
+        {
+          "id": "major-13-death.prompt.carry",
+          "text": "Which lesson belongs in the next cycle, and which structure does not?",
+          "themes": [
+            "beginning",
+            "discernment"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-13-death.prompt.ending",
+        "major-13-death.prompt.carry"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "major-14-temperance",
+      "order": 15,
+      "arcana": "major",
+      "number": 14,
+      "rank": "14",
+      "title": "Temperance",
+      "omarchyTitle": "Integration",
+      "suit": null,
+      "element": "fire",
+      "image": "assets/card-art/15-major-arcana-14-temperance.png",
+      "coreThemes": [
+        "integration",
+        "exchange",
+        "stability"
+      ],
+      "imagery": [
+        {
+          "id": "major-14-temperance.image.primary",
+          "detail": "A standing figure adjusts three controls at the junction where pipes from two elevated reservoirs merge into one circuit.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-14-temperance.core",
+          "text": "Temperance creates balance through patient mixture, moderation, and adjustment between differing elements.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "integration",
+            "exchange"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-14-temperance.omarchy",
+          "text": "Integration joins separate sources at an interface where each can retain its necessary character.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "exchange",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-14-temperance.position.single",
+          "text": "Look for the proportion that lets distinct needs cooperate without erasing either one.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "integration",
+            "exchange",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-14-temperance.position.context",
+          "text": "The situation is being stabilized through combination, calibration, and reciprocal adjustment.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "integration",
+            "exchange",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-14-temperance.position.friction",
+          "text": "One input may dominate the mixture, or repeated correction may lack a guiding measure.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "integration",
+            "exchange",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-14-temperance.position.doorway",
+          "text": "Change one ratio at a time and observe whether the whole system becomes more coherent.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "integration",
+            "exchange",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-14-temperance.reversal.excessive",
+          "text": "Continuous adjustment has become overcorrection, preventing a stable blend from settling.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "integration",
+            "exchange",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-14-temperance.reversal.blocked",
+          "text": "The elements remain available but cannot yet meet through a compatible interface.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "integration",
+            "exchange",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-14-temperance.reversal.traditional-reversed",
+          "text": "Extremes, imbalance, or poor combination is disrupting the middle path.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "integration",
+            "exchange",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "excessive": [
+          "major-14-temperance.reversal.excessive"
+        ],
+        "blocked": [
+          "major-14-temperance.reversal.blocked"
+        ],
+        "traditional_reversed": [
+          "major-14-temperance.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-14-temperance.position.single"
+        ],
+        "context": [
+          "major-14-temperance.position.context"
+        ],
+        "friction": [
+          "major-14-temperance.position.friction"
+        ],
+        "doorway": [
+          "major-14-temperance.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-14-temperance.prompt.ratio",
+          "text": "Which two needs require a better proportion rather than a winner?",
+          "themes": [
+            "integration",
+            "exchange"
+          ]
+        },
+        {
+          "id": "major-14-temperance.prompt.calibrate",
+          "text": "What small adjustment could reveal whether balance is improving?",
+          "themes": [
+            "stability",
+            "attention"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-14-temperance.prompt.ratio",
+        "major-14-temperance.prompt.calibrate"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "major-15-the-devil",
+      "order": 16,
+      "arcana": "major",
+      "number": 15,
+      "rank": "15",
+      "title": "The Devil",
+      "omarchyTitle": "Dependency Loop",
+      "suit": null,
+      "element": "earth",
+      "image": "assets/card-art/16-major-arcana-15-the-devil.png",
+      "coreThemes": [
+        "boundary",
+        "agency",
+        "ambiguity"
+      ],
+      "imagery": [
+        {
+          "id": "major-15-the-devil.image.primary",
+          "detail": "Two seated figures face separate desks while cables loop from their wrists into a large tangled network of suspended panels.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-15-the-devil.core",
+          "text": "The Devil exposes binding attachments, compulsive bargains, and the agency hidden inside a seemingly fixed constraint.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "agency"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-15-the-devil.omarchy",
+          "text": "Dependency Loop traces each binding so chosen dependencies can be separated from those maintained by default.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "agency",
+            "ambiguity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-15-the-devil.position.single",
+          "text": "Inspect the bargain that keeps this pattern attractive as well as restrictive.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "boundary",
+            "agency",
+            "ambiguity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-15-the-devil.position.context",
+          "text": "A dependency, appetite, or repeated bargain is narrowing the sense of available action.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "boundary",
+            "agency",
+            "ambiguity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-15-the-devil.position.friction",
+          "text": "Immediate reward may be obscuring the cost of remaining connected to the loop.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "boundary",
+            "agency",
+            "ambiguity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-15-the-devil.position.doorway",
+          "text": "Name the binding precisely and test one point where choice can be restored.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "boundary",
+            "agency",
+            "ambiguity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-15-the-devil.reversal.blocked",
+          "text": "Agency is constrained by a dependency whose terms are still difficult to interrupt.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "agency",
+            "ambiguity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-15-the-devil.reversal.released",
+          "text": "A binding pattern is loosening as its bargain becomes more visible and less automatic.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "agency",
+            "ambiguity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-15-the-devil.reversal.traditional-reversed",
+          "text": "Recognition, detachment, or recovery of control is opening a path out of constraint.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "agency",
+            "ambiguity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "blocked": [
+          "major-15-the-devil.reversal.blocked"
+        ],
+        "released": [
+          "major-15-the-devil.reversal.released"
+        ],
+        "traditional_reversed": [
+          "major-15-the-devil.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-15-the-devil.position.single"
+        ],
+        "context": [
+          "major-15-the-devil.position.context"
+        ],
+        "friction": [
+          "major-15-the-devil.position.friction"
+        ],
+        "doorway": [
+          "major-15-the-devil.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-15-the-devil.prompt.bargain",
+          "text": "What does this pattern provide in exchange for the freedom it limits?",
+          "themes": [
+            "exchange",
+            "agency"
+          ]
+        },
+        {
+          "id": "major-15-the-devil.prompt.link",
+          "text": "Which single link in the dependency can be observed or changed directly?",
+          "themes": [
+            "boundary",
+            "clarity"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-15-the-devil.prompt.bargain",
+        "major-15-the-devil.prompt.link"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "major-16-the-tower",
+      "order": 17,
+      "arcana": "major",
+      "number": 16,
+      "rank": "16",
+      "title": "The Tower",
+      "omarchyTitle": "System Failure",
+      "suit": null,
+      "element": "spirit",
+      "image": "assets/card-art/17-major-arcana-16-the-tower.png",
+      "coreThemes": [
+        "change",
+        "truth",
+        "release"
+      ],
+      "imagery": [
+        {
+          "id": "major-16-the-tower.image.primary",
+          "detail": "A vertical column of stacked windows fractures down its center while two figures move away along opposing lower paths.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-16-the-tower.core",
+          "text": "The Tower is a disruptive collapse that exposes the weakness or false premise inside a standing structure.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-16-the-tower.omarchy",
+          "text": "System Failure treats the fault as evidence about hidden architecture rather than proof that recovery is impossible.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "truth",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-16-the-tower.position.single",
+          "text": "Name the assumption that the disruption has made impossible to maintain.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "truth",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-16-the-tower.position.context",
+          "text": "Rupture, disclosure, or structural instability has changed the terms of the situation.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "truth",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-16-the-tower.position.friction",
+          "text": "Effort spent preserving the former shape may conflict with what its failure revealed.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "truth",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-16-the-tower.position.doorway",
+          "text": "Stabilize what remains, isolate the failed premise, and rebuild only from verified ground.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "truth",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-16-the-tower.reversal.delayed",
+          "text": "The structural break has been postponed or contained while its underlying pressure remains.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "truth",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-16-the-tower.reversal.recovering",
+          "text": "The collapse is no longer immediate, though reconstruction still needs careful foundations.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "truth",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-16-the-tower.reversal.traditional-reversed",
+          "text": "Avoidance, delayed upheaval, or fear of disruption is keeping the unstable structure active.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "truth",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "delayed": [
+          "major-16-the-tower.reversal.delayed"
+        ],
+        "recovering": [
+          "major-16-the-tower.reversal.recovering"
+        ],
+        "traditional_reversed": [
+          "major-16-the-tower.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-16-the-tower.position.single"
+        ],
+        "context": [
+          "major-16-the-tower.position.context"
+        ],
+        "friction": [
+          "major-16-the-tower.position.friction"
+        ],
+        "doorway": [
+          "major-16-the-tower.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-16-the-tower.prompt.premise",
+          "text": "Which failed assumption is now visible enough to examine directly?",
+          "themes": [
+            "truth",
+            "clarity"
+          ]
+        },
+        {
+          "id": "major-16-the-tower.prompt.remains",
+          "text": "What remains sound after the disruption, and what needs release?",
+          "themes": [
+            "change",
+            "release"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-16-the-tower.prompt.premise",
+        "major-16-the-tower.prompt.remains"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "major-17-the-star",
+      "order": 18,
+      "arcana": "major",
+      "number": 17,
+      "rank": "17",
+      "title": "The Star",
+      "omarchyTitle": "Recovery State",
+      "suit": null,
+      "element": "air",
+      "image": "assets/card-art/18-major-arcana-17-the-star.png",
+      "coreThemes": [
+        "guidance",
+        "recovery",
+        "clarity"
+      ],
+      "imagery": [
+        {
+          "id": "major-17-the-star.image.primary",
+          "detail": "A figure reaches into a cabinet control panel as a chain of linked square nodes rises toward a larger network beside archive shelves.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-17-the-star.core",
+          "text": "The Star offers renewed hope, clear orientation, and gentle replenishment after upheaval.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "guidance",
+            "recovery"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-17-the-star.omarchy",
+          "text": "Recovery State reconnects trustworthy reference points while restoring the material base step by step.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "recovery",
+            "clarity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-17-the-star.position.single",
+          "text": "Locate the modest signal that can support renewed direction without demanding certainty.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "guidance",
+            "recovery",
+            "clarity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-17-the-star.position.context",
+          "text": "The situation contains a calm opening for repair, trust, and longer-range orientation.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "guidance",
+            "recovery",
+            "clarity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-17-the-star.position.friction",
+          "text": "Discouragement may make a real source of guidance difficult to recognize or receive.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "guidance",
+            "recovery",
+            "clarity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-17-the-star.position.doorway",
+          "text": "Follow the next verifiable marker and let accumulated evidence rebuild confidence.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "guidance",
+            "recovery",
+            "clarity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-17-the-star.reversal.unavailable",
+          "text": "A trustworthy signal is hard to locate even though orientation is deeply needed.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "guidance",
+            "recovery",
+            "clarity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-17-the-star.reversal.recovering",
+          "text": "Confidence is returning gradually and benefits from commitments sized to current capacity.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "guidance",
+            "recovery",
+            "clarity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-17-the-star.reversal.traditional-reversed",
+          "text": "Discouragement, loss of faith, or disconnection from guidance is slowing renewal.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "guidance",
+            "recovery",
+            "clarity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "unavailable": [
+          "major-17-the-star.reversal.unavailable"
+        ],
+        "recovering": [
+          "major-17-the-star.reversal.recovering"
+        ],
+        "traditional_reversed": [
+          "major-17-the-star.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-17-the-star.position.single"
+        ],
+        "context": [
+          "major-17-the-star.position.context"
+        ],
+        "friction": [
+          "major-17-the-star.position.friction"
+        ],
+        "doorway": [
+          "major-17-the-star.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-17-the-star.prompt.marker",
+          "text": "What small sign of recovery is reliable enough to follow?",
+          "themes": [
+            "guidance",
+            "recovery"
+          ]
+        },
+        {
+          "id": "major-17-the-star.prompt.restore",
+          "text": "Which foundation needs replenishment before confidence can expand?",
+          "themes": [
+            "clarity",
+            "stability"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-17-the-star.prompt.marker",
+        "major-17-the-star.prompt.restore"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "major-18-the-moon",
+      "order": 19,
+      "arcana": "major",
+      "number": 18,
+      "rank": "18",
+      "title": "The Moon",
+      "omarchyTitle": "Hidden Processes",
+      "suit": null,
+      "element": "water",
+      "image": "assets/card-art/19-major-arcana-18-the-moon.png",
+      "coreThemes": [
+        "ambiguity",
+        "intuition",
+        "discernment"
+      ],
+      "imagery": [
+        {
+          "id": "major-18-the-moon.image.primary",
+          "detail": "A seated figure studies layered translucent windows filled with dotted arrow paths that diverge and cross over a pale planning surface.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-18-the-moon.core",
+          "text": "The Moon moves through ambiguity, imagination, and instinct where perception is meaningful but not fully reliable.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "ambiguity",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-18-the-moon.omarchy",
+          "text": "Hidden Processes traces background activity while refusing to treat the first explanation as final.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "intuition",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-18-the-moon.position.single",
+          "text": "Hold several interpretations lightly until observation separates signal from projection.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "ambiguity",
+            "intuition",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-18-the-moon.position.context",
+          "text": "Unclear paths, partial visibility, and intuitive impressions surround the current issue.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "ambiguity",
+            "intuition",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-18-the-moon.position.friction",
+          "text": "Anxiety or compelling imagery may be filling gaps that the available evidence cannot settle.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "ambiguity",
+            "intuition",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-18-the-moon.position.doorway",
+          "text": "Map what is known, mark what is inferred, and investigate the most consequential uncertainty.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "ambiguity",
+            "intuition",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-18-the-moon.reversal.distorted",
+          "text": "Imagination is reshaping incomplete evidence into a pattern more definite than the record allows.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "ambiguity",
+            "intuition",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-18-the-moon.reversal.internalized",
+          "text": "Uncertainty is being processed privately, making its influence stronger than its outward signs.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "ambiguity",
+            "intuition",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-18-the-moon.reversal.traditional-reversed",
+          "text": "Confusion, fear, or misinterpretation is complicating the search for a clear path.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "ambiguity",
+            "intuition",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "distorted": [
+          "major-18-the-moon.reversal.distorted"
+        ],
+        "internalized": [
+          "major-18-the-moon.reversal.internalized"
+        ],
+        "traditional_reversed": [
+          "major-18-the-moon.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-18-the-moon.position.single"
+        ],
+        "context": [
+          "major-18-the-moon.position.context"
+        ],
+        "friction": [
+          "major-18-the-moon.position.friction"
+        ],
+        "doorway": [
+          "major-18-the-moon.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-18-the-moon.prompt.known",
+          "text": "Which parts of the current story are observed facts rather than inferred links?",
+          "themes": [
+            "ambiguity",
+            "truth"
+          ]
+        },
+        {
+          "id": "major-18-the-moon.prompt.uncertainty",
+          "text": "What uncertainty matters most, and how could it be investigated safely?",
+          "themes": [
+            "discernment",
+            "attention"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-18-the-moon.prompt.known",
+        "major-18-the-moon.prompt.uncertainty"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "major-19-the-sun",
+      "order": 20,
+      "arcana": "major",
+      "number": 19,
+      "rank": "19",
+      "title": "The Sun",
+      "omarchyTitle": "Coherent System",
+      "suit": null,
+      "element": "fire",
+      "image": "assets/card-art/20-major-arcana-19-the-sun.png",
+      "coreThemes": [
+        "clarity",
+        "connection",
+        "resilience"
+      ],
+      "imagery": [
+        {
+          "id": "major-19-the-sun.image.primary",
+          "detail": "A central figure runs with a small animal beneath a broad luminous disc while two other figures lift large window panels into place.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-19-the-sun.core",
+          "text": "The Sun brings vitality, candor, shared joy, and the ease that comes when essential things are visible.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "clarity",
+            "connection"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-19-the-sun.omarchy",
+          "text": "Coherent System makes purpose and tools legible enough for effort to move freely through the environment.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "connection",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-19-the-sun.position.single",
+          "text": "Recognize what is working plainly and allow its value to be shared.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "clarity",
+            "connection",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-19-the-sun.position.context",
+          "text": "Visibility, confidence, and open participation give this situation usable energy.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "clarity",
+            "connection",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-19-the-sun.position.friction",
+          "text": "A demand for constant brightness may leave ordinary limits or unresolved details unseen.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "clarity",
+            "connection",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-19-the-sun.position.doorway",
+          "text": "Bring the work into clear view, acknowledge the contributors, and build on demonstrated strength.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "clarity",
+            "connection",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-19-the-sun.reversal.reduced",
+          "text": "The available warmth and confidence are real but quieter than expected.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "clarity",
+            "connection",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-19-the-sun.reversal.excessive",
+          "text": "Optimism is being pressed so hard that nuance and legitimate limits lose visibility.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "clarity",
+            "connection",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-19-the-sun.reversal.traditional-reversed",
+          "text": "Dimmed confidence, delayed enjoyment, or incomplete clarity is muting an otherwise positive field.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "clarity",
+            "connection",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "reduced": [
+          "major-19-the-sun.reversal.reduced"
+        ],
+        "excessive": [
+          "major-19-the-sun.reversal.excessive"
+        ],
+        "traditional_reversed": [
+          "major-19-the-sun.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-19-the-sun.position.single"
+        ],
+        "context": [
+          "major-19-the-sun.position.context"
+        ],
+        "friction": [
+          "major-19-the-sun.position.friction"
+        ],
+        "doorway": [
+          "major-19-the-sun.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-19-the-sun.prompt.visible",
+          "text": "What success or source of vitality deserves straightforward recognition?",
+          "themes": [
+            "clarity",
+            "resilience"
+          ]
+        },
+        {
+          "id": "major-19-the-sun.prompt.share",
+          "text": "How could this clarity be shared without requiring everyone to perform enthusiasm?",
+          "themes": [
+            "connection",
+            "boundary"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-19-the-sun.prompt.visible",
+        "major-19-the-sun.prompt.share"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "major-20-judgement",
+      "order": 21,
+      "arcana": "major",
+      "number": 20,
+      "rank": "20",
+      "title": "Judgement",
+      "omarchyTitle": "System Call",
+      "suit": null,
+      "element": "spirit",
+      "image": "assets/card-art/21-major-arcana-20-judgement.png",
+      "coreThemes": [
+        "discernment",
+        "change",
+        "agency",
+        "truth"
+      ],
+      "imagery": [
+        {
+          "id": "major-20-judgement.image.primary",
+          "detail": "A central figure raises a circular network symbol while other figures work at consoles across a tiled field beneath concentric overhead arcs.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-20-judgement.core",
+          "text": "Judgement calls for honest reckoning, awakening, and a response shaped by what reflection has revealed.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "discernment",
+            "change"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-20-judgement.omarchy",
+          "text": "System Call reviews dormant processes and consciously selects which ones belong in the renewed session.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "agency",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-20-judgement.position.single",
+          "text": "Answer the call to evaluate the past without remaining trapped inside its earlier verdict.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "discernment",
+            "change",
+            "agency",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-20-judgement.position.context",
+          "text": "A reckoning or moment of renewed awareness is asking for an accountable response.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "discernment",
+            "change",
+            "agency",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-20-judgement.position.friction",
+          "text": "Harsh self-judgment or avoidance may be preventing useful learning from becoming change.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "discernment",
+            "change",
+            "agency",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-20-judgement.position.doorway",
+          "text": "Gather the lesson, revise the response, and choose what deserves reactivation now.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "discernment",
+            "change",
+            "agency",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-20-judgement.reversal.blocked",
+          "text": "The lesson has become visible, yet doubt is obstructing a meaningful response.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "discernment",
+            "change",
+            "agency",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-20-judgement.reversal.reconsidered",
+          "text": "An earlier verdict needs revision in light of deeper reflection or new evidence.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "discernment",
+            "change",
+            "agency",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-20-judgement.reversal.traditional-reversed",
+          "text": "Avoidance, severe self-criticism, or lack of reflection is delaying renewal.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "discernment",
+            "change",
+            "agency",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "blocked": [
+          "major-20-judgement.reversal.blocked"
+        ],
+        "reconsidered": [
+          "major-20-judgement.reversal.reconsidered"
+        ],
+        "traditional_reversed": [
+          "major-20-judgement.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-20-judgement.position.single"
+        ],
+        "context": [
+          "major-20-judgement.position.context"
+        ],
+        "friction": [
+          "major-20-judgement.position.friction"
+        ],
+        "doorway": [
+          "major-20-judgement.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-20-judgement.prompt.lesson",
+          "text": "What lesson can be accepted without turning it into a permanent verdict?",
+          "themes": [
+            "truth",
+            "discernment"
+          ]
+        },
+        {
+          "id": "major-20-judgement.prompt.reactivate",
+          "text": "Which former commitment deserves a conscious new response, if any?",
+          "themes": [
+            "change",
+            "agency"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-20-judgement.prompt.lesson",
+        "major-20-judgement.prompt.reactivate"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "major-21-the-world",
+      "order": 22,
+      "arcana": "major",
+      "number": 21,
+      "rank": "21",
+      "title": "The World",
+      "omarchyTitle": "Complete Environment",
+      "suit": null,
+      "element": "spirit",
+      "image": "assets/card-art/22-major-arcana-21-the-world.png",
+      "coreThemes": [
+        "integration",
+        "connection",
+        "stability"
+      ],
+      "imagery": [
+        {
+          "id": "major-21-the-world.image.primary",
+          "detail": "A central figure stands within a circular console ring divided into many distinct interface segments and linked to four outer terminals.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-21-the-world.core",
+          "text": "The World gathers completion, integration, and belonging into a whole whose parts can work together.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "integration",
+            "connection"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-21-the-world.omarchy",
+          "text": "Complete Environment aligns components, operator, and purpose within one coherent living system.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "connection",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-21-the-world.position.single",
+          "text": "Recognize the cycle that is complete and the wider whole it now makes visible.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "integration",
+            "connection",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-21-the-world.position.context",
+          "text": "Integration and closure are bringing separate strands into a stable shared form.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "integration",
+            "connection",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-21-the-world.position.friction",
+          "text": "One unfinished edge may be preventing completion from being acknowledged or embodied.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "integration",
+            "connection",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-21-the-world.position.doorway",
+          "text": "Connect the final loose part, mark the completion, and carry the integrated learning onward.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "integration",
+            "connection",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-21-the-world.reversal.delayed",
+          "text": "Completion is close, but a remaining dependency keeps the cycle from settling.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "integration",
+            "connection",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-21-the-world.reversal.developing",
+          "text": "The whole is taking shape while its parts still learn how to operate together.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "integration",
+            "connection",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-21-the-world.reversal.traditional-reversed",
+          "text": "Incompletion, lack of closure, or a missing connection is interrupting full integration.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "integration",
+            "connection",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "delayed": [
+          "major-21-the-world.reversal.delayed"
+        ],
+        "developing": [
+          "major-21-the-world.reversal.developing"
+        ],
+        "traditional_reversed": [
+          "major-21-the-world.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-21-the-world.position.single"
+        ],
+        "context": [
+          "major-21-the-world.position.context"
+        ],
+        "friction": [
+          "major-21-the-world.position.friction"
+        ],
+        "doorway": [
+          "major-21-the-world.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-21-the-world.prompt.whole",
+          "text": "What becomes possible to see now that the separate parts are connected?",
+          "themes": [
+            "integration",
+            "connection"
+          ]
+        },
+        {
+          "id": "major-21-the-world.prompt.closure",
+          "text": "Which final edge needs attention before this cycle can be set down?",
+          "themes": [
+            "stability",
+            "attention"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-21-the-world.prompt.whole",
+        "major-21-the-world.prompt.closure"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "suiteVersion": 1,
+  "outcome": "passed",
+  "candidateDigest": "7ebcbba02fdcdd4f5b755be0b937b1cc2bf65b9b4a8a647c912c9163ba695c5d",
+  "cases": 456456,
+  "complete": true,
+  "shards": 78,
+  "semanticDigest": "870bfede4b3095d45b062d5e9ebc86e90b4fbb1a4ddb3e6b55d8bb9183fdc77d",
+  "shardDigest": null,
+  "observed": {
+    "elapsedMs": 99014,
+    "peakRssMb": 565
+  },
+  "blockingBudget": {
+    "elapsedMs": 120000,
+    "peakRssMb": 1024,
+    "met": true
+  }
+}

@@ -19,7 +19,6 @@ Item {
   readonly property bool compact: width < 260
   readonly property int detailPixelSize: root.compact ? 9 : Math.max(12, Math.round(14 * root.unit))
   readonly property int systemPixelSize: root.compact ? 10 : Math.max(13, Math.round(15 * root.unit))
-  readonly property int microPixelSize: Math.max(9, Math.round(10 * root.unit))
   readonly property string artworkFilename: {
     if (root.showBack) return "card-back.png"
     if (!root.cardData || !root.cardData.image) return ""
@@ -31,7 +30,7 @@ Item {
   readonly property string displayDomainLabel: {
     var card = root.cardData
     if (!card) return ""
-    return card.arcana === "major" ? "MAJOR ARCANA" : root.domainLabel
+    return card.arcana === "major" ? "Major arcana" : root.domainLabel
   }
   readonly property string coordinateLabel: coordinateFor(root.cardData)
   readonly property string keywordLabel: keywordsFor(root.cardData)
@@ -50,8 +49,9 @@ Item {
 
   function domainFor(card) {
     if (!card) return ""
-    if (card.arcana === "major") return "MAJOR ARCANA / ARCHETYPAL SYSTEM"
-    return String(card.suit).toUpperCase() + " / " + String(card.omarchy.domain).toUpperCase()
+    if (card.arcana === "major") return "Major arcana · Archetypal system"
+    var suit = String(card.suit)
+    return suit.charAt(0).toUpperCase() + suit.slice(1) + " · " + String(card.omarchy.domain)
   }
 
   function coordinateFor(card) {
@@ -64,7 +64,7 @@ Item {
 
   function keywordsFor(card) {
     if (!card || !card.traditional || !card.traditional.uprightKeywords) return ""
-    return card.traditional.uprightKeywords.slice(0, 3).join(" / ").toUpperCase()
+    return card.traditional.uprightKeywords.slice(0, 3).join(" · ")
   }
 
   Rectangle {
@@ -215,7 +215,7 @@ Item {
       y: Math.round((root.compact ? 900 : 912) * root.unit)
       width: Math.round(538 * root.unit)
       height: Math.round((root.compact ? 56 : 43) * root.unit)
-      text: root.cardData ? String(root.cardData.title).toUpperCase() : ""
+      text: root.cardData ? String(root.cardData.title) : ""
       color: root.inkColor
       font.family: "sans-serif"
       font.bold: true
@@ -231,7 +231,7 @@ Item {
       x: Math.round(32 * root.unit)
       y: Math.round((root.compact ? 962 : 958) * root.unit)
       width: Math.round(536 * root.unit)
-      text: root.cardData ? String(root.cardData.systemTitle).toUpperCase() : ""
+      text: root.cardData ? String(root.cardData.systemTitle) : ""
       color: root.primaryColor
       font.family: "monospace"
       font.bold: true
@@ -250,18 +250,5 @@ Item {
       Rectangle { width: Math.max(2, Math.round(4 * root.unit)); height: width; radius: width / 2; color: root.inkColor }
     }
 
-    Text {
-      visible: !root.compact
-      x: Math.round(31 * root.unit)
-      y: Math.round(1010 * root.unit)
-      width: Math.round(538 * root.unit)
-      text: "SOVEREIGN DESKTOP  /  ORDER SURROUNDING MYSTERY"
-      color: root.mutedColor
-      font.family: "monospace"
-      font.pixelSize: root.microPixelSize
-      font.letterSpacing: Math.max(0.15, 0.3 * root.unit)
-      elide: Text.ElideRight
-      textFormat: Text.PlainText
-    }
   }
 }

@@ -1,0 +1,2168 @@
+{
+  "benchmarkVersion": 1,
+  "candidateDigest": "7ebcbba02fdcdd4f5b755be0b937b1cc2bf65b9b4a8a647c912c9163ba695c5d",
+  "cases": [
+    {
+      "id": "tower-and-aces-rebuild-beginning",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {
+            "positionId": "context",
+            "cardId": "major-16-the-tower",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "friction",
+            "cardId": "swords-01-ace",
+            "orientation": "upright"
+          },
+          {
+            "positionId": "doorway",
+            "cardId": "wands-01-ace",
+            "orientation": "upright"
+          }
+        ],
+        "originalQuestion": "What clear beginning can follow a broken structure?",
+        "topicLens": "creative-practice",
+        "tradition": "rws",
+        "reversalPolicy": "multi_hypothesis",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "spread",
+        "hypothesisCounts": [
+          2,
+          0,
+          0
+        ],
+        "selectedModes": [
+          [
+            "delayed",
+            "recovering"
+          ],
+          [],
+          []
+        ],
+        "interpretationCount": 2,
+        "distinguishingQuestionCount": 1,
+        "interactionCount": 2,
+        "interactionTypes": [
+          "continues",
+          "reinforces"
+        ],
+        "patternCount": 5,
+        "patternTypes": [
+          "arcana-balance",
+          "number-recurrence",
+          "rank-recurrence",
+          "theme-recurrence",
+          "theme-recurrence"
+        ],
+        "correlatedEvidenceGroupCount": 1,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 6,
+          "expanded": 6
+        },
+        "reframeReason": null,
+        "courtActivationModes": {}
+      }
+    },
+    {
+      "id": "chariot-and-eights-directed-effort",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {
+            "positionId": "context",
+            "cardId": "major-07-the-chariot",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "friction",
+            "cardId": "wands-08-eight",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "doorway",
+            "cardId": "pentacles-08-eight",
+            "orientation": "reversed"
+          }
+        ],
+        "originalQuestion": "How can momentum become focused, repeatable effort?",
+        "topicLens": "work",
+        "tradition": "rws",
+        "reversalPolicy": "energy_state",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "spread",
+        "hypothesisCounts": [
+          1,
+          1,
+          1
+        ],
+        "selectedModes": [
+          [
+            "excessive"
+          ],
+          [
+            "delayed"
+          ],
+          [
+            "excessive"
+          ]
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 3,
+        "interactionTypes": [
+          "continues",
+          "reinforces",
+          "returns"
+        ],
+        "patternCount": 7,
+        "patternTypes": [
+          "arcana-balance",
+          "number-recurrence",
+          "orientation-concentration",
+          "rank-recurrence",
+          "theme-recurrence",
+          "theme-recurrence",
+          "theme-recurrence"
+        ],
+        "correlatedEvidenceGroupCount": 2,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 5,
+          "expanded": 5
+        },
+        "reframeReason": null,
+        "courtActivationModes": {}
+      }
+    },
+    {
+      "id": "star-with-queen-and-king-guidance",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {
+            "positionId": "context",
+            "cardId": "major-17-the-star",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "friction",
+            "cardId": "swords-13-queen",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "doorway",
+            "cardId": "cups-14-king",
+            "orientation": "reversed"
+          }
+        ],
+        "originalQuestion": "What kind of steady guidance supports recovery?",
+        "topicLens": "wellbeing",
+        "tradition": "rws",
+        "reversalPolicy": "none",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "spread",
+        "hypothesisCounts": [
+          0,
+          0,
+          0
+        ],
+        "selectedModes": [
+          [],
+          [],
+          []
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 1,
+        "interactionTypes": [
+          "reinforces"
+        ],
+        "patternCount": 5,
+        "patternTypes": [
+          "arcana-balance",
+          "court-density",
+          "element-recurrence",
+          "orientation-concentration",
+          "theme-recurrence"
+        ],
+        "correlatedEvidenceGroupCount": 2,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 5,
+          "expanded": 5
+        },
+        "reframeReason": null,
+        "courtActivationModes": {
+          "swords-13-queen": [
+            "approach",
+            "person",
+            "role"
+          ],
+          "cups-14-king": [
+            "approach",
+            "person",
+            "role"
+          ]
+        }
+      }
+    },
+    {
+      "id": "moon-and-pages-learning-signal",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {
+            "positionId": "context",
+            "cardId": "major-18-the-moon",
+            "orientation": "upright"
+          },
+          {
+            "positionId": "friction",
+            "cardId": "wands-11-page",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "doorway",
+            "cardId": "cups-11-page",
+            "orientation": "upright"
+          }
+        ],
+        "originalQuestion": "What is still emerging from an ambiguous signal?",
+        "topicLens": "creative-practice",
+        "tradition": "rws",
+        "reversalPolicy": "energy_state",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "spread",
+        "hypothesisCounts": [
+          0,
+          1,
+          0
+        ],
+        "selectedModes": [
+          [],
+          [
+            "developing"
+          ],
+          []
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 2,
+        "interactionTypes": [
+          "continues",
+          "returns"
+        ],
+        "patternCount": 7,
+        "patternTypes": [
+          "arcana-balance",
+          "court-density",
+          "element-recurrence",
+          "number-recurrence",
+          "rank-recurrence",
+          "theme-recurrence",
+          "theme-recurrence"
+        ],
+        "correlatedEvidenceGroupCount": 2,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 5,
+          "expanded": 5
+        },
+        "reframeReason": null,
+        "courtActivationModes": {
+          "wands-11-page": [
+            "approach",
+            "person",
+            "role"
+          ],
+          "cups-11-page": [
+            "approach",
+            "person",
+            "role"
+          ]
+        }
+      }
+    },
+    {
+      "id": "knight-fool-and-seven-measured-risk",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {
+            "positionId": "context",
+            "cardId": "swords-12-knight",
+            "orientation": "upright"
+          },
+          {
+            "positionId": "friction",
+            "cardId": "major-00-the-fool",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "doorway",
+            "cardId": "cups-07-seven",
+            "orientation": "upright"
+          }
+        ],
+        "originalQuestion": "Which possibility deserves action, and which needs more discernment?",
+        "topicLens": "general",
+        "tradition": "rws",
+        "reversalPolicy": "traditional",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "spread",
+        "hypothesisCounts": [
+          0,
+          1,
+          0
+        ],
+        "selectedModes": [
+          [],
+          [
+            "traditional_reversed"
+          ],
+          []
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 2,
+        "interactionTypes": [
+          "continues",
+          "reinforces"
+        ],
+        "patternCount": 4,
+        "patternTypes": [
+          "arcana-balance",
+          "element-recurrence",
+          "theme-recurrence",
+          "theme-recurrence"
+        ],
+        "correlatedEvidenceGroupCount": 1,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 5,
+          "expanded": 5
+        },
+        "reframeReason": null,
+        "courtActivationModes": {
+          "swords-12-knight": [
+            "approach",
+            "person",
+            "role"
+          ]
+        }
+      }
+    },
+    {
+      "id": "death-and-queens-relational-transition",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {
+            "positionId": "context",
+            "cardId": "major-13-death",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "friction",
+            "cardId": "cups-13-queen",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "doorway",
+            "cardId": "wands-13-queen",
+            "orientation": "upright"
+          }
+        ],
+        "originalQuestion": "How can a changing relationship retain care and boundaries?",
+        "topicLens": "relationship",
+        "tradition": "rws",
+        "reversalPolicy": "energy_state",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "spread",
+        "hypothesisCounts": [
+          1,
+          1,
+          0
+        ],
+        "selectedModes": [
+          [
+            "blocked"
+          ],
+          [
+            "excessive"
+          ],
+          []
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 3,
+        "interactionTypes": [
+          "continues",
+          "reinforces",
+          "returns"
+        ],
+        "patternCount": 6,
+        "patternTypes": [
+          "arcana-balance",
+          "court-density",
+          "element-recurrence",
+          "number-recurrence",
+          "orientation-concentration",
+          "rank-recurrence"
+        ],
+        "correlatedEvidenceGroupCount": 3,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 5,
+          "expanded": 5
+        },
+        "reframeReason": null,
+        "courtActivationModes": {
+          "cups-13-queen": [
+            "approach",
+            "person",
+            "role"
+          ],
+          "wands-13-queen": [
+            "approach",
+            "person",
+            "role"
+          ]
+        }
+      }
+    },
+    {
+      "id": "emperor-and-nines-durable-boundary",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {
+            "positionId": "context",
+            "cardId": "major-04-the-emperor",
+            "orientation": "upright"
+          },
+          {
+            "positionId": "friction",
+            "cardId": "wands-09-nine",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "doorway",
+            "cardId": "cups-09-nine",
+            "orientation": "upright"
+          }
+        ],
+        "originalQuestion": "Which boundary makes endurance more sustainable?",
+        "topicLens": "work",
+        "tradition": "rws",
+        "reversalPolicy": "traditional",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "spread",
+        "hypothesisCounts": [
+          0,
+          1,
+          0
+        ],
+        "selectedModes": [
+          [],
+          [
+            "traditional_reversed"
+          ],
+          []
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 3,
+        "interactionTypes": [
+          "continues",
+          "reinforces",
+          "returns"
+        ],
+        "patternCount": 5,
+        "patternTypes": [
+          "arcana-balance",
+          "number-recurrence",
+          "rank-recurrence",
+          "theme-recurrence",
+          "theme-recurrence"
+        ],
+        "correlatedEvidenceGroupCount": 1,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 5,
+          "expanded": 5
+        },
+        "reframeReason": null,
+        "courtActivationModes": {}
+      }
+    },
+    {
+      "id": "world-and-aces-material-completion",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {
+            "positionId": "context",
+            "cardId": "major-21-the-world",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "friction",
+            "cardId": "cups-01-ace",
+            "orientation": "upright"
+          },
+          {
+            "positionId": "doorway",
+            "cardId": "pentacles-01-ace",
+            "orientation": "upright"
+          }
+        ],
+        "originalQuestion": "How can completion make room for a grounded beginning?",
+        "topicLens": "general",
+        "tradition": "rws",
+        "reversalPolicy": "multi_hypothesis",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "spread",
+        "hypothesisCounts": [
+          1,
+          0,
+          0
+        ],
+        "selectedModes": [
+          [
+            "delayed"
+          ],
+          [],
+          []
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 3,
+        "interactionTypes": [
+          "continues",
+          "reinforces",
+          "returns"
+        ],
+        "patternCount": 6,
+        "patternTypes": [
+          "arcana-balance",
+          "number-recurrence",
+          "rank-recurrence",
+          "theme-recurrence",
+          "theme-recurrence",
+          "theme-recurrence"
+        ],
+        "correlatedEvidenceGroupCount": 1,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 5,
+          "expanded": 5
+        },
+        "reframeReason": null,
+        "courtActivationModes": {}
+      }
+    },
+    {
+      "id": "sevens-and-devil-contested-agency",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {
+            "positionId": "context",
+            "cardId": "wands-07-seven",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "friction",
+            "cardId": "swords-07-seven",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "doorway",
+            "cardId": "major-15-the-devil",
+            "orientation": "reversed"
+          }
+        ],
+        "originalQuestion": "Where is agency constrained, defended, or reclaimed?",
+        "topicLens": "general",
+        "tradition": "rws",
+        "reversalPolicy": "none",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "spread",
+        "hypothesisCounts": [
+          0,
+          0,
+          0
+        ],
+        "selectedModes": [
+          [],
+          [],
+          []
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 2,
+        "interactionTypes": [
+          "reinforces",
+          "returns"
+        ],
+        "patternCount": 5,
+        "patternTypes": [
+          "arcana-balance",
+          "number-recurrence",
+          "orientation-concentration",
+          "rank-recurrence",
+          "theme-recurrence"
+        ],
+        "correlatedEvidenceGroupCount": 2,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 5,
+          "expanded": 5
+        },
+        "reframeReason": null,
+        "courtActivationModes": {}
+      }
+    },
+    {
+      "id": "strength-and-kings-disciplined-courage",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {
+            "positionId": "context",
+            "cardId": "major-08-strength",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "friction",
+            "cardId": "swords-14-king",
+            "orientation": "upright"
+          },
+          {
+            "positionId": "doorway",
+            "cardId": "wands-14-king",
+            "orientation": "upright"
+          }
+        ],
+        "originalQuestion": "How can courage guide disciplined leadership?",
+        "topicLens": "work",
+        "tradition": "rws",
+        "reversalPolicy": "multi_hypothesis",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "spread",
+        "hypothesisCounts": [
+          2,
+          0,
+          0
+        ],
+        "selectedModes": [
+          [
+            "internalized",
+            "reduced"
+          ],
+          [],
+          []
+        ],
+        "interpretationCount": 2,
+        "distinguishingQuestionCount": 1,
+        "interactionCount": 3,
+        "interactionTypes": [
+          "continues",
+          "reinforces",
+          "returns"
+        ],
+        "patternCount": 6,
+        "patternTypes": [
+          "arcana-balance",
+          "court-density",
+          "number-recurrence",
+          "rank-recurrence",
+          "theme-recurrence",
+          "theme-recurrence"
+        ],
+        "correlatedEvidenceGroupCount": 2,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 6,
+          "expanded": 6
+        },
+        "reframeReason": null,
+        "courtActivationModes": {
+          "swords-14-king": [
+            "approach",
+            "person",
+            "role"
+          ],
+          "wands-14-king": [
+            "approach",
+            "person",
+            "role"
+          ]
+        }
+      }
+    },
+    {
+      "id": "fives-and-hierophant-conflict-guidance",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {
+            "positionId": "context",
+            "cardId": "swords-05-five",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "friction",
+            "cardId": "cups-05-five",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "doorway",
+            "cardId": "major-05-the-hierophant",
+            "orientation": "reversed"
+          }
+        ],
+        "originalQuestion": "What guidance helps conflict and loss become instructive?",
+        "topicLens": "wellbeing",
+        "tradition": "rws",
+        "reversalPolicy": "energy_state",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "spread",
+        "hypothesisCounts": [
+          1,
+          1,
+          1
+        ],
+        "selectedModes": [
+          [
+            "reconsidered"
+          ],
+          [
+            "recovering"
+          ],
+          [
+            "excessive"
+          ]
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 3,
+        "interactionTypes": [
+          "continues",
+          "reinforces",
+          "returns"
+        ],
+        "patternCount": 4,
+        "patternTypes": [
+          "arcana-balance",
+          "number-recurrence",
+          "orientation-concentration",
+          "rank-recurrence"
+        ],
+        "correlatedEvidenceGroupCount": 1,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 5,
+          "expanded": 5
+        },
+        "reframeReason": null,
+        "courtActivationModes": {}
+      }
+    },
+    {
+      "id": "fours-and-hermit-restorative-solitude",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {
+            "positionId": "context",
+            "cardId": "swords-04-four",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "friction",
+            "cardId": "cups-04-four",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "doorway",
+            "cardId": "major-09-the-hermit",
+            "orientation": "upright"
+          }
+        ],
+        "originalQuestion": "How can rest and solitude restore attention?",
+        "topicLens": "wellbeing",
+        "tradition": "rws",
+        "reversalPolicy": "traditional",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "spread",
+        "hypothesisCounts": [
+          1,
+          1,
+          0
+        ],
+        "selectedModes": [
+          [
+            "traditional_reversed"
+          ],
+          [
+            "traditional_reversed"
+          ],
+          []
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 3,
+        "interactionTypes": [
+          "continues",
+          "reinforces",
+          "returns"
+        ],
+        "patternCount": 5,
+        "patternTypes": [
+          "arcana-balance",
+          "number-recurrence",
+          "orientation-concentration",
+          "rank-recurrence",
+          "theme-recurrence"
+        ],
+        "correlatedEvidenceGroupCount": 2,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 5,
+          "expanded": 5
+        },
+        "reframeReason": null,
+        "courtActivationModes": {}
+      }
+    },
+    {
+      "id": "priestess-and-twos-attentive-choice",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {
+            "positionId": "context",
+            "cardId": "major-02-the-high-priestess",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "friction",
+            "cardId": "cups-02-two",
+            "orientation": "upright"
+          },
+          {
+            "positionId": "doorway",
+            "cardId": "wands-02-two",
+            "orientation": "upright"
+          }
+        ],
+        "originalQuestion": "What quiet information should shape this choice?",
+        "topicLens": "general",
+        "tradition": "rws",
+        "reversalPolicy": "multi_hypothesis",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "spread",
+        "hypothesisCounts": [
+          2,
+          0,
+          0
+        ],
+        "selectedModes": [
+          [
+            "internalized",
+            "unavailable"
+          ],
+          [],
+          []
+        ],
+        "interpretationCount": 2,
+        "distinguishingQuestionCount": 1,
+        "interactionCount": 3,
+        "interactionTypes": [
+          "continues",
+          "reinforces",
+          "returns"
+        ],
+        "patternCount": 3,
+        "patternTypes": [
+          "arcana-balance",
+          "number-recurrence",
+          "rank-recurrence"
+        ],
+        "correlatedEvidenceGroupCount": 1,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 6,
+          "expanded": 6
+        },
+        "reframeReason": null,
+        "courtActivationModes": {}
+      }
+    },
+    {
+      "id": "six-ten-and-judgement-release-review",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {
+            "positionId": "context",
+            "cardId": "wands-06-six",
+            "orientation": "upright"
+          },
+          {
+            "positionId": "friction",
+            "cardId": "swords-10-ten",
+            "orientation": "upright"
+          },
+          {
+            "positionId": "doorway",
+            "cardId": "major-20-judgement",
+            "orientation": "reversed"
+          }
+        ],
+        "originalQuestion": "What needs review before effort can be released?",
+        "topicLens": "work",
+        "tradition": "rws",
+        "reversalPolicy": "multi_hypothesis",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "spread",
+        "hypothesisCounts": [
+          0,
+          0,
+          2
+        ],
+        "selectedModes": [
+          [],
+          [],
+          [
+            "blocked",
+            "reconsidered"
+          ]
+        ],
+        "interpretationCount": 2,
+        "distinguishingQuestionCount": 1,
+        "interactionCount": 1,
+        "interactionTypes": [
+          "continues"
+        ],
+        "patternCount": 2,
+        "patternTypes": [
+          "arcana-balance",
+          "theme-recurrence"
+        ],
+        "correlatedEvidenceGroupCount": 0,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 6,
+          "expanded": 6
+        },
+        "reframeReason": null,
+        "courtActivationModes": {}
+      }
+    },
+    {
+      "id": "lovers-and-twos-reciprocal-choice",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {
+            "positionId": "context",
+            "cardId": "major-06-the-lovers",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "friction",
+            "cardId": "pentacles-02-two",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "doorway",
+            "cardId": "swords-02-two",
+            "orientation": "reversed"
+          }
+        ],
+        "originalQuestion": "What makes this choice genuinely reciprocal?",
+        "topicLens": "relationship",
+        "tradition": "rws",
+        "reversalPolicy": "energy_state",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "spread",
+        "hypothesisCounts": [
+          1,
+          1,
+          1
+        ],
+        "selectedModes": [
+          [
+            "blocked"
+          ],
+          [
+            "excessive"
+          ],
+          [
+            "reconsidered"
+          ]
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 2,
+        "interactionTypes": [
+          "continues",
+          "returns"
+        ],
+        "patternCount": 6,
+        "patternTypes": [
+          "arcana-balance",
+          "element-recurrence",
+          "number-recurrence",
+          "orientation-concentration",
+          "rank-recurrence",
+          "theme-recurrence"
+        ],
+        "correlatedEvidenceGroupCount": 3,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 5,
+          "expanded": 5
+        },
+        "reframeReason": null,
+        "courtActivationModes": {}
+      }
+    },
+    {
+      "id": "sun-and-sixes-resilient-support",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {
+            "positionId": "context",
+            "cardId": "major-19-the-sun",
+            "orientation": "upright"
+          },
+          {
+            "positionId": "friction",
+            "cardId": "swords-06-six",
+            "orientation": "upright"
+          },
+          {
+            "positionId": "doorway",
+            "cardId": "cups-06-six",
+            "orientation": "upright"
+          }
+        ],
+        "originalQuestion": "What support helps a transition remain hopeful and durable?",
+        "topicLens": "relationship",
+        "tradition": "rws",
+        "reversalPolicy": "none",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "spread",
+        "hypothesisCounts": [
+          0,
+          0,
+          0
+        ],
+        "selectedModes": [
+          [],
+          [],
+          []
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 3,
+        "interactionTypes": [
+          "continues",
+          "reinforces",
+          "returns"
+        ],
+        "patternCount": 5,
+        "patternTypes": [
+          "arcana-balance",
+          "number-recurrence",
+          "rank-recurrence",
+          "theme-recurrence",
+          "theme-recurrence"
+        ],
+        "correlatedEvidenceGroupCount": 1,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 5,
+          "expanded": 5
+        },
+        "reframeReason": null,
+        "courtActivationModes": {}
+      }
+    },
+    {
+      "id": "magician-page-and-four-skilled-container",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {
+            "positionId": "context",
+            "cardId": "major-01-the-magician",
+            "orientation": "upright"
+          },
+          {
+            "positionId": "friction",
+            "cardId": "swords-11-page",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "doorway",
+            "cardId": "major-06-the-lovers",
+            "orientation": "reversed"
+          }
+        ],
+        "originalQuestion": "What skill and structure can contain this initiative?",
+        "topicLens": "creative-practice",
+        "tradition": "rws",
+        "reversalPolicy": "energy_state",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "spread",
+        "hypothesisCounts": [
+          0,
+          1,
+          1
+        ],
+        "selectedModes": [
+          [],
+          [
+            "developing"
+          ],
+          [
+            "blocked"
+          ]
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 2,
+        "interactionTypes": [
+          "reinforces",
+          "returns"
+        ],
+        "patternCount": 6,
+        "patternTypes": [
+          "arcana-balance",
+          "element-recurrence",
+          "major-density",
+          "orientation-concentration",
+          "theme-recurrence",
+          "theme-recurrence"
+        ],
+        "correlatedEvidenceGroupCount": 2,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 5,
+          "expanded": 5
+        },
+        "reframeReason": null,
+        "courtActivationModes": {
+          "swords-11-page": [
+            "approach",
+            "person",
+            "role"
+          ]
+        }
+      }
+    },
+    {
+      "id": "hanged-man-and-knights-changing-pace",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {
+            "positionId": "context",
+            "cardId": "major-12-the-hanged-man",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "friction",
+            "cardId": "wands-12-knight",
+            "orientation": "upright"
+          },
+          {
+            "positionId": "doorway",
+            "cardId": "cups-12-knight",
+            "orientation": "upright"
+          }
+        ],
+        "originalQuestion": "What pause could improve the direction of action?",
+        "topicLens": "work",
+        "tradition": "rws",
+        "reversalPolicy": "traditional",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "spread",
+        "hypothesisCounts": [
+          1,
+          0,
+          0
+        ],
+        "selectedModes": [
+          [
+            "traditional_reversed"
+          ],
+          [],
+          []
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 3,
+        "interactionTypes": [
+          "continues",
+          "reinforces",
+          "returns"
+        ],
+        "patternCount": 4,
+        "patternTypes": [
+          "arcana-balance",
+          "court-density",
+          "number-recurrence",
+          "rank-recurrence"
+        ],
+        "correlatedEvidenceGroupCount": 2,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 5,
+          "expanded": 5
+        },
+        "reframeReason": null,
+        "courtActivationModes": {
+          "wands-12-knight": [
+            "approach",
+            "person",
+            "role"
+          ],
+          "cups-12-knight": [
+            "approach",
+            "person",
+            "role"
+          ]
+        }
+      }
+    },
+    {
+      "id": "empress-and-threes-sustained-growth",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {
+            "positionId": "context",
+            "cardId": "major-03-the-empress",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "friction",
+            "cardId": "swords-03-three",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "doorway",
+            "cardId": "wands-03-three",
+            "orientation": "reversed"
+          }
+        ],
+        "originalQuestion": "How can growth continue without bypassing friction?",
+        "topicLens": "creative-practice",
+        "tradition": "rws",
+        "reversalPolicy": "energy_state",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "spread",
+        "hypothesisCounts": [
+          1,
+          1,
+          1
+        ],
+        "selectedModes": [
+          [
+            "excessive"
+          ],
+          [
+            "recovering"
+          ],
+          [
+            "blocked"
+          ]
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 3,
+        "interactionTypes": [
+          "continues",
+          "reinforces",
+          "returns"
+        ],
+        "patternCount": 4,
+        "patternTypes": [
+          "arcana-balance",
+          "number-recurrence",
+          "orientation-concentration",
+          "rank-recurrence"
+        ],
+        "correlatedEvidenceGroupCount": 1,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 5,
+          "expanded": 5
+        },
+        "reframeReason": null,
+        "courtActivationModes": {}
+      }
+    },
+    {
+      "id": "wheel-and-tens-changing-load",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {
+            "positionId": "context",
+            "cardId": "major-10-wheel-of-fortune",
+            "orientation": "upright"
+          },
+          {
+            "positionId": "friction",
+            "cardId": "wands-10-ten",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "doorway",
+            "cardId": "cups-10-ten",
+            "orientation": "upright"
+          }
+        ],
+        "originalQuestion": "What can change in how this load is carried?",
+        "topicLens": "work",
+        "tradition": "rws",
+        "reversalPolicy": "none",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "spread",
+        "hypothesisCounts": [
+          0,
+          0,
+          0
+        ],
+        "selectedModes": [
+          [],
+          [],
+          []
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 3,
+        "interactionTypes": [
+          "continues",
+          "reinforces",
+          "returns"
+        ],
+        "patternCount": 3,
+        "patternTypes": [
+          "arcana-balance",
+          "number-recurrence",
+          "rank-recurrence"
+        ],
+        "correlatedEvidenceGroupCount": 1,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 5,
+          "expanded": 5
+        },
+        "reframeReason": null,
+        "courtActivationModes": {}
+      }
+    },
+    {
+      "id": "justice-and-eights-clear-accountability",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {
+            "positionId": "context",
+            "cardId": "major-11-justice",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "friction",
+            "cardId": "cups-08-eight",
+            "orientation": "upright"
+          },
+          {
+            "positionId": "doorway",
+            "cardId": "swords-08-eight",
+            "orientation": "reversed"
+          }
+        ],
+        "originalQuestion": "What would make this transition more accountable and clear?",
+        "topicLens": "relationship",
+        "tradition": "rws",
+        "reversalPolicy": "traditional",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "spread",
+        "hypothesisCounts": [
+          1,
+          0,
+          1
+        ],
+        "selectedModes": [
+          [
+            "traditional_reversed"
+          ],
+          [],
+          [
+            "traditional_reversed"
+          ]
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 2,
+        "interactionTypes": [
+          "continues",
+          "returns"
+        ],
+        "patternCount": 6,
+        "patternTypes": [
+          "arcana-balance",
+          "element-recurrence",
+          "number-recurrence",
+          "orientation-concentration",
+          "rank-recurrence",
+          "theme-recurrence"
+        ],
+        "correlatedEvidenceGroupCount": 2,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 5,
+          "expanded": 5
+        },
+        "reframeReason": null,
+        "courtActivationModes": {}
+      }
+    },
+    {
+      "id": "five-temperance-four-conflict-integration",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {
+            "positionId": "context",
+            "cardId": "wands-05-five",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "friction",
+            "cardId": "major-14-temperance",
+            "orientation": "upright"
+          },
+          {
+            "positionId": "doorway",
+            "cardId": "wands-04-four",
+            "orientation": "reversed"
+          }
+        ],
+        "originalQuestion": "How can conflict be integrated into a steadier practice?",
+        "topicLens": "creative-practice",
+        "tradition": "rws",
+        "reversalPolicy": "energy_state",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "spread",
+        "hypothesisCounts": [
+          1,
+          0,
+          1
+        ],
+        "selectedModes": [
+          [
+            "excessive"
+          ],
+          [],
+          [
+            "private"
+          ]
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 2,
+        "interactionTypes": [
+          "continues",
+          "returns"
+        ],
+        "patternCount": 6,
+        "patternTypes": [
+          "arcana-balance",
+          "element-recurrence",
+          "orientation-concentration",
+          "suit-recurrence",
+          "theme-recurrence",
+          "theme-recurrence"
+        ],
+        "correlatedEvidenceGroupCount": 2,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 5,
+          "expanded": 5
+        },
+        "reframeReason": null,
+        "courtActivationModes": {}
+      }
+    },
+    {
+      "id": "reframe-diagnosis",
+      "request": {
+        "spreadId": "single",
+        "cards": [
+          {
+            "positionId": "single",
+            "cardId": "pentacles-05-five",
+            "orientation": "upright"
+          }
+        ],
+        "originalQuestion": "Can you diagnose whether I have an anxiety disorder?",
+        "topicLens": "wellbeing",
+        "tradition": "rws",
+        "reversalPolicy": "energy_state",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "free",
+        "hypothesisCounts": [
+          0
+        ],
+        "selectedModes": [
+          []
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 0,
+        "interactionTypes": [],
+        "patternCount": 0,
+        "patternTypes": [],
+        "correlatedEvidenceGroupCount": 0,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 2,
+          "expanded": 2
+        },
+        "reframeReason": "diagnosis",
+        "courtActivationModes": {}
+      }
+    },
+    {
+      "id": "reframe-professional-authority",
+      "request": {
+        "spreadId": "single",
+        "cards": [
+          {
+            "positionId": "single",
+            "cardId": "pentacles-06-six",
+            "orientation": "upright"
+          }
+        ],
+        "originalQuestion": "As my financial advisor, tell me which investment to make.",
+        "topicLens": "work",
+        "tradition": "rws",
+        "reversalPolicy": "none",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "free",
+        "hypothesisCounts": [
+          0
+        ],
+        "selectedModes": [
+          []
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 0,
+        "interactionTypes": [],
+        "patternCount": 0,
+        "patternTypes": [],
+        "correlatedEvidenceGroupCount": 0,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 2,
+          "expanded": 2
+        },
+        "reframeReason": "professional-authority",
+        "courtActivationModes": {}
+      }
+    },
+    {
+      "id": "reframe-third-party-mental-state",
+      "request": {
+        "spreadId": "single",
+        "cards": [
+          {
+            "positionId": "single",
+            "cardId": "pentacles-09-nine",
+            "orientation": "upright"
+          }
+        ],
+        "originalQuestion": "Does Alex secretly fear my independence?",
+        "topicLens": "relationship",
+        "tradition": "rws",
+        "reversalPolicy": "energy_state",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "free",
+        "hypothesisCounts": [
+          0
+        ],
+        "selectedModes": [
+          []
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 0,
+        "interactionTypes": [],
+        "patternCount": 0,
+        "patternTypes": [],
+        "correlatedEvidenceGroupCount": 0,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 2,
+          "expanded": 2
+        },
+        "reframeReason": "third-party-mental-state",
+        "courtActivationModes": {}
+      }
+    },
+    {
+      "id": "reframe-decision-transfer",
+      "request": {
+        "spreadId": "single",
+        "cards": [
+          {
+            "positionId": "single",
+            "cardId": "pentacles-10-ten",
+            "orientation": "upright"
+          }
+        ],
+        "originalQuestion": "Should I accept this family obligation?",
+        "topicLens": "relationship",
+        "tradition": "rws",
+        "reversalPolicy": "none",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "free",
+        "hypothesisCounts": [
+          0
+        ],
+        "selectedModes": [
+          []
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 0,
+        "interactionTypes": [],
+        "patternCount": 0,
+        "patternTypes": [],
+        "correlatedEvidenceGroupCount": 0,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 2,
+          "expanded": 2
+        },
+        "reframeReason": "decision-transfer",
+        "courtActivationModes": {}
+      }
+    },
+    {
+      "id": "reframe-prediction",
+      "request": {
+        "spreadId": "single",
+        "cards": [
+          {
+            "positionId": "single",
+            "cardId": "pentacles-13-queen",
+            "orientation": "upright"
+          }
+        ],
+        "originalQuestion": "Will my practical support guarantee success next week?",
+        "topicLens": "work",
+        "tradition": "rws",
+        "reversalPolicy": "energy_state",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "free",
+        "hypothesisCounts": [
+          0
+        ],
+        "selectedModes": [
+          []
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 0,
+        "interactionTypes": [],
+        "patternCount": 0,
+        "patternTypes": [],
+        "correlatedEvidenceGroupCount": 0,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 2,
+          "expanded": 2
+        },
+        "reframeReason": "prediction",
+        "courtActivationModes": {
+          "pentacles-13-queen": [
+            "approach",
+            "person",
+            "role"
+          ]
+        }
+      }
+    },
+    {
+      "id": "supported-alternative-release-or-excess",
+      "request": {
+        "spreadId": "single",
+        "cards": [
+          {
+            "positionId": "single",
+            "cardId": "pentacles-04-four",
+            "orientation": "reversed"
+          }
+        ],
+        "originalQuestion": "What changes if I loosen my hold on this resource?",
+        "topicLens": "general",
+        "tradition": "rws",
+        "reversalPolicy": "multi_hypothesis",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "free",
+        "hypothesisCounts": [
+          2
+        ],
+        "selectedModes": [
+          [
+            "excessive",
+            "released"
+          ]
+        ],
+        "interpretationCount": 2,
+        "distinguishingQuestionCount": 1,
+        "interactionCount": 0,
+        "interactionTypes": [],
+        "patternCount": 0,
+        "patternTypes": [],
+        "correlatedEvidenceGroupCount": 0,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 3,
+          "expanded": 3
+        },
+        "reframeReason": null,
+        "courtActivationModes": {}
+      }
+    },
+    {
+      "id": "multi-hypothesis-no-alternative",
+      "request": {
+        "spreadId": "single",
+        "cards": [
+          {
+            "positionId": "single",
+            "cardId": "pentacles-14-king",
+            "orientation": "reversed"
+          }
+        ],
+        "originalQuestion": "Which part of this structure needs firmer stewardship?",
+        "topicLens": "work",
+        "tradition": "rws",
+        "reversalPolicy": "multi_hypothesis",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "free",
+        "hypothesisCounts": [
+          1
+        ],
+        "selectedModes": [
+          [
+            "distorted"
+          ]
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 0,
+        "interactionTypes": [],
+        "patternCount": 0,
+        "patternTypes": [],
+        "correlatedEvidenceGroupCount": 0,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 2,
+          "expanded": 2
+        },
+        "reframeReason": null,
+        "courtActivationModes": {
+          "pentacles-14-king": [
+            "approach",
+            "person",
+            "role"
+          ]
+        }
+      }
+    },
+    {
+      "id": "traditional-reversal",
+      "request": {
+        "spreadId": "single",
+        "cards": [
+          {
+            "positionId": "single",
+            "cardId": "pentacles-12-knight",
+            "orientation": "reversed"
+          }
+        ],
+        "originalQuestion": "What routine deserves patient reconsideration?",
+        "topicLens": "work",
+        "tradition": "rws",
+        "reversalPolicy": "traditional",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "free",
+        "hypothesisCounts": [
+          1
+        ],
+        "selectedModes": [
+          [
+            "traditional_reversed"
+          ]
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 0,
+        "interactionTypes": [],
+        "patternCount": 0,
+        "patternTypes": [],
+        "correlatedEvidenceGroupCount": 0,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 2,
+          "expanded": 2
+        },
+        "reframeReason": null,
+        "courtActivationModes": {
+          "pentacles-12-knight": [
+            "approach",
+            "person",
+            "role"
+          ]
+        }
+      }
+    },
+    {
+      "id": "reversal-disabled",
+      "request": {
+        "spreadId": "single",
+        "cards": [
+          {
+            "positionId": "single",
+            "cardId": "pentacles-11-page",
+            "orientation": "reversed"
+          }
+        ],
+        "originalQuestion": "What opportunity can I study before committing?",
+        "topicLens": "general",
+        "tradition": "rws",
+        "reversalPolicy": "none",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "free",
+        "hypothesisCounts": [
+          0
+        ],
+        "selectedModes": [
+          []
+        ],
+        "interpretationCount": 1,
+        "distinguishingQuestionCount": 0,
+        "interactionCount": 0,
+        "interactionTypes": [],
+        "patternCount": 0,
+        "patternTypes": [],
+        "correlatedEvidenceGroupCount": 0,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 2,
+          "expanded": 2
+        },
+        "reframeReason": null,
+        "courtActivationModes": {
+          "pentacles-11-page": [
+            "approach",
+            "person",
+            "role"
+          ]
+        }
+      }
+    },
+    {
+      "id": "internalized-intensity-alternative",
+      "request": {
+        "spreadId": "single",
+        "cards": [
+          {
+            "positionId": "single",
+            "cardId": "swords-09-nine",
+            "orientation": "reversed"
+          }
+        ],
+        "originalQuestion": "How can I relate differently to a recurring worry?",
+        "topicLens": "wellbeing",
+        "tradition": "rws",
+        "reversalPolicy": "multi_hypothesis",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "free",
+        "hypothesisCounts": [
+          2
+        ],
+        "selectedModes": [
+          [
+            "excessive",
+            "internalized"
+          ]
+        ],
+        "interpretationCount": 2,
+        "distinguishingQuestionCount": 1,
+        "interactionCount": 0,
+        "interactionTypes": [],
+        "patternCount": 0,
+        "patternTypes": [],
+        "correlatedEvidenceGroupCount": 0,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 3,
+          "expanded": 3
+        },
+        "reframeReason": null,
+        "courtActivationModes": {}
+      }
+    },
+    {
+      "id": "delayed-transition-alternative",
+      "request": {
+        "spreadId": "single",
+        "cards": [
+          {
+            "positionId": "single",
+            "cardId": "pentacles-07-seven",
+            "orientation": "reversed"
+          }
+        ],
+        "originalQuestion": "What evidence would justify more patience or a change of course?",
+        "topicLens": "work",
+        "tradition": "rws",
+        "reversalPolicy": "multi_hypothesis",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "free",
+        "hypothesisCounts": [
+          2
+        ],
+        "selectedModes": [
+          [
+            "delayed",
+            "turning_away"
+          ]
+        ],
+        "interpretationCount": 2,
+        "distinguishingQuestionCount": 1,
+        "interactionCount": 0,
+        "interactionTypes": [],
+        "patternCount": 0,
+        "patternTypes": [],
+        "correlatedEvidenceGroupCount": 0,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 3,
+          "expanded": 3
+        },
+        "reframeReason": null,
+        "courtActivationModes": {}
+      }
+    },
+    {
+      "id": "private-intensity-alternative",
+      "request": {
+        "spreadId": "single",
+        "cards": [
+          {
+            "positionId": "single",
+            "cardId": "cups-03-three",
+            "orientation": "reversed"
+          }
+        ],
+        "originalQuestion": "What boundary would keep connection sustainable?",
+        "topicLens": "relationship",
+        "tradition": "rws",
+        "reversalPolicy": "multi_hypothesis",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "free",
+        "hypothesisCounts": [
+          2
+        ],
+        "selectedModes": [
+          [
+            "excessive",
+            "private"
+          ]
+        ],
+        "interpretationCount": 2,
+        "distinguishingQuestionCount": 1,
+        "interactionCount": 0,
+        "interactionTypes": [],
+        "patternCount": 0,
+        "patternTypes": [],
+        "correlatedEvidenceGroupCount": 0,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 3,
+          "expanded": 3
+        },
+        "reframeReason": null,
+        "courtActivationModes": {}
+      }
+    },
+    {
+      "id": "blocked-direction-alternative",
+      "request": {
+        "spreadId": "single",
+        "cards": [
+          {
+            "positionId": "single",
+            "cardId": "pentacles-03-three",
+            "orientation": "reversed"
+          }
+        ],
+        "originalQuestion": "What would make this collaboration more workable?",
+        "topicLens": "work",
+        "tradition": "rws",
+        "reversalPolicy": "multi_hypothesis",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {
+        "readingKind": "free",
+        "hypothesisCounts": [
+          2
+        ],
+        "selectedModes": [
+          [
+            "blocked",
+            "misdirected"
+          ]
+        ],
+        "interpretationCount": 2,
+        "distinguishingQuestionCount": 1,
+        "interactionCount": 0,
+        "interactionTypes": [],
+        "patternCount": 0,
+        "patternTypes": [],
+        "correlatedEvidenceGroupCount": 0,
+        "reflectionPromptCount": 2,
+        "utteranceCounts": {
+          "concise": 3,
+          "expanded": 3
+        },
+        "reframeReason": null,
+        "courtActivationModes": {}
+      }
+    }
+  ]
+}

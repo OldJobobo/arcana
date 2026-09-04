@@ -3,6 +3,7 @@
 const fs=require("node:fs");
 const path=require("node:path");
 const zlib=require("node:zlib");
+const crypto=require("node:crypto");
 const root=path.resolve(__dirname,"..");
 const failures=[];
 function fail(message){failures.push(message)}
@@ -61,8 +62,14 @@ function pngAlpha(file,expectedWidth,expectedHeight){
 }
 
 const manifest=readJson("manifest.json");
-const deck=readJson("assets/cards.json");
-const sources=readJson("assets/sources.json");
+const deck=readJson("assets/semantic-v2/cards.json");
+const spreads=readJson("assets/spreads.json");
+const registry=readJson("assets/semantic-v2/accepted-batches.json");
+const legacyDeck=readJson("assets/cards.json");
+const benchmark=readJson("tests/fixtures/semantic-v2-corpus-benchmark.json");
+const tripleReport=readJson("tests/fixtures/semantic-v2-triple-matrix.json");
+const Interpretation=require(path.join(root,"src/Interpretation.js"));
+const assembled=require(path.join(root,"tools/assemble-semantic-v2-catalog.js")).assemble(root,registry,legacyDeck,spreads);
 const files=walk(root).filter(p=>!p.includes(path.sep+".git"+path.sep));
 const rel=files.map(p=>path.relative(root,p));
 
@@ -71,14 +78,16 @@ if(manifest.id!=="org.ministryoftaste.arcana")fail("manifest id")
 if(manifest.version!=="0.1.0-alpha")fail("manifest version")
 for(const kind of ["service","panel","bar-widget"])if(!manifest.kinds.includes(kind))fail("missing kind "+kind)
 for(const ep of Object.values(manifest.entryPoints))if(!fs.existsSync(path.join(root,ep)))fail("missing entry point "+ep)
+try{Interpretation.validateCatalog(deck,spreads)}catch(error){fail("semantic-v2 catalog rejected: "+error.message)}
 if(deck.cards.length!==78)fail("deck must contain 78 cards")
 if(new Set(deck.cards.map(c=>c.id)).size!==78)fail("card ids not unique")
 if(deck.cards.some((c,i)=>c.order!==i+1))fail("canonical order not contiguous")
-const sourceIds=new Set(sources.sources.map(s=>s.id))
+if(assembled.digest!==benchmark.candidateDigest)fail("accepted catalog digest does not match benchmark")
+if(JSON.stringify(assembled.catalog)!==JSON.stringify(deck))fail("runtime catalog differs from accepted batch assembly")
 for(const c of deck.cards){
- if(!c.sources.every(x=>sourceIds.has(x)))fail("unknown source on "+c.id)
- if(!c.orientationModes.length)fail("missing reversal modes on "+c.id)
- if(!c.observed.length)fail("missing observed details on "+c.id)
+ if(Object.keys(c.reversalModes).length<2)fail("missing reversal modes on "+c.id)
+ if(!c.imagery.length)fail("missing observed imagery on "+c.id)
+ if(Object.prototype.hasOwnProperty.call(c,"orientationModes"))fail("legacy orientationModes on "+c.id)
 }
 const pngs=rel.filter(x=>x.startsWith("assets/card-art/")&&x.endsWith(".png"))
 if(pngs.length!==79)fail("expected 79 card artwork PNGs, got "+pngs.length)
@@ -133,10 +142,38 @@ for(const wanted of ["README.md","LICENSE","CHANGELOG.md","INTERPRETATION-RESEAR
 for(const file of files){const st=fs.statSync(file);if((st.mode&0o111)!==0)fail("executable file: "+path.relative(root,file))}
 const runtime=rel.filter(x=>/\.(qml|js)$/.test(x)&&!x.startsWith("tests/")&&!x.startsWith("tools/")).map(x=>fs.readFileSync(path.join(root,x),"utf8")).join("\n")
 for(const [name,re] of [["privilege escalation",/\b(?:sudo|pkexec)\b/],["system manager",/\bsystemctl\b/],["network downloader",/\b(?:curl|wget)\b/],["shell interpolation",/(?:bash|sh)\s*[-, ]+lc/]])if(re.test(runtime))fail("forbidden runtime capability: "+name)
-const Arcana=require(path.join(root,"src/Arcana.js"));
-const selection=Arcana.draw(deck.cards,{seed:"release-validator",count:3,reversals:true});
-const reading=Arcana.compose(deck.cards,selection,"context-friction-doorway");
-if(reading.cards.length!==3||reading.relationships.length<2)fail("runtime smoke reading failed")
-const report={outcome:failures.length?"failed":"passed",version:manifest.version,files:rel.length,cards:deck.cards.length,pngs:pngs.length,masks:maskPngs.length,faultMasksActive:visibleMasks.fault.length,faultMasksTransparent:79-visibleMasks.fault.length,selection:selection.map(x=>x.cardId),relationships:reading.relationships.length,failures};
+const serviceSource=fs.readFileSync(path.join(root,"ArcanaService.qml"),"utf8");
+if(/Arcana\.(?:compose|buildHandoff|draw)\(/.test(serviceSource)||/assets\/cards\.json/.test(serviceSource))fail("production service retains legacy semantic runtime use")
+if(/fallback prose|Date\.now\(\)/i.test(serviceSource))fail("production service retains fallback interpretation or entropy")
+const legalCase=benchmark.cases.find(item=>item.id==="tower-and-aces-rebuild-beginning");
+const noAlternativeCase=benchmark.cases.find(item=>item.id==="reframe-diagnosis");
+let legalReading=null,noAlternativeReading=null;
+try{
+ legalReading=Interpretation.interpret(deck,spreads,legalCase.request);
+ noAlternativeReading=Interpretation.interpret(deck,spreads,noAlternativeCase.request);
+}catch(error){fail("curated semantic release reading failed: "+error.message)}
+if(legalReading){
+ if(legalReading.methodVersion!=="arcana-composer-v2"||legalReading.schemaVersion!==2||legalReading.interactions.length!==2)fail("curated legal-relation reading invalid")
+ const spread=spreads.spreads.find(item=>item.id===legalReading.spreadId);
+ for(const relation of legalReading.interactions){const edge=spread.edges.find(item=>item.from===relation.from&&item.to===relation.to);if(!edge||!edge.allowedRelations.includes(relation.type))fail("curated reading contains illegal relation")}
+}
+if(noAlternativeReading){
+ if(noAlternativeReading.interpretations.length!==1||noAlternativeReading.distinguishingQuestions.length!==0)fail("no-alternative semantic reading invalid")
+ const panel=Interpretation.toPanelReading(deck,spreads,noAlternativeReading,null);
+ const copied=Interpretation.copyReading(deck,spreads,noAlternativeReading);
+ const packet=JSON.parse(Interpretation.buildHandoff(deck,spreads,noAlternativeReading));
+ if(panel.alternative!==null||packet.alternative!==null||copied.includes("ALTERNATIVE"))fail("no-alternative projection leaked empty alternative")
+}
+if(legalReading&&noAlternativeReading){
+ const readings=[legalReading,noAlternativeReading];
+ const repeated=[Interpretation.interpret(deck,spreads,legalCase.request),Interpretation.interpret(deck,spreads,noAlternativeCase.request)];
+ if(JSON.stringify(readings)!==JSON.stringify(repeated))fail("canonical semantic readings are not deterministic")
+ const semanticDigest=crypto.createHash("sha256").update(readings.map(JSON.stringify).join("\n")).digest("hex");
+ if(semanticDigest!=="f3471c38bd9f61f06c6a1663e5e7711f4c1b4526e3963187bd6391c2fd40616a")fail("canonical semantic release digest drift")
+}
+try{Interpretation.interpret(deck,spreads,Object.assign({},legalCase.request,{cards:legalCase.request.cards.slice(0,2)}));fail("malformed request did not fail closed")}catch(error){if(error.code!=="INVALID_SPREAD_CARDINALITY")fail("malformed request returned wrong typed failure")}
+if(tripleReport.outcome!=="passed"||!tripleReport.complete||tripleReport.cases!==78*77*76||tripleReport.candidateDigest!==benchmark.candidateDigest||!tripleReport.blockingBudget.met)fail("complete triple-matrix release report invalid")
+const selection=legalCase.request.cards;
+const report={outcome:failures.length?"failed":"passed",version:manifest.version,files:rel.length,cards:deck.cards.length,candidateDigest:assembled.digest,tripleDigest:tripleReport.semanticDigest,pngs:pngs.length,masks:maskPngs.length,faultMasksActive:visibleMasks.fault.length,faultMasksTransparent:79-visibleMasks.fault.length,selection:selection.map(x=>x.cardId),relationships:legalReading?legalReading.interactions.length:0,failures};
 console.log(JSON.stringify(report,null,2));
 if(failures.length)process.exit(1);

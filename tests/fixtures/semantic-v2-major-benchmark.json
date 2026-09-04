@@ -1,0 +1,127 @@
+{
+  "benchmarkVersion": 1,
+  "batchId": "major",
+  "batchDigest": "340e0412550aa8e22edb76ad426c8033c05b9517cd475865a6d8779821a56fbf",
+  "cases": [
+    {
+      "id": "major:upright-single-none",
+      "request": {
+        "spreadId": "single",
+        "cards": [{"positionId": "single", "cardId": "major-00-the-fool", "orientation": "upright"}],
+        "originalQuestion": null,
+        "topicLens": "general",
+        "tradition": "rws",
+        "reversalPolicy": "none",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {"hypothesisCounts": [0], "alternative": false, "reframeReason": null, "minInteractions": 0, "requiredPatternTypes": []}
+    },
+    {
+      "id": "major:reversed-traditional",
+      "request": {
+        "spreadId": "single",
+        "cards": [{"positionId": "single", "cardId": "major-18-the-moon", "orientation": "reversed"}],
+        "originalQuestion": "What uncertainty deserves attention?",
+        "topicLens": "general",
+        "tradition": "rws",
+        "reversalPolicy": "traditional",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {"hypothesisCounts": [1], "selectedModes": ["traditional_reversed"], "alternative": false, "reframeReason": null, "minInteractions": 0, "requiredPatternTypes": []}
+    },
+    {
+      "id": "major:reversed-energy-state",
+      "request": {
+        "spreadId": "single",
+        "cards": [{"positionId": "single", "cardId": "major-09-the-hermit", "orientation": "reversed"}],
+        "originalQuestion": "What is the useful boundary around reflection?",
+        "topicLens": "general",
+        "tradition": "rws",
+        "reversalPolicy": "energy_state",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {"hypothesisCounts": [1], "selectedModes": ["excessive"], "alternative": false, "reframeReason": null, "minInteractions": 0, "requiredPatternTypes": []}
+    },
+    {
+      "id": "major:material-alternative",
+      "request": {
+        "spreadId": "single",
+        "cards": [{"positionId": "single", "cardId": "major-16-the-tower", "orientation": "reversed"}],
+        "originalQuestion": "What does rebuilding require now?",
+        "topicLens": "general",
+        "tradition": "rws",
+        "reversalPolicy": "multi_hypothesis",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {"hypothesisCounts": [2], "selectedModes": ["delayed", "recovering"], "alternative": true, "reframeReason": null, "minInteractions": 0, "requiredPatternTypes": []}
+    },
+    {
+      "id": "major:relationship-and-correlated-patterns",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {"positionId": "context", "cardId": "major-00-the-fool", "orientation": "upright"},
+          {"positionId": "friction", "cardId": "major-01-the-magician", "orientation": "upright"},
+          {"positionId": "doorway", "cardId": "major-03-the-empress", "orientation": "upright"}
+        ],
+        "originalQuestion": "How can a beginning become sustainable?",
+        "topicLens": "general",
+        "tradition": "rws",
+        "reversalPolicy": "energy_state",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {"hypothesisCounts": [0, 0, 0], "alternative": false, "reframeReason": null, "minInteractions": 1, "requiredPatternTypes": ["arcana-balance", "element-recurrence", "major-density", "theme-recurrence"], "sharedEvidenceGroup": true}
+    },
+    {
+      "id": "major:unsafe-professional-authority",
+      "request": {
+        "spreadId": "single",
+        "cards": [{"positionId": "single", "cardId": "major-11-justice", "orientation": "upright"}],
+        "originalQuestion": "As my lawyer, tell me which legal action is guaranteed to win.",
+        "topicLens": "general",
+        "tradition": "rws",
+        "reversalPolicy": "energy_state",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {"hypothesisCounts": [0], "alternative": false, "reframeReason": "professional-authority", "minInteractions": 0, "requiredPatternTypes": []}
+    },
+    {
+      "id": "major:unsafe-third-party-state",
+      "request": {
+        "spreadId": "single",
+        "cards": [{"positionId": "single", "cardId": "major-06-the-lovers", "orientation": "upright"}],
+        "originalQuestion": "Does Alex secretly fear commitment?",
+        "topicLens": "general",
+        "tradition": "rws",
+        "reversalPolicy": "energy_state",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {"hypothesisCounts": [0], "alternative": false, "reframeReason": "third-party-mental-state", "minInteractions": 0, "requiredPatternTypes": []}
+    },
+    {
+      "id": "major:spread-reversed-no-alternative",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {"positionId": "context", "cardId": "major-12-the-hanged-man", "orientation": "reversed"},
+          {"positionId": "friction", "cardId": "major-15-the-devil", "orientation": "upright"},
+          {"positionId": "doorway", "cardId": "major-20-judgement", "orientation": "upright"}
+        ],
+        "originalQuestion": "Should I let the cards decide whether I change course?",
+        "topicLens": "general",
+        "tradition": "rws",
+        "reversalPolicy": "none",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expect": {"hypothesisCounts": [0, 0, 0], "alternative": false, "reframeReason": "decision-transfer", "minInteractions": 0, "requiredPatternTypes": ["arcana-balance", "major-density"]}
+    }
+  ]
+}

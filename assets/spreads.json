@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "spreads": [
+    {
+      "id": "single",
+      "title": "Single Draw",
+      "cardCount": 1,
+      "positions": [
+        {
+          "id": "single",
+          "label": "Single Draw",
+          "prompt": "What deserves attention in the present situation?",
+          "agency": "descriptive",
+          "polarity": "neutral"
+        }
+      ],
+      "edges": [],
+      "centrality": ["single"]
+    },
+    {
+      "id": "context-friction-doorway",
+      "title": "Context / Friction / Doorway",
+      "cardCount": 3,
+      "positions": [
+        {
+          "id": "context",
+          "label": "Context",
+          "prompt": "What pattern is organizing the present situation?",
+          "agency": "descriptive",
+          "polarity": "neutral"
+        },
+        {
+          "id": "friction",
+          "label": "Friction",
+          "prompt": "What pressure, contradiction, excess, or blocked capacity matters?",
+          "agency": "diagnostic-reflective",
+          "polarity": "neutral"
+        },
+        {
+          "id": "doorway",
+          "label": "Doorway",
+          "prompt": "What resource, experiment, boundary, or inquiry may help?",
+          "agency": "conditional",
+          "polarity": "neutral"
+        }
+      ],
+      "edges": [
+        {
+          "from": "context",
+          "to": "friction",
+          "allowedRelations": ["reinforces", "contrasts", "qualifies"],
+          "causality": false
+        },
+        {
+          "from": "friction",
+          "to": "doorway",
+          "allowedRelations": ["continues", "corrects", "transforms", "releases"],
+          "causality": false
+        },
+        {
+          "from": "context",
+          "to": "doorway",
+          "allowedRelations": ["returns", "reverses", "matures", "departs"],
+          "causality": false
+        }
+      ],
+      "centrality": ["friction", "doorway", "context"]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "registryVersion": 1,
+  "methodVersion": "arcana-composer-v2",
+  "batches": [
+    {"id": "major", "file": "assets/semantic-v2/batches/major.json", "cards": 22, "digest": "340e0412550aa8e22edb76ad426c8033c05b9517cd475865a6d8779821a56fbf"},
+    {"id": "wands", "file": "assets/semantic-v2/batches/wands.json", "cards": 14, "digest": "f12bd422dd9c2fc89bb50a156ba591cca80f06c9141763566a45c12a25480fc5"},
+    {"id": "cups", "file": "assets/semantic-v2/batches/cups.json", "cards": 14, "digest": "89cf3134bab59da76795ed8c908423654dce97a0e9ae1d3b225b682498489a09"},
+    {"id": "swords", "file": "assets/semantic-v2/batches/swords.json", "cards": 14, "digest": "71b76160b9df3f69b469e558de279675c37910a379f1c117e5de3c3022bd9224"},
+    {"id": "pentacles", "file": "assets/semantic-v2/batches/pentacles.json", "cards": 14, "digest": "61e123b5659656e54c02743b5cb36dad915c4a09a134ced320b539672ffcfc87"}
+  ]
+}

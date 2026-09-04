@@ -13,6 +13,7 @@ Item {
   property var service: null
   property bool opened: false
   property string viewMode: "reading"
+  property bool expandedReading: false
   property string pendingRedraw: ""
   property string question: ""
   property bool veilNextReading: false
@@ -361,11 +362,28 @@ Item {
     return lines.join("\n")
   }
 
+  function questionStateText() {
+    readingRevision
+    if (!reading || reading.originalQuestion === null) return ""
+    var text = "Question · “" + reading.originalQuestion + "”"
+    if (reading.normalizedQuestion !== reading.originalQuestion)
+      text += "\nReframed · " + reading.normalizedQuestion + "\nReason · " + reading.reframeReason
+    return text
+  }
+
+  function narrativeText() {
+    readingRevision
+    if (!reading) return "Drawing from the complete 78-card system…"
+    var utterances = expandedReading ? reading.utterances.expanded : reading.utterances.concise
+    var lines = utterances.map(function(item) { return item.text })
+    return lines.join(expandedReading ? "\n\n" : "\n")
+  }
+
   function modeLabel() {
-    if (!service) return "INITIALIZING"
-    if (service.currentReadingKind === "spread") return "CONTEXT / FRICTION / DOORWAY"
-    if (service.currentReadingKind === "free") return "FREE DRAW"
-    return "DAILY DRAW"
+    if (!service) return "Preparing"
+    if (service.currentReadingKind === "spread") return "Context · Friction · Doorway"
+    if (service.currentReadingKind === "free") return "Free draw"
+    return "Daily draw"
   }
 
   function agentStatusText() {
@@ -439,6 +457,10 @@ Item {
           root.drawSpread(); event.accepted = true
         } else if (event.key === Qt.Key_A) {
           root.openAgentPreview(); event.accepted = true
+        } else if (event.key === Qt.Key_C) {
+          if (root.resolveService()) root.service.copyCurrentReading(); event.accepted = true
+        } else if (event.key === Qt.Key_E) {
+          root.expandedReading = !root.expandedReading; event.accepted = true
         } else if (event.key === Qt.Key_I) {
           root.viewMode = "about"; event.accepted = true
         } else if (event.key === Qt.Key_1) {
@@ -524,19 +546,23 @@ Item {
               }
             }
 
-            Column {
+            Text {
               x: 58
-              y: 1
-              spacing: 3
-              Text { text: "ARCANA"; color: root.ivory; font.family: "monospace"; font.pixelSize: 19; font.bold: true; font.letterSpacing: 2.5; textFormat: Text.PlainText }
-              Text { text: "ORDER SURROUNDING MYSTERY"; color: root.muted; font.family: "monospace"; font.pixelSize: 9; font.letterSpacing: 2.2; textFormat: Text.PlainText }
+              anchors.verticalCenter: parent.verticalCenter
+              text: "ARCANA"
+              color: root.ivory
+              font.family: "monospace"
+              font.pixelSize: 19
+              font.bold: true
+              font.letterSpacing: 2.5
+              textFormat: Text.PlainText
             }
 
             Text {
               anchors.right: closeButton.left
               anchors.rightMargin: 18
               anchors.verticalCenter: parent.verticalCenter
-              text: "0.1.0-ALPHA  //  " + root.modeLabel()
+              text: root.modeLabel()
               color: root.cyan
               font.family: "monospace"
               font.pixelSize: 9
@@ -548,7 +574,7 @@ Item {
               id: closeButton
               anchors.right: parent.right
               anchors.verticalCenter: parent.verticalCenter
-              text: "ESC  CLOSE"
+              text: "Esc  Close"
               compact: true
               onClicked: root.requestClose()
             }
@@ -564,18 +590,18 @@ Item {
               anchors.left: parent.left
               anchors.verticalCenter: parent.verticalCenter
               spacing: 8
-              ArcanaButton { systemTheme: root.systemTheme; text: "D  DAILY"; compact: true; selected: root.viewMode === "reading" && root.service && root.service.currentReadingKind === "daily"; onClicked: root.showDaily() }
-              ArcanaButton { systemTheme: root.systemTheme; text: "F  FREE"; compact: true; selected: root.viewMode === "reading" && root.service && root.service.currentReadingKind === "free"; onClicked: root.drawFree() }
-              ArcanaButton { systemTheme: root.systemTheme; text: "S  SPREAD"; compact: true; selected: root.viewMode === "reading" && root.service && root.service.currentReadingKind === "spread"; onClicked: root.drawSpread() }
-              ArcanaButton { systemTheme: root.systemTheme; text: "A  AGENT"; compact: true; selected: root.viewMode === "agent"; onClicked: root.openAgentPreview() }
-              ArcanaButton { systemTheme: root.systemTheme; text: "I  METHOD"; compact: true; selected: root.viewMode === "about"; onClicked: root.viewMode = "about" }
+              ArcanaButton { systemTheme: root.systemTheme; text: "D  Daily"; compact: true; selected: root.viewMode === "reading" && root.service && root.service.currentReadingKind === "daily"; onClicked: root.showDaily() }
+              ArcanaButton { systemTheme: root.systemTheme; text: "F  Free"; compact: true; selected: root.viewMode === "reading" && root.service && root.service.currentReadingKind === "free"; onClicked: root.drawFree() }
+              ArcanaButton { systemTheme: root.systemTheme; text: "S  Spread"; compact: true; selected: root.viewMode === "reading" && root.service && root.service.currentReadingKind === "spread"; onClicked: root.drawSpread() }
+              ArcanaButton { systemTheme: root.systemTheme; text: "A  Agent"; compact: true; selected: root.viewMode === "agent"; onClicked: root.openAgentPreview() }
+              ArcanaButton { systemTheme: root.systemTheme; text: "I  About"; compact: true; selected: root.viewMode === "about"; onClicked: root.viewMode = "about" }
             }
 
             Text {
               visible: root.pendingRedraw === "daily"
               anchors.right: parent.right
               anchors.verticalCenter: parent.verticalCenter
-              text: "PRESS R AGAIN TO REPLACE TODAY’S CARD"
+              text: "Press R again to replace today’s card"
               color: root.brass
               font.family: "monospace"
               font.pixelSize: 9
@@ -588,11 +614,11 @@ Item {
               anchors.right: parent.right
               anchors.verticalCenter: parent.verticalCenter
               spacing: 5
-              Text { anchors.verticalCenter: parent.verticalCenter; text: "SCALE"; color: root.muted; font.family: "monospace"; font.pixelSize: 9; font.letterSpacing: 1; textFormat: Text.PlainText }
+              Text { anchors.verticalCenter: parent.verticalCenter; text: "Scale"; color: root.muted; font.family: "monospace"; font.pixelSize: 9; font.letterSpacing: 1; textFormat: Text.PlainText }
               ArcanaButton { systemTheme: root.systemTheme; text: "1×"; compact: true; selected: root.selectedScale === 1; onClicked: { if (root.resolveService()) root.service.setUiScale(1) } }
               ArcanaButton { systemTheme: root.systemTheme; text: "1.25×"; compact: true; selected: root.selectedScale === 1.25; onClicked: { if (root.resolveService()) root.service.setUiScale(1.25) } }
               ArcanaButton { systemTheme: root.systemTheme; text: "1.5×"; compact: true; selected: root.selectedScale === 1.5; onClicked: { if (root.resolveService()) root.service.setUiScale(1.5) } }
-              ArcanaButton { systemTheme: root.systemTheme; text: root.systemTheme ? "COLORS  SYSTEM" : "COLORS  ARCANA"; compact: true; selected: root.systemTheme; onClicked: { if (root.resolveService()) root.service.toggleThemeMode() } }
+              ArcanaButton { systemTheme: root.systemTheme; text: root.systemTheme ? "Colors  System" : "Colors  Arcana"; compact: true; selected: root.systemTheme; onClicked: { if (root.resolveService()) root.service.toggleThemeMode() } }
             }
           }
 
@@ -601,7 +627,7 @@ Item {
           Item {
             id: content
             width: parent.width
-            height: frame.height - 24*2 - 58 - 48 - 2 - 31
+            height: frame.height - 24*2 - 58 - 48 - 2
 
             Item {
               anchors.fill: parent
@@ -675,7 +701,7 @@ Item {
 
                     Text {
                       width: parent.width
-                      text: root.reading && root.reading.cards.length > 1 ? "REVEAL ALL THREE CARDS" : "REVEAL THE CARD"
+                      text: root.reading && root.reading.cards.length > 1 ? "Reveal all three cards" : "Reveal the card"
                       color: root.cyan
                       font.family: "monospace"
                       font.pixelSize: 14
@@ -714,18 +740,25 @@ Item {
                       width: readingScroll.width - 14
                       spacing: 11
 
-                    Text { width: parent.width; text: root.reading ? (root.reading.cards.length === 1 ? root.modeLabel()+"  ·  "+root.reading.cards[0].card.title.toUpperCase() : root.reading.spreadName.toUpperCase()) : "PREPARING DRAW"; color: root.cyan; font.family: "monospace"; font.pixelSize: 11; font.bold: true; font.letterSpacing: 1.2; wrapMode: Text.Wrap; textFormat: Text.PlainText }
-                    Text { width: parent.width; text: root.reading ? root.reading.synthesis : "Drawing from the complete 78-card system…"; color: root.ivory; font.family: "monospace"; font.pixelSize: 13; lineHeight: 1.35; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                    Text { width: parent.width; text: root.reading ? (root.reading.cards.length === 1 ? root.modeLabel()+"  ·  "+root.reading.cards[0].card.title : root.reading.spreadName) : "Preparing draw"; color: root.cyan; font.family: "sans-serif"; font.pixelSize: 15; font.bold: true; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                    Text { visible: root.reading && root.reading.originalQuestion !== null; width: parent.width; text: root.questionStateText(); color: root.brass; font.family: "sans-serif"; font.pixelSize: 11; lineHeight: 1.35; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                    Text { width: parent.width; text: root.narrativeText(); color: root.ivory; font.family: "sans-serif"; font.pixelSize: 14; lineHeight: 1.45; wrapMode: Text.Wrap; textFormat: Text.PlainText }
                     Rectangle { width: parent.width; height: 1; color: "#334447" }
-                    Text { visible: root.reading && root.reading.relationships.length > 0; width: parent.width; text: "RELATIONSHIPS"; color: root.brass; font.family: "monospace"; font.pixelSize: 9; font.bold: true; font.letterSpacing: 1.2; textFormat: Text.PlainText }
-                    Text { visible: root.reading && root.reading.relationships.length > 0; width: parent.width; text: root.relationshipText(); color: root.muted; font.family: "monospace"; font.pixelSize: 11; lineHeight: 1.3; wrapMode: Text.Wrap; textFormat: Text.PlainText }
-                    Text { visible: root.reading && root.reading.cards.length > 1; width: parent.width; text: "SPREAD PATTERN"; color: root.brass; font.family: "monospace"; font.pixelSize: 9; font.bold: true; font.letterSpacing: 1.2; textFormat: Text.PlainText }
-                    Text { visible: root.reading && root.reading.cards.length > 1; width: parent.width; text: root.patternText(); color: root.muted; font.family: "monospace"; font.pixelSize: 11; lineHeight: 1.3; wrapMode: Text.Wrap; textFormat: Text.PlainText }
-                    Rectangle { visible: root.reading && root.reading.cards.length > 1; width: parent.width; height: 1; color: "#334447" }
-                    Text { width: parent.width; text: "ANOTHER WAY TO READ IT"; color: root.brass; font.family: "monospace"; font.pixelSize: 9; font.bold: true; font.letterSpacing: 1.2; textFormat: Text.PlainText }
-                    Text { width: parent.width; text: root.reading ? root.reading.alternative : ""; color: root.ivory; font.family: "monospace"; font.pixelSize: 11; lineHeight: 1.3; wrapMode: Text.Wrap; textFormat: Text.PlainText }
-                    Text { width: parent.width; text: root.reading ? root.reading.reflection : ""; color: root.cyan; font.family: "monospace"; font.pixelSize: 12; lineHeight: 1.3; wrapMode: Text.Wrap; textFormat: Text.PlainText }
-                      ArcanaButton { systemTheme: root.systemTheme; visible: root.service && root.service.currentReadingKind === "daily"; text: root.pendingRedraw === "daily" ? "R  CONFIRM REDRAW" : "R  REDRAW DAILY"; danger: root.pendingRedraw === "daily"; onClicked: root.confirmDailyRedraw() }
+                    Text { visible: root.reading && root.reading.relationships.length > 0; width: parent.width; text: "Relationships"; color: root.brass; font.family: "sans-serif"; font.pixelSize: 11; font.bold: true; textFormat: Text.PlainText }
+                    Text { visible: root.reading && root.reading.relationships.length > 0; width: parent.width; text: root.relationshipText(); color: root.muted; font.family: "sans-serif"; font.pixelSize: 12; lineHeight: 1.4; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                    Text { visible: root.reading && root.reading.patterns.length > 0; width: parent.width; text: "Spread pattern"; color: root.brass; font.family: "sans-serif"; font.pixelSize: 11; font.bold: true; textFormat: Text.PlainText }
+                    Text { visible: root.reading && root.reading.patterns.length > 0; width: parent.width; text: root.patternText(); color: root.muted; font.family: "sans-serif"; font.pixelSize: 12; lineHeight: 1.4; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                    Rectangle { visible: root.reading && (root.reading.patterns.length > 0 || root.reading.alternative !== null); width: parent.width; height: 1; color: "#334447" }
+                    Text { visible: root.reading && root.reading.alternative !== null; width: parent.width; text: "Another supported reading"; color: root.brass; font.family: "sans-serif"; font.pixelSize: 11; font.bold: true; textFormat: Text.PlainText }
+                    Text { visible: root.reading && root.reading.alternative !== null; width: parent.width; text: root.reading && root.reading.alternative ? root.reading.alternative.text : ""; color: root.ivory; font.family: "sans-serif"; font.pixelSize: 12; lineHeight: 1.4; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                    Text { visible: root.reading && root.reading.distinguishingQuestions.length > 0; width: parent.width; text: "Distinguishing question\n" + (root.reading ? root.reading.distinguishingQuestions.join("\n") : ""); color: root.brass; font.family: "sans-serif"; font.pixelSize: 11; font.bold: true; lineHeight: 1.4; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                    Text { width: parent.width; text: root.reading ? root.reading.reflection : ""; color: root.cyan; font.family: "sans-serif"; font.pixelSize: 13; font.italic: true; lineHeight: 1.4; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                    Row {
+                      spacing: 8
+                      ArcanaButton { systemTheme: root.systemTheme; text: root.expandedReading ? "E  Compact" : "E  Expand"; onClicked: root.expandedReading = !root.expandedReading }
+                      ArcanaButton { systemTheme: root.systemTheme; text: root.service && root.service.copyStatus === "copied" ? "C  Copied" : "C  Copy"; onClicked: { if (root.resolveService()) root.service.copyCurrentReading() } }
+                      ArcanaButton { systemTheme: root.systemTheme; visible: root.service && root.service.currentReadingKind === "daily"; text: root.pendingRedraw === "daily" ? "R  Confirm redraw" : "R  Redraw daily"; danger: root.pendingRedraw === "daily"; onClicked: root.confirmDailyRedraw() }
+                    }
                     }
                   }
 
@@ -748,7 +781,7 @@ Item {
                     anchors.rightMargin: 12
                     anchors.bottom: parent.bottom
                     anchors.bottomMargin: 7
-                    text: "SCROLL  ↓"
+                    text: "Scroll  ↓"
                     color: root.cyan
                     font.family: "monospace"
                     font.pixelSize: 9
@@ -770,8 +803,8 @@ Item {
                 anchors.bottomMargin: 12
                 spacing: 12
 
-                Text { text: "ASK YOUR AGENT"; color: root.cyan; font.family: "monospace"; font.pixelSize: 14; font.bold: true; font.letterSpacing: 1.8; textFormat: Text.PlainText }
-                Text { width: parent.width; text: "Omarchy launches configured agents in unattended / auto-approval modes. Review the exact packet below. Opening the terminal is an explicit action; agent prose is not canonical Arcana data."; color: root.brass; font.family: "monospace"; font.pixelSize: 11; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                Text { text: "Ask your agent"; color: root.cyan; font.family: "monospace"; font.pixelSize: 14; font.bold: true; font.letterSpacing: 1.8; textFormat: Text.PlainText }
+                Text { width: parent.width; text: "Check what will be shared before opening the agent terminal. Nothing is sent until you choose Launch."; color: root.brass; font.family: "sans-serif"; font.pixelSize: 12; wrapMode: Text.Wrap; textFormat: Text.PlainText }
 
                 Row {
                   width: parent.width
@@ -800,7 +833,7 @@ Item {
                     }
                     Text { anchors.fill: parent; anchors.margins: 10; visible: questionInput.text === "" && !questionInput.activeFocus; text: "/  optional question or intention"; color: root.muted; font.family: "monospace"; font.pixelSize: 11; textFormat: Text.PlainText }
                   }
-                  ArcanaButton { systemTheme: root.systemTheme; id: actionButton; text: "REFRESH PACKET"; onClicked: root.openAgentPreview() }
+                  ArcanaButton { systemTheme: root.systemTheme; id: actionButton; text: "Update preview"; onClicked: root.openAgentPreview() }
                 }
 
                 Text { width: parent.width; text: root.agentStatusText(); color: root.service && root.service.agentStatus === "launch-failed" ? root.fault : root.muted; font.family: "monospace"; font.pixelSize: 10; textFormat: Text.PlainText }
@@ -838,9 +871,9 @@ Item {
                   id: agentActions
                   height: 38
                   spacing: 10
-                  ArcanaButton { systemTheme: root.systemTheme; visible: root.service && (root.service.agentStatus === "unset" || root.service.agentStatus === "retry"); text: root.service && root.service.agentStatus === "retry" ? "RECHECK AGENT" : "CHOOSE DEFAULT AGENT"; onClicked: { if (root.service.agentStatus === "retry") root.openAgentPreview(); else root.service.openAgentPicker() } }
-                  ArcanaButton { systemTheme: root.systemTheme; visible: root.service && root.service.agentStatus === "ready"; text: "LAUNCH " + (root.service ? root.service.configuredAgent.toUpperCase() : "AGENT"); onClicked: root.service.launchAgent() }
-                  ArcanaButton { systemTheme: root.systemTheme; text: "BACK TO READING"; onClicked: { root.viewMode = "reading"; keyboardRoot.forceActiveFocus() } }
+                  ArcanaButton { systemTheme: root.systemTheme; visible: root.service && (root.service.agentStatus === "unset" || root.service.agentStatus === "retry"); text: root.service && root.service.agentStatus === "retry" ? "Recheck agent" : "Choose default agent"; onClicked: { if (root.service.agentStatus === "retry") root.openAgentPreview(); else root.service.openAgentPicker() } }
+                  ArcanaButton { systemTheme: root.systemTheme; visible: root.service && root.service.agentStatus === "ready"; text: "Launch " + (root.service ? root.service.configuredAgent : "agent"); onClicked: root.service.launchAgent() }
+                  ArcanaButton { systemTheme: root.systemTheme; text: "Back to reading"; onClicked: { root.viewMode = "reading"; keyboardRoot.forceActiveFocus() } }
                 }
               }
             }
@@ -858,9 +891,9 @@ Item {
                 Column {
                   width: Math.round(parent.width * 0.47)
                   spacing: 14
-                  Text { text: "CONSTRAINED INTERPRETIVE SYNTHESIS"; color: root.cyan; font.family: "monospace"; font.pixelSize: 13; font.bold: true; font.letterSpacing: 1.2; textFormat: Text.PlainText }
-                  Text { width: parent.width; text: "Arcana is a reflective engine, not factual authority. The canonical reading is composed locally from authored card semantics, orientation, spread position, pairwise relationships, and spread-wide patterns. Alternatives are included only when they remain traceable to the current cards."; color: root.ivory; font.family: "monospace"; font.pixelSize: 12; lineHeight: 1.4; wrapMode: Text.Wrap; textFormat: Text.PlainText }
-                  Text { width: parent.width; text: "Traditional meaning\nModern interpretive range\nOmarchy system translation\nTyped orientation transformation\nPosition grammar\nRelationship edges\nSpread-wide pattern\nDeterministic synthesis\nReflective question"; color: root.muted; font.family: "monospace"; font.pixelSize: 11; lineHeight: 1.35; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                  Text { text: "How a reading is made"; color: root.cyan; font.family: "sans-serif"; font.pixelSize: 15; font.bold: true; textFormat: Text.PlainText }
+                  Text { width: parent.width; text: "Arcana brings together the card’s meaning, its orientation, its place in the spread, and the connections between the cards."; color: root.ivory; font.family: "sans-serif"; font.pixelSize: 13; lineHeight: 1.45; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                  Text { width: parent.width; text: "The same cards and choices always produce the same reading. A second interpretation appears only when the cards genuinely support one."; color: root.muted; font.family: "sans-serif"; font.pixelSize: 12; lineHeight: 1.45; wrapMode: Text.Wrap; textFormat: Text.PlainText }
                 }
 
                 Rectangle { width: 1; height: parent.height; color: "#334447" }
@@ -868,22 +901,15 @@ Item {
                 Column {
                   width: parent.width - Math.round(parent.width * 0.47) - 31
                   spacing: 14
-                  Text { text: "PROVENANCE + REALITY SAFETY"; color: root.brass; font.family: "monospace"; font.pixelSize: 13; font.bold: true; font.letterSpacing: 1.2; textFormat: Text.PlainText }
-                  Text { width: parent.width; text: "Historical anchor: A. E. Waite, public domain\nVault keyword research: user-local reference\nDeck-specific language: original Arcana authorship\nComposer: deterministic original method\nAgent response: optional and visibly agent-assisted"; color: root.ivory; font.family: "monospace"; font.pixelSize: 11; lineHeight: 1.45; wrapMode: Text.Wrap; textFormat: Text.PlainText }
-                  Text { width: parent.width; text: "Readings never claim prophecy, diagnosis, guaranteed outcomes, third-party mind access, legal advice, financial advice, or medical advice. Keep agency with the person asking. Ordinary evidence and trusted human support outrank symbolic inference when stakes are real."; color: root.muted; font.family: "monospace"; font.pixelSize: 11; lineHeight: 1.4; wrapMode: Text.Wrap; textFormat: Text.PlainText }
-                  ArcanaButton { systemTheme: root.systemTheme; text: "BACK TO READING"; onClicked: { root.viewMode = "reading"; keyboardRoot.forceActiveFocus() } }
+                  Text { text: "Ground rules"; color: root.brass; font.family: "sans-serif"; font.pixelSize: 15; font.bold: true; textFormat: Text.PlainText }
+                  Text { width: parent.width; text: "Use the reading to notice patterns and ask better questions—not to surrender a decision."; color: root.ivory; font.family: "sans-serif"; font.pixelSize: 13; lineHeight: 1.45; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                  Text { width: parent.width; text: "Arcana does not predict outcomes, diagnose people, read someone else’s mind, or replace medical, legal, financial, or human support."; color: root.muted; font.family: "sans-serif"; font.pixelSize: 12; lineHeight: 1.45; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                  ArcanaButton { systemTheme: root.systemTheme; text: "Back to reading"; onClicked: { root.viewMode = "reading"; keyboardRoot.forceActiveFocus() } }
                 }
               }
             }
           }
 
-          Rectangle { width: parent.width; height: 1; color: "#273638" }
-          Item {
-            width: parent.width
-            height: 30
-            Text { anchors.left: parent.left; anchors.verticalCenter: parent.verticalCenter; text: "D DAILY   F FREE   S SPREAD   A AGENT   I METHOD   T COLORS   1/2/3 SCALE   ESC CLOSE"; color: root.muted; font.family: "monospace"; font.pixelSize: 9; font.letterSpacing: 0.65; textFormat: Text.PlainText }
-            Text { anchors.right: parent.right; anchors.verticalCenter: parent.verticalCenter; text: "LOCAL READING  //  AGENT PROSE OPTIONAL"; color: root.brass; font.family: "monospace"; font.pixelSize: 9; font.letterSpacing: 0.55; textFormat: Text.PlainText }
-          }
         }
       }
 
@@ -922,7 +948,7 @@ Item {
 
           Text {
             width: parent.width
-            text: "CARD INSPECTION  //  " + (root.inspectionItem ? root.inspectionItem.card.title.toUpperCase() : "")
+            text: "Card inspection  ·  " + (root.inspectionItem ? root.inspectionItem.card.title : "")
             color: root.cyan
             font.family: "monospace"
             font.pixelSize: 10
@@ -977,7 +1003,7 @@ Item {
 
           Text {
             width: parent.width
-            text: root.inspectionItem ? root.inspectionItem.card.systemTitle.toUpperCase() + "  //  " + root.inspectionItem.orientationLabel.toUpperCase() : ""
+            text: root.inspectionItem ? root.inspectionItem.card.systemTitle + "  ·  " + root.inspectionItem.orientationLabel : ""
             color: root.brass
             font.family: "monospace"
             font.pixelSize: 10
@@ -990,7 +1016,7 @@ Item {
 
           Text {
             width: parent.width
-            text: "CLICK / ENTER / ESC TO RETURN"
+            text: "Click, Enter, or Esc to return"
             color: root.muted
             font.family: "monospace"
             font.pixelSize: 9

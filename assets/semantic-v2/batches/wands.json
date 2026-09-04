@@ -1,0 +1,3877 @@
+{
+  "schemaVersion": 2,
+  "deckId": "arcana-v2-wands-candidate",
+  "deckTitle": "Arcana Semantic v2 Wands Candidate",
+  "methodVersion": "arcana-composer-v2",
+  "sources": {
+    "schemaVersion": 2,
+    "sources": [
+      {
+        "id": "waite-pkt",
+        "author": "A. E. Waite",
+        "title": "The Pictorial Key to the Tarot",
+        "url": "https://sacred-texts.com/tarot/pkt/index.htm",
+        "tradition": "rws",
+        "publicationYear": 1911,
+        "licenseStatus": "public-domain",
+        "use": [
+          "historical-description",
+          "upright",
+          "reversed"
+        ]
+      },
+      {
+        "id": "vault-keywords",
+        "author": null,
+        "title": "Tarot Card Meanings — 78 Cards",
+        "url": null,
+        "tradition": "rws",
+        "publicationYear": null,
+        "licenseStatus": "private-reference",
+        "use": [
+          "upright",
+          "reversed"
+        ]
+      },
+      {
+        "id": "omarchy-guide",
+        "author": "OldJobobo",
+        "title": "Arcana Major and Minor Guides",
+        "url": null,
+        "tradition": "arcana",
+        "publicationYear": 2026,
+        "licenseStatus": "original-work",
+        "use": [
+          "omarchy",
+          "system-title"
+        ]
+      },
+      {
+        "id": "arcana-artwork",
+        "author": "OldJobobo",
+        "title": "Arcana Packaged Artwork",
+        "url": null,
+        "tradition": "arcana",
+        "publicationYear": 2026,
+        "licenseStatus": "original-work",
+        "use": [
+          "imagery"
+        ]
+      },
+      {
+        "id": "arcana-structural",
+        "author": null,
+        "title": "Arcana Structural Conventions v2",
+        "url": null,
+        "tradition": "golden-dawn-structural",
+        "publicationYear": 2026,
+        "licenseStatus": "structural-convention",
+        "use": [
+          "position",
+          "relationship",
+          "pattern"
+        ]
+      }
+    ]
+  },
+  "cards": [
+    {
+      "schemaVersion": 2,
+      "id": "wands-01-ace",
+      "order": 23,
+      "arcana": "minor",
+      "number": 1,
+      "rank": "ace",
+      "title": "Ace Of Wands",
+      "omarchyTitle": "Ignition Point",
+      "suit": "wands",
+      "element": "fire",
+      "image": "assets/card-art/23-wands-01-ace-of-wands.png",
+      "coreThemes": [
+        "beginning",
+        "initiative",
+        "momentum"
+      ],
+      "imagery": [
+        {
+          "id": "wands-01-ace.image.primary",
+          "detail": "A figure drives a long lever into a floor control as two bright beams converge across an industrial tower.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "wands-01-ace.core",
+          "text": "The Ace of Wands brings a fresh creative impulse that asks for initiative and embodied expression.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "initiative"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-01-ace.omarchy",
+          "text": "Ignition Point marks the command that wakes a dormant system and tests whether energy can become motion.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "initiative",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-01-ace.position.single",
+          "text": "Locate the live spark and distinguish it from excitement that has no chosen outlet.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-01-ace.position.context",
+          "text": "Unused creative energy is making a new beginning possible within the present conditions.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-01-ace.position.friction",
+          "text": "Strong desire is arriving before a channel sturdy enough to carry it.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-01-ace.position.doorway",
+          "text": "Give the impulse one bounded task that can return immediate evidence.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-01-ace.reversal.blocked",
+          "text": "The impulse is alive, but an obstruction prevents it from entering practical motion.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-01-ace.reversal.reduced",
+          "text": "Available energy is modest, so the beginning needs a scale that matches current capacity.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-01-ace.reversal.traditional-reversed",
+          "text": "Low vitality, fading interest, or an unformed aim is weakening the chance to begin.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "blocked": [
+          "wands-01-ace.reversal.blocked"
+        ],
+        "reduced": [
+          "wands-01-ace.reversal.reduced"
+        ],
+        "traditional_reversed": [
+          "wands-01-ace.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "wands-01-ace.position.single"
+        ],
+        "context": [
+          "wands-01-ace.position.context"
+        ],
+        "friction": [
+          "wands-01-ace.position.friction"
+        ],
+        "doorway": [
+          "wands-01-ace.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "wands-01-ace.prompt.spark",
+          "text": "What idea or desire still feels alive after the first rush of excitement passes?",
+          "themes": [
+            "beginning",
+            "attention"
+          ]
+        },
+        {
+          "id": "wands-01-ace.prompt.channel",
+          "text": "What single action could give that energy a useful channel today?",
+          "themes": [
+            "initiative",
+            "momentum"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "wands-01-ace.prompt.spark",
+        "wands-01-ace.prompt.channel"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "wands-02-two",
+      "order": 24,
+      "arcana": "minor",
+      "number": 2,
+      "rank": "two",
+      "title": "Two Of Wands",
+      "omarchyTitle": "Vector Choice",
+      "suit": "wands",
+      "element": "fire",
+      "image": "assets/card-art/24-wands-02-two-of-wands.png",
+      "coreThemes": [
+        "agency",
+        "perspective",
+        "opportunity"
+      ],
+      "imagery": [
+        {
+          "id": "wands-02-two.image.primary",
+          "detail": "A figure stands between two angled rails on a high platform, facing a bright path that branches away from dark machinery.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "wands-02-two.core",
+          "text": "The Two of Wands surveys possible horizons and turns desire into a considered choice of direction.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "agency",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-02-two.omarchy",
+          "text": "Vector Choice compares reachable routes before committing resources to one execution path.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "perspective",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-02-two.position.single",
+          "text": "Stand far enough back to compare the options without confusing possibility with commitment.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "agency",
+            "perspective",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-02-two.position.context",
+          "text": "A wider field of action has opened, and present agency rests in selecting a direction.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "agency",
+            "perspective",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-02-two.position.friction",
+          "text": "Staying at the threshold preserves options while preventing any route from becoming real.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "agency",
+            "perspective",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-02-two.position.doorway",
+          "text": "Choose a direction by naming the value and cost that make it preferable to the others.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "agency",
+            "perspective",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-02-two.reversal.turning-away",
+          "text": "A promising direction is being avoided because leaving the familiar would require exposure.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "agency",
+            "perspective",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-02-two.reversal.reconsidered",
+          "text": "The plan needs another comparison of scope, resources, and actual appetite before commitment.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "agency",
+            "perspective",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-02-two.reversal.traditional-reversed",
+          "text": "The horizon contracts when poor preparation or excessive caution makes only the smallest choices feel available.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "agency",
+            "perspective",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "turning_away": [
+          "wands-02-two.reversal.turning-away"
+        ],
+        "reconsidered": [
+          "wands-02-two.reversal.reconsidered"
+        ],
+        "traditional_reversed": [
+          "wands-02-two.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "wands-02-two.position.single"
+        ],
+        "context": [
+          "wands-02-two.position.context"
+        ],
+        "friction": [
+          "wands-02-two.position.friction"
+        ],
+        "doorway": [
+          "wands-02-two.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "wands-02-two.prompt.horizon",
+          "text": "Which option expands your field without asking you to ignore its real cost?",
+          "themes": [
+            "opportunity",
+            "perspective"
+          ]
+        },
+        {
+          "id": "wands-02-two.prompt.commitment",
+          "text": "What information is essential before you stop surveying and commit?",
+          "themes": [
+            "agency",
+            "clarity"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "wands-02-two.prompt.horizon",
+        "wands-02-two.prompt.commitment"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "wands-03-three",
+      "order": 25,
+      "arcana": "minor",
+      "number": 3,
+      "rank": "three",
+      "title": "Three Of Wands",
+      "omarchyTitle": "Launch Sequence",
+      "suit": "wands",
+      "element": "fire",
+      "image": "assets/card-art/25-wands-03-three-of-wands.png",
+      "coreThemes": [
+        "momentum",
+        "opportunity",
+        "perspective"
+      ],
+      "imagery": [
+        {
+          "id": "wands-03-three.image.primary",
+          "detail": "A figure holds a control cube at a console while three aligned gateway frames and parallel tracks recede into the distance.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "wands-03-three.core",
+          "text": "The Three of Wands follows committed effort outward, where distance and response reveal room for expansion.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "momentum",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-03-three.omarchy",
+          "text": "Launch Sequence monitors a dispatched process across successive gates instead of treating release as completion.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "opportunity",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-03-three.position.single",
+          "text": "Look beyond the initial launch and assess what the returning signals say about reach.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "momentum",
+            "opportunity",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-03-three.position.context",
+          "text": "Prior initiative is now traveling into a larger field with consequences beyond the starting point.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "momentum",
+            "opportunity",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-03-three.position.friction",
+          "text": "Expectation of rapid expansion may be overlooking a bottleneck farther along the route.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "momentum",
+            "opportunity",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-03-three.position.doorway",
+          "text": "Prepare the next stage around verified response rather than imagined scale.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "momentum",
+            "opportunity",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-03-three.reversal.delayed",
+          "text": "The outward movement is taking longer than planned, leaving growth dependent on patience and review.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "momentum",
+            "opportunity",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-03-three.reversal.blocked",
+          "text": "A downstream obstacle is preventing committed effort from reaching the wider field.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "momentum",
+            "opportunity",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-03-three.reversal.traditional-reversed",
+          "text": "Expected expansion narrows under frustration, limited foresight, or a route that has failed to open.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "momentum",
+            "opportunity",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "delayed": [
+          "wands-03-three.reversal.delayed"
+        ],
+        "blocked": [
+          "wands-03-three.reversal.blocked"
+        ],
+        "traditional_reversed": [
+          "wands-03-three.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "wands-03-three.position.single"
+        ],
+        "context": [
+          "wands-03-three.position.context"
+        ],
+        "friction": [
+          "wands-03-three.position.friction"
+        ],
+        "doorway": [
+          "wands-03-three.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "wands-03-three.prompt.signal",
+          "text": "What response from beyond your immediate setting deserves closer attention?",
+          "themes": [
+            "attention",
+            "perspective"
+          ]
+        },
+        {
+          "id": "wands-03-three.prompt.range",
+          "text": "Which preparation would let the work travel farther without losing integrity?",
+          "themes": [
+            "opportunity",
+            "discipline"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "wands-03-three.prompt.signal",
+        "wands-03-three.prompt.range"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "wands-04-four",
+      "order": 26,
+      "arcana": "minor",
+      "number": 4,
+      "rank": "four",
+      "title": "Four Of Wands",
+      "omarchyTitle": "Stable Build",
+      "suit": "wands",
+      "element": "fire",
+      "image": "assets/card-art/26-wands-04-four-of-wands.png",
+      "coreThemes": [
+        "collaboration",
+        "connection",
+        "stability"
+      ],
+      "imagery": [
+        {
+          "id": "wands-04-four.image.primary",
+          "detail": "Four figures gather around a square worktable of gears and circuit pieces beneath a cable frame held by four posts.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "wands-04-four.core",
+          "text": "The Four of Wands celebrates a shared milestone and the stable ground that makes belonging possible.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "collaboration",
+            "connection"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-04-four.omarchy",
+          "text": "Stable Build recognizes a configuration that now works reliably enough for collaborators to gather around it.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "connection",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-04-four.position.single",
+          "text": "Acknowledge what has become dependable and who helped establish that foundation.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "collaboration",
+            "connection",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-04-four.position.context",
+          "text": "Shared structure, welcome, or a completed stage is giving the situation cohesion.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "collaboration",
+            "connection",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-04-four.position.friction",
+          "text": "The appearance of harmony may be concealing uneven support or uncertainty about belonging.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "collaboration",
+            "connection",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-04-four.position.doorway",
+          "text": "Mark the milestone together, then agree on what keeps the shared foundation sound.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "collaboration",
+            "connection",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-04-four.reversal.unavailable",
+          "text": "The support usually offered by a group or home base is difficult to access right now.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "collaboration",
+            "connection",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-04-four.reversal.private",
+          "text": "A meaningful milestone may need quiet recognition before it is opened to a wider circle.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "collaboration",
+            "connection",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-04-four.reversal.traditional-reversed",
+          "text": "Celebration is interrupted by instability, weak support, or conflict within the shared environment.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "collaboration",
+            "connection",
+            "stability"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "unavailable": [
+          "wands-04-four.reversal.unavailable"
+        ],
+        "private": [
+          "wands-04-four.reversal.private"
+        ],
+        "traditional_reversed": [
+          "wands-04-four.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "wands-04-four.position.single"
+        ],
+        "context": [
+          "wands-04-four.position.context"
+        ],
+        "friction": [
+          "wands-04-four.position.friction"
+        ],
+        "doorway": [
+          "wands-04-four.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "wands-04-four.prompt.foundation",
+          "text": "What has become reliable enough to be named as a real foundation?",
+          "themes": [
+            "stability",
+            "clarity"
+          ]
+        },
+        {
+          "id": "wands-04-four.prompt.welcome",
+          "text": "Who or what needs a clearer invitation into the shared space?",
+          "themes": [
+            "connection",
+            "collaboration"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "wands-04-four.prompt.foundation",
+        "wands-04-four.prompt.welcome"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "wands-05-five",
+      "order": 27,
+      "arcana": "minor",
+      "number": 5,
+      "rank": "five",
+      "title": "Five Of Wands",
+      "omarchyTitle": "Competing Processes",
+      "suit": "wands",
+      "element": "fire",
+      "image": "assets/card-art/27-wands-05-five-of-wands.png",
+      "coreThemes": [
+        "collaboration",
+        "conflict",
+        "focus"
+      ],
+      "imagery": [
+        {
+          "id": "wands-05-five.image.primary",
+          "detail": "Five figures operate articulated arms from separate panels, all reaching toward one central radial mechanism.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "wands-05-five.core",
+          "text": "The Five of Wands brings competing energies into contact, creating friction that can sharpen skill or scatter effort.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "collaboration",
+            "conflict"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-05-five.omarchy",
+          "text": "Competing Processes exposes contention at a shared resource so priorities and interfaces can be clarified.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "conflict",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-05-five.position.single",
+          "text": "Identify whether this contest is generating useful distinction or merely consuming attention.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "collaboration",
+            "conflict",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-05-five.position.context",
+          "text": "Several active wills are pressing on the same field without a settled way to coordinate.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "collaboration",
+            "conflict",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-05-five.position.friction",
+          "text": "Rivalry is fragmenting effort because participants are competing before agreeing on the object of the work.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "collaboration",
+            "conflict",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-05-five.position.doorway",
+          "text": "Define the shared problem, the rules of engagement, and where disagreement can remain productive.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "collaboration",
+            "conflict",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-05-five.reversal.turning-away",
+          "text": "Conflict is being avoided, leaving important differences active but unexamined.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "collaboration",
+            "conflict",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-05-five.reversal.excessive",
+          "text": "Competition has become so dominant that winning matters more than the common task.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "collaboration",
+            "conflict",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-05-five.reversal.traditional-reversed",
+          "text": "A quieter field may reflect willingness to respect differences without turning every disagreement into a contest.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "collaboration",
+            "conflict",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "turning_away": [
+          "wands-05-five.reversal.turning-away"
+        ],
+        "excessive": [
+          "wands-05-five.reversal.excessive"
+        ],
+        "traditional_reversed": [
+          "wands-05-five.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "wands-05-five.position.single"
+        ],
+        "context": [
+          "wands-05-five.position.context"
+        ],
+        "friction": [
+          "wands-05-five.position.friction"
+        ],
+        "doorway": [
+          "wands-05-five.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "wands-05-five.prompt.contest",
+          "text": "What is this disagreement capable of clarifying if it is handled directly?",
+          "themes": [
+            "conflict",
+            "clarity"
+          ]
+        },
+        {
+          "id": "wands-05-five.prompt.rules",
+          "text": "Which ground rule would turn scattered rivalry into useful collaboration?",
+          "themes": [
+            "collaboration",
+            "focus"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "wands-05-five.prompt.contest",
+        "wands-05-five.prompt.rules"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "wands-06-six",
+      "order": 28,
+      "arcana": "minor",
+      "number": 6,
+      "rank": "six",
+      "title": "Six Of Wands",
+      "omarchyTitle": "Successful Deploy",
+      "suit": "wands",
+      "element": "fire",
+      "image": "assets/card-art/28-wands-06-six-of-wands.png",
+      "coreThemes": [
+        "courage",
+        "leadership",
+        "momentum"
+      ],
+      "imagery": [
+        {
+          "id": "wands-06-six.image.primary",
+          "detail": "One standing figure raises a rod beside five launch slots while five observers gather before a tall machine under a circular light.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "wands-06-six.core",
+          "text": "The Six of Wands receives visible acknowledgment after effort succeeds and confidence gathers around that result.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "courage",
+            "leadership"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-06-six.omarchy",
+          "text": "Successful Deploy uses public feedback from a working release to build momentum without mistaking applause for maintenance.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "leadership",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-06-six.position.single",
+          "text": "Receive the evidence of success while staying clear about the work that produced it.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "courage",
+            "leadership",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-06-six.position.context",
+          "text": "Visible progress has increased confidence and placed the result before a wider audience.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "courage",
+            "leadership",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-06-six.position.friction",
+          "text": "Recognition may be distorting priorities or failing to reach the contributors who carried the effort.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "courage",
+            "leadership",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-06-six.position.doorway",
+          "text": "Credit the actual work, capture what succeeded, and choose the next responsibility deliberately.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "courage",
+            "leadership",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-06-six.reversal.internalized",
+          "text": "The achievement is real, but recognition remains private or has not translated into confidence.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "courage",
+            "leadership",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-06-six.reversal.excessive",
+          "text": "Public approval is occupying more attention than the substance it was meant to confirm.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "courage",
+            "leadership",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-06-six.reversal.traditional-reversed",
+          "text": "The expected victory feels uncertain after a setback, absent acknowledgment, or an injury to pride.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "courage",
+            "leadership",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "internalized": [
+          "wands-06-six.reversal.internalized"
+        ],
+        "excessive": [
+          "wands-06-six.reversal.excessive"
+        ],
+        "traditional_reversed": [
+          "wands-06-six.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "wands-06-six.position.single"
+        ],
+        "context": [
+          "wands-06-six.position.context"
+        ],
+        "friction": [
+          "wands-06-six.position.friction"
+        ],
+        "doorway": [
+          "wands-06-six.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "wands-06-six.prompt.credit",
+          "text": "What contribution deserves accurate acknowledgment rather than vague praise?",
+          "themes": [
+            "leadership",
+            "clarity"
+          ]
+        },
+        {
+          "id": "wands-06-six.prompt.next",
+          "text": "How can this success support the next step without dictating it?",
+          "themes": [
+            "momentum",
+            "agency"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "wands-06-six.prompt.credit",
+        "wands-06-six.prompt.next"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "wands-07-seven",
+      "order": 29,
+      "arcana": "minor",
+      "number": 7,
+      "rank": "seven",
+      "title": "Seven Of Wands",
+      "omarchyTitle": "Defend Position",
+      "suit": "wands",
+      "element": "fire",
+      "image": "assets/card-art/29-wands-07-seven-of-wands.png",
+      "coreThemes": [
+        "boundary",
+        "courage",
+        "resilience"
+      ],
+      "imagery": [
+        {
+          "id": "wands-07-seven.image.primary",
+          "detail": "A braced figure pushes a long horizontal bar against a machine where six spring-mounted bars press back from the opposite side.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "wands-07-seven.core",
+          "text": "The Seven of Wands defends hard-won ground when pressure tests conviction, boundaries, and endurance.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "courage"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-07-seven.omarchy",
+          "text": "Defend Position holds a chosen configuration against competing demands while checking whether the stance still serves its purpose.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "courage",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-07-seven.position.single",
+          "text": "Name the ground worth protecting and separate it from pride that resists every challenge.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "boundary",
+            "courage",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-07-seven.position.context",
+          "text": "The current position has value, yet maintaining it now requires visible effort and courage.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "boundary",
+            "courage",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-07-seven.position.friction",
+          "text": "Continuous defense is consuming resilience because every demand is being treated as equally threatening.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "boundary",
+            "courage",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-07-seven.position.doorway",
+          "text": "Set one firm boundary around the essential point and release the contests that do not matter.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "boundary",
+            "courage",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-07-seven.reversal.reduced",
+          "text": "Defensive capacity is depleted, making even a sound boundary difficult to maintain.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "courage",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-07-seven.reversal.reconsidered",
+          "text": "The pressure invites a fresh decision about which position still deserves protection.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "courage",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-07-seven.reversal.traditional-reversed",
+          "text": "Contested ground becomes harder to hold under overwhelm, wavering confidence, or a readiness to surrender.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "courage",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "reduced": [
+          "wands-07-seven.reversal.reduced"
+        ],
+        "reconsidered": [
+          "wands-07-seven.reversal.reconsidered"
+        ],
+        "traditional_reversed": [
+          "wands-07-seven.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "wands-07-seven.position.single"
+        ],
+        "context": [
+          "wands-07-seven.position.context"
+        ],
+        "friction": [
+          "wands-07-seven.position.friction"
+        ],
+        "doorway": [
+          "wands-07-seven.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "wands-07-seven.prompt.ground",
+          "text": "Which principle or resource is genuinely worth the effort of defending?",
+          "themes": [
+            "boundary",
+            "discernment"
+          ]
+        },
+        {
+          "id": "wands-07-seven.prompt.pressure",
+          "text": "What pressure can be declined without abandoning your position?",
+          "themes": [
+            "resilience",
+            "agency"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "wands-07-seven.prompt.ground",
+        "wands-07-seven.prompt.pressure"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "wands-08-eight",
+      "order": 30,
+      "arcana": "minor",
+      "number": 8,
+      "rank": "eight",
+      "title": "Eight Of Wands",
+      "omarchyTitle": "Rapid Execution",
+      "suit": "wands",
+      "element": "fire",
+      "image": "assets/card-art/30-wands-08-eight-of-wands.png",
+      "coreThemes": [
+        "change",
+        "focus",
+        "momentum"
+      ],
+      "imagery": [
+        {
+          "id": "wands-08-eight.image.primary",
+          "detail": "A lone figure watches eight parallel rods sweep across a bright diagonal field toward a distant cluster of geometric structures.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "wands-08-eight.core",
+          "text": "The Eight of Wands carries events forward quickly once direction is clear and obstacles have fallen away.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-08-eight.omarchy",
+          "text": "Rapid Execution sends multiple aligned operations through one clean channel before new contention can accumulate.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "focus",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-08-eight.position.single",
+          "text": "Notice where speed is now possible because the path and purpose are already aligned.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "focus",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-08-eight.position.context",
+          "text": "Several developments are moving at once, compressing the interval between decision and response.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "focus",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-08-eight.position.friction",
+          "text": "Velocity is reducing the time available to verify direction or absorb incoming change.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "focus",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-08-eight.position.doorway",
+          "text": "Protect the common trajectory, communicate promptly, and postpone additions that would scatter motion.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "focus",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-08-eight.reversal.delayed",
+          "text": "Expected movement has slowed, creating a waiting interval that can be used to check alignment.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "focus",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-08-eight.reversal.excessive",
+          "text": "Events are accelerating faster than attention can sort priorities and consequences.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "focus",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-08-eight.reversal.traditional-reversed",
+          "text": "Otherwise direct movement loses coherence through delay, crossed messages, or hurried action.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "focus",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "delayed": [
+          "wands-08-eight.reversal.delayed"
+        ],
+        "excessive": [
+          "wands-08-eight.reversal.excessive"
+        ],
+        "traditional_reversed": [
+          "wands-08-eight.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "wands-08-eight.position.single"
+        ],
+        "context": [
+          "wands-08-eight.position.context"
+        ],
+        "friction": [
+          "wands-08-eight.position.friction"
+        ],
+        "doorway": [
+          "wands-08-eight.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "wands-08-eight.prompt.trajectory",
+          "text": "Which moving parts already share a clear destination?",
+          "themes": [
+            "focus",
+            "momentum"
+          ]
+        },
+        {
+          "id": "wands-08-eight.prompt.pace",
+          "text": "What check would preserve accuracy without stopping useful speed?",
+          "themes": [
+            "attention",
+            "change"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "wands-08-eight.prompt.trajectory",
+        "wands-08-eight.prompt.pace"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "wands-09-nine",
+      "order": 31,
+      "arcana": "minor",
+      "number": 9,
+      "rank": "nine",
+      "title": "Nine Of Wands",
+      "omarchyTitle": "Persistent Process",
+      "suit": "wands",
+      "element": "fire",
+      "image": "assets/card-art/31-wands-09-nine-of-wands.png",
+      "coreThemes": [
+        "boundary",
+        "recovery",
+        "resilience"
+      ],
+      "imagery": [
+        {
+          "id": "wands-09-nine.image.primary",
+          "detail": "A bandaged, blindfolded figure crouches beneath a large elevated machine, adjusting one of the nine articulated supports holding it up.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "wands-09-nine.core",
+          "text": "The Nine of Wands sustains a guarded last effort through experience, resilience, and awareness of prior strain.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "recovery"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-09-nine.omarchy",
+          "text": "Persistent Process keeps a stressed service standing while treating accumulated damage as operational evidence.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "recovery",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-09-nine.position.single",
+          "text": "Honor the endurance that brought you here and examine what the guarded stance is costing.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "boundary",
+            "recovery",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-09-nine.position.context",
+          "text": "Previous strain has made persistence possible but has also heightened vigilance around the final stretch.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "boundary",
+            "recovery",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-09-nine.position.friction",
+          "text": "Readiness for another impact is preventing recovery and turning every signal into a warning.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "boundary",
+            "recovery",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-09-nine.position.doorway",
+          "text": "Reinforce the essential support, schedule recovery, and stop defending against hazards that are no longer present.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "boundary",
+            "recovery",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-09-nine.reversal.reduced",
+          "text": "Resilience is running low after prolonged strain, and the current defense needs relief.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "recovery",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-09-nine.reversal.recovering",
+          "text": "The guarded system is beginning to restore capacity as pressure eases and support returns.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "recovery",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-09-nine.reversal.traditional-reversed",
+          "text": "The last reserve weakens under exhaustion, rigid defensiveness, or growing doubt about the effort.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "recovery",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "reduced": [
+          "wands-09-nine.reversal.reduced"
+        ],
+        "recovering": [
+          "wands-09-nine.reversal.recovering"
+        ],
+        "traditional_reversed": [
+          "wands-09-nine.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "wands-09-nine.position.single"
+        ],
+        "context": [
+          "wands-09-nine.position.context"
+        ],
+        "friction": [
+          "wands-09-nine.position.friction"
+        ],
+        "doorway": [
+          "wands-09-nine.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "wands-09-nine.prompt.reserve",
+          "text": "What reserve remains, and what demand is currently draining it fastest?",
+          "themes": [
+            "resilience",
+            "attention"
+          ]
+        },
+        {
+          "id": "wands-09-nine.prompt.repair",
+          "text": "Which support can be repaired before you ask yourself for another push?",
+          "themes": [
+            "recovery",
+            "boundary"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "wands-09-nine.prompt.reserve",
+        "wands-09-nine.prompt.repair"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "wands-10-ten",
+      "order": 32,
+      "arcana": "minor",
+      "number": 10,
+      "rank": "ten",
+      "title": "Ten Of Wands",
+      "omarchyTitle": "Workload Saturation",
+      "suit": "wands",
+      "element": "fire",
+      "image": "assets/card-art/32-wands-10-ten-of-wands.png",
+      "coreThemes": [
+        "boundary",
+        "burden",
+        "release"
+      ],
+      "imagery": [
+        {
+          "id": "wands-10-ten.image.primary",
+          "detail": "A figure leans against ten arrowed lines descending from a dense stack of panels, with one line bending toward a separate target.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "wands-10-ten.core",
+          "text": "The Ten of Wands carries accomplishment together with the burden of responsibilities concentrated beyond healthy capacity.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "burden"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-10-ten.omarchy",
+          "text": "Workload Saturation reveals a queue whose accumulated tasks now require closure, transfer, or refusal rather than more throughput.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "burden",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-10-ten.position.single",
+          "text": "Count the obligations being carried and distinguish chosen responsibility from automatic accumulation.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "boundary",
+            "burden",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-10-ten.position.context",
+          "text": "The work has advanced, but its many demands are now concentrated into a heavy final load.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "boundary",
+            "burden",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-10-ten.position.friction",
+          "text": "Capability is attracting additional responsibility faster than limits can be communicated.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "boundary",
+            "burden",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-10-ten.position.doorway",
+          "text": "Finish the essential task, transfer what others can hold, and decline the load that exceeds scope.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "boundary",
+            "burden",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-10-ten.reversal.excessive",
+          "text": "Responsibility has expanded beyond sustainable capacity and is crowding out effective action.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "burden",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-10-ten.reversal.released",
+          "text": "A burden can now be set down as obligation is separated from habit and control.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "burden",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-10-ten.reversal.traditional-reversed",
+          "text": "Responsible completion breaks down when overload or refusal to delegate pushes the carrier beyond capacity.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "burden",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "excessive": [
+          "wands-10-ten.reversal.excessive"
+        ],
+        "released": [
+          "wands-10-ten.reversal.released"
+        ],
+        "traditional_reversed": [
+          "wands-10-ten.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "wands-10-ten.position.single"
+        ],
+        "context": [
+          "wands-10-ten.position.context"
+        ],
+        "friction": [
+          "wands-10-ten.position.friction"
+        ],
+        "doorway": [
+          "wands-10-ten.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "wands-10-ten.prompt.load",
+          "text": "Which obligation belongs to the purpose, and which arrived only because you could carry it?",
+          "themes": [
+            "burden",
+            "discernment"
+          ]
+        },
+        {
+          "id": "wands-10-ten.prompt.transfer",
+          "text": "What can be completed, delegated, or stopped without betraying the essential commitment?",
+          "themes": [
+            "release",
+            "boundary"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "wands-10-ten.prompt.load",
+        "wands-10-ten.prompt.transfer"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "wands-11-page",
+      "order": 33,
+      "arcana": "minor",
+      "number": 11,
+      "rank": "page",
+      "title": "Page Of Wands",
+      "omarchyTitle": "Spark / Explorer",
+      "suit": "wands",
+      "element": "fire",
+      "image": "assets/card-art/33-wands-page-of-wands.png",
+      "coreThemes": [
+        "beginning",
+        "initiative",
+        "skill"
+      ],
+      "imagery": [
+        {
+          "id": "wands-11-page.image.primary",
+          "detail": "A figure draws a taut line from a handheld control toward a bright suspended square above three angled console panels.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "wands-11-page.core",
+          "text": "The Page of Wands meets possibility with exploratory enthusiasm, messages, and experiments that begin developing skill.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "initiative"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-11-page.omarchy",
+          "text": "Spark / Explorer tests an unfamiliar command in a small environment where curiosity can produce usable feedback.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "initiative",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-11-page.position.single",
+          "text": "Approach the opening as a learner who can act before claiming mastery.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-11-page.position.context",
+          "text": "Fresh interest or an unexpected message is inviting experimentation in a new direction.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-11-page.position.friction",
+          "text": "Excitement is skipping the practice needed to turn discovery into reliable capability.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-11-page.position.doorway",
+          "text": "Run a lightweight trial, record the response, and let the next question emerge from evidence.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-11-page.reversal.developing",
+          "text": "The exploratory impulse is genuine, though direction and technique are still taking shape.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-11-page.reversal.misdirected",
+          "text": "Curiosity is chasing stimulation that does not deepen the chosen inquiry.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-11-page.reversal.traditional-reversed",
+          "text": "Exploration stalls amid procrastination, scattered enthusiasm, or behavior that creates needless conflict.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-11-page.court.person",
+          "text": "Curiosity and candid enthusiasm may arrive through someone ready to learn by trying.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-11-page.court.role",
+          "text": "Scouting is useful here: test a possibility, then report what direct experience reveals.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-11-page.court.approach",
+          "text": "Use beginner attention, quick experiments, and honest notes about what remains unlearned.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "developing": [
+          "wands-11-page.reversal.developing"
+        ],
+        "misdirected": [
+          "wands-11-page.reversal.misdirected"
+        ],
+        "traditional_reversed": [
+          "wands-11-page.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "wands-11-page.position.single"
+        ],
+        "context": [
+          "wands-11-page.position.context"
+        ],
+        "friction": [
+          "wands-11-page.position.friction"
+        ],
+        "doorway": [
+          "wands-11-page.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "wands-11-page.prompt.message",
+          "text": "What new signal deserves exploration before it becomes a fixed story?",
+          "themes": [
+            "beginning",
+            "attention"
+          ]
+        },
+        {
+          "id": "wands-11-page.prompt.trial",
+          "text": "What small trial would teach a useful skill even if the idea changes?",
+          "themes": [
+            "initiative",
+            "skill"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "wands-11-page.prompt.message",
+        "wands-11-page.prompt.trial"
+      ],
+      "courtModes": {
+        "person": [
+          "wands-11-page.court.person"
+        ],
+        "role": [
+          "wands-11-page.court.role"
+        ],
+        "approach": [
+          "wands-11-page.court.approach"
+        ]
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "id": "wands-12-knight",
+      "order": 34,
+      "arcana": "minor",
+      "number": 12,
+      "rank": "knight",
+      "title": "Knight Of Wands",
+      "omarchyTitle": "Launcher",
+      "suit": "wands",
+      "element": "fire",
+      "image": "assets/card-art/34-wands-knight-of-wands.png",
+      "coreThemes": [
+        "courage",
+        "momentum",
+        "risk"
+      ],
+      "imagery": [
+        {
+          "id": "wands-12-knight.image.primary",
+          "detail": "A running figure climbs a steep rail of stacked panels and reaches toward a floating tile while arrows point upward along the route.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "wands-12-knight.core",
+          "text": "The Knight of Wands advances through bold action, appetite for experience, and willingness to meet risk in motion.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "courage",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-12-knight.omarchy",
+          "text": "Launcher commits force to an ascending route and favors decisive movement once the target comes into view.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "momentum",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-12-knight.position.single",
+          "text": "Measure whether the appetite for movement is serving a destination or only escaping stillness.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "courage",
+            "momentum",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-12-knight.position.context",
+          "text": "A bold push, urgent mission, or adventurous approach is rapidly changing the available terrain.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "courage",
+            "momentum",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-12-knight.position.friction",
+          "text": "Impatience is treating caution as an enemy and leaving follow-through behind the initial charge.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "courage",
+            "momentum",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-12-knight.position.doorway",
+          "text": "Aim the surge at one destination, state the acceptable risk, and carry the action through its landing.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "courage",
+            "momentum",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-12-knight.reversal.excessive",
+          "text": "Momentum has become impulsive, exposing the work to avoidable conflict and unstable turns.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "courage",
+            "momentum",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-12-knight.reversal.delayed",
+          "text": "The drive to advance is meeting a halt that tests patience more than courage.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "courage",
+            "momentum",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-12-knight.reversal.traditional-reversed",
+          "text": "Force scatters before reaching the goal when frustration turns speed into reckless or volatile action.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "courage",
+            "momentum",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-12-knight.court.person",
+          "text": "Someone forceful and adventurous can energize the situation through direct engagement with risk.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "courage",
+            "momentum",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-12-knight.court.role",
+          "text": "When hesitation has outlived its usefulness, a mobilizing role can restore movement.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "courage",
+            "momentum",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-12-knight.court.approach",
+          "text": "Move decisively toward one target while keeping enough control to adjust the route.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "courage",
+            "momentum",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "excessive": [
+          "wands-12-knight.reversal.excessive"
+        ],
+        "delayed": [
+          "wands-12-knight.reversal.delayed"
+        ],
+        "traditional_reversed": [
+          "wands-12-knight.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "wands-12-knight.position.single"
+        ],
+        "context": [
+          "wands-12-knight.position.context"
+        ],
+        "friction": [
+          "wands-12-knight.position.friction"
+        ],
+        "doorway": [
+          "wands-12-knight.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "wands-12-knight.prompt.destination",
+          "text": "What destination is worthy of this much speed and appetite?",
+          "themes": [
+            "momentum",
+            "discernment"
+          ]
+        },
+        {
+          "id": "wands-12-knight.prompt.risk",
+          "text": "Which risk is intrinsic to the venture, and which comes only from haste?",
+          "themes": [
+            "risk",
+            "attention"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "wands-12-knight.prompt.destination",
+        "wands-12-knight.prompt.risk"
+      ],
+      "courtModes": {
+        "person": [
+          "wands-12-knight.court.person"
+        ],
+        "role": [
+          "wands-12-knight.court.role"
+        ],
+        "approach": [
+          "wands-12-knight.court.approach"
+        ]
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "id": "wands-13-queen",
+      "order": 35,
+      "arcana": "minor",
+      "number": 13,
+      "rank": "queen",
+      "title": "Queen Of Wands",
+      "omarchyTitle": "Creative Integrator",
+      "suit": "wands",
+      "element": "fire",
+      "image": "assets/card-art/35-wands-queen-of-wands.png",
+      "coreThemes": [
+        "connection",
+        "courage",
+        "integration"
+      ],
+      "imagery": [
+        {
+          "id": "wands-13-queen.image.primary",
+          "detail": "A central figure and a seated cat stand before branching panels while icons for tools, code, a cursor, and a gear radiate overhead.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "wands-13-queen.core",
+          "text": "The Queen of Wands joins warm confidence, determined creativity, and social presence without surrendering independence.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "courage"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-13-queen.omarchy",
+          "text": "Creative Integrator holds diverse tools and outgoing paths within one coherent field of confident direction.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "courage",
+            "integration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-13-queen.position.single",
+          "text": "Bring full presence to the work without making confidence depend on comparison.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "courage",
+            "integration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-13-queen.position.context",
+          "text": "Creative assurance and relational warmth are helping distinct parts operate as a whole.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "courage",
+            "integration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-13-queen.position.friction",
+          "text": "Visibility or competence may be stirring self-comparison that narrows generosity and range.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "courage",
+            "integration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-13-queen.position.doorway",
+          "text": "Connect the people and tools already present around a clearly owned creative intention.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "courage",
+            "integration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-13-queen.reversal.distorted",
+          "text": "Creative confidence is being bent into comparison, possessiveness, or a need to control attention.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "courage",
+            "integration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-13-queen.reversal.internalized",
+          "text": "Courage and creative authority are active privately but not yet expressed in the shared field.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "courage",
+            "integration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-13-queen.reversal.traditional-reversed",
+          "text": "The usual warmth and determination recede when insecurity, jealousy, or self-absorption takes command.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "courage",
+            "integration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-13-queen.court.person",
+          "text": "Warm, self-directed creative presence may draw others into the work without erasing their independence.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "courage",
+            "integration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-13-queen.court.role",
+          "text": "Integration matters here: varied contributions need coherence without losing each participant’s agency.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "courage",
+            "integration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-13-queen.court.approach",
+          "text": "Lead through visible confidence, generous connection, and clear ownership of the creative aim.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "courage",
+            "integration"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "distorted": [
+          "wands-13-queen.reversal.distorted"
+        ],
+        "internalized": [
+          "wands-13-queen.reversal.internalized"
+        ],
+        "traditional_reversed": [
+          "wands-13-queen.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "wands-13-queen.position.single"
+        ],
+        "context": [
+          "wands-13-queen.position.context"
+        ],
+        "friction": [
+          "wands-13-queen.position.friction"
+        ],
+        "doorway": [
+          "wands-13-queen.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "wands-13-queen.prompt.confidence",
+          "text": "Where is confidence already supported by practice rather than approval?",
+          "themes": [
+            "courage",
+            "skill"
+          ]
+        },
+        {
+          "id": "wands-13-queen.prompt.integration",
+          "text": "Which separate contribution could become stronger through deliberate connection?",
+          "themes": [
+            "connection",
+            "integration"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "wands-13-queen.prompt.confidence",
+        "wands-13-queen.prompt.integration"
+      ],
+      "courtModes": {
+        "person": [
+          "wands-13-queen.court.person"
+        ],
+        "role": [
+          "wands-13-queen.court.role"
+        ],
+        "approach": [
+          "wands-13-queen.court.approach"
+        ]
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "id": "wands-14-king",
+      "order": 36,
+      "arcana": "minor",
+      "number": 14,
+      "rank": "king",
+      "title": "King Of Wands",
+      "omarchyTitle": "Director Of Will",
+      "suit": "wands",
+      "element": "fire",
+      "image": "assets/card-art/36-wands-king-of-wands.png",
+      "coreThemes": [
+        "discipline",
+        "leadership",
+        "perspective"
+      ],
+      "imagery": [
+        {
+          "id": "wands-14-king.image.primary",
+          "detail": "An elevated figure holds a long horizontal control line aimed at a distant geometric structure while several operators work at stations below.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "wands-14-king.core",
+          "text": "The King of Wands directs sustained vision through mature initiative, broad perspective, and accountable leadership.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "discipline",
+            "leadership"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-14-king.omarchy",
+          "text": "Strategic direction aligns many active stations behind a distant objective while keeping execution connected to purpose.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "leadership",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-14-king.position.single",
+          "text": "Translate the large vision into direction that others can understand, question, and carry.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "discipline",
+            "leadership",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-14-king.position.context",
+          "text": "Long-range purpose and concentrated leadership are organizing the work across multiple contributors.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "discipline",
+            "leadership",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-14-king.position.friction",
+          "text": "A commanding vision is exceeding practical scope or leaving too little room for local knowledge.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "discipline",
+            "leadership",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-14-king.position.doorway",
+          "text": "State the objective, delegate real authority, and establish evidence that can revise the plan.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "discipline",
+            "leadership",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-14-king.reversal.excessive",
+          "text": "Direction has hardened into overreach, with ambition occupying more space than shared capacity.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "discipline",
+            "leadership",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-14-king.reversal.misdirected",
+          "text": "Strong leadership energy is serving an objective that no longer matches the underlying purpose.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "discipline",
+            "leadership",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-14-king.reversal.traditional-reversed",
+          "text": "The larger vision weakens when command becomes impulsive, overbearing, or detached from achievable scope.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "discipline",
+            "leadership",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-14-king.court.person",
+          "text": "Strategic perspective may come through someone comfortable with initiative and substantial responsibility.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "discipline",
+            "leadership",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-14-king.court.role",
+          "text": "Direction-setting here means coordinating effort without absorbing every decision.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "discipline",
+            "leadership",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-14-king.court.approach",
+          "text": "Hold the broad objective steadily while granting others meaningful scope to execute and respond.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "discipline",
+            "leadership",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "excessive": [
+          "wands-14-king.reversal.excessive"
+        ],
+        "misdirected": [
+          "wands-14-king.reversal.misdirected"
+        ],
+        "traditional_reversed": [
+          "wands-14-king.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "wands-14-king.position.single"
+        ],
+        "context": [
+          "wands-14-king.position.context"
+        ],
+        "friction": [
+          "wands-14-king.position.friction"
+        ],
+        "doorway": [
+          "wands-14-king.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "wands-14-king.prompt.vision",
+          "text": "Which part of the larger vision is clear enough to guide action now?",
+          "themes": [
+            "perspective",
+            "clarity"
+          ]
+        },
+        {
+          "id": "wands-14-king.prompt.authority",
+          "text": "Where can authority be shared without losing accountable direction?",
+          "themes": [
+            "leadership",
+            "agency"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "wands-14-king.prompt.vision",
+        "wands-14-king.prompt.authority"
+      ],
+      "courtModes": {
+        "person": [
+          "wands-14-king.court.person"
+        ],
+        "role": [
+          "wands-14-king.court.role"
+        ],
+        "approach": [
+          "wands-14-king.court.approach"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,3877 @@
+{
+  "schemaVersion": 2,
+  "deckId": "arcana-v2-swords-candidate",
+  "deckTitle": "Arcana Semantic v2 Swords Candidate",
+  "methodVersion": "arcana-composer-v2",
+  "sources": {
+    "schemaVersion": 2,
+    "sources": [
+      {
+        "id": "waite-pkt",
+        "author": "A. E. Waite",
+        "title": "The Pictorial Key to the Tarot",
+        "url": "https://sacred-texts.com/tarot/pkt/index.htm",
+        "tradition": "rws",
+        "publicationYear": 1911,
+        "licenseStatus": "public-domain",
+        "use": [
+          "historical-description",
+          "upright",
+          "reversed"
+        ]
+      },
+      {
+        "id": "vault-keywords",
+        "author": null,
+        "title": "Tarot Card Meanings — 78 Cards",
+        "url": null,
+        "tradition": "rws",
+        "publicationYear": null,
+        "licenseStatus": "private-reference",
+        "use": [
+          "upright",
+          "reversed"
+        ]
+      },
+      {
+        "id": "omarchy-guide",
+        "author": "OldJobobo",
+        "title": "Arcana Major and Minor Guides",
+        "url": null,
+        "tradition": "arcana",
+        "publicationYear": 2026,
+        "licenseStatus": "original-work",
+        "use": [
+          "omarchy",
+          "system-title"
+        ]
+      },
+      {
+        "id": "arcana-artwork",
+        "author": "OldJobobo",
+        "title": "Arcana Packaged Artwork",
+        "url": null,
+        "tradition": "arcana",
+        "publicationYear": 2026,
+        "licenseStatus": "original-work",
+        "use": [
+          "imagery"
+        ]
+      },
+      {
+        "id": "arcana-structural",
+        "author": null,
+        "title": "Arcana Structural Conventions v2",
+        "url": null,
+        "tradition": "golden-dawn-structural",
+        "publicationYear": 2026,
+        "licenseStatus": "structural-convention",
+        "use": [
+          "position",
+          "relationship",
+          "pattern"
+        ]
+      }
+    ]
+  },
+  "cards": [
+    {
+      "schemaVersion": 2,
+      "id": "swords-01-ace",
+      "order": 51,
+      "arcana": "minor",
+      "number": 1,
+      "rank": "ace",
+      "title": "Ace Of Swords",
+      "omarchyTitle": "Single Decision",
+      "suit": "swords",
+      "element": "air",
+      "image": "assets/card-art/51-swords-01-ace-of-swords.png",
+      "coreThemes": [
+        "beginning",
+        "clarity",
+        "truth"
+      ],
+      "imagery": [
+        {
+          "id": "swords-01-ace.image.primary",
+          "detail": "A vertical blade divides two dense tangles of crossing cables while two operators work at separate desks on either side.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "swords-01-ace.core",
+          "text": "The Ace of Swords introduces a breakthrough in thought: a precise idea or truth that can cut through confusion.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "clarity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-01-ace.omarchy",
+          "text": "Single Decision isolates the decisive signal from competing threads so that one clear criterion can organize the next move.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "clarity",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-01-ace.position.single",
+          "text": "Name the distinction that makes the situation intelligible without pretending every uncertainty has vanished.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "clarity",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-01-ace.position.context",
+          "text": "A new fact, insight, or firm criterion is changing how the whole question can be framed.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "clarity",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-01-ace.position.friction",
+          "text": "Sharp certainty risks cutting past useful complexity or turning honest clarity into a weapon.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "clarity",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-01-ace.position.doorway",
+          "text": "Write the decision in one sentence, then test it against the strongest piece of contrary evidence.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "clarity",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-01-ace.reversal.blocked",
+          "text": "The needed distinction is present but cannot yet pass through noise, pressure, or withheld information.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "clarity",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-01-ace.reversal.distorted",
+          "text": "A partial truth is being sharpened into an absolute conclusion that the available evidence cannot support.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "clarity",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-01-ace.reversal.traditional-reversed",
+          "text": "Confusion, harsh judgment, or chaotic reasoning obscures the clean breakthrough this card ordinarily offers.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "clarity",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "blocked": [
+          "swords-01-ace.reversal.blocked"
+        ],
+        "distorted": [
+          "swords-01-ace.reversal.distorted"
+        ],
+        "traditional_reversed": [
+          "swords-01-ace.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "swords-01-ace.position.single"
+        ],
+        "context": [
+          "swords-01-ace.position.context"
+        ],
+        "friction": [
+          "swords-01-ace.position.friction"
+        ],
+        "doorway": [
+          "swords-01-ace.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "swords-01-ace.prompt.criterion",
+          "text": "Which single criterion would clarify the decision without erasing its consequences?",
+          "themes": [
+            "clarity",
+            "agency"
+          ]
+        },
+        {
+          "id": "swords-01-ace.prompt.counterpoint",
+          "text": "What credible fact would require you to refine your current conclusion?",
+          "themes": [
+            "truth",
+            "discernment"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "swords-01-ace.prompt.criterion",
+        "swords-01-ace.prompt.counterpoint"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "swords-02-two",
+      "order": 52,
+      "arcana": "minor",
+      "number": 2,
+      "rank": "two",
+      "title": "Two Of Swords",
+      "omarchyTitle": "Branch Lock",
+      "suit": "swords",
+      "element": "air",
+      "image": "assets/card-art/52-swords-02-two-of-swords.png",
+      "coreThemes": [
+        "ambiguity",
+        "agency",
+        "discernment"
+      ],
+      "imagery": [
+        {
+          "id": "swords-02-two.image.primary",
+          "detail": "A seated operator faces two opposing display panels whose arrows converge on a small square suspended between them.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "swords-02-two.core",
+          "text": "The Two of Swords holds a difficult choice in suspension when competing considerations appear equally compelling.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "ambiguity",
+            "agency"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-02-two.omarchy",
+          "text": "Branch Lock captures two valid execution paths waiting on a comparison the current interface has not resolved.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "agency",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-02-two.position.single",
+          "text": "Separate what is genuinely undecidable from what remains undecided because a difficult cost has not been faced.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "ambiguity",
+            "agency",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-02-two.position.context",
+          "text": "Opposed options and incomplete information have produced a protective pause in commitment.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "ambiguity",
+            "agency",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-02-two.position.friction",
+          "text": "Maintaining perfect balance is postponing the consequence that accompanies either available route.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "ambiguity",
+            "agency",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-02-two.position.doorway",
+          "text": "Choose the next reversible step that gathers evidence without disguising it as a final commitment.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "ambiguity",
+            "agency",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-02-two.reversal.reconsidered",
+          "text": "The original either-or framing is being reopened because another criterion or option deserves inclusion.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "ambiguity",
+            "agency",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-02-two.reversal.unavailable",
+          "text": "No present option satisfies the necessary conditions, making a temporary refusal more honest than forced agreement.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "ambiguity",
+            "agency",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-02-two.reversal.traditional-reversed",
+          "text": "Conflicting information and the absence of a clean choice make even the lesser compromise difficult to identify.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "ambiguity",
+            "agency",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "reconsidered": [
+          "swords-02-two.reversal.reconsidered"
+        ],
+        "unavailable": [
+          "swords-02-two.reversal.unavailable"
+        ],
+        "traditional_reversed": [
+          "swords-02-two.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "swords-02-two.position.single"
+        ],
+        "context": [
+          "swords-02-two.position.context"
+        ],
+        "friction": [
+          "swords-02-two.position.friction"
+        ],
+        "doorway": [
+          "swords-02-two.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "swords-02-two.prompt.cost",
+          "text": "Which cost belongs to each option, and which cost are you currently refusing to name?",
+          "themes": [
+            "agency",
+            "truth"
+          ]
+        },
+        {
+          "id": "swords-02-two.prompt.evidence",
+          "text": "What missing information could materially change the balance between the branches?",
+          "themes": [
+            "ambiguity",
+            "discernment"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "swords-02-two.prompt.cost",
+        "swords-02-two.prompt.evidence"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "swords-03-three",
+      "order": 53,
+      "arcana": "minor",
+      "number": 3,
+      "rank": "three",
+      "title": "Three Of Swords",
+      "omarchyTitle": "Merge Conflict",
+      "suit": "swords",
+      "element": "air",
+      "image": "assets/card-art/53-swords-03-three-of-swords.png",
+      "coreThemes": [
+        "conflict",
+        "grief",
+        "truth"
+      ],
+      "imagery": [
+        {
+          "id": "swords-03-three.image.primary",
+          "detail": "Three upright blades pierce a fractured planning table and the split floor beneath it as two figures stand apart on opposite sides.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "swords-03-three.core",
+          "text": "The Three of Swords acknowledges grief or separation made sharper by a truth that can no longer be avoided.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "conflict",
+            "grief"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-03-three.omarchy",
+          "text": "Merge Conflict reveals incompatible changes at the shared surface; progress pauses until the break is examined rather than overwritten.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "grief",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-03-three.position.single",
+          "text": "Let the painful fact be specific enough to grieve instead of enlarging it into a verdict on everything.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "conflict",
+            "grief",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-03-three.position.context",
+          "text": "A rupture, disappointment, or necessary separation is defining the emotional and intellectual terrain.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "conflict",
+            "grief",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-03-three.position.friction",
+          "text": "Attempts to reason past the hurt are keeping its actual source from being understood and integrated.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "conflict",
+            "grief",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-03-three.position.doorway",
+          "text": "Identify what was lost, what remains intact, and the support needed for the next manageable step.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "conflict",
+            "grief",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-03-three.reversal.recovering",
+          "text": "The sharpest impact is easing, allowing the rupture to be remembered without governing every present choice.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "conflict",
+            "grief",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-03-three.reversal.released",
+          "text": "An old injury or grievance is loosening its claim on attention, even though repair may remain incomplete.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "conflict",
+            "grief",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-03-three.reversal.traditional-reversed",
+          "text": "Recovery begins through forgiveness, honest mourning, or gradual movement beyond the original break.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "conflict",
+            "grief",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "recovering": [
+          "swords-03-three.reversal.recovering"
+        ],
+        "released": [
+          "swords-03-three.reversal.released"
+        ],
+        "traditional_reversed": [
+          "swords-03-three.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "swords-03-three.position.single"
+        ],
+        "context": [
+          "swords-03-three.position.context"
+        ],
+        "friction": [
+          "swords-03-three.position.friction"
+        ],
+        "doorway": [
+          "swords-03-three.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "swords-03-three.prompt.loss",
+          "text": "What exactly has been lost, and what are you adding to that loss through interpretation?",
+          "themes": [
+            "grief",
+            "truth"
+          ]
+        },
+        {
+          "id": "swords-03-three.prompt.repair",
+          "text": "Which form of repair is available to you even if restoration is not?",
+          "themes": [
+            "recovery",
+            "agency"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "swords-03-three.prompt.loss",
+        "swords-03-three.prompt.repair"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "swords-04-four",
+      "order": 54,
+      "arcana": "minor",
+      "number": 4,
+      "rank": "four",
+      "title": "Four Of Swords",
+      "omarchyTitle": "Suspended Process",
+      "suit": "swords",
+      "element": "air",
+      "image": "assets/card-art/54-swords-04-four-of-swords.png",
+      "coreThemes": [
+        "rest",
+        "recovery",
+        "solitude"
+      ],
+      "imagery": [
+        {
+          "id": "swords-04-four.image.primary",
+          "detail": "A figure lies inside a dark capsule while four large blades point inward from the surrounding circuit structure.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "swords-04-four.core",
+          "text": "The Four of Swords calls for deliberate withdrawal, quiet contemplation, and restoration after mental or interpersonal strain.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "rest",
+            "recovery"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-04-four.omarchy",
+          "text": "Suspended Process preserves state while active demands are paused, creating a protected interval for maintenance before resumption.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "recovery",
+            "solitude"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-04-four.position.single",
+          "text": "Treat rest as an active boundary around attention rather than a reward earned only after exhaustion.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "rest",
+            "recovery",
+            "solitude"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-04-four.position.context",
+          "text": "Reduced activity and private reflection are providing the space needed to regain coherence.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "rest",
+            "recovery",
+            "solitude"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-04-four.position.friction",
+          "text": "Ongoing demands are entering the recovery interval, or retreat has continued beyond its restorative purpose.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "rest",
+            "recovery",
+            "solitude"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-04-four.position.doorway",
+          "text": "Define a real stopping point, remove one source of input, and decide what evidence would support returning.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "rest",
+            "recovery",
+            "solitude"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-04-four.reversal.unavailable",
+          "text": "Necessary rest cannot be reached because interruption, vigilance, or obligation keeps the mind engaged.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "rest",
+            "recovery",
+            "solitude"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-04-four.reversal.excessive",
+          "text": "The protective pause has become prolonged withdrawal that avoids testing whether capacity has returned.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "rest",
+            "recovery",
+            "solitude"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-04-four.reversal.traditional-reversed",
+          "text": "Restlessness, stress, or depleted reserves signal that restoration has been postponed too long.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "rest",
+            "recovery",
+            "solitude"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "unavailable": [
+          "swords-04-four.reversal.unavailable"
+        ],
+        "excessive": [
+          "swords-04-four.reversal.excessive"
+        ],
+        "traditional_reversed": [
+          "swords-04-four.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "swords-04-four.position.single"
+        ],
+        "context": [
+          "swords-04-four.position.context"
+        ],
+        "friction": [
+          "swords-04-four.position.friction"
+        ],
+        "doorway": [
+          "swords-04-four.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "swords-04-four.prompt.boundary",
+          "text": "What input or obligation needs a temporary boundary so recovery can actually occur?",
+          "themes": [
+            "boundary",
+            "rest"
+          ]
+        },
+        {
+          "id": "swords-04-four.prompt.return",
+          "text": "How would you recognize that solitude has restored enough capacity for a measured return?",
+          "themes": [
+            "recovery",
+            "attention"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "swords-04-four.prompt.boundary",
+        "swords-04-four.prompt.return"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "swords-05-five",
+      "order": 55,
+      "arcana": "minor",
+      "number": 5,
+      "rank": "five",
+      "title": "Five Of Swords",
+      "omarchyTitle": "Hostile Fork",
+      "suit": "swords",
+      "element": "air",
+      "image": "assets/card-art/55-swords-05-five-of-swords.png",
+      "coreThemes": [
+        "agency",
+        "conflict",
+        "risk"
+      ],
+      "imagery": [
+        {
+          "id": "swords-05-five.image.primary",
+          "detail": "A seated operator controls five articulated arms ending in blades that cut into a fractured network while other figures watch from separate platforms.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "swords-05-five.core",
+          "text": "The Five of Swords examines conflict pursued for advantage, where winning can damage trust and leave every participant with a cost.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "agency",
+            "conflict"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-05-five.omarchy",
+          "text": "Hostile Fork routes control away from a shared network, turning a technical divergence into leverage over everyone still connected.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "conflict",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-05-five.position.single",
+          "text": "Assess not only whether the contest can be won, but what the chosen method leaves behind afterward.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "agency",
+            "conflict",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-05-five.position.context",
+          "text": "A struggle over advantage, recognition, or control is narrowing the range of cooperative outcomes.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "agency",
+            "conflict",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-05-five.position.friction",
+          "text": "Defensiveness and scorekeeping are making concession feel like defeat even when the conflict harms the larger aim.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "agency",
+            "conflict",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-05-five.position.doorway",
+          "text": "Protect the essential boundary, relinquish the performative victory, and propose one concrete term for repair.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "agency",
+            "conflict",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-05-five.reversal.released",
+          "text": "The need to prevail is loosening, creating room to end an unproductive contest without declaring a victor.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "agency",
+            "conflict",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-05-five.reversal.reconsidered",
+          "text": "The conflict strategy is under review as its relational and practical costs become harder to dismiss.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "agency",
+            "conflict",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-05-five.reversal.traditional-reversed",
+          "text": "Lingering resentment competes with a real desire to reconcile and step out of the winner-loser frame.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "agency",
+            "conflict",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "released": [
+          "swords-05-five.reversal.released"
+        ],
+        "reconsidered": [
+          "swords-05-five.reversal.reconsidered"
+        ],
+        "traditional_reversed": [
+          "swords-05-five.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "swords-05-five.position.single"
+        ],
+        "context": [
+          "swords-05-five.position.context"
+        ],
+        "friction": [
+          "swords-05-five.position.friction"
+        ],
+        "doorway": [
+          "swords-05-five.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "swords-05-five.prompt.price",
+          "text": "What would victory cost the wider purpose, including trust and future cooperation?",
+          "themes": [
+            "conflict",
+            "risk"
+          ]
+        },
+        {
+          "id": "swords-05-five.prompt.terms",
+          "text": "Which boundary is essential, and which demand exists mainly to avoid feeling defeated?",
+          "themes": [
+            "boundary",
+            "agency"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "swords-05-five.prompt.price",
+        "swords-05-five.prompt.terms"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "swords-06-six",
+      "order": 56,
+      "arcana": "minor",
+      "number": 6,
+      "rank": "six",
+      "title": "Six Of Swords",
+      "omarchyTitle": "Safe Migration",
+      "suit": "swords",
+      "element": "air",
+      "image": "assets/card-art/56-swords-06-six-of-swords.png",
+      "coreThemes": [
+        "change",
+        "release",
+        "resilience"
+      ],
+      "imagery": [
+        {
+          "id": "swords-06-six.image.primary",
+          "detail": "Two figures travel inside an enclosed vehicle with a chest between them while six parallel blade-like rails cross the boundary between dark and light fields.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "swords-06-six.core",
+          "text": "The Six of Swords marks a sober transition away from difficulty, carrying lessons and unresolved weight toward calmer conditions.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-06-six.omarchy",
+          "text": "Safe Migration moves the essential payload across a difficult boundary with continuity prioritized over speed or spectacle.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "release",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-06-six.position.single",
+          "text": "Focus on the passage itself: what must be carried, what can be left, and what support makes movement safer.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "release",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-06-six.position.context",
+          "text": "Distance from a turbulent setting is becoming possible, though the transition still requires care and adaptation.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "release",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-06-six.position.friction",
+          "text": "Old burdens are being packed into the new environment without deciding whether they still belong there.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "release",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-06-six.position.doorway",
+          "text": "Set a modest destination, secure the essential resources, and release one burden that serves only the previous setting.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "release",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-06-six.reversal.blocked",
+          "text": "The route away from difficulty exists, but unresolved logistics or obligations prevent the passage from beginning.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "release",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-06-six.reversal.turning-away",
+          "text": "Movement toward change is interrupted by a return to familiar strain or reluctance to cross the threshold.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "release",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-06-six.reversal.traditional-reversed",
+          "text": "Unresolved concerns and accumulated baggage make transition harder, revealing what has not yet been left behind.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "release",
+            "resilience"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "blocked": [
+          "swords-06-six.reversal.blocked"
+        ],
+        "turning_away": [
+          "swords-06-six.reversal.turning-away"
+        ],
+        "traditional_reversed": [
+          "swords-06-six.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "swords-06-six.position.single"
+        ],
+        "context": [
+          "swords-06-six.position.context"
+        ],
+        "friction": [
+          "swords-06-six.position.friction"
+        ],
+        "doorway": [
+          "swords-06-six.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "swords-06-six.prompt.cargo",
+          "text": "What is essential to carry forward, and what belongs to the conditions you are leaving?",
+          "themes": [
+            "release",
+            "discernment"
+          ]
+        },
+        {
+          "id": "swords-06-six.prompt.passage",
+          "text": "Which practical support would make this transition safer rather than merely faster?",
+          "themes": [
+            "change",
+            "resilience"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "swords-06-six.prompt.cargo",
+        "swords-06-six.prompt.passage"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "swords-07-seven",
+      "order": 57,
+      "arcana": "minor",
+      "number": 7,
+      "rank": "seven",
+      "title": "Seven Of Swords",
+      "omarchyTitle": "Privilege Escalation",
+      "suit": "swords",
+      "element": "air",
+      "image": "assets/card-art/57-swords-07-seven-of-swords.png",
+      "coreThemes": [
+        "discernment",
+        "risk",
+        "truth"
+      ],
+      "imagery": [
+        {
+          "id": "swords-07-seven.image.primary",
+          "detail": "Gloved hands feed seven blade-tipped cables through a doorway toward an occupied office beyond the threshold.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "swords-07-seven.core",
+          "text": "The Seven of Swords uses strategy, discretion, and indirect action while warning that secrecy can separate tactics from integrity.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "discernment",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-07-seven.omarchy",
+          "text": "Privilege Escalation exploits an unseen access path, gaining reach beyond the permissions openly granted by the shared system.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "risk",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-07-seven.position.single",
+          "text": "Examine whether discretion protects a legitimate aim or merely prevents the method from receiving scrutiny.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "discernment",
+            "risk",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-07-seven.position.context",
+          "text": "Information and access are moving through an indirect route whose ownership and consent remain unclear.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "discernment",
+            "risk",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-07-seven.position.friction",
+          "text": "A clever workaround creates exposure because its success depends on concealment or an incomplete account.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "discernment",
+            "risk",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-07-seven.position.doorway",
+          "text": "Reduce the hidden surface: document the actual method, verify permission, and choose the least deceptive viable route.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "discernment",
+            "risk",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-07-seven.reversal.reconsidered",
+          "text": "The covert approach is being re-evaluated before its risks become harder to contain or explain.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "discernment",
+            "risk",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-07-seven.reversal.released",
+          "text": "A concealed action or partial account is being brought into the open so responsibility can replace evasion.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "discernment",
+            "risk",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-07-seven.reversal.traditional-reversed",
+          "text": "Coming clean or revising the strategy offers a way out of deception that has become difficult to maintain.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "discernment",
+            "risk",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "reconsidered": [
+          "swords-07-seven.reversal.reconsidered"
+        ],
+        "released": [
+          "swords-07-seven.reversal.released"
+        ],
+        "traditional_reversed": [
+          "swords-07-seven.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "swords-07-seven.position.single"
+        ],
+        "context": [
+          "swords-07-seven.position.context"
+        ],
+        "friction": [
+          "swords-07-seven.position.friction"
+        ],
+        "doorway": [
+          "swords-07-seven.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "swords-07-seven.prompt.permission",
+          "text": "Whose permission, resources, or trust does the current tactic rely on without explicit agreement?",
+          "themes": [
+            "truth",
+            "boundary"
+          ]
+        },
+        {
+          "id": "swords-07-seven.prompt.exposure",
+          "text": "What part of the plan would you change if the full method had to be documented?",
+          "themes": [
+            "risk",
+            "discernment"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "swords-07-seven.prompt.permission",
+        "swords-07-seven.prompt.exposure"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "swords-08-eight",
+      "order": 58,
+      "arcana": "minor",
+      "number": 8,
+      "rank": "eight",
+      "title": "Eight Of Swords",
+      "omarchyTitle": "Permission Denied",
+      "suit": "swords",
+      "element": "air",
+      "image": "assets/card-art/58-swords-08-eight-of-swords.png",
+      "coreThemes": [
+        "agency",
+        "boundary",
+        "perspective"
+      ],
+      "imagery": [
+        {
+          "id": "swords-08-eight.image.primary",
+          "detail": "A seated operator occupies a circular enclosure formed by upright blades, with a bright open path crossing through a gap in the ring.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "swords-08-eight.core",
+          "text": "The Eight of Swords describes constrained agency: fear and a narrowed viewpoint can make real limits appear more complete than they are.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "agency",
+            "boundary"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-08-eight.omarchy",
+          "text": "Permission Denied displays a restrictive perimeter, yet the visible opening suggests that the access model has not been tested from every angle.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "boundary",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-08-eight.position.single",
+          "text": "Map the difference between external constraints, internal assumptions, and choices that remain available inside both.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "agency",
+            "boundary",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-08-eight.position.context",
+          "text": "A restricted field of action has made caution understandable while shrinking awareness of possible movement.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "agency",
+            "boundary",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-08-eight.position.friction",
+          "text": "Repeated attention to prohibition is treating one denied route as proof that every route is closed.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "agency",
+            "boundary",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-08-eight.position.doorway",
+          "text": "Test one low-risk opening and let the observed result, rather than the enclosing story, update the map.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "agency",
+            "boundary",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-08-eight.reversal.blocked",
+          "text": "A genuine external limit remains in force, so perspective alone cannot create access that is not currently available.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "agency",
+            "boundary",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-08-eight.reversal.recovering",
+          "text": "A wider view is returning, making a small but meaningful exercise of agency visible again.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "agency",
+            "boundary",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-08-eight.reversal.traditional-reversed",
+          "text": "Self-acceptance and a changed perspective loosen the sense of entrapment enough for movement to resume.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "agency",
+            "boundary",
+            "perspective"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "blocked": [
+          "swords-08-eight.reversal.blocked"
+        ],
+        "recovering": [
+          "swords-08-eight.reversal.recovering"
+        ],
+        "traditional_reversed": [
+          "swords-08-eight.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "swords-08-eight.position.single"
+        ],
+        "context": [
+          "swords-08-eight.position.context"
+        ],
+        "friction": [
+          "swords-08-eight.position.friction"
+        ],
+        "doorway": [
+          "swords-08-eight.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "swords-08-eight.prompt.map",
+          "text": "Which limits are observable facts, and which are conclusions built around those facts?",
+          "themes": [
+            "truth",
+            "perspective"
+          ]
+        },
+        {
+          "id": "swords-08-eight.prompt.opening",
+          "text": "What is the smallest safe action that could test whether the boundary is complete?",
+          "themes": [
+            "agency",
+            "risk"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "swords-08-eight.prompt.map",
+        "swords-08-eight.prompt.opening"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "swords-09-nine",
+      "order": 59,
+      "arcana": "minor",
+      "number": 9,
+      "rank": "nine",
+      "title": "Nine Of Swords",
+      "omarchyTitle": "Recursive Error",
+      "suit": "swords",
+      "element": "air",
+      "image": "assets/card-art/59-swords-09-nine-of-swords.png",
+      "coreThemes": [
+        "attention",
+        "burden",
+        "rest"
+      ],
+      "imagery": [
+        {
+          "id": "swords-09-nine.image.primary",
+          "detail": "A bowed figure braces against a desk beneath nine blades arranged on looping orbital paths around a dark central point.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "swords-09-nine.core",
+          "text": "The Nine of Swords brings private worry and relentless mental replay into view, especially when imagined consequences crowd out rest.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "burden"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-09-nine.omarchy",
+          "text": "Recursive Error keeps feeding the same alarming output back into its own input until attention can no longer distinguish signal from repetition.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "burden",
+            "rest"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-09-nine.position.single",
+          "text": "Bring the recurring thought into daylight and compare its claim with what is known, unknown, and merely rehearsed.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "attention",
+            "burden",
+            "rest"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-09-nine.position.context",
+          "text": "Unanswered concerns are consuming attention in isolation and making the situation feel heavier than its visible evidence.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "attention",
+            "burden",
+            "rest"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-09-nine.position.friction",
+          "text": "Repeated review is posing as preparation while depriving the mind of the rest needed for proportion.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "attention",
+            "burden",
+            "rest"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-09-nine.position.doorway",
+          "text": "Externalize the loop in writing, mark the unsupported steps, and share the concrete concern with a trusted support.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "attention",
+            "burden",
+            "rest"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-09-nine.reversal.internalized",
+          "text": "The burden remains largely private, making its intensity difficult to compare with outside evidence or support.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "burden",
+            "rest"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-09-nine.reversal.excessive",
+          "text": "Mental rehearsal has accelerated beyond useful problem-solving and now magnifies each uncertain consequence.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "burden",
+            "rest"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-09-nine.reversal.traditional-reversed",
+          "text": "Hope and outreach begin to interrupt despair, though recurring fear may still require patient attention and support.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "burden",
+            "rest"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "internalized": [
+          "swords-09-nine.reversal.internalized"
+        ],
+        "excessive": [
+          "swords-09-nine.reversal.excessive"
+        ],
+        "traditional_reversed": [
+          "swords-09-nine.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "swords-09-nine.position.single"
+        ],
+        "context": [
+          "swords-09-nine.position.context"
+        ],
+        "friction": [
+          "swords-09-nine.position.friction"
+        ],
+        "doorway": [
+          "swords-09-nine.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "swords-09-nine.prompt.known",
+          "text": "Which part of the recurring concern is supported by present evidence, and which part is projection?",
+          "themes": [
+            "truth",
+            "attention"
+          ]
+        },
+        {
+          "id": "swords-09-nine.prompt.support",
+          "text": "What concrete concern could you share so it does not have to circulate in isolation?",
+          "themes": [
+            "connection",
+            "burden"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "swords-09-nine.prompt.known",
+        "swords-09-nine.prompt.support"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "swords-10-ten",
+      "order": 60,
+      "arcana": "minor",
+      "number": 10,
+      "rank": "ten",
+      "title": "Ten Of Swords",
+      "omarchyTitle": "Fatal Exception",
+      "suit": "swords",
+      "element": "air",
+      "image": "assets/card-art/60-swords-10-ten-of-swords.png",
+      "coreThemes": [
+        "change",
+        "recovery",
+        "release"
+      ],
+      "imagery": [
+        {
+          "id": "swords-10-ten.image.primary",
+          "detail": "Ten blades pierce a tall stack of collapsing interface structures while a distant figure stands holding a loose control cable.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "swords-10-ten.core",
+          "text": "The Ten of Swords marks a painful ending whose finality stops a failed pattern from demanding further effort.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "recovery"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-10-ten.omarchy",
+          "text": "Fatal Exception halts the compromised stack completely, making containment and a clean restart more honest than another patch.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "recovery",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-10-ten.position.single",
+          "text": "Acknowledge what has ended without turning one collapse into a permanent definition of your capacity.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "recovery",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-10-ten.position.context",
+          "text": "A structure or strategy has reached its limit, removing the option of continuing in its previous form.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "recovery",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-10-ten.position.friction",
+          "text": "Energy is still being spent disputing an ending that has already withdrawn its workable foundation.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "recovery",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-10-ten.position.doorway",
+          "text": "Contain the damage, preserve the lesson, and choose the first recovery action that does not depend on restoring the old stack.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "recovery",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-10-ten.reversal.recovering",
+          "text": "After the lowest point, limited capacity is returning and can be directed toward repair rather than repetition.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "recovery",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-10-ten.reversal.released",
+          "text": "Acceptance of the ending frees attention and resources that had remained attached to an unworkable form.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "recovery",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-10-ten.reversal.traditional-reversed",
+          "text": "The ending may mark a floor; recovery can begin when its finality is acknowledged rather than resisted.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "recovery",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "recovering": [
+          "swords-10-ten.reversal.recovering"
+        ],
+        "released": [
+          "swords-10-ten.reversal.released"
+        ],
+        "traditional_reversed": [
+          "swords-10-ten.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "swords-10-ten.position.single"
+        ],
+        "context": [
+          "swords-10-ten.position.context"
+        ],
+        "friction": [
+          "swords-10-ten.position.friction"
+        ],
+        "doorway": [
+          "swords-10-ten.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "swords-10-ten.prompt.ending",
+          "text": "What has actually ended, and what part of your identity does not need to end with it?",
+          "themes": [
+            "change",
+            "truth"
+          ]
+        },
+        {
+          "id": "swords-10-ten.prompt.salvage",
+          "text": "Which lesson or resource can be salvaged without rebuilding the failed arrangement?",
+          "themes": [
+            "recovery",
+            "release"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "swords-10-ten.prompt.ending",
+        "swords-10-ten.prompt.salvage"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "swords-11-page",
+      "order": 61,
+      "arcana": "minor",
+      "number": 11,
+      "rank": "page",
+      "title": "Page Of Swords",
+      "omarchyTitle": "The Analyst",
+      "suit": "swords",
+      "element": "air",
+      "image": "assets/card-art/61-swords-page-of-swords.png",
+      "coreThemes": [
+        "attention",
+        "beginning",
+        "skill"
+      ],
+      "imagery": [
+        {
+          "id": "swords-11-page.image.primary",
+          "detail": "A standing figure holds an upright blade beside a bright vertical divide while studying three connected technical diagrams.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "swords-11-page.core",
+          "text": "The Page of Swords brings alert curiosity, quick questions, and the early development of intellectual or communicative skill.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "beginning"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-11-page.omarchy",
+          "text": "The Analyst inspects each connection at the boundary, treating anomaly and contradiction as invitations to learn the system more precisely.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "beginning",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-11-page.position.single",
+          "text": "Use curiosity to sharpen the question before trying to demonstrate that the first theory is correct.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "attention",
+            "beginning",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-11-page.position.context",
+          "text": "New information or an observant participant is bringing useful scrutiny to assumptions that had gone untested.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "attention",
+            "beginning",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-11-page.position.friction",
+          "text": "Restless inquiry is scattering attention or turning incomplete findings into provocative claims.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "attention",
+            "beginning",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-11-page.position.doorway",
+          "text": "Define one question, inspect the primary evidence, and communicate what remains uncertain alongside what was found.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "attention",
+            "beginning",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-11-page.reversal.developing",
+          "text": "The inquiry is sincere but the skill to evaluate sources and communicate conclusions is still forming.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "beginning",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-11-page.reversal.misdirected",
+          "text": "Curiosity has shifted toward rumor, surveillance, or argument instead of disciplined investigation.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "beginning",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-11-page.reversal.traditional-reversed",
+          "text": "Manipulative talk or unsupported claims misuse the Page’s mental energy while producing little accountable action.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "beginning",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-11-page.court.person",
+          "text": "An alert and questioning presence may notice inconsistencies that more practiced participants have learned to overlook.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "beginning",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-11-page.court.role",
+          "text": "The investigative role gathers facts, tests assumptions, and keeps uncertainty visible during early analysis.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "beginning",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-11-page.court.approach",
+          "text": "Ask precise questions, trace each claim to evidence, and revise the working theory without embarrassment.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "attention",
+            "beginning",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "developing": [
+          "swords-11-page.reversal.developing"
+        ],
+        "misdirected": [
+          "swords-11-page.reversal.misdirected"
+        ],
+        "traditional_reversed": [
+          "swords-11-page.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "swords-11-page.position.single"
+        ],
+        "context": [
+          "swords-11-page.position.context"
+        ],
+        "friction": [
+          "swords-11-page.position.friction"
+        ],
+        "doorway": [
+          "swords-11-page.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "swords-11-page.prompt.question",
+          "text": "Which question would produce understanding rather than merely display cleverness?",
+          "themes": [
+            "attention",
+            "clarity"
+          ]
+        },
+        {
+          "id": "swords-11-page.prompt.source",
+          "text": "What primary evidence could confirm, complicate, or overturn the current theory?",
+          "themes": [
+            "skill",
+            "truth"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "swords-11-page.prompt.question",
+        "swords-11-page.prompt.source"
+      ],
+      "courtModes": {
+        "person": [
+          "swords-11-page.court.person"
+        ],
+        "role": [
+          "swords-11-page.court.role"
+        ],
+        "approach": [
+          "swords-11-page.court.approach"
+        ]
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "id": "swords-12-knight",
+      "order": 62,
+      "arcana": "minor",
+      "number": 12,
+      "rank": "knight",
+      "title": "Knight Of Swords",
+      "omarchyTitle": "The Debugger",
+      "suit": "swords",
+      "element": "air",
+      "image": "assets/card-art/62-swords-knight-of-swords.png",
+      "coreThemes": [
+        "focus",
+        "initiative",
+        "risk"
+      ],
+      "imagery": [
+        {
+          "id": "swords-12-knight.image.primary",
+          "detail": "A kneeling figure rides a small wheeled platform and thrusts a long blade toward dense streams of panels and lines rushing past.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "swords-12-knight.core",
+          "text": "The Knight of Swords commits thought to rapid action, pursuing an idea or defense with courage and considerable risk of haste.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "focus",
+            "initiative"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-12-knight.omarchy",
+          "text": "The Debugger enters the live data stream at speed, cutting toward the fault before the surrounding system has finished stabilizing.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "initiative",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-12-knight.position.single",
+          "text": "Direct the surge of conviction toward one verified target and account for what speed makes harder to notice.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "focus",
+            "initiative",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-12-knight.position.context",
+          "text": "Urgent analysis and decisive movement are accelerating a situation that had remained abstract or stalled.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "focus",
+            "initiative",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-12-knight.position.friction",
+          "text": "Momentum is outrunning evidence, consultation, or awareness of collateral effects along the route.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "focus",
+            "initiative",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-12-knight.position.doorway",
+          "text": "Pause long enough to verify the target and stopping condition, then act with concentrated force rather than indiscriminate speed.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "focus",
+            "initiative",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-12-knight.reversal.excessive",
+          "text": "The drive to act has become reckless acceleration that leaves no room for correction or response.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "focus",
+            "initiative",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-12-knight.reversal.misdirected",
+          "text": "Decisive energy is aimed at the wrong fault, risking damage while the actual issue remains active.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "focus",
+            "initiative",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-12-knight.reversal.traditional-reversed",
+          "text": "Directionless urgency and disregard for consequences turn bold action into an unpredictable liability.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "focus",
+            "initiative",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-12-knight.court.person",
+          "text": "A direct and intellectually forceful presence may challenge delay by moving quickly toward the disputed point.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "focus",
+            "initiative",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-12-knight.court.role",
+          "text": "The intervention role cuts through drift when a well-defined problem requires immediate concentrated effort.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "focus",
+            "initiative",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-12-knight.court.approach",
+          "text": "Verify the target, act decisively, and preserve a stopping rule that allows new evidence to change the course.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "focus",
+            "initiative",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "excessive": [
+          "swords-12-knight.reversal.excessive"
+        ],
+        "misdirected": [
+          "swords-12-knight.reversal.misdirected"
+        ],
+        "traditional_reversed": [
+          "swords-12-knight.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "swords-12-knight.position.single"
+        ],
+        "context": [
+          "swords-12-knight.position.context"
+        ],
+        "friction": [
+          "swords-12-knight.position.friction"
+        ],
+        "doorway": [
+          "swords-12-knight.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "swords-12-knight.prompt.target",
+          "text": "What evidence confirms that your urgency is aimed at the actual problem?",
+          "themes": [
+            "focus",
+            "truth"
+          ]
+        },
+        {
+          "id": "swords-12-knight.prompt.brake",
+          "text": "Which stopping condition would keep decisive action from becoming uncontrolled momentum?",
+          "themes": [
+            "risk",
+            "discipline"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "swords-12-knight.prompt.target",
+        "swords-12-knight.prompt.brake"
+      ],
+      "courtModes": {
+        "person": [
+          "swords-12-knight.court.person"
+        ],
+        "role": [
+          "swords-12-knight.court.role"
+        ],
+        "approach": [
+          "swords-12-knight.court.approach"
+        ]
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "id": "swords-13-queen",
+      "order": 63,
+      "arcana": "minor",
+      "number": 13,
+      "rank": "queen",
+      "title": "Queen Of Swords",
+      "omarchyTitle": "The Arbiter",
+      "suit": "swords",
+      "element": "air",
+      "image": "assets/card-art/63-swords-queen-of-swords.png",
+      "coreThemes": [
+        "boundary",
+        "clarity",
+        "discernment"
+      ],
+      "imagery": [
+        {
+          "id": "swords-13-queen.image.primary",
+          "detail": "A standing figure holds a sword upright and extends an open hand toward linked diagrams, with a cracked dark panel behind them.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "swords-13-queen.core",
+          "text": "The Queen of Swords joins clear perception with earned independence, setting honest boundaries without abandoning complexity.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "clarity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-13-queen.omarchy",
+          "text": "The Arbiter compares linked evidence across a clean dividing line, keeping prior damage visible without letting it predetermine the ruling.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "clarity",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-13-queen.position.single",
+          "text": "State the clearest fair assessment available while leaving room for relevant complexity and revision.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "boundary",
+            "clarity",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-13-queen.position.context",
+          "text": "Independent judgment and explicit boundaries are helping the situation become more legible and accountable.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "boundary",
+            "clarity",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-13-queen.position.friction",
+          "text": "Discernment is hardening into severity, using past injury to exclude nuance before it can be heard.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "boundary",
+            "clarity",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-13-queen.position.doorway",
+          "text": "Separate evidence from residue, communicate the boundary plainly, and invite only the information that could fairly alter it.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "boundary",
+            "clarity",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-13-queen.reversal.unavailable",
+          "text": "Clear assessment is difficult to access because hurt, fatigue, or defensiveness occupies the judging position.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "clarity",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-13-queen.reversal.distorted",
+          "text": "A useful boundary has hardened into contempt or punitive certainty that no longer serves truth.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "clarity",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-13-queen.reversal.traditional-reversed",
+          "text": "Bitterness and cutting judgment compromise the perceptiveness needed for a fair and clear-minded response.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "clarity",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-13-queen.court.person",
+          "text": "A perceptive and self-possessed presence may offer candor shaped by experience rather than by a need for approval.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "clarity",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-13-queen.court.role",
+          "text": "The arbiter role distinguishes evidence from preference and protects the boundary required for fair consideration.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "clarity",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-13-queen.court.approach",
+          "text": "Listen for complexity, name the relevant facts plainly, and set limits without adding humiliation.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "boundary",
+            "clarity",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "unavailable": [
+          "swords-13-queen.reversal.unavailable"
+        ],
+        "distorted": [
+          "swords-13-queen.reversal.distorted"
+        ],
+        "traditional_reversed": [
+          "swords-13-queen.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "swords-13-queen.position.single"
+        ],
+        "context": [
+          "swords-13-queen.position.context"
+        ],
+        "friction": [
+          "swords-13-queen.position.friction"
+        ],
+        "doorway": [
+          "swords-13-queen.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "swords-13-queen.prompt.boundary",
+          "text": "Which boundary protects clear judgment, and which reaction is trying to punish?",
+          "themes": [
+            "boundary",
+            "discernment"
+          ]
+        },
+        {
+          "id": "swords-13-queen.prompt.revision",
+          "text": "What new evidence would deserve to alter your present assessment?",
+          "themes": [
+            "clarity",
+            "truth"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "swords-13-queen.prompt.boundary",
+        "swords-13-queen.prompt.revision"
+      ],
+      "courtModes": {
+        "person": [
+          "swords-13-queen.court.person"
+        ],
+        "role": [
+          "swords-13-queen.court.role"
+        ],
+        "approach": [
+          "swords-13-queen.court.approach"
+        ]
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "id": "swords-14-king",
+      "order": 64,
+      "arcana": "minor",
+      "number": 14,
+      "rank": "king",
+      "title": "King Of Swords",
+      "omarchyTitle": "Architect Of Logic",
+      "suit": "swords",
+      "element": "air",
+      "image": "assets/card-art/64-swords-king-of-swords.png",
+      "coreThemes": [
+        "discipline",
+        "leadership",
+        "truth"
+      ],
+      "imagery": [
+        {
+          "id": "swords-14-king.image.primary",
+          "detail": "A central figure holds a tall upright blade before branching circuit structures while four other figures work at separate stations around the system.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "swords-14-king.core",
+          "text": "The King of Swords applies disciplined reason and principled authority, using truth to guide decisions that affect a wider field.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "discipline",
+            "leadership"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-14-king.omarchy",
+          "text": "Architect Of Logic establishes the governing structure through which distributed decisions can remain consistent, inspectable, and accountable.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "leadership",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-14-king.position.single",
+          "text": "Identify the principle that should govern the decision, then apply it consistently to power as well as preference.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "discipline",
+            "leadership",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-14-king.position.context",
+          "text": "A need for rigorous standards and accountable judgment is organizing the work of several participants.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "discipline",
+            "leadership",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-14-king.position.friction",
+          "text": "Abstract logic is being used to dominate the field or to hide whose interests the system privileges.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "discipline",
+            "leadership",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-14-king.position.doorway",
+          "text": "Make the governing rule explicit, invite a challenge from affected participants, and document the reason for the final choice.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "discipline",
+            "leadership",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-14-king.reversal.excessive",
+          "text": "Authority has become overcentralized, treating control as proof that the reasoning behind it is sound.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "discipline",
+            "leadership",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-14-king.reversal.distorted",
+          "text": "Logic is being selectively arranged to manipulate agreement or defend power rather than discover truth.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "discipline",
+            "leadership",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-14-king.reversal.traditional-reversed",
+          "text": "Cruel or manipulative authority weakens the disciplined judgment that legitimate leadership requires.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "discipline",
+            "leadership",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-14-king.court.person",
+          "text": "A principled and analytically disciplined presence may bring structure to decisions with consequences beyond the immediate participants.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "discipline",
+            "leadership",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-14-king.court.role",
+          "text": "The governance role defines fair rules, explains their basis, and remains accountable for how authority is exercised.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "discipline",
+            "leadership",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-14-king.court.approach",
+          "text": "Reason from explicit principles, examine who bears the consequences, and keep the decision open to evidence-based review.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "discipline",
+            "leadership",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "excessive": [
+          "swords-14-king.reversal.excessive"
+        ],
+        "distorted": [
+          "swords-14-king.reversal.distorted"
+        ],
+        "traditional_reversed": [
+          "swords-14-king.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "swords-14-king.position.single"
+        ],
+        "context": [
+          "swords-14-king.position.context"
+        ],
+        "friction": [
+          "swords-14-king.position.friction"
+        ],
+        "doorway": [
+          "swords-14-king.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "swords-14-king.prompt.principle",
+          "text": "Which principle governs this decision, and is it being applied consistently to everyone involved?",
+          "themes": [
+            "discipline",
+            "truth"
+          ]
+        },
+        {
+          "id": "swords-14-king.prompt.power",
+          "text": "How can the reasoning be inspected or challenged by those who carry its consequences?",
+          "themes": [
+            "leadership",
+            "clarity"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "swords-14-king.prompt.principle",
+        "swords-14-king.prompt.power"
+      ],
+      "courtModes": {
+        "person": [
+          "swords-14-king.court.person"
+        ],
+        "role": [
+          "swords-14-king.court.role"
+        ],
+        "approach": [
+          "swords-14-king.court.approach"
+        ]
+      }
+    }
+  ]
+}

@@ -47,10 +47,14 @@ function boundedCount(value, total) {
 }
 
 function toArray(value) {
-  if (Array.isArray(value)) return value;
-  if (!value || !Number.isFinite(Number(value.length))) return [];
+  if (Array.isArray(value)) {
+    if (value.length > 10000) throw new Error("Array exceeds resource bound");
+    return value;
+  }
+  if (!value || !Number.isSafeInteger(Number(value.length)) || Number(value.length) < 0) throw new Error("Invalid array-like length");
+  if (Number(value.length) > 10000) throw new Error("Array-like value exceeds resource bound");
   const output=[];
-  const length=Math.max(0,Math.floor(Number(value.length)));
+  const length=Number(value.length);
   for (let index=0;index<length;index++) output.push(value[index]);
   return output;
 }
@@ -60,7 +64,8 @@ function draw(deck, options) {
   const cards = toArray(deck);
   if (!cards.length) return [];
   const next = rng(options.seed || "arcana");
-  const pool = cards.map((card,index) => index);
+  const pool=[];
+  for (let index=0;index<cards.length;index++) pool.push(index);
   const count = boundedCount(options.count, pool.length);
   const output = [];
   for (let i=0; i<count; i++) {
@@ -78,8 +83,31 @@ function draw(deck, options) {
   return output;
 }
 
+function drawV2(deck, options) {
+  options = options || {};
+  const cards = toArray(deck);
+  if (!cards.length) return [];
+  const next = rng(options.seed || "arcana");
+  const pool=[];
+  for (let index=0;index<cards.length;index++) pool.push(index);
+  const count = boundedCount(options.count, pool.length);
+  const output=[];
+  for (let i=0;i<count;i++) {
+    const pick=Math.floor(next()*pool.length);
+    const card=cards[pool.splice(pick,1)[0]];
+    const reversed=options.reversals === true && next() < 0.34;
+    if (reversed) next();
+    output.push({cardId:card.id,orientation:reversed ? "reversed" : "upright"});
+  }
+  return output;
+}
+
 function dailyKey(localDate) {
   return "daily:" + boundedText(localDate, 10) + ":" + METHOD_VERSION;
+}
+
+function dailyKeyV2(localDate) {
+  return "daily:" + boundedText(localDate, 10) + ":arcana-composer-v2";
 }
 
 function findCard(deck,id) {
@@ -277,7 +305,15 @@ function buildHandoff(reading,userQuestion) {
 
 function BufferByteLength(text) {
   if (typeof Buffer !== "undefined") return Buffer.byteLength(text,"utf8");
-  return unescape(encodeURIComponent(text)).length;
+  let bytes=0;
+  for (let i=0;i<text.length;i++) {
+    const code=text.charCodeAt(i);
+    if (code <= 0x7f) bytes+=1;
+    else if (code <= 0x7ff) bytes+=2;
+    else if (code >= 0xd800 && code <= 0xdbff && i+1<text.length && text.charCodeAt(i+1) >= 0xdc00 && text.charCodeAt(i+1) <= 0xdfff) { bytes+=4; i++; }
+    else bytes+=3;
+  }
+  return bytes;
 }
 
-if (typeof module !== "undefined") module.exports={METHOD_VERSION,MAX_HANDOFF_BYTES,hashSeed,rng,draw,dailyKey,compose,buildHandoff};
+if (typeof module !== "undefined") module.exports={METHOD_VERSION,MAX_HANDOFF_BYTES,hashSeed,rng,draw,drawV2,dailyKey,dailyKeyV2,compose,buildHandoff};

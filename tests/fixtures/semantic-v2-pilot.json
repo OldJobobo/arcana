@@ -1,0 +1,3536 @@
+{
+  "schemaVersion": 2,
+  "deckId": "arcana-v2-pilot",
+  "deckTitle": "Arcana v2 Pilot",
+  "methodVersion": "arcana-composer-v2",
+  "sources": {
+    "schemaVersion": 2,
+    "sources": [
+      {
+        "id": "waite-pkt",
+        "author": "A. E. Waite",
+        "title": "The Pictorial Key to the Tarot",
+        "url": "https://sacred-texts.com/tarot/pkt/index.htm",
+        "tradition": "rws",
+        "publicationYear": 1911,
+        "licenseStatus": "public-domain",
+        "use": [
+          "historical-description",
+          "upright",
+          "reversed"
+        ]
+      },
+      {
+        "id": "vault-keywords",
+        "author": null,
+        "title": "Tarot Card Meanings — 78 Cards",
+        "url": null,
+        "tradition": "rws",
+        "publicationYear": null,
+        "licenseStatus": "private-reference",
+        "use": [
+          "upright",
+          "reversed"
+        ]
+      },
+      {
+        "id": "omarchy-guide",
+        "author": "OldJobobo",
+        "title": "Arcana Major and Minor Guides",
+        "url": null,
+        "tradition": "arcana",
+        "publicationYear": 2026,
+        "licenseStatus": "original-work",
+        "use": [
+          "omarchy",
+          "system-title"
+        ]
+      },
+      {
+        "id": "arcana-artwork",
+        "author": "OldJobobo",
+        "title": "Arcana Packaged Artwork",
+        "url": null,
+        "tradition": "arcana",
+        "publicationYear": 2026,
+        "licenseStatus": "original-work",
+        "use": [
+          "imagery"
+        ]
+      },
+      {
+        "id": "arcana-structural",
+        "author": null,
+        "title": "Arcana Structural Conventions v2",
+        "url": null,
+        "tradition": "golden-dawn-structural",
+        "publicationYear": 2026,
+        "licenseStatus": "structural-convention",
+        "use": [
+          "position",
+          "relationship",
+          "pattern"
+        ]
+      }
+    ]
+  },
+  "cards": [
+    {
+      "schemaVersion": 2,
+      "id": "major-00-the-fool",
+      "order": 1,
+      "arcana": "major",
+      "number": 0,
+      "rank": "0",
+      "title": "The Fool",
+      "omarchyTitle": "First Boot",
+      "suit": null,
+      "element": "air",
+      "image": "assets/card-art/01-major-arcana-00-the-fool.png",
+      "coreThemes": [
+        "beginning",
+        "opportunity",
+        "risk"
+      ],
+      "imagery": [
+        {
+          "id": "major-00-the-fool.image.primary",
+          "detail": "A figure steps across scattered interface fragments toward an isolated marker.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-00-the-fool.core",
+          "text": "A beginning can require movement before complete certainty is available.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-00-the-fool.omarchy",
+          "text": "Enter the new environment as a learner while keeping recovery paths visible.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "opportunity",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-00-the-fool.position.single",
+          "text": "Notice where beginner's attention is more useful than premature mastery.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "opportunity",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-00-the-fool.position.context",
+          "text": "The situation is organized by an opening whose shape is not settled yet.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "opportunity",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-00-the-fool.position.friction",
+          "text": "The pressure lies between useful openness and unexamined risk.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "opportunity",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-00-the-fool.position.doorway",
+          "text": "Take a reversible first step and learn from what the environment returns.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "opportunity",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-00-the-fool.reversal.excessive",
+          "text": "Openness becomes excessive when momentum outruns attention to consequence.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "opportunity",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-00-the-fool.reversal.developing",
+          "text": "A new beginning may still need a smaller and safer first step.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "opportunity",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-00-the-fool.reversal.traditional-reversed",
+          "text": "The beginning may be approached through hesitation, poor preparation, or avoidable risk.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "opportunity",
+            "risk"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "excessive": [
+          "major-00-the-fool.reversal.excessive"
+        ],
+        "developing": [
+          "major-00-the-fool.reversal.developing"
+        ],
+        "traditional_reversed": [
+          "major-00-the-fool.reversal.traditional-reversed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-00-the-fool.position.single"
+        ],
+        "context": [
+          "major-00-the-fool.position.context"
+        ],
+        "friction": [
+          "major-00-the-fool.position.friction"
+        ],
+        "doorway": [
+          "major-00-the-fool.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-00-the-fool.prompt.notice",
+          "text": "Notice where beginner's attention is more useful than premature mastery.",
+          "themes": [
+            "beginning",
+            "opportunity"
+          ]
+        },
+        {
+          "id": "major-00-the-fool.prompt.act",
+          "text": "Take a reversible first step and learn from what the environment returns.",
+          "themes": [
+            "opportunity",
+            "risk"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-00-the-fool.prompt.notice",
+        "major-00-the-fool.prompt.act"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "major-09-the-hermit",
+      "order": 10,
+      "arcana": "major",
+      "number": 9,
+      "rank": "IX",
+      "title": "The Hermit",
+      "omarchyTitle": "Private Workspace",
+      "suit": null,
+      "element": "earth",
+      "image": "assets/card-art/10-major-arcana-09-the-hermit.png",
+      "coreThemes": [
+        "solitude",
+        "discernment",
+        "focus"
+      ],
+      "imagery": [
+        {
+          "id": "major-09-the-hermit.image.primary",
+          "detail": "A seated figure faces a bright, sparse workstation inside a mostly dark field.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-09-the-hermit.core",
+          "text": "Protected distance can make a quieter signal easier to discern.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "solitude",
+            "discernment"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-09-the-hermit.omarchy",
+          "text": "Reduce competing windows until the essential signal becomes legible.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "discernment",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-09-the-hermit.position.single",
+          "text": "Ask what becomes legible when ambient demands are reduced.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "solitude",
+            "discernment",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-09-the-hermit.position.context",
+          "text": "The situation is being organized by withdrawal, review, or protected concentration.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "solitude",
+            "discernment",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-09-the-hermit.position.friction",
+          "text": "Solitude may be clarifying the issue or hardening into disconnection.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "solitude",
+            "discernment",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-09-the-hermit.position.doorway",
+          "text": "Create a bounded interval for inquiry, then return with one tested insight.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "solitude",
+            "discernment",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-09-the-hermit.reversal.unavailable",
+          "text": "Protected space may be unavailable even though discernment is needed.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "solitude",
+            "discernment",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-09-the-hermit.reversal.excessive",
+          "text": "Useful solitude may have extended into avoidant isolation.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "solitude",
+            "discernment",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-09-the-hermit.reversal.private",
+          "text": "The inquiry may be active but not yet ready for public explanation.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "solitude",
+            "discernment",
+            "focus"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "unavailable": [
+          "major-09-the-hermit.reversal.unavailable"
+        ],
+        "excessive": [
+          "major-09-the-hermit.reversal.excessive"
+        ],
+        "private": [
+          "major-09-the-hermit.reversal.private"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-09-the-hermit.position.single"
+        ],
+        "context": [
+          "major-09-the-hermit.position.context"
+        ],
+        "friction": [
+          "major-09-the-hermit.position.friction"
+        ],
+        "doorway": [
+          "major-09-the-hermit.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-09-the-hermit.prompt.notice",
+          "text": "Ask what becomes legible when ambient demands are reduced.",
+          "themes": [
+            "solitude",
+            "discernment"
+          ]
+        },
+        {
+          "id": "major-09-the-hermit.prompt.act",
+          "text": "Create a bounded interval for inquiry, then return with one tested insight.",
+          "themes": [
+            "discernment",
+            "focus"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-09-the-hermit.prompt.notice",
+        "major-09-the-hermit.prompt.act"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "major-16-the-tower",
+      "order": 17,
+      "arcana": "major",
+      "number": 16,
+      "rank": "XVI",
+      "title": "The Tower",
+      "omarchyTitle": "Kernel Panic",
+      "suit": null,
+      "element": "fire",
+      "image": "assets/card-art/17-major-arcana-16-the-tower.png",
+      "coreThemes": [
+        "change",
+        "truth",
+        "release"
+      ],
+      "imagery": [
+        {
+          "id": "major-16-the-tower.image.primary",
+          "detail": "A stacked architecture splits down its center while figures move away along opposing paths.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-16-the-tower.core",
+          "text": "A failing structure can expose assumptions that gradual adjustment left hidden.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-16-the-tower.omarchy",
+          "text": "Treat the crash as evidence about the system boundary, not as proof that recovery is impossible.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "truth",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-16-the-tower.position.single",
+          "text": "Name what the disruption has made impossible to keep pretending.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "truth",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-16-the-tower.position.context",
+          "text": "The present arrangement is organized by rupture, disclosure, or structural instability.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "truth",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-16-the-tower.position.friction",
+          "text": "Trying to preserve the previous form may compete with the truth revealed by its failure.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "truth",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-16-the-tower.position.doorway",
+          "text": "Stabilize what remains, identify the failed assumption, and rebuild only what is needed.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "change",
+            "truth",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-16-the-tower.reversal.internalized",
+          "text": "The rupture may be contained internally while its pressure remains active.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "truth",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-16-the-tower.reversal.recovering",
+          "text": "The immediate collapse may be past while rebuilding is still incomplete.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "truth",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-16-the-tower.reversal.turning-away",
+          "text": "Attention may be turning away from a necessary structural disclosure.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "change",
+            "truth",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "internalized": [
+          "major-16-the-tower.reversal.internalized"
+        ],
+        "recovering": [
+          "major-16-the-tower.reversal.recovering"
+        ],
+        "turning_away": [
+          "major-16-the-tower.reversal.turning-away"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-16-the-tower.position.single"
+        ],
+        "context": [
+          "major-16-the-tower.position.context"
+        ],
+        "friction": [
+          "major-16-the-tower.position.friction"
+        ],
+        "doorway": [
+          "major-16-the-tower.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-16-the-tower.prompt.notice",
+          "text": "Name what the disruption has made impossible to keep pretending.",
+          "themes": [
+            "change",
+            "truth"
+          ]
+        },
+        {
+          "id": "major-16-the-tower.prompt.act",
+          "text": "Stabilize what remains, identify the failed assumption, and rebuild only what is needed.",
+          "themes": [
+            "truth",
+            "release"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-16-the-tower.prompt.notice",
+        "major-16-the-tower.prompt.act"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "major-17-the-star",
+      "order": 18,
+      "arcana": "major",
+      "number": 17,
+      "rank": "XVII",
+      "title": "The Star",
+      "omarchyTitle": "Package Index",
+      "suit": null,
+      "element": "air",
+      "image": "assets/card-art/18-major-arcana-17-the-star.png",
+      "coreThemes": [
+        "guidance",
+        "recovery",
+        "clarity"
+      ],
+      "imagery": [
+        {
+          "id": "major-17-the-star.image.primary",
+          "detail": "A figure consults an illuminated terminal beneath a branching chain of linked markers.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "major-17-the-star.core",
+          "text": "A modest reliable signal can restore direction after disruption.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "guidance",
+            "recovery"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-17-the-star.omarchy",
+          "text": "Reconnect to a trusted index and let recovery proceed through verifiable steps.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "recovery",
+            "clarity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-17-the-star.position.single",
+          "text": "Identify the smallest signal that still feels trustworthy.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "guidance",
+            "recovery",
+            "clarity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-17-the-star.position.context",
+          "text": "The situation is organized by renewed orientation and a signal worth following.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "guidance",
+            "recovery",
+            "clarity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-17-the-star.position.friction",
+          "text": "Hope may be present but difficult to trust after recent disruption.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "guidance",
+            "recovery",
+            "clarity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-17-the-star.position.doorway",
+          "text": "Choose the next verifiable marker instead of demanding the whole route at once.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "guidance",
+            "recovery",
+            "clarity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-17-the-star.reversal.unavailable",
+          "text": "Guidance may feel unavailable even while the need for orientation is clear.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "guidance",
+            "recovery",
+            "clarity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "major-17-the-star.reversal.recovering",
+          "text": "Trust is returning gradually and may not yet support a large commitment.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "guidance",
+            "recovery",
+            "clarity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "unavailable": [
+          "major-17-the-star.reversal.unavailable"
+        ],
+        "recovering": [
+          "major-17-the-star.reversal.recovering"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "major-17-the-star.position.single"
+        ],
+        "context": [
+          "major-17-the-star.position.context"
+        ],
+        "friction": [
+          "major-17-the-star.position.friction"
+        ],
+        "doorway": [
+          "major-17-the-star.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "major-17-the-star.prompt.notice",
+          "text": "Identify the smallest signal that still feels trustworthy.",
+          "themes": [
+            "guidance",
+            "recovery"
+          ]
+        },
+        {
+          "id": "major-17-the-star.prompt.act",
+          "text": "Choose the next verifiable marker instead of demanding the whole route at once.",
+          "themes": [
+            "recovery",
+            "clarity"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "major-17-the-star.prompt.notice",
+        "major-17-the-star.prompt.act"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "wands-01-ace",
+      "order": 23,
+      "arcana": "minor",
+      "number": 1,
+      "rank": "ace",
+      "title": "Ace of Wands",
+      "omarchyTitle": "Ignition",
+      "suit": "wands",
+      "element": "fire",
+      "image": "assets/card-art/23-wands-01-ace-of-wands.png",
+      "coreThemes": [
+        "initiative",
+        "momentum",
+        "opportunity"
+      ],
+      "imagery": [
+        {
+          "id": "wands-01-ace.image.primary",
+          "detail": "A figure drives a lever into a platform as sharp beams cross an industrial structure.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "wands-01-ace.core",
+          "text": "An available impulse can become useful through a concrete act of initiation.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "initiative",
+            "momentum"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-01-ace.omarchy",
+          "text": "Convert latent power into one observable process rather than another planning loop.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "momentum",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-01-ace.position.single",
+          "text": "Choose one action that proves whether the spark can carry load.",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "initiative",
+            "momentum",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-01-ace.position.context",
+          "text": "The present situation contains unused energy or a viable starting impulse.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "initiative",
+            "momentum",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-01-ace.position.friction",
+          "text": "Enthusiasm may be outrunning the mechanism needed to sustain it.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "initiative",
+            "momentum",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-01-ace.position.doorway",
+          "text": "Start the smallest action that can produce real feedback.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "initiative",
+            "momentum",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-01-ace.reversal.blocked",
+          "text": "Initiative is present but cannot yet find a workable channel.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "initiative",
+            "momentum",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-01-ace.reversal.misdirected",
+          "text": "Energy is moving, but toward an aim that does not resolve the actual need.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "initiative",
+            "momentum",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-01-ace.reversal.reduced",
+          "text": "The available initiative may be smaller than the current plan assumes.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "initiative",
+            "momentum",
+            "opportunity"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "blocked": [
+          "wands-01-ace.reversal.blocked"
+        ],
+        "misdirected": [
+          "wands-01-ace.reversal.misdirected"
+        ],
+        "reduced": [
+          "wands-01-ace.reversal.reduced"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "wands-01-ace.position.single"
+        ],
+        "context": [
+          "wands-01-ace.position.context"
+        ],
+        "friction": [
+          "wands-01-ace.position.friction"
+        ],
+        "doorway": [
+          "wands-01-ace.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "wands-01-ace.prompt.notice",
+          "text": "Choose one action that proves whether the spark can carry load.",
+          "themes": [
+            "initiative",
+            "momentum"
+          ]
+        },
+        {
+          "id": "wands-01-ace.prompt.act",
+          "text": "Start the smallest action that can produce real feedback.",
+          "themes": [
+            "momentum",
+            "opportunity"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "wands-01-ace.prompt.notice",
+        "wands-01-ace.prompt.act"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "wands-10-ten",
+      "order": 32,
+      "arcana": "minor",
+      "number": 10,
+      "rank": "ten",
+      "title": "Ten of Wands",
+      "omarchyTitle": "Process Saturation",
+      "suit": "wands",
+      "element": "fire",
+      "image": "assets/card-art/32-wands-10-ten-of-wands.png",
+      "coreThemes": [
+        "burden",
+        "boundary",
+        "release"
+      ],
+      "imagery": [
+        {
+          "id": "wands-10-ten.image.primary",
+          "detail": "A crouched figure braces beneath ten descending process lines from an overloaded stack.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "wands-10-ten.core",
+          "text": "Sustained effort becomes a burden when too many active commitments depend on one carrier.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "burden",
+            "boundary"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-10-ten.omarchy",
+          "text": "Reduce process saturation by closing, transferring, or pausing work before adding load.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "boundary",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-10-ten.position.single",
+          "text": "Which commitment can be closed or transferred without abandoning what matters?",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "burden",
+            "boundary",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-10-ten.position.context",
+          "text": "The situation is organized by accumulated responsibility and constrained capacity.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "burden",
+            "boundary",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-10-ten.position.friction",
+          "text": "Competence may be disguising a workload that is no longer sustainable.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "burden",
+            "boundary",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-10-ten.position.doorway",
+          "text": "Choose what to complete, delegate, or stop before accepting another demand.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "burden",
+            "boundary",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-10-ten.reversal.excessive",
+          "text": "Responsibility has expanded beyond the capacity of the current system.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "burden",
+            "boundary",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-10-ten.reversal.released",
+          "text": "A burden may be ready to leave once obligation is separated from habit.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "burden",
+            "boundary",
+            "release"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "excessive": [
+          "wands-10-ten.reversal.excessive"
+        ],
+        "released": [
+          "wands-10-ten.reversal.released"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "wands-10-ten.position.single"
+        ],
+        "context": [
+          "wands-10-ten.position.context"
+        ],
+        "friction": [
+          "wands-10-ten.position.friction"
+        ],
+        "doorway": [
+          "wands-10-ten.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "wands-10-ten.prompt.notice",
+          "text": "Which commitment can be closed or transferred without abandoning what matters?",
+          "themes": [
+            "burden",
+            "boundary"
+          ]
+        },
+        {
+          "id": "wands-10-ten.prompt.act",
+          "text": "Choose what to complete, delegate, or stop before accepting another demand.",
+          "themes": [
+            "boundary",
+            "release"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "wands-10-ten.prompt.notice",
+        "wands-10-ten.prompt.act"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "wands-11-page",
+      "order": 33,
+      "arcana": "minor",
+      "number": 11,
+      "rank": "page",
+      "title": "Page of Wands",
+      "omarchyTitle": "Prototype Runner",
+      "suit": "wands",
+      "element": "fire",
+      "image": "assets/card-art/33-wands-page-of-wands.png",
+      "coreThemes": [
+        "beginning",
+        "initiative",
+        "skill"
+      ],
+      "imagery": [
+        {
+          "id": "wands-11-page.image.primary",
+          "detail": "A young figure draws a line from handheld controls toward a bright suspended tile.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "wands-11-page.core",
+          "text": "Curiosity becomes capable through experiments small enough to teach quickly.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "initiative"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-11-page.omarchy",
+          "text": "Run the prototype against reality before defending the idea as a finished system.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "initiative",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-11-page.position.single",
+          "text": "What can be learned through a small prototype rather than more speculation?",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-11-page.position.context",
+          "text": "The situation invites exploratory action and rapid learning.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-11-page.position.friction",
+          "text": "Novelty may be receiving more attention than follow-through.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-11-page.position.doorway",
+          "text": "Build one disposable test and record what it changes.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-11-page.reversal.developing",
+          "text": "The exploratory capacity is real but still lacks practiced technique.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-11-page.reversal.excessive",
+          "text": "Experimentation may be multiplying without producing a decision.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-11-page.court.person",
+          "text": "A curious person may be bringing untested energy into the situation.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-11-page.court.role",
+          "text": "The needed role is to explore and report without pretending to possess mastery.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "wands-11-page.court.approach",
+          "text": "Use a lightweight experiment and let evidence revise the initial enthusiasm.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "beginning",
+            "initiative",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "developing": [
+          "wands-11-page.reversal.developing"
+        ],
+        "excessive": [
+          "wands-11-page.reversal.excessive"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "wands-11-page.position.single"
+        ],
+        "context": [
+          "wands-11-page.position.context"
+        ],
+        "friction": [
+          "wands-11-page.position.friction"
+        ],
+        "doorway": [
+          "wands-11-page.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "wands-11-page.prompt.notice",
+          "text": "What can be learned through a small prototype rather than more speculation?",
+          "themes": [
+            "beginning",
+            "initiative"
+          ]
+        },
+        {
+          "id": "wands-11-page.prompt.act",
+          "text": "Build one disposable test and record what it changes.",
+          "themes": [
+            "initiative",
+            "skill"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "wands-11-page.prompt.notice",
+        "wands-11-page.prompt.act"
+      ],
+      "courtModes": {
+        "person": [
+          "wands-11-page.court.person"
+        ],
+        "role": [
+          "wands-11-page.court.role"
+        ],
+        "approach": [
+          "wands-11-page.court.approach"
+        ]
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "id": "cups-11-page",
+      "order": 47,
+      "arcana": "minor",
+      "number": 11,
+      "rank": "page",
+      "title": "Page of Cups",
+      "omarchyTitle": "Signal Listener",
+      "suit": "cups",
+      "element": "water",
+      "image": "assets/card-art/47-cups-page-of-cups.png",
+      "coreThemes": [
+        "connection",
+        "intuition",
+        "beginning"
+      ],
+      "imagery": [
+        {
+          "id": "cups-11-page.image.primary",
+          "detail": "A young figure studies a small luminous packet held between two separated interface regions.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "cups-11-page.core",
+          "text": "Emotional curiosity can notice an unexpected signal before its meaning is settled.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "intuition"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-11-page.omarchy",
+          "text": "Receive the unusual packet without promoting it immediately to a trusted protocol.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "intuition",
+            "beginning"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-11-page.position.single",
+          "text": "What unexpected feeling or message deserves curiosity without immediate conclusion?",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "intuition",
+            "beginning"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-11-page.position.context",
+          "text": "The situation invites receptive attention to a new emotional or relational signal.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "intuition",
+            "beginning"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-11-page.position.friction",
+          "text": "Sensitivity may become projection when surprise is treated as certainty.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "intuition",
+            "beginning"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-11-page.position.doorway",
+          "text": "Acknowledge the signal, ask a gentle question, and wait for corroboration.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "intuition",
+            "beginning"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-11-page.reversal.private",
+          "text": "The emerging feeling may be real but not yet ready to be shared.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "intuition",
+            "beginning"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-11-page.reversal.distorted",
+          "text": "An ambiguous signal may be acquiring more meaning than the evidence supports.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "intuition",
+            "beginning"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-11-page.court.person",
+          "text": "A receptive person may be noticing a subtle or unexpected emotional signal.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "intuition",
+            "beginning"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-11-page.court.role",
+          "text": "The needed role is to listen without converting ambiguity into certainty.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "intuition",
+            "beginning"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-11-page.court.approach",
+          "text": "Meet surprise with curiosity, a gentle question, and room for correction.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "intuition",
+            "beginning"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "private": [
+          "cups-11-page.reversal.private"
+        ],
+        "distorted": [
+          "cups-11-page.reversal.distorted"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "cups-11-page.position.single"
+        ],
+        "context": [
+          "cups-11-page.position.context"
+        ],
+        "friction": [
+          "cups-11-page.position.friction"
+        ],
+        "doorway": [
+          "cups-11-page.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "cups-11-page.prompt.notice",
+          "text": "What unexpected feeling or message deserves curiosity without immediate conclusion?",
+          "themes": [
+            "connection",
+            "intuition"
+          ]
+        },
+        {
+          "id": "cups-11-page.prompt.act",
+          "text": "Acknowledge the signal, ask a gentle question, and wait for corroboration.",
+          "themes": [
+            "intuition",
+            "beginning"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "cups-11-page.prompt.notice",
+        "cups-11-page.prompt.act"
+      ],
+      "courtModes": {
+        "person": [
+          "cups-11-page.court.person"
+        ],
+        "role": [
+          "cups-11-page.court.role"
+        ],
+        "approach": [
+          "cups-11-page.court.approach"
+        ]
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "id": "cups-12-knight",
+      "order": 48,
+      "arcana": "minor",
+      "number": 12,
+      "rank": "knight",
+      "title": "Knight of Cups",
+      "omarchyTitle": "Protocol Envoy",
+      "suit": "cups",
+      "element": "water",
+      "image": "assets/card-art/48-cups-knight-of-cups.png",
+      "coreThemes": [
+        "connection",
+        "initiative",
+        "exchange"
+      ],
+      "imagery": [
+        {
+          "id": "cups-12-knight.image.primary",
+          "detail": "One figure carries a glowing packet toward another across a narrow interface boundary.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "cups-12-knight.core",
+          "text": "A sincere offer can move a relationship when it remains responsive to the recipient.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "initiative"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-12-knight.omarchy",
+          "text": "Send a clear proposal across the boundary and leave room for a genuine response.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "initiative",
+            "exchange"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-12-knight.position.single",
+          "text": "What offer can be made without scripting the other person's response?",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "initiative",
+            "exchange"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-12-knight.position.context",
+          "text": "The situation is organized by an invitation, offer, or emotionally meaningful approach.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "initiative",
+            "exchange"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-12-knight.position.friction",
+          "text": "Idealized intent may be obscuring how the offer actually lands.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "initiative",
+            "exchange"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-12-knight.position.doorway",
+          "text": "Make the invitation specific, bounded, and easy to answer honestly.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "connection",
+            "initiative",
+            "exchange"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-12-knight.reversal.misdirected",
+          "text": "The offer may serve an imagined response more than the relationship in front of it.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "initiative",
+            "exchange"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-12-knight.reversal.delayed",
+          "text": "A sincere approach may need better timing or clearer terms.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "initiative",
+            "exchange"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-12-knight.court.person",
+          "text": "A person may be approaching with an offer shaped strongly by feeling or imagination.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "initiative",
+            "exchange"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-12-knight.court.role",
+          "text": "The needed role is to carry an invitation without controlling its answer.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "initiative",
+            "exchange"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "cups-12-knight.court.approach",
+          "text": "Lead with sincerity, define the offer, and remain responsive to feedback.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "connection",
+            "initiative",
+            "exchange"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "misdirected": [
+          "cups-12-knight.reversal.misdirected"
+        ],
+        "delayed": [
+          "cups-12-knight.reversal.delayed"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "cups-12-knight.position.single"
+        ],
+        "context": [
+          "cups-12-knight.position.context"
+        ],
+        "friction": [
+          "cups-12-knight.position.friction"
+        ],
+        "doorway": [
+          "cups-12-knight.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "cups-12-knight.prompt.notice",
+          "text": "What offer can be made without scripting the other person's response?",
+          "themes": [
+            "connection",
+            "initiative"
+          ]
+        },
+        {
+          "id": "cups-12-knight.prompt.act",
+          "text": "Make the invitation specific, bounded, and easy to answer honestly.",
+          "themes": [
+            "initiative",
+            "exchange"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "cups-12-knight.prompt.notice",
+        "cups-12-knight.prompt.act"
+      ],
+      "courtModes": {
+        "person": [
+          "cups-12-knight.court.person"
+        ],
+        "role": [
+          "cups-12-knight.court.role"
+        ],
+        "approach": [
+          "cups-12-knight.court.approach"
+        ]
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "id": "swords-03-three",
+      "order": 53,
+      "arcana": "minor",
+      "number": 3,
+      "rank": "three",
+      "title": "Three of Swords",
+      "omarchyTitle": "Merge Conflict",
+      "suit": "swords",
+      "element": "air",
+      "image": "assets/card-art/53-swords-03-three-of-swords.png",
+      "coreThemes": [
+        "conflict",
+        "truth",
+        "grief"
+      ],
+      "imagery": [
+        {
+          "id": "swords-03-three.image.primary",
+          "detail": "Three upright blades pierce a divided planning surface between two separated figures.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "swords-03-three.core",
+          "text": "Painful contradiction becomes workable when its competing truths are named precisely.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "conflict",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-03-three.omarchy",
+          "text": "Expose the conflicting changes before forcing a merge that loses important information.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "truth",
+            "grief"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-03-three.position.single",
+          "text": "What truth hurts partly because another truth is also present?",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "conflict",
+            "truth",
+            "grief"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-03-three.position.context",
+          "text": "The situation is organized by a contradiction that carries emotional cost.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "conflict",
+            "truth",
+            "grief"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-03-three.position.friction",
+          "text": "Avoidance may preserve short-term comfort while deepening the unresolved split.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "conflict",
+            "truth",
+            "grief"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-03-three.position.doorway",
+          "text": "Name each valid concern separately before choosing what can be reconciled.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "conflict",
+            "truth",
+            "grief"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-03-three.reversal.internalized",
+          "text": "The conflict may be held privately instead of being expressed where it can be addressed.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "conflict",
+            "truth",
+            "grief"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-03-three.reversal.recovering",
+          "text": "The sharpest conflict may be easing while grief still needs acknowledgment.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "conflict",
+            "truth",
+            "grief"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-03-three.reversal.reconsidered",
+          "text": "The first account of the conflict may need revision as another valid concern becomes visible.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "conflict",
+            "truth",
+            "grief"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "internalized": [
+          "swords-03-three.reversal.internalized"
+        ],
+        "recovering": [
+          "swords-03-three.reversal.recovering"
+        ],
+        "reconsidered": [
+          "swords-03-three.reversal.reconsidered"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "swords-03-three.position.single"
+        ],
+        "context": [
+          "swords-03-three.position.context"
+        ],
+        "friction": [
+          "swords-03-three.position.friction"
+        ],
+        "doorway": [
+          "swords-03-three.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "swords-03-three.prompt.notice",
+          "text": "What truth hurts partly because another truth is also present?",
+          "themes": [
+            "conflict",
+            "truth"
+          ]
+        },
+        {
+          "id": "swords-03-three.prompt.act",
+          "text": "Name each valid concern separately before choosing what can be reconciled.",
+          "themes": [
+            "truth",
+            "grief"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "swords-03-three.prompt.notice",
+        "swords-03-three.prompt.act"
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "swords-13-queen",
+      "order": 63,
+      "arcana": "minor",
+      "number": 13,
+      "rank": "queen",
+      "title": "Queen of Swords",
+      "omarchyTitle": "Policy Maintainer",
+      "suit": "swords",
+      "element": "air",
+      "image": "assets/card-art/63-swords-queen-of-swords.png",
+      "coreThemes": [
+        "clarity",
+        "boundary",
+        "truth"
+      ],
+      "imagery": [
+        {
+          "id": "swords-13-queen.image.primary",
+          "detail": "A standing figure holds a vertical blade beside layered decision diagrams and branching arrows.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "swords-13-queen.core",
+          "text": "Clear judgment can hold a firm boundary without abandoning context or care.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "clarity",
+            "boundary"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-13-queen.omarchy",
+          "text": "Maintain the policy by making its reasoning and exceptions inspectable.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "boundary",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-13-queen.position.single",
+          "text": "Which boundary becomes fairer when its reasoning is made explicit?",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "clarity",
+            "boundary",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-13-queen.position.context",
+          "text": "The situation is organized by discernment, standards, or a necessary boundary.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "clarity",
+            "boundary",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-13-queen.position.friction",
+          "text": "Precision may become severity if it stops listening for relevant context.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "clarity",
+            "boundary",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-13-queen.position.doorway",
+          "text": "State the boundary and the reason for it in language others can evaluate.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "clarity",
+            "boundary",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-13-queen.reversal.distorted",
+          "text": "Clear judgment may be distorted by accumulated hurt or defensive certainty.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "clarity",
+            "boundary",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-13-queen.reversal.unavailable",
+          "text": "The needed boundary may be understood but difficult to state.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "clarity",
+            "boundary",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-13-queen.court.person",
+          "text": "A discerning person may be testing the situation against explicit standards.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "clarity",
+            "boundary",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-13-queen.court.role",
+          "text": "The needed role is to separate relevant evidence from pressure and noise.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "clarity",
+            "boundary",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "swords-13-queen.court.approach",
+          "text": "State a precise boundary, invite pertinent context, and revise only for reasons.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "clarity",
+            "boundary",
+            "truth"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "distorted": [
+          "swords-13-queen.reversal.distorted"
+        ],
+        "unavailable": [
+          "swords-13-queen.reversal.unavailable"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "swords-13-queen.position.single"
+        ],
+        "context": [
+          "swords-13-queen.position.context"
+        ],
+        "friction": [
+          "swords-13-queen.position.friction"
+        ],
+        "doorway": [
+          "swords-13-queen.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "swords-13-queen.prompt.notice",
+          "text": "Which boundary becomes fairer when its reasoning is made explicit?",
+          "themes": [
+            "clarity",
+            "boundary"
+          ]
+        },
+        {
+          "id": "swords-13-queen.prompt.act",
+          "text": "State the boundary and the reason for it in language others can evaluate.",
+          "themes": [
+            "boundary",
+            "truth"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "swords-13-queen.prompt.notice",
+        "swords-13-queen.prompt.act"
+      ],
+      "courtModes": {
+        "person": [
+          "swords-13-queen.court.person"
+        ],
+        "role": [
+          "swords-13-queen.court.role"
+        ],
+        "approach": [
+          "swords-13-queen.court.approach"
+        ]
+      }
+    },
+    {
+      "schemaVersion": 2,
+      "id": "pentacles-14-king",
+      "order": 78,
+      "arcana": "minor",
+      "number": 14,
+      "rank": "king",
+      "title": "King of Pentacles",
+      "omarchyTitle": "Infrastructure Steward",
+      "suit": "pentacles",
+      "element": "earth",
+      "image": "assets/card-art/78-pentacles-king-of-pentacles.png",
+      "coreThemes": [
+        "stability",
+        "leadership",
+        "skill"
+      ],
+      "imagery": [
+        {
+          "id": "pentacles-14-king.image.primary",
+          "detail": "A seated figure oversees several linked work areas, storage systems, and shared infrastructure.",
+          "kind": "observed",
+          "deckSpecific": true,
+          "sourceRefs": [
+            "arcana-artwork"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "id": "pentacles-14-king.core",
+          "text": "Durable stewardship joins material competence with responsibility for continuity.",
+          "lens": "traditional-core",
+          "orientation": "upright",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "stability",
+            "leadership"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "pentacles-14-king.omarchy",
+          "text": "Operate the infrastructure for long-term reliability rather than visible control alone.",
+          "lens": "omarchy",
+          "orientation": "upright",
+          "tradition": "arcana",
+          "provenanceKind": "omarchy-original",
+          "sourceRefs": [
+            "omarchy-guide"
+          ],
+          "themes": [
+            "leadership",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "pentacles-14-king.position.single",
+          "text": "What resource needs stewardship rather than ownership or display?",
+          "lens": "position-single",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "stability",
+            "leadership",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "pentacles-14-king.position.context",
+          "text": "The situation is organized by resources, maintenance, and accountable authority.",
+          "lens": "position-context",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "stability",
+            "leadership",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "pentacles-14-king.position.friction",
+          "text": "Stability may be defended so rigidly that adaptation becomes difficult.",
+          "lens": "position-friction",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "stability",
+            "leadership",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "pentacles-14-king.position.doorway",
+          "text": "Protect the essential service while creating a measured path for change.",
+          "lens": "position-doorway",
+          "orientation": "both",
+          "tradition": "arcana",
+          "provenanceKind": "composer-inference",
+          "sourceRefs": [
+            "arcana-structural"
+          ],
+          "themes": [
+            "stability",
+            "leadership",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "pentacles-14-king.reversal.excessive",
+          "text": "Control of resources may have become more important than their purpose.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "stability",
+            "leadership",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "pentacles-14-king.reversal.unavailable",
+          "text": "Material support or experienced stewardship may not be accessible yet.",
+          "lens": "reversal",
+          "orientation": "reversed",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "stability",
+            "leadership",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "pentacles-14-king.court.person",
+          "text": "An experienced person may be focused on continuity, resources, and practical outcomes.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "stability",
+            "leadership",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "pentacles-14-king.court.role",
+          "text": "The needed role is to steward shared capacity and remain accountable for its use.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "stability",
+            "leadership",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        },
+        {
+          "id": "pentacles-14-king.court.approach",
+          "text": "Prefer durable systems, explicit ownership, and changes that preserve essential service.",
+          "lens": "traditional-range",
+          "orientation": "both",
+          "tradition": "rws",
+          "provenanceKind": "original-paraphrase",
+          "sourceRefs": [
+            "waite-pkt",
+            "vault-keywords"
+          ],
+          "themes": [
+            "stability",
+            "leadership",
+            "skill"
+          ],
+          "topicLenses": [
+            "general"
+          ]
+        }
+      ],
+      "reversalModes": {
+        "excessive": [
+          "pentacles-14-king.reversal.excessive"
+        ],
+        "unavailable": [
+          "pentacles-14-king.reversal.unavailable"
+        ]
+      },
+      "positionClaims": {
+        "single": [
+          "pentacles-14-king.position.single"
+        ],
+        "context": [
+          "pentacles-14-king.position.context"
+        ],
+        "friction": [
+          "pentacles-14-king.position.friction"
+        ],
+        "doorway": [
+          "pentacles-14-king.position.doorway"
+        ]
+      },
+      "reflectionPrompts": [
+        {
+          "id": "pentacles-14-king.prompt.notice",
+          "text": "What resource needs stewardship rather than ownership or display?",
+          "themes": [
+            "stability",
+            "leadership"
+          ]
+        },
+        {
+          "id": "pentacles-14-king.prompt.act",
+          "text": "Protect the essential service while creating a measured path for change.",
+          "themes": [
+            "leadership",
+            "skill"
+          ]
+        }
+      ],
+      "reflectionPromptIds": [
+        "pentacles-14-king.prompt.notice",
+        "pentacles-14-king.prompt.act"
+      ],
+      "courtModes": {
+        "person": [
+          "pentacles-14-king.court.person"
+        ],
+        "role": [
+          "pentacles-14-king.court.role"
+        ],
+        "approach": [
+          "pentacles-14-king.court.approach"
+        ]
+      }
+    }
+  ],
+  "cases": [
+    {
+      "id": "case:grounded-alternative",
+      "request": {
+        "spreadId": "context-friction-doorway",
+        "cards": [
+          {
+            "positionId": "context",
+            "cardId": "major-09-the-hermit",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "friction",
+            "cardId": "major-16-the-tower",
+            "orientation": "reversed"
+          },
+          {
+            "positionId": "doorway",
+            "cardId": "major-17-the-star",
+            "orientation": "upright"
+          }
+        ],
+        "originalQuestion": "Should I keep forcing the current approach?",
+        "topicLens": "general",
+        "tradition": "rws",
+        "reversalPolicy": "multi_hypothesis",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expectedReading": {
+        "schemaVersion": 2,
+        "methodVersion": "arcana-composer-v2",
+        "id": "reading:pilot:grounded-alternative",
+        "createdAt": null,
+        "kind": "spread",
+        "spreadId": "context-friction-doorway",
+        "originalQuestion": "Should I keep forcing the current approach?",
+        "normalizedQuestion": "What factors should I examine before deciding whether to continue this approach?",
+        "reframeReason": "decision-transfer",
+        "reversalPolicy": "multi_hypothesis",
+        "cards": [
+          {
+            "positionId": "context",
+            "cardId": "major-09-the-hermit",
+            "orientation": "reversed",
+            "selectedHypotheses": [
+              "excessive",
+              "private"
+            ]
+          },
+          {
+            "positionId": "friction",
+            "cardId": "major-16-the-tower",
+            "orientation": "reversed",
+            "selectedHypotheses": [
+              "internalized",
+              "recovering"
+            ]
+          },
+          {
+            "positionId": "doorway",
+            "cardId": "major-17-the-star",
+            "orientation": "upright",
+            "selectedHypotheses": []
+          }
+        ],
+        "interactions": [],
+        "patterns": [],
+        "interpretations": [
+          {
+            "id": "proposition:primary",
+            "status": "primary",
+            "claim": "A disrupted approach may need enough distance for its failed assumption to become clear before recovery can offer a trustworthy next marker.",
+            "evidence": [
+              "major-09-the-hermit.position.context",
+              "major-16-the-tower.position.friction",
+              "major-17-the-star.position.doorway"
+            ],
+            "counterEvidence": [],
+            "ambiguityAxis": null
+          },
+          {
+            "id": "proposition:alternative",
+            "status": "alternative",
+            "claim": "Withdrawal may be preserving avoidant isolation rather than discernment, making a small external recovery signal more useful than further private analysis.",
+            "evidence": [
+              "major-09-the-hermit.reversal.excessive",
+              "major-16-the-tower.reversal.recovering",
+              "major-17-the-star.core"
+            ],
+            "counterEvidence": [
+              {
+                "evidenceId": "major-09-the-hermit.core",
+                "reason": "supports-competing-hypothesis",
+                "targetPropositionId": "proposition:alternative"
+              }
+            ],
+            "ambiguityAxis": "withdrawal-as-discernment-or-isolation"
+          }
+        ],
+        "distinguishingQuestions": [
+          "Does time away produce a clearer testable signal, or mainly postpone contact with the failed assumption?"
+        ],
+        "reflectionPromptIds": [
+          "major-17-the-star.prompt.act"
+        ],
+        "utterances": {
+          "concise": [
+            {
+              "id": "utterance:primary:governing",
+              "role": "governing",
+              "text": "A disrupted approach may need distance before recovery reveals a trustworthy next marker.",
+              "evidence": [
+                "major-09-the-hermit.position.context",
+                "major-16-the-tower.position.friction",
+                "major-17-the-star.position.doorway"
+              ]
+            },
+            {
+              "id": "utterance:alternative:governing",
+              "role": "alternative",
+              "text": "If withdrawal is preserving isolation, a small external signal may be more useful than further private analysis.",
+              "evidence": [
+                "major-09-the-hermit.reversal.excessive",
+                "major-17-the-star.core"
+              ]
+            }
+          ],
+          "expanded": [
+            {
+              "id": "utterance:primary:governing",
+              "role": "governing",
+              "text": "A disrupted approach may need enough distance for its failed assumption to become clear.",
+              "evidence": [
+                "major-09-the-hermit.position.context",
+                "major-16-the-tower.position.friction"
+              ]
+            },
+            {
+              "id": "utterance:primary:development",
+              "role": "development",
+              "text": "Recovery can then proceed by choosing one trustworthy and verifiable marker.",
+              "evidence": [
+                "major-17-the-star.position.doorway"
+              ]
+            },
+            {
+              "id": "utterance:alternative:governing",
+              "role": "alternative",
+              "text": "Withdrawal may instead be preserving avoidant isolation rather than discernment.",
+              "evidence": [
+                "major-09-the-hermit.reversal.excessive",
+                "major-16-the-tower.reversal.recovering"
+              ]
+            }
+          ]
+        },
+        "agentAssistance": null
+      }
+    },
+    {
+      "id": "case:no-alternative",
+      "request": {
+        "spreadId": "single",
+        "cards": [
+          {
+            "positionId": "single",
+            "cardId": "wands-01-ace",
+            "orientation": "upright"
+          }
+        ],
+        "originalQuestion": null,
+        "topicLens": "general",
+        "tradition": "rws",
+        "reversalPolicy": "energy_state",
+        "elementalDignity": "disabled",
+        "narratorId": "clear-reflective-v1"
+      },
+      "expectedReading": {
+        "schemaVersion": 2,
+        "methodVersion": "arcana-composer-v2",
+        "id": "reading:pilot:no-alternative",
+        "createdAt": null,
+        "kind": "free",
+        "spreadId": "single",
+        "originalQuestion": null,
+        "normalizedQuestion": null,
+        "reframeReason": null,
+        "reversalPolicy": "energy_state",
+        "cards": [
+          {
+            "positionId": "single",
+            "cardId": "wands-01-ace",
+            "orientation": "upright",
+            "selectedHypotheses": []
+          }
+        ],
+        "interactions": [],
+        "patterns": [],
+        "interpretations": [
+          {
+            "id": "proposition:primary",
+            "status": "primary",
+            "claim": "A small observable act can test whether the available initiative has enough structure to become sustained work.",
+            "evidence": [
+              "wands-01-ace.core",
+              "wands-01-ace.position.single"
+            ],
+            "counterEvidence": [],
+            "ambiguityAxis": null
+          }
+        ],
+        "distinguishingQuestions": [],
+        "reflectionPromptIds": [
+          "wands-01-ace.prompt.notice"
+        ],
+        "utterances": {
+          "concise": [
+            {
+              "id": "utterance:primary:governing",
+              "role": "governing",
+              "text": "A small observable act can test whether the available initiative can carry sustained work.",
+              "evidence": [
+                "wands-01-ace.core",
+                "wands-01-ace.position.single"
+              ]
+            }
+          ],
+          "expanded": [
+            {
+              "id": "utterance:primary:governing",
+              "role": "governing",
+              "text": "Initiative is available, but its value depends on contact with a concrete task.",
+              "evidence": [
+                "wands-01-ace.core"
+              ]
+            },
+            {
+              "id": "utterance:primary:development",
+              "role": "development",
+              "text": "Choose one small action that can return evidence before more momentum is committed.",
+              "evidence": [
+                "wands-01-ace.position.single"
+              ]
+            }
+          ]
+        },
+        "agentAssistance": null
+      }
+    }
+  ]
+}

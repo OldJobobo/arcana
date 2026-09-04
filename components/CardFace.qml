@@ -115,7 +115,7 @@ Column {
   Text {
     width: parent.width
     visible: root.itemData && root.itemData.positionId !== "single"
-    text: root.itemData ? root.itemData.positionLabel.toUpperCase() : ""
+    text: root.itemData ? root.itemData.positionLabel : ""
     color: "#62d6df"
     font.family: "monospace"
     font.pixelSize: 9
@@ -127,7 +127,7 @@ Column {
 
   Text {
     width: parent.width
-    text: root.faceVisible && root.itemData ? root.itemData.orientationLabel : "FACE DOWN"
+    text: root.faceVisible && root.itemData ? root.itemData.orientationLabel : "Face down"
     color: root.faceVisible && root.itemData && root.itemData.orientation === "reversed" ? "#b89b61" : "#899a9c"
     font.family: "monospace"
     font.pixelSize: 9
