@@ -1,0 +1,31 @@
+name: Validate release
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  repository:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [22, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm test
+      - run: node tests/validate-release.js
+      - name: Verify complete triple matrix (hardware budget is measured in the release VM/local gate)
+        if: matrix.node == 24
+        run: node tools/run-semantic-triple-matrix.js --workers=2 --verify-report
+      - run: npm run package
+      - uses: actions/upload-artifact@v4
+        if: matrix.node == 24
+        with:
+          name: arcana-alpha
+          path: dist/*
+          if-no-files-found: error
+# QML, real I/O, and host-shell acceptance remain mandatory local release gates.
+# See docs/RELEASE-READINESS.md; this workflow does not claim Quattro certification.

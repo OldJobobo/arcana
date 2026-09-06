@@ -8,7 +8,7 @@ const root=path.resolve(__dirname,"..");
 const failures=[];
 function fail(message){failures.push(message)}
 function readJson(file){return JSON.parse(fs.readFileSync(path.join(root,file),"utf8"))}
-function walk(dir,out=[]){for(const name of fs.readdirSync(dir)){const p=path.join(dir,name);const st=fs.lstatSync(p);if(st.isSymbolicLink())fail("symlink: "+path.relative(root,p));else if(st.isDirectory())walk(p,out);else out.push(p)}return out}
+function walk(dir,out=[]){for(const name of fs.readdirSync(dir)){if(dir===root&&[".git",".release-local","dist","graphify-out"].includes(name))continue;const p=path.join(dir,name);const st=fs.lstatSync(p);if(st.isSymbolicLink())fail("symlink: "+path.relative(root,p));else if(st.isDirectory())walk(p,out);else out.push(p)}return out}
 function paeth(left,above,upperLeft){const p=left+above-upperLeft;const pa=Math.abs(p-left),pb=Math.abs(p-above),pc=Math.abs(p-upperLeft);return pa<=pb&&pa<=pc?left:pb<=pc?above:upperLeft}
 function validatePng(file,expectedWidth,expectedHeight,allowedColorTypes){
  const b=fs.readFileSync(file);
@@ -75,7 +75,10 @@ const rel=files.map(p=>path.relative(root,p));
 
 if(manifest.schemaVersion!==1)fail("manifest schemaVersion")
 if(manifest.id!=="org.ministryoftaste.arcana")fail("manifest id")
-if(manifest.version!=="0.1.0-alpha")fail("manifest version")
+if(!/^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$/.test(manifest.version))fail("manifest version")
+if(manifest.version!==readJson("package.json").version)fail("package and manifest versions differ")
+if(manifest.license!=="MIT AND CC-BY-NC-ND-4.0")fail("mixed license declaration")
+if(!fs.existsSync(path.join(root,"LICENSES/CC-BY-NC-ND-4.0.txt")))fail("missing artwork license")
 for(const kind of ["service","panel","bar-widget"])if(!manifest.kinds.includes(kind))fail("missing kind "+kind)
 for(const ep of Object.values(manifest.entryPoints))if(!fs.existsSync(path.join(root,ep)))fail("missing entry point "+ep)
 try{Interpretation.validateCatalog(deck,spreads)}catch(error){fail("semantic-v2 catalog rejected: "+error.message)}

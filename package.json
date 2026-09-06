@@ -3,11 +3,14 @@
   "version": "0.1.0-alpha",
   "private": true,
   "type": "commonjs",
+  "engines": {"node": ">=22.15"},
   "scripts": {
     "test": "node --test tests/*.test.js",
     "test:qml": "QML_XHR_ALLOW_FILE_READ=1 QT_QPA_PLATFORM=offscreen /usr/lib/qt6/bin/qmltestrunner -input tests -o -,txt",
     "test:qml-service": "QML_XHR_ALLOW_FILE_READ=1 QT_QPA_PLATFORM=offscreen timeout 15s quickshell -p tests-qml-service.qml --no-duplicate 2>&1 | grep -q ARCANA_SERVICE_TEST_PASS",
+    "test:qml-io": "node tools/test-qml-io.js",
+    "package": "node tools/package-release.js",
     "test:triples": "node tools/run-semantic-triple-matrix.js --workers=10 --enforce-budget --verify-report",
-    "validate": "npm test && npm run test:qml && npm run test:qml-service && npm run test:triples && node tests/validate-release.js"
+    "validate": "npm test && npm run test:qml && npm run test:qml-service && npm run test:qml-io && npm run test:triples && node tests/validate-release.js"
   }
 }

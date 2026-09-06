@@ -4,7 +4,7 @@
   "name": "Arcana",
   "version": "0.1.0-alpha",
   "author": "Ministry of Taste",
-  "license": "MIT",
+  "license": "MIT AND CC-BY-NC-ND-4.0",
   "description": "A keyboard-first, shell-native reflective tarot system for Omarchy Quattro.",
   "kinds": [
     "service",

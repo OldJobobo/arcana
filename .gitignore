@@ -1,0 +1,4 @@
+.release-local/
+dist/
+# Local analysis output; its manifest is not a plugin manifest.
+graphify-out/

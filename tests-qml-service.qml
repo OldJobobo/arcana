@@ -12,11 +12,23 @@ ShellRoot {
 
   function runBoundaryTest() {
     check(service.ready, "service did not become migration-ready")
+    check(!service.fullscreen, "fresh state unexpectedly fullscreen")
+    service.setUiScale(1.25)
+    check(service.toggleFullscreen(), "fullscreen toggle did not enter")
+    check(service.uiScale === 1.25, "fullscreen changed saved scale")
+    check(!service.toggleFullscreen(), "fullscreen toggle did not exit")
+    service.setFullscreen(true)
+    service.setUiScale(1)
+    check(service.fullscreen, "scale unexpectedly exited fullscreen")
+    service.setFullscreen(false)
     check(service.requestSpread(), "spread request rejected")
     check(service.drawStatus === "collecting", "controlled entropy seam not armed")
     service.finishEntropy("1")
     check(service.currentReading.cards.length === 3, "three-card reading missing")
     check(service.currentReading.spreadName === "Context / Friction / Doorway", "spread title mismatch")
+    check(service.prepareAgent(""), "optional empty question rejected")
+    check(service.currentReading.originalQuestion === null, "empty question was not absent")
+    check(service.prepareAgent("   "), "optional whitespace question rejected")
     var questionlessId=service.currentSemanticReading.id
     check(service.prepareAgent("Will this definitely work?"), "question recomposition failed")
     check(service.currentSemanticReading.id !== questionlessId, "question did not create a new semantic reading")
@@ -34,6 +46,13 @@ ShellRoot {
     check(service.lastAgentArgv.length === 4, "agent argv cardinality mismatch")
     check(service.lastAgentArgv[0] === "omarchy" && service.lastAgentArgv[1] === "agent" && service.lastAgentArgv[2] === "prompt", "agent argv prefix mismatch")
     check(service.lastAgentArgv[3] === packetText, "preview does not equal one-element argv packet")
+    check(!service.prepareAgent("predict my fate"), "unsafe unresolved question accepted")
+    check(service.agentPacket === "" && service.agentStatus === "question-failed", "failed preview retained stale launch packet")
+    var beforeFailure = service.currentReading.readingId
+    check(service.requestFree(), "free request rejected")
+    check(!service.requestFree(), "concurrent entropy request accepted")
+    service.failPendingDraw()
+    check(service.currentReading.readingId === beforeFailure, "entropy failure replaced reading")
     console.log("ARCANA_SERVICE_TEST_PASS")
   }
 

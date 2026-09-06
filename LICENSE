@@ -20,8 +20,20 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-This license covers the plugin source code and original release prose. The
-included Arcana card artwork and deck-guide authorship are not granted
-under this MIT license and remain Copyright (c) 2026 Ministry of Taste /
-OldJobobo unless separately licensed in writing. Public-domain historical
-sources remain public domain.
+Scope: this MIT license covers the plugin source code, tests, tools, and
+original release documentation, except for the material identified below.
+
+The original artwork, masks, and authored deck data under assets/, and the
+original deck-guide material in docs/MAJOR-ARCANA-GUIDE.md and
+docs/MINOR-ARCANA-GUIDE.md, are Copyright (c) 2026 Ministry of Taste /
+OldJobobo and licensed under Creative Commons
+Attribution-NonCommercial-NoDerivatives 4.0 International
+(SPDX: CC-BY-NC-ND-4.0). See LICENSES/CC-BY-NC-ND-4.0.txt and
+https://creativecommons.org/licenses/by-nc-nd/4.0/.
+
+Attribution: Arcana — Ministry of Taste / OldJobobo, 2026. Retain this
+notice and the license when sharing the covered material. The license
+allows noncommercial sharing with attribution, not sharing adaptations.
+The source code's MIT permission does not override these asset terms.
+Public-domain historical sources remain public domain; third-party
+reference material is not relicensed by this notice.
