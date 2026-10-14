@@ -1,5 +1,41 @@
 # Changelog
 
+## 0.2.0 — 2026-10-14
+
+### Added
+
+- Small manifest-driven version readout beside the panel title
+- Reading history: the last 20 draws (cards and orientations only, never questions), with an `H` view that reopens any of them
+- `V` toggles reversed cards for new draws (also in About)
+- Readable copy (`C`) for notes and journals; `Shift+C` keeps the evidence-ID copy
+- Keyboard scrolling (`↑` `↓` `PgUp` `PgDn` `Home` `End`) for the reading, agent packet, and history
+- IPC commands: `reading [text|evidence|json]`, `handoff [question]`, `history`, `reversals <true|false>`; `status` reports `dailyIsStale`, `reversals`, and `historyLength`
+- Bar tooltip lists every card in the current reading
+
+### Changed
+
+- The agent handoff opens with plain-language instructions telling the agent to give the reading in its first reply (answer the question, interpret each card in its position, suggest next steps) instead of asking what to explore, plus ground rules, the quoted question, card names, and the labeled reading, followed by the structured packet (now `packetVersion` 3 with card titles and claim text)
+- Reading prose follows the spread order (Context, Friction, connection, Doorway), and the panel labels each sentence with its position and card
+- Pattern and relationship text is written in plain language instead of internal values such as `major-0-minor-3` or `context → friction`
+- Arcana balance is now the last-resort spread connection, behind shared themes and suits
+- The panel opens on the focused monitor, and clicking outside the framed panel closes it
+- Dividers and the packet box follow `SYSTEM` colors
+- The bar icon is now a standard bar glyph (fanned cards) drawn through Omarchy's `BarIconButton`, so it matches the size, centering, and color of the other bar icons instead of a custom two-color sigil
+- The service validates the deck once at load and reuses it, instead of deep-copying and re-validating the 600 KB catalog on every action
+
+### Fixed
+
+- Opening the panel on a new day showed the previous day's card as the daily draw; it now draws today's card
+- Ordinary questions such as "Work feels draining" or "Why does Monday feel heavy" were rewritten as questions about another person
+- Questions containing "secret", "predict", or "fate" were rejected outright; fortune-telling wording is now reframed instead
+- The reflection prompt and alternative reading appeared twice in the panel
+- Copy passed the reading through `wl-copy`'s arguments, where it stayed visible in the process list; it now goes through stdin
+- Pressing `D` to revisit today's card discarded the saved agent question
+- An armed daily redraw (`R`) never expired; it now disarms after four seconds
+- An agent session that ran longer than a second and then closed with a non-zero status was reported as a failed launch
+- **Launch** failed in terminals that cap launch arguments, such as Splinterm (4 KiB): the agent packet is now written to an owner-only `handoff.md` and the agent gets a short prompt pointing to it, which also keeps the reading and question out of the process list
+- IPC `status`, `daily`, `free`, `spread`, `retryStorage`, and `history` failed unless given an unused argument
+
 ## 0.1.0-alpha — 2026-09-01
 
 First complete alpha candidate.

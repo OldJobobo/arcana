@@ -4,7 +4,7 @@
 
 **Research date:** 2026-09-01
 
-**Companion plan:** `docs/IMPLEMENTATION-PLAN.md`
+**Companion plan:** `docs/design/IMPLEMENTATION-PLAN.md`
 
 ## 1. Purpose
 

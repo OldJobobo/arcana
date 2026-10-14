@@ -1,4 +1,22 @@
-# Arcana 0.1.0-alpha release readiness
+# Arcana release readiness
+
+## 0.2.0 — 2026-10-14
+
+The current 0.2.0 candidate passed `npm run validate` locally:
+
+| Gate | Result |
+| --- | --- |
+| Node tests | 140 passed, zero failures |
+| QML projection tests | 4 QtTest passes, zero failures |
+| QML service tests | Passed |
+| Real QML I/O | All 10 scenarios passed, including owner-only file handoff |
+| Complete upright triple matrix | All 456,456 cases; pinned digest matched; 95,950 ms / 396 MB, within the 120,000 ms / 1,024 MB budget |
+| Release validator | Passed: 78 cards, 79 images, 237 masks, zero failures |
+| Title version readout | Separate offscreen QML check passed: manifest updates, missing-manifest fallback, small type, right-of-title placement, and baseline alignment |
+
+These checks ran with Qt 6.12.0 on the host. The version-label check instantiates the actual title/label fragment, not the entire live panel. No fresh live-shell visual acceptance, VM acceptance, external-agent launch, or Marketplace approval is claimed for 0.2.0. The historical screenshots and acceptance records below describe the alpha baseline, not new release evidence. Runtime packaging and its checksum are generated with `npm run package`; packaging tests verify reproducibility and the allowlist.
+
+## Historical 0.1.0-alpha evidence
 
 **Local alpha candidate: validated on 2026-09-06 UTC.** No remote publication, release tag, or Marketplace approval is implied. The package checksum is generated alongside the archive in `dist/`, not embedded in this document.
 

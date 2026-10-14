@@ -21,6 +21,9 @@ Arcana is a standalone Omarchy Quattro/Quickshell plugin that turns a complete 7
 - Persistent `ARCANA` / `SYSTEM` color mode with theme-responsive card spot colors; structural black/ivory remains fixed
 - Staged panel reveal plus physical card motion: hover/focus lift, face-down draws, click/keyboard flip reveals, and a large second-click inspection view
 - Explicit **Ask Your Agent** packet preview using Omarchy’s configured default agent
+- Reading history of the last 20 draws, reopenable from the panel
+- Readable copy for notes, plus an evidence-ID copy for auditing
+- IPC commands for scripts and agents to read the current reading
 
 Agent prose is optional and non-canonical. Arcana never treats tarot as prophecy, diagnosis, professional advice, or factual authority.
 
@@ -51,9 +54,9 @@ omarchy-shell shell summon org.ministryoftaste.arcana '{}'
 npm run validate
 npm run package
 cd dist
-sha256sum -c arcana-0.1.0-alpha.tar.gz.sha256
+sha256sum -c arcana-0.2.0.tar.gz.sha256
 unpack=$(mktemp -d ./arcana-unpack.XXXXXX)
-tar -xzf arcana-0.1.0-alpha.tar.gz -C "$unpack"
+tar -xzf arcana-0.2.0.tar.gz -C "$unpack"
 cd "$unpack"
 omarchy plugin validate ./org.ministryoftaste.arcana
 plugins="$HOME/.config/omarchy/plugins"
@@ -85,7 +88,10 @@ To remove the plugin, run `omarchy plugin remove org.ministryoftaste.arcana`. Th
 | `S` | Context / Friction / Doorway |
 | `A` | Ask Your Agent preview |
 | `I` | Method and provenance |
-| `E` / `C` | Expand/compact interpretation / copy current reading |
+| `E` | Expand/compact interpretation |
+| `C` / `Shift+C` | Copy the reading as readable text / with evidence IDs |
+| `H` | Reading history; `Enter` reopens the selected reading |
+| `V` | Turn reversed cards on or off for new draws |
 | `T` | Toggle Arcana identity colors / active Omarchy theme colors |
 | `1` / `2` / `3` | Set panel scale to `1×` / `1.25×` / `1.5×` without changing fullscreen |
 | `F11` / **Full** | Toggle fullscreen on the current output; the previous scale is retained |
@@ -93,24 +99,40 @@ To remove the plugin, run `omarchy plugin remove org.ministryoftaste.arcana`. Th
 | `Tab` / `Shift+Tab` | Move focus between face-down cards and controls |
 | `Enter` / `Space` | Reveal the focused card; press again to inspect it at large size |
 | `/` | Focus the optional agent question |
+| `↑` `↓` `PgUp` `PgDn` `Home` `End` | Scroll the reading, agent packet, or history |
 | `Esc` / `Q` | Back or close; Esc leaves fullscreen before closing the reading view |
 
-Middle-clicking the bar sigil performs a free draw without opening the panel; left-click opens or closes the panel.
+Middle-clicking the bar icon performs a free draw without opening the panel; left-click opens or closes the panel. The panel opens on the focused monitor; clicking outside the framed panel closes it.
+
+## Scripting and agents
+
+The service registers a Quickshell IPC target in the Omarchy shell, so scripts and agents can read the current reading without opening the panel:
+
+```bash
+omarchy-shell org.ministryoftaste.arcana.service reading text      # readable text
+omarchy-shell org.ministryoftaste.arcana.service reading evidence  # with claim IDs
+omarchy-shell org.ministryoftaste.arcana.service reading json      # full panel projection
+omarchy-shell org.ministryoftaste.arcana.service handoff "What should I notice today?"   # or handoff "" for no question
+omarchy-shell org.ministryoftaste.arcana.service daily             # draw today's card if needed
+omarchy-shell org.ministryoftaste.arcana.service status
+```
+
+Also available: `free`, `spread`, `history`, `scale <1|1.25|1.5>`, `theme <arcana|system>`, `fullscreen <true|false>`, `reversals <true|false>`, and `retryStorage`. `reading` and `handoff` always take an argument (Quickshell IPC has no optional parameters). `handoff` saves the question with the reading, like **Update preview** in the panel, and returns the agent packet; it never launches an agent.
 
 ## State and trust boundary
 
-State is stored in `${XDG_STATE_HOME:-~/.local/state}/omarchy/arcana.json`. The plugin stores only current daily selection, last reading, draw counter, and local preferences, including panel scale and color mode. Scale, fullscreen, and color mode persist across panel close, plugin reload, and shell restart. **Full** expands the panel to fill the current output without changing the framed view’s rendered scale—text, cards, and controls stay the same size; fullscreen is an independent toggle, so you can change scale while staying fullscreen. Both the chosen scale and **Full** remain highlighted. Fullscreen uses the full canvas: edge-aligned controls, a dedicated card area with responsive card spacing, and a separate reading area. Supporting details move into a side column when space allows and return beneath the narrative at larger scales or on smaller outputs. Text measure stays bounded; card and type sizes still follow your chosen scale. On smaller displays the rendered size fits within the available output without changing the saved scale. `SYSTEM` color mode follows Quattro’s live popup, text, accent, muted, border, and urgent roles. Card silhouettes, ivory fields, linework, typography, identity, orientation, and reading state remain fixed; only packaged primary, secondary, and fault spot-color masks respond to the selected color mode. Low-contrast system colors fall back deterministically to the ARCANA signal palette. Fault coverage is intentionally sparse: nine cards carry fault pixels for meaningful failure, conflict, warning, or destructive states, while the other 70 images retain transparent fault layers so every image uses the same three-mask renderer. The exact set is declared in `assets/card-art-masks/fault-contract.json` and enforced by the release validator. The plugin does not read arbitrary files, shell history, environment dumps, vault content, credentials, or unrelated state.
+State is stored in `${XDG_STATE_HOME:-~/.local/state}/omarchy/arcana.json`. The plugin stores only current daily selection, last reading, draw counter, reading history (the last 20 draws' cards and orientations, without questions), and local preferences, including panel scale, color mode, and reversals. Scale, fullscreen, and color mode persist across panel close, plugin reload, and shell restart. **Full** expands the panel to fill the current output without changing the framed view’s rendered scale—text, cards, and controls stay the same size; fullscreen is an independent toggle, so you can change scale while staying fullscreen. Both the chosen scale and **Full** remain highlighted. Fullscreen uses the full canvas: edge-aligned controls, a dedicated card area with responsive card spacing, and a separate reading area. Supporting details move into a side column when space allows and return beneath the narrative at larger scales or on smaller outputs. Text measure stays bounded; card and type sizes still follow your chosen scale. On smaller displays the rendered size fits within the available output without changing the saved scale. `SYSTEM` color mode follows Quattro’s live popup, text, accent, muted, border, and urgent roles. Card silhouettes, ivory fields, linework, typography, identity, orientation, and reading state remain fixed; only packaged primary, secondary, and fault spot-color masks respond to the selected color mode. Low-contrast system colors fall back deterministically to the ARCANA signal palette. Fault coverage is intentionally sparse: nine cards carry fault pixels for meaningful failure, conflict, warning, or destructive states, while the other 70 images retain transparent fault layers so every image uses the same three-mask renderer. The exact set is declared in `assets/card-art-masks/fault-contract.json` and enforced by the release validator. The plugin does not read arbitrary files, shell history, environment dumps, vault content, credentials, or unrelated state.
 
 **Question privacy:** updating the agent preview saves the original question and its reframed form inside the last reading, before any agent launch. These are plaintext local data and are restored after restart. Preparing another question replaces them; an ordinary new draw clears the question from the last reading. The input field itself is transient. To remove all saved data, follow the clearing procedure below. Copying also places reading/question text on the Wayland clipboard, which a clipboard-history manager may retain.
 
-The agent handoff contains only the current reading and an optional, clearly delimited user question. It uses argument-array process launch through:
+The agent handoff contains only the current reading and an optional, clearly delimited user question. It opens with plain-language instructions for the agent: its first reply must be the reading itself (a direct answer to your question, each card in its position, and concrete next steps), with ground rules against predictions, professional advice, and actions on the computer unless asked, then the labeled reading, then a structured JSON packet with card claims and evidence IDs. Arcana launches whichever agent Omarchy has configured as the default; nothing is hardcoded to a specific agent. On launch it writes the exact previewed packet to an owner-only file and starts the agent with a short prompt that points to it, using argument-array process launch:
 
 ```text
 omarchy default agent
-omarchy agent prompt <bounded-packet>
+omarchy agent prompt "Read the Arcana tarot reading handoff at <state>/omarchy/arcana-agent-context/handoff.md …"
 ```
 
-The launch is never automatic. Omarchy agents may run with unattended/auto-approval behavior, so the panel previews the exact packet and requires an explicit launch action.
+The packet is not passed on the command line, because some terminals cap launch arguments (Splinterm allows 4 KiB) and command lines are visible in the process list for the whole agent session. The handoff file is replaced on each launch and can contain your question; delete it with the state file when clearing data. The launch is never automatic. Omarchy agents may run with unattended/auto-approval behavior, so the panel previews the exact packet and requires an explicit launch action.
 
 ## Recovery and clearing data
 
@@ -126,7 +148,7 @@ mv -- "$state" "$state.backup-$(date +%s)"
 omarchy plugin enable org.ministryoftaste.arcana
 ```
 
-For permanent deletion, remove the state file and any backups you no longer want while Arcana is disabled. Clear clipboard history separately if you copied a reading. Re-enabling starts with fresh defaults. External edits are read on reload/restart or **Retry loading**, not merged into a running reading.
+For permanent deletion, remove the state file, the `arcana-agent-context/handoff.md` file beside it, and any backups you no longer want while Arcana is disabled. Clear clipboard history separately if you copied a reading. Re-enabling starts with fresh defaults. External edits are read on reload/restart or **Retry loading**, not merged into a running reading.
 
 ## Development and release checks
 
