@@ -18,7 +18,7 @@ TestCase {
     var spreads=readJson("../assets/spreads.json")
     var semantic=Interpretation.interpret(catalog,spreads,{spreadId:"single",cards:[{positionId:"single",cardId:"major-00-the-fool",orientation:"reversed"}],originalQuestion:"Will I definitely succeed?",topicLens:"general",tradition:"rws",reversalPolicy:"multi_hypothesis",elementalDignity:"disabled",narratorId:"clear-reflective-v1"})
     var panel=Interpretation.toPanelReading(catalog,spreads,semantic,{kind:"free",createdAt:null})
-    var packet=JSON.parse(Interpretation.buildHandoff(catalog,spreads,semantic))
+    var packet=Interpretation.handoffPacket(Interpretation.buildHandoff(catalog,spreads,semantic))
     compare(semantic.id,"reading:83d71649")
     compare(semantic.normalizedQuestion,"What can I understand or do to improve my approach to this uncertain outcome?")
     compare(semantic.reframeReason,"prediction")
@@ -49,7 +49,7 @@ TestCase {
     var panel=Interpretation.toPanelReading(catalog,spreads,recomposed,{kind:"spread",createdAt:null})
     var copied=Interpretation.copyReading(catalog,spreads,recomposed,8000)
     var packetText=Interpretation.buildHandoff(catalog,spreads,recomposed,12000)
-    var packet=JSON.parse(packetText)
+    var packet=Interpretation.handoffPacket(packetText)
     var argv=["omarchy","agent","prompt",packetText]
     compare(panel.spreadName,"Context / Friction / Doorway")
     compare(panel.originalQuestion,recomposed.originalQuestion)

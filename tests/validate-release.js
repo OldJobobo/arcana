@@ -164,7 +164,7 @@ if(noAlternativeReading){
  if(noAlternativeReading.interpretations.length!==1||noAlternativeReading.distinguishingQuestions.length!==0)fail("no-alternative semantic reading invalid")
  const panel=Interpretation.toPanelReading(deck,spreads,noAlternativeReading,null);
  const copied=Interpretation.copyReading(deck,spreads,noAlternativeReading);
- const packet=JSON.parse(Interpretation.buildHandoff(deck,spreads,noAlternativeReading));
+ const packet=Interpretation.handoffPacket(Interpretation.buildHandoff(deck,spreads,noAlternativeReading));
  if(panel.alternative!==null||packet.alternative!==null||copied.includes("ALTERNATIVE"))fail("no-alternative projection leaked empty alternative")
 }
 if(legalReading&&noAlternativeReading){
@@ -172,7 +172,7 @@ if(legalReading&&noAlternativeReading){
  const repeated=[Interpretation.interpret(deck,spreads,legalCase.request),Interpretation.interpret(deck,spreads,noAlternativeCase.request)];
  if(JSON.stringify(readings)!==JSON.stringify(repeated))fail("canonical semantic readings are not deterministic")
  const semanticDigest=crypto.createHash("sha256").update(readings.map(JSON.stringify).join("\n")).digest("hex");
- if(semanticDigest!=="f3471c38bd9f61f06c6a1663e5e7711f4c1b4526e3963187bd6391c2fd40616a")fail("canonical semantic release digest drift")
+ if(semanticDigest!=="dbcc995f4c3b506a7b3b8f999d533166329d0ed4d9b9839f9dba2442721701f3")fail("canonical semantic release digest drift")
 }
 try{Interpretation.interpret(deck,spreads,Object.assign({},legalCase.request,{cards:legalCase.request.cards.slice(0,2)}));fail("malformed request did not fail closed")}catch(error){if(error.code!=="INVALID_SPREAD_CARDINALITY")fail("malformed request returned wrong typed failure")}
 if(tripleReport.outcome!=="passed"||!tripleReport.complete||tripleReport.cases!==78*77*76||tripleReport.candidateDigest!==benchmark.candidateDigest||!tripleReport.blockingBudget.met)fail("complete triple-matrix release report invalid")

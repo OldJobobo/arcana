@@ -59,9 +59,18 @@ test("handoff is a bounded validated semantic packet with exact question state",
   const selected=item || caseWhere(entry => entry.expect.reframeReason !== null);
   const reading=readingFor(selected);
   const packetText=Interpretation.buildHandoff(catalog,spreads,reading);
-  const packet=JSON.parse(packetText);
+  const packet=Interpretation.handoffPacket(packetText);
   assert.ok(Interpretation.byteLength(packetText) <= 12000);
-  assert.equal(packet.packetVersion,2);
+  assert.equal(packet.packetVersion,3);
+  assert.match(packetText,/^# Arcana reading\n/);
+  assert.match(packetText,/Interpret, do not predict/);
+  // The first move is the reading itself, answered against the question.
+  assert.match(packetText,reading.originalQuestion !== null ? /answer the user's question using this reading/ : /give the user the reading/);
+  assert.match(packetText,/Go through each card in its position/);
+  assert.doesNotMatch(packetText,/Start by|asking which part/);
+  assert.match(packetText,/Do not run commands/);
+  assert.ok(packet.cards.every(card => card.title && card.positionLabel && card.claims.every(claim => typeof claim.text === "string")));
+  if (reading.originalQuestion !== null) assert.ok(packetText.includes("> "+reading.originalQuestion.split("\n")[0]));
   assert.equal(packet.semantic.readingId,reading.id);
   assert.equal(packet.semantic.methodVersion,"arcana-composer-v2");
   assert.equal(packet.question.original,reading.originalQuestion);
@@ -82,7 +91,7 @@ test("all corpus benchmark projections fit runtime copy and handoff limits", () 
     const handoff=Interpretation.buildHandoff(catalog,spreads,reading,12000);
     assert.ok(Interpretation.byteLength(copied) <= 8000,item.id+" copy");
     assert.ok(Interpretation.byteLength(handoff) <= 12000,item.id+" handoff");
-    const packet=JSON.parse(handoff);
+    const packet=Interpretation.handoffPacket(handoff);
     assert.equal(packet.semantic.readingId,reading.id,item.id);
     assert.equal(packet.alternative === null,reading.interpretations.length === 1,item.id);
   }
@@ -95,4 +104,40 @@ test("projection helpers fail closed on invalid semantic readings", () => {
   assert.throws(() => Interpretation.toPanelReading(catalog,spreads,reading,null),error => error && error.code === "UNKNOWN_CARD");
   assert.throws(() => Interpretation.copyReading(catalog,spreads,reading),error => error && error.code === "UNKNOWN_CARD");
   assert.throws(() => Interpretation.buildHandoff(catalog,spreads,reading),error => error && error.code === "UNKNOWN_CARD");
+});
+
+test("readable copy names each card and labels each sentence without IDs", () => {
+  const item=caseWhere(entry => entry.request.spreadId === "context-friction-doorway" && entry.expect.interpretationCount === 2);
+  const reading=readingFor(item);
+  const copied=Interpretation.copyReadableReading(catalog,spreads,reading,8000,{kind:"spread",localDate:"2026-10-13"});
+  const panel=Interpretation.toPanelReading(catalog,spreads,reading,null);
+  assert.match(copied,/^Arcana · Context \/ Friction \/ Doorway · 2026-10-13\n/);
+  for (const card of panel.cards) assert.ok(copied.includes(card.positionLabel+": "+card.card.title),card.instanceId);
+  assert.ok(copied.includes("Another reading"));
+  assert.equal(copied.includes(reading.id),false);
+  assert.equal(/[a-z]+-\d\d-[a-z]+\./.test(copied),false,"claim IDs leaked into readable copy");
+  assert.ok(Interpretation.byteLength(Interpretation.copyReadableReading(catalog,spreads,reading,1500)) <= 1500);
+});
+
+test("panel utterances carry position labels and patterns read as prose", () => {
+  for (const item of benchmark.cases.filter(entry => entry.request.spreadId === "context-friction-doorway").slice(0,20)) {
+    const panel=Interpretation.toPanelReading(catalog,spreads,readingFor(item),null);
+    const labels=panel.utterances.concise.map(utterance => utterance.label);
+    assert.ok(labels[0].startsWith("Context · "),item.id+": "+labels[0]);
+    assert.ok(labels[1].startsWith("Friction · "),item.id+": "+labels[1]);
+    assert.ok(panel.utterances.concise.some(utterance => utterance.role === "tension" && utterance.label === "" && utterance.text.startsWith("Across the spread, ")),item.id);
+    for (const pattern of panel.patterns) assert.doesNotMatch(pattern.text,/major-\d|-recurrence|minor-\d/,item.id);
+    for (const relation of panel.relationships) assert.doesNotMatch(relation.text,/→|context:|friction:/,item.id);
+    for (const utterance of panel.utterances.concise) assert.doesNotMatch(utterance.text,/major \d minor \d|through theme /,item.id);
+  }
+});
+
+test("engine binds validated catalogs once and matches the stateless API", () => {
+  const engine=Interpretation.createEngine(catalog,spreads);
+  const item=caseWhere(entry => entry.expect.interpretationCount === 2);
+  const reading=engine.interpret(item.request);
+  assert.deepEqual(reading,readingFor(item));
+  assert.deepEqual(engine.toPanelReading(reading,null),Interpretation.toPanelReading(catalog,spreads,reading,null));
+  assert.equal(engine.copyReading(reading,8000),Interpretation.copyReading(catalog,spreads,reading,8000));
+  assert.equal(engine.buildHandoff(reading,12000),Interpretation.buildHandoff(catalog,spreads,reading,12000));
 });

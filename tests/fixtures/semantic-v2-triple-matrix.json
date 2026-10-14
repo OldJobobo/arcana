@@ -5,11 +5,11 @@
   "cases": 456456,
   "complete": true,
   "shards": 78,
-  "semanticDigest": "870bfede4b3095d45b062d5e9ebc86e90b4fbb1a4ddb3e6b55d8bb9183fdc77d",
+  "semanticDigest": "eda107af26bfc2438525e7d590957d9d0614203dc67b10c858ac8fb03f128185",
   "shardDigest": null,
   "observed": {
-    "elapsedMs": 99014,
-    "peakRssMb": 565
+    "elapsedMs": 87109,
+    "peakRssMb": 407
   },
   "blockingBudget": {
     "elapsedMs": 120000,

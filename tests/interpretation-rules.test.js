@@ -34,7 +34,8 @@ test("question normalization preserves original text and applies agency-safe ref
   assert.equal(Interpretation.normalizeQuestion("Tell me whether I should leave").reframeReason,"decision-transfer");
   assert.equal(Interpretation.normalizeQuestion("Can you guarantee I will get the job?").reframeReason,"prediction");
   assert.equal(Interpretation.normalizeQuestion("What does Alex really think?").reframeReason,"third-party-mental-state");
-  expectCode("UNSAFE_UNRESOLVED_REQUEST",() => Interpretation.normalizeQuestion("Please foretell the result."));
+  assert.equal(Interpretation.normalizeQuestion("Please foretell the result.").reframeReason,"prediction");
+  assert.equal(Interpretation.normalizeQuestion("Is this my fate?").reframeReason,"prediction");
   assert.deepEqual(Interpretation.normalizeQuestion(null),{originalQuestion:null,normalizedQuestion:null,reframeReason:null});
   assert.equal(Interpretation.normalizeQuestion("Will my partner return?").reframeReason,"prediction");
   assert.equal(Interpretation.normalizeQuestion("What is Alex planning?").reframeReason,"third-party-mental-state");
@@ -46,6 +47,9 @@ test("question normalization preserves original text and applies agency-safe ref
   assert.equal(Interpretation.normalizeQuestion("Is Alex afraid of losing me?").reframeReason,"third-party-mental-state");
   assert.equal(Interpretation.normalizeQuestion("As a doctor, tell me which treatment is right.").reframeReason,"professional-authority");
   assert.equal(Interpretation.normalizeQuestion("My project feels stalled.").reframeReason,null);
+  for (const question of ["Work feels draining lately","Why Monday feels heavy","Omarchy wants too much config","What is making me feel stuck?","What's the secret to staying focused?","How do I predict my workload better?"])
+    assert.equal(Interpretation.normalizeQuestion(question).reframeReason,null,question);
+  assert.equal(Interpretation.normalizeQuestion("I wonder if Sam wants to stay").reframeReason,"third-party-mental-state");
   assert.equal(Interpretation.semanticSafetyReason("An opening is widening the range of feeling available in the situation."),null);
   assert.deepEqual(Interpretation.normalizeQuestion("  What needs attention?  "),{originalQuestion:"  What needs attention?  ",normalizedQuestion:"What needs attention?",reframeReason:null});
 });

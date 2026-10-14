@@ -2,7 +2,7 @@
 
 const test=require("node:test");
 const assert=require("node:assert/strict");
-const Legacy=require("../src/Arcana");
+const Legacy=require("./fixtures/legacy-composer-v1");
 const Interpretation=require("../src/Interpretation");
 const legacyCatalog=require("../assets/cards.json");
 const catalog=require("../assets/semantic-v2/cards.json");

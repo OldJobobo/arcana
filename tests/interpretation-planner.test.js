@@ -36,7 +36,7 @@ test("content planning satisfies coverage and selects one spread-level connectio
   assert.deepEqual([...covered].sort(),["context","doorway","friction"]);
   assert.equal(plan.selectedPropositions.filter(item => item.kind === "interaction" || item.kind === "pattern").length,1);
   assert.equal(plan.selectedPropositions.find(item => item.kind === "interaction" || item.kind === "pattern").kind,"interaction");
-  assert.deepEqual(plan.rhetoricalTree.map(item => item.role),["governing","support","tension","development","reflection"]);
+  assert.deepEqual(plan.rhetoricalTree.map(item => item.role),["support","governing","tension","development","reflection"]);
   assert.equal(new Set(plan.rhetoricalTree.map(item => item.role)).size,plan.rhetoricalTree.length);
 });
 
@@ -131,8 +131,8 @@ test("concise and expanded renderings preserve one selected semantic plan", () =
   const expanded=Interpretation.renderPlan(plan,"expanded");
   assert.ok(concise.length >= plan.rhetoricalTree.length);
   assert.ok(expanded.length >= concise.length);
-  assert.equal(concise[0].role,"governing");
-  assert.equal(expanded[0].role,"governing");
+  assert.deepEqual(concise.slice(0,2).map(item => item.role),["support","governing"]);
+  assert.deepEqual(expanded.slice(0,2).map(item => item.role),["support","governing"]);
   const selectedEvidence=new Set(plan.selectedPropositions.flatMap(item => item.evidence).concat(plan.alternative ? plan.alternative.evidence : []));
   assert.ok(concise.every(item => item.evidence.every(id => selectedEvidence.has(id))));
   assert.ok(expanded.every(item => item.evidence.every(id => selectedEvidence.has(id))));
