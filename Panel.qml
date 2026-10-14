@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Wayland
+import Quickshell.Hyprland
 import qs.Commons
 import "components"
 import "src/Settings.js" as Settings
@@ -23,6 +24,8 @@ Item {
   property bool inspectionOpen: false
   property var inspectionItem: null
   property real inspectionProgress: 0
+  // Output the panel opens on; chosen from Hyprland's focused monitor at open.
+  property var targetScreen: Quickshell.screens.length > 0 ? Quickshell.screens[0] : null
   readonly property var reading: service ? service.currentReading : null
   readonly property int readingRevision: service ? service.readingRevision : 0
   readonly property bool systemTheme: service && service.themeMode === "system"
@@ -55,6 +58,10 @@ Item {
   property color graphite: systemTheme ? Color.popups.background : "#101416"
   property color panelBorder: systemTheme ? Color.popups.border : "#3e5558"
   property color artContrastSurface: "#10151a"
+  property color divider: systemTheme ? Qt.rgba(Color.popups.border.r, Color.popups.border.g, Color.popups.border.b, 0.7) : "#334447"
+  property color dividerQuiet: systemTheme ? Qt.rgba(Color.popups.border.r, Color.popups.border.g, Color.popups.border.b, 0.5) : "#273638"
+  property color insetSurface: systemTheme ? Qt.darker(Color.popups.background, 1.15) : "#0c1012"
+  property color insetText: systemTheme ? Color.popups.text : "#b7c0be"
   property color rawArtPrimary: systemTheme ? Color.accent : "#469bff"
   property color rawArtSecondary: systemTheme
     ? Qt.rgba((Color.accent.r * 0.68) + (Color.popups.text.r * 0.32),
@@ -123,6 +130,15 @@ Item {
   Behavior on artPrimary { ColorAnimation { duration: 220 } }
   Behavior on artSecondary { ColorAnimation { duration: 220 } }
   Behavior on artFault { ColorAnimation { duration: 220 } }
+  Behavior on divider { ColorAnimation { duration: 220 } }
+
+  // An armed daily redraw disarms itself if it is not confirmed.
+  Timer {
+    id: redrawArmTimeout
+    interval: 4000
+    running: root.pendingRedraw !== ""
+    onTriggered: root.pendingRedraw = ""
+  }
 
   Timer {
     id: revealStart
@@ -281,7 +297,16 @@ Item {
     return service
   }
 
+  function focusedScreen() {
+    var monitor = Hyprland.focusedMonitor
+    if (monitor)
+      for (var i = 0; i < Quickshell.screens.length; i++)
+        if (Quickshell.screens[i].name === monitor.name) return Quickshell.screens[i]
+    return Quickshell.screens.length > 0 ? Quickshell.screens[0] : null
+  }
+
   function open(payloadJson) {
+    targetScreen = focusedScreen()
     panelReveal.stop()
     revealStart.stop()
     contentReveal.stop()
@@ -296,7 +321,9 @@ Item {
     resolveService()
     question = reading && reading.originalQuestion ? reading.originalQuestion : ""
     questionInput.focus = false
-    if (service && !service.currentReading) {
+    // Draw a fresh daily when there is no reading yet, or when the reading on
+    // screen is a daily card from an earlier day.
+    if (service && (!service.currentReading || service.dailyIsStale())) {
       veilNextReading = true
       if (!service.requestDaily(false)) veilNextReading = false
     } else revealAllCards()
@@ -379,6 +406,53 @@ Item {
     if (resolveService()) service.prepareAgent(question)
   }
 
+  function narrativeItems() {
+    readingRevision
+    if (!reading) return []
+    var utterances = expandedReading ? reading.utterances.expanded : reading.utterances.concise
+    // Reflection prompts and the alternative have their own sections.
+    return utterances.filter(function(item) { return item.role !== "reflection" && item.role !== "alternative" })
+  }
+
+  function scrollActiveView(event) {
+    var view = viewMode === "agent" ? packetScroll : viewMode === "history" ? historyList : viewMode === "reading" ? readingScroll : null
+    if (!view) return false
+    var page = Math.max(40, view.height - 40)
+    var maxY = Math.max(0, view.contentHeight - view.height)
+    var y = view.contentY
+    if (event.key === Qt.Key_Down) y += 40
+    else if (event.key === Qt.Key_Up) y -= 40
+    else if (event.key === Qt.Key_PageDown) y += page
+    else if (event.key === Qt.Key_PageUp) y -= page
+    else if (event.key === Qt.Key_Home) y = 0
+    else if (event.key === Qt.Key_End) y = maxY
+    else return false
+    view.contentY = Math.max(0, Math.min(maxY, y))
+    return true
+  }
+
+  function showHistory() {
+    pendingRedraw = ""
+    viewMode = "history"
+    Qt.callLater(function() { historyList.forceActiveFocus() })
+  }
+
+  function openHistoryEntry(index) {
+    if (!resolveService() || !service.restoreHistory(index)) return
+    viewMode = "reading"
+    keyboardRoot.forceActiveFocus()
+  }
+
+  function historyText(entry) {
+    if (!entry) return ""
+    var kind = entry.kind === "daily" ? "Daily" : entry.kind === "free" ? "Free" : "Spread"
+    var when = entry.createdAt ? Qt.formatDateTime(new Date(entry.createdAt), "yyyy-MM-dd  hh:mm") : ""
+    var titles = (entry.cards || []).map(function(card) {
+      return service.cardTitle(card.cardId) + (card.orientation === "reversed" ? " (reversed)" : "")
+    })
+    return { kind: kind, when: when, cards: titles.join("  ·  ") }
+  }
+
   function relationshipText() {
     readingRevision
     if (!reading || !reading.relationships) return ""
@@ -404,13 +478,6 @@ Item {
     return text
   }
 
-  function narrativeText() {
-    readingRevision
-    if (!reading) return statusMessage || "Choose Daily, Free, or Spread to begin."
-    var utterances = expandedReading ? reading.utterances.expanded : reading.utterances.concise
-    var lines = utterances.map(function(item) { return item.text })
-    return lines.join(expandedReading ? "\n\n" : "\n")
-  }
 
   function modeLabel() {
     if (!service) return "Preparing"
@@ -422,14 +489,14 @@ Item {
   function agentStatusText() {
     if (!service) return "Service unavailable"
     var s=service.agentStatus
-    if (s === "question-failed") return "This question could not be safely interpreted. Try an open-ended question about your own actions."
+    if (s === "question-failed") return "This question could not be prepared. Try rephrasing it as an open question about your own situation."
     if (s === "no-reading") return "Draw and reveal a reading before preparing an agent packet."
     if (s === "checking") return "Checking Omarchy’s configured default agent…"
     if (s === "unset") return "No default agent is configured on this Omarchy system."
     if (s === "ready") return "Ready to launch “"+service.configuredAgent+"” in the configured terminal."
     if (s === "retry") return "Agent picker opened. Choose an agent, then recheck."
     if (s === "launching") return "Requesting the configured Omarchy agent terminal…"
-    if (s === "launched") return "Agent terminal launch requested. Canonical Arcana data remains unchanged."
+    if (s === "launched") return "Agent terminal opened. Canonical Arcana data remains unchanged."
     if (s === "launch-failed") return "The configured-agent launch failed. The reading remains local and unchanged."
     if (s === "unavailable") return "Omarchy’s default-agent route was unavailable."
     return "Preview the packet before launching an agent."
@@ -437,7 +504,7 @@ Item {
 
   PanelWindow {
     id: surface
-    screen: Quickshell.screens.length > 0 ? Quickshell.screens[0] : null
+    screen: root.targetScreen
     visible: root.opened
     color: "transparent"
     surfaceFormat.opaque: false
@@ -454,12 +521,6 @@ Item {
       right: true
     }
 
-    mask: Region {
-      x: root.inspectionOpen ? 0 : frameBounds.x
-      y: root.inspectionOpen ? 0 : frameBounds.y
-      width: root.inspectionOpen ? surface.width : frameBounds.width
-      height: root.inspectionOpen ? surface.height : frameBounds.height
-    }
 
     FocusScope {
       id: keyboardRoot
@@ -478,6 +539,10 @@ Item {
           event.accepted = true
           return
         }
+        if (root.scrollActiveView(event)) {
+          event.accepted = true
+          return
+        }
         if (questionInput.activeFocus) {
           if (event.key === Qt.Key_Escape) {
             questionInput.focus = false
@@ -487,7 +552,7 @@ Item {
           return
         }
         if (event.key === Qt.Key_Escape || event.key === Qt.Key_Q) {
-          if (root.viewMode !== "reading") root.viewMode = "reading"
+          if (root.viewMode !== "reading") { root.viewMode = "reading"; keyboardRoot.forceActiveFocus() }
           else if (event.key === Qt.Key_Escape && root.fullscreen) root.service.setFullscreen(false)
           else root.requestClose()
           event.accepted = true
@@ -500,7 +565,14 @@ Item {
         } else if (event.key === Qt.Key_A) {
           root.openAgentPreview(); event.accepted = true
         } else if (event.key === Qt.Key_C) {
-          if (root.resolveService()) root.service.copyCurrentReading(); event.accepted = true
+          if (root.resolveService()) root.service.copyCurrentReading(event.modifiers & Qt.ShiftModifier ? "evidence" : "readable")
+          event.accepted = true
+        } else if (event.key === Qt.Key_H) {
+          if (root.viewMode === "history") { root.viewMode = "reading"; keyboardRoot.forceActiveFocus() }
+          else root.showHistory()
+          event.accepted = true
+        } else if (event.key === Qt.Key_V) {
+          if (root.resolveService()) root.service.toggleReversals(); event.accepted = true
         } else if (event.key === Qt.Key_E) {
           root.expandedReading = !root.expandedReading; event.accepted = true
         } else if (event.key === Qt.Key_I) {
@@ -518,6 +590,14 @@ Item {
         } else if (event.key === Qt.Key_Slash && root.viewMode === "agent") {
           questionInput.forceActiveFocus(); event.accepted = true
         }
+      }
+
+      MouseArea {
+        id: outsideClick
+        anchors.fill: parent
+        acceptedButtons: Qt.LeftButton | Qt.RightButton | Qt.MiddleButton
+        enabled: root.opened && !root.inspectionOpen && !root.fullscreen
+        onClicked: root.requestClose()
       }
 
       Item {
@@ -538,6 +618,12 @@ Item {
           color: root.graphite
           border.width: 1
           border.color: root.panelBorder
+
+        // Swallow clicks on the frame so they don't reach the outside-click area.
+        MouseArea {
+          anchors.fill: parent
+          acceptedButtons: Qt.LeftButton | Qt.RightButton | Qt.MiddleButton
+        }
 
         Rectangle {
           id: innerKeyline
@@ -563,34 +649,21 @@ Item {
             width: parent.width
             height: 58
 
-            Item {
-              x: 0
-              y: 4
-              width: 46
-              height: 38
-              Rectangle { anchors.centerIn: parent; width: 20; height: 20; rotation: 45; color: "transparent"; border.width: 1; border.color: root.cyan }
-              Rectangle {
-                id: registrationLine
-                anchors.verticalCenter: parent.verticalCenter
-                width: root.viewMode === "reading" ? 42 : (root.viewMode === "agent" ? 32 : 37)
-                height: 1
-                color: root.cyan
-                opacity: 0.72
-                Behavior on width { NumberAnimation { duration: 180; easing.type: Easing.OutCubic } }
-              }
-              Rectangle { anchors.centerIn: parent; width: 4; height: 4; radius: 2; color: root.cyan }
-              Rectangle {
-                x: registrationLine.width - 4
-                y: 30
-                width: 4
-                height: 4
-                radius: 2
-                color: root.brass
-                Behavior on x { NumberAnimation { duration: 180; easing.type: Easing.OutCubic } }
-              }
+            // Same glyph as the bar icon, so the panel and bar read as one mark.
+            Text {
+              x: 4
+              anchors.verticalCenter: parent.verticalCenter
+              width: 38
+              horizontalAlignment: Text.AlignHCenter
+              text: "\uDB81\uDE38" // nf-md-cards (U+F0638)
+              color: root.cyan
+              font.family: "JetBrainsMono Nerd Font"
+              font.pixelSize: 26
+              textFormat: Text.PlainText
             }
 
             Text {
+              id: panelTitle
               x: 58
               anchors.verticalCenter: parent.verticalCenter
               text: "ARCANA"
@@ -599,6 +672,18 @@ Item {
               font.pixelSize: 19
               font.bold: true
               font.letterSpacing: 2.5
+              textFormat: Text.PlainText
+            }
+
+            Text {
+              id: versionLabel
+              anchors.left: panelTitle.right
+              anchors.leftMargin: 10
+              anchors.baseline: panelTitle.baseline
+              text: root.manifest && root.manifest.version ? "v" + root.manifest.version : ""
+              color: root.muted
+              font.family: "monospace"
+              font.pixelSize: 10
               textFormat: Text.PlainText
             }
 
@@ -624,7 +709,7 @@ Item {
             }
           }
 
-          Rectangle { width: parent.width; height: 1; color: "#334447" }
+          Rectangle { width: parent.width; height: 1; color: root.divider }
 
           Item {
             width: parent.width
@@ -634,10 +719,11 @@ Item {
               anchors.left: parent.left
               anchors.verticalCenter: parent.verticalCenter
               spacing: 8
-              ArcanaButton { systemTheme: root.systemTheme; text: "D  Daily"; compact: true; selected: root.viewMode === "reading" && root.service && root.service.currentReadingKind === "daily"; onClicked: root.showDaily() }
-              ArcanaButton { systemTheme: root.systemTheme; text: "F  Free"; compact: true; selected: root.viewMode === "reading" && root.service && root.service.currentReadingKind === "free"; onClicked: root.drawFree() }
-              ArcanaButton { systemTheme: root.systemTheme; text: "S  Spread"; compact: true; selected: root.viewMode === "reading" && root.service && root.service.currentReadingKind === "spread"; onClicked: root.drawSpread() }
+              ArcanaButton { systemTheme: root.systemTheme; text: "D  Daily"; compact: true; selected: root.viewMode === "reading" && !!root.service && root.service.currentReadingKind === "daily"; onClicked: root.showDaily() }
+              ArcanaButton { systemTheme: root.systemTheme; text: "F  Free"; compact: true; selected: root.viewMode === "reading" && !!root.service && root.service.currentReadingKind === "free"; onClicked: root.drawFree() }
+              ArcanaButton { systemTheme: root.systemTheme; text: "S  Spread"; compact: true; selected: root.viewMode === "reading" && !!root.service && root.service.currentReadingKind === "spread"; onClicked: root.drawSpread() }
               ArcanaButton { systemTheme: root.systemTheme; text: "A  Agent"; compact: true; selected: root.viewMode === "agent"; onClicked: root.openAgentPreview() }
+              ArcanaButton { systemTheme: root.systemTheme; text: "H  History"; compact: true; selected: root.viewMode === "history"; onClicked: root.showHistory() }
               ArcanaButton { systemTheme: root.systemTheme; text: "I  About"; compact: true; selected: root.viewMode === "about"; onClicked: root.viewMode = "about" }
             }
 
@@ -667,7 +753,7 @@ Item {
             }
           }
 
-          Rectangle { width: parent.width; height: 1; color: "#273638" }
+          Rectangle { width: parent.width; height: 1; color: root.dividerQuiet }
 
           RowLayout {
             id: statusBanner
@@ -686,7 +772,7 @@ Item {
             }
             ArcanaButton {
               systemTheme: root.systemTheme
-              visible: root.service && ["invalid", "load-failed", "save-failed"].indexOf(root.service.stateStatus) >= 0
+              visible: !!root.service && ["invalid", "load-failed", "save-failed"].indexOf(root.service.stateStatus) >= 0
               text: root.service && root.service.stateStatus === "save-failed" ? "Retry saving" : "Retry loading"
               onClicked: root.service.retryStorage()
             }
@@ -758,14 +844,14 @@ Item {
                   }
                 }
 
-                Rectangle { width: 1; height: parent.height; color: "#2d3d40" }
+                Rectangle { width: 1; height: parent.height; color: root.dividerQuiet }
 
                 Item {
                   width: readingLayout.layout.textWidth
                   height: parent.height
 
                   Column {
-                    visible: root.reading && !root.cardsComplete
+                    visible: !!root.reading && !root.cardsComplete
                     anchors.centerIn: parent
                     width: parent.width - 48
                     spacing: 12
@@ -817,8 +903,18 @@ Item {
                       width: summaryColumn.layout.mainWidth
                       spacing: 11
                     Text { width: parent.width; text: root.reading ? (root.reading.cards.length === 1 ? root.modeLabel()+"  ·  "+root.reading.cards[0].card.title : root.reading.spreadName) : "Preparing draw"; color: root.cyan; font.family: "sans-serif"; font.pixelSize: 15; font.bold: true; wrapMode: Text.Wrap; textFormat: Text.PlainText }
-                    Text { visible: root.reading && root.reading.originalQuestion !== null; width: parent.width; text: root.questionStateText(); color: root.brass; font.family: "sans-serif"; font.pixelSize: 11; lineHeight: 1.35; wrapMode: Text.Wrap; textFormat: Text.PlainText }
-                    Text { width: parent.width; text: root.narrativeText(); color: root.ivory; font.family: "sans-serif"; font.pixelSize: 14; lineHeight: 1.45; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                    Text { visible: !!root.reading && root.reading.originalQuestion !== null; width: parent.width; text: root.questionStateText(); color: root.brass; font.family: "sans-serif"; font.pixelSize: 11; lineHeight: 1.35; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                    Text { visible: !root.reading; width: parent.width; text: root.statusMessage || "Choose Daily, Free, or Spread to begin."; color: root.ivory; font.family: "sans-serif"; font.pixelSize: 14; lineHeight: 1.45; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                    Repeater {
+                      model: root.narrativeItems()
+                      delegate: Column {
+                        required property var modelData
+                        width: narrativeColumn.width
+                        spacing: 3
+                        Text { visible: modelData.label !== ""; width: parent.width; text: modelData.label; color: root.brass; font.family: "monospace"; font.pixelSize: 10; font.bold: true; font.letterSpacing: 0.9; elide: Text.ElideRight; textFormat: Text.PlainText }
+                        Text { width: parent.width; text: modelData.text; color: root.ivory; font.family: "sans-serif"; font.pixelSize: 14; lineHeight: 1.45; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                      }
+                    }
                     }
 
                     Rectangle {
@@ -826,7 +922,7 @@ Item {
                       x: detailsColumn.x - 16
                       width: 1
                       height: detailsColumn.implicitHeight
-                      color: "#334447"
+                      color: root.divider
                     }
                     Column {
                       id: detailsColumn
@@ -834,15 +930,15 @@ Item {
                       y: summaryColumn.layout.split ? 0 : narrativeColumn.implicitHeight + 11
                       width: summaryColumn.layout.detailsWidth
                       spacing: 11
-                    Rectangle { visible: !summaryColumn.layout.split; width: parent.width; height: 1; color: "#334447" }
-                    Text { visible: root.reading && root.reading.relationships.length > 0; width: parent.width; text: "Relationships"; color: root.brass; font.family: "sans-serif"; font.pixelSize: 11; font.bold: true; textFormat: Text.PlainText }
-                    Text { visible: root.reading && root.reading.relationships.length > 0; width: parent.width; text: root.relationshipText(); color: root.muted; font.family: "sans-serif"; font.pixelSize: 12; lineHeight: 1.4; wrapMode: Text.Wrap; textFormat: Text.PlainText }
-                    Text { visible: root.reading && root.reading.patterns.length > 0; width: parent.width; text: "Spread pattern"; color: root.brass; font.family: "sans-serif"; font.pixelSize: 11; font.bold: true; textFormat: Text.PlainText }
-                    Text { visible: root.reading && root.reading.patterns.length > 0; width: parent.width; text: root.patternText(); color: root.muted; font.family: "sans-serif"; font.pixelSize: 12; lineHeight: 1.4; wrapMode: Text.Wrap; textFormat: Text.PlainText }
-                    Rectangle { visible: root.reading && (root.reading.patterns.length > 0 || root.reading.alternative !== null); width: parent.width; height: 1; color: "#334447" }
-                    Text { visible: root.reading && root.reading.alternative !== null; width: parent.width; text: "Another supported reading"; color: root.brass; font.family: "sans-serif"; font.pixelSize: 11; font.bold: true; textFormat: Text.PlainText }
-                    Text { visible: root.reading && root.reading.alternative !== null; width: parent.width; text: root.reading && root.reading.alternative ? root.reading.alternative.text : ""; color: root.ivory; font.family: "sans-serif"; font.pixelSize: 12; lineHeight: 1.4; wrapMode: Text.Wrap; textFormat: Text.PlainText }
-                    Text { visible: root.reading && root.reading.distinguishingQuestions.length > 0; width: parent.width; text: "Distinguishing question\n" + (root.reading ? root.reading.distinguishingQuestions.join("\n") : ""); color: root.brass; font.family: "sans-serif"; font.pixelSize: 11; font.bold: true; lineHeight: 1.4; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                    Rectangle { visible: !summaryColumn.layout.split; width: parent.width; height: 1; color: root.divider }
+                    Text { visible: !!root.reading && root.reading.relationships.length > 0; width: parent.width; text: "Relationships"; color: root.brass; font.family: "sans-serif"; font.pixelSize: 11; font.bold: true; textFormat: Text.PlainText }
+                    Text { visible: !!root.reading && root.reading.relationships.length > 0; width: parent.width; text: root.relationshipText(); color: root.muted; font.family: "sans-serif"; font.pixelSize: 12; lineHeight: 1.4; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                    Text { visible: !!root.reading && root.reading.patterns.length > 0; width: parent.width; text: "Spread pattern"; color: root.brass; font.family: "sans-serif"; font.pixelSize: 11; font.bold: true; textFormat: Text.PlainText }
+                    Text { visible: !!root.reading && root.reading.patterns.length > 0; width: parent.width; text: root.patternText(); color: root.muted; font.family: "sans-serif"; font.pixelSize: 12; lineHeight: 1.4; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                    Rectangle { visible: !!root.reading && (root.reading.patterns.length > 0 || root.reading.alternative !== null); width: parent.width; height: 1; color: root.divider }
+                    Text { visible: !!root.reading && root.reading.alternative !== null; width: parent.width; text: "Another supported reading"; color: root.brass; font.family: "sans-serif"; font.pixelSize: 11; font.bold: true; textFormat: Text.PlainText }
+                    Text { visible: !!root.reading && root.reading.alternative !== null; width: parent.width; text: root.reading && root.reading.alternative ? root.reading.alternative.text : ""; color: root.ivory; font.family: "sans-serif"; font.pixelSize: 12; lineHeight: 1.4; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                    Text { visible: !!root.reading && root.reading.distinguishingQuestions.length > 0; width: parent.width; text: "Distinguishing question\n" + (root.reading ? root.reading.distinguishingQuestions.join("\n") : ""); color: root.brass; font.family: "sans-serif"; font.pixelSize: 11; font.bold: true; lineHeight: 1.4; wrapMode: Text.Wrap; textFormat: Text.PlainText }
                     }
 
                     Column {
@@ -850,13 +946,13 @@ Item {
                       y: summaryColumn.layout.split ? narrativeColumn.implicitHeight + 24 : detailsColumn.y + detailsColumn.implicitHeight + 11
                       width: summaryColumn.layout.mainWidth
                       spacing: 11
-                    Rectangle { visible: summaryColumn.layout.split; width: parent.width; height: 1; color: "#334447" }
+                    Rectangle { visible: summaryColumn.layout.split; width: parent.width; height: 1; color: root.divider }
                     Text { width: parent.width; text: root.reading ? root.reading.reflection : ""; color: root.cyan; font.family: "sans-serif"; font.pixelSize: 13; font.italic: true; lineHeight: 1.4; wrapMode: Text.Wrap; textFormat: Text.PlainText }
                     Row {
                       spacing: 8
                       ArcanaButton { systemTheme: root.systemTheme; text: root.expandedReading ? "E  Compact" : "E  Expand"; onClicked: root.expandedReading = !root.expandedReading }
-                      ArcanaButton { systemTheme: root.systemTheme; text: root.service && root.service.copyStatus === "copied" ? "C  Copied" : root.service && root.service.copyStatus === "copy-failed" ? "C  Retry copy" : "C  Copy"; onClicked: { if (root.resolveService()) root.service.copyCurrentReading() } }
-                      ArcanaButton { systemTheme: root.systemTheme; visible: root.service && root.service.currentReadingKind === "daily"; text: root.pendingRedraw === "daily" ? "R  Confirm redraw" : "R  Redraw daily"; danger: root.pendingRedraw === "daily"; onClicked: root.confirmDailyRedraw() }
+                      ArcanaButton { systemTheme: root.systemTheme; text: root.service && root.service.copyStatus === "copied" ? "C  Copied" : root.service && root.service.copyStatus === "copy-failed" ? "C  Retry copy" : "C  Copy"; onClicked: { if (root.resolveService()) root.service.copyCurrentReading("readable") } }
+                      ArcanaButton { systemTheme: root.systemTheme; visible: !!root.service && root.service.currentReadingKind === "daily"; text: root.pendingRedraw === "daily" ? "R  Confirm redraw" : "R  Redraw daily"; danger: root.pendingRedraw === "daily"; onClicked: root.confirmDailyRedraw() }
                     }
                     }
                     }
@@ -944,12 +1040,13 @@ Item {
                 Rectangle {
                   width: parent.width
                   height: Math.max(120, parent.height - y - agentActions.height - parent.spacing - 18)
-                  color: "#0c1012"
+                  color: root.insetSurface
                   border.width: 1
-                  border.color: "#2d3d40"
+                  border.color: root.dividerQuiet
                   clip: true
 
                   Flickable {
+                    id: packetScroll
                     anchors.fill: parent
                     anchors.margins: 12
                     contentWidth: width
@@ -960,7 +1057,7 @@ Item {
                       id: packetText
                       width: parent.width
                       text: root.service ? root.service.agentPacket : ""
-                      color: "#b7c0be"
+                      color: root.insetText
                       font.family: "monospace"
                       font.pixelSize: 10
                       lineHeight: 1.25
@@ -974,9 +1071,66 @@ Item {
                   id: agentActions
                   height: 38
                   spacing: 10
-                  ArcanaButton { systemTheme: root.systemTheme; visible: root.service && (root.service.agentStatus === "unset" || root.service.agentStatus === "retry"); text: root.service && root.service.agentStatus === "retry" ? "Recheck agent" : "Choose default agent"; onClicked: { if (root.service.agentStatus === "retry") root.openAgentPreview(); else root.service.openAgentPicker() } }
-                  ArcanaButton { systemTheme: root.systemTheme; visible: root.service && root.service.agentStatus === "ready"; text: "Launch " + (root.service ? root.service.configuredAgent : "agent"); onClicked: root.service.launchAgent() }
+                  ArcanaButton { systemTheme: root.systemTheme; visible: !!root.service && (root.service.agentStatus === "unset" || root.service.agentStatus === "retry"); text: root.service && root.service.agentStatus === "retry" ? "Recheck agent" : "Choose default agent"; onClicked: { if (root.service.agentStatus === "retry") root.openAgentPreview(); else root.service.openAgentPicker() } }
+                  ArcanaButton { systemTheme: root.systemTheme; visible: !!root.service && root.service.agentStatus === "ready"; text: "Launch " + (root.service ? root.service.configuredAgent : "agent"); onClicked: root.service.launchAgent() }
                   ArcanaButton { systemTheme: root.systemTheme; text: "Back to reading"; onClicked: { root.viewMode = "reading"; keyboardRoot.forceActiveFocus() } }
+                }
+              }
+            }
+
+            Item {
+              anchors.fill: parent
+              visible: root.viewMode === "history"
+
+              Column {
+                anchors.fill: parent
+                anchors.topMargin: 18
+                anchors.bottomMargin: 12
+                spacing: 12
+
+                Text { text: "Recent readings"; color: root.cyan; font.family: "monospace"; font.pixelSize: 14; font.bold: true; font.letterSpacing: 1.8; textFormat: Text.PlainText }
+                Text { width: parent.width; text: "The last " + 20 + " draws on this device. Only cards and orientations are kept, never questions. Enter or click reopens a reading."; color: root.muted; font.family: "sans-serif"; font.pixelSize: 11; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                Text { visible: !root.service || root.service.history.length === 0; text: "No readings yet."; color: root.ivory; font.family: "sans-serif"; font.pixelSize: 13; textFormat: Text.PlainText }
+
+                ListView {
+                  id: historyList
+                  width: parent.width
+                  height: parent.height - y
+                  clip: true
+                  spacing: 4
+                  boundsBehavior: Flickable.StopAtBounds
+                  keyNavigationEnabled: true
+                  model: root.service ? root.service.history : []
+                  Keys.onReturnPressed: root.openHistoryEntry(currentIndex)
+                  Keys.onEnterPressed: root.openHistoryEntry(currentIndex)
+                  delegate: Rectangle {
+                    required property var modelData
+                    required property int index
+                    readonly property var summary: root.historyText(modelData)
+                    readonly property bool current: ListView.isCurrentItem && historyList.activeFocus
+                    width: historyList.width
+                    height: 40
+                    radius: 3
+                    color: current || rowMouse.containsMouse ? Qt.rgba(root.cyan.r, root.cyan.g, root.cyan.b, 0.09) : "transparent"
+                    border.width: current ? 1 : 0
+                    border.color: root.cyan
+                    Row {
+                      anchors.left: parent.left
+                      anchors.leftMargin: 12
+                      anchors.verticalCenter: parent.verticalCenter
+                      spacing: 16
+                      Text { width: 64; text: summary.kind; color: root.cyan; font.family: "monospace"; font.pixelSize: 10; font.bold: true; textFormat: Text.PlainText }
+                      Text { width: 132; text: summary.when; color: root.muted; font.family: "monospace"; font.pixelSize: 10; textFormat: Text.PlainText }
+                      Text { width: historyList.width - 260; text: summary.cards; color: root.ivory; font.family: "sans-serif"; font.pixelSize: 12; elide: Text.ElideRight; textFormat: Text.PlainText }
+                    }
+                    MouseArea {
+                      id: rowMouse
+                      anchors.fill: parent
+                      hoverEnabled: true
+                      cursorShape: Qt.PointingHandCursor
+                      onClicked: root.openHistoryEntry(index)
+                    }
+                  }
                 }
               }
             }
@@ -999,7 +1153,7 @@ Item {
                   Text { width: parent.width; text: "The same cards and choices always produce the same reading. A second interpretation appears only when the cards genuinely support one."; color: root.muted; font.family: "sans-serif"; font.pixelSize: 12; lineHeight: 1.45; wrapMode: Text.Wrap; textFormat: Text.PlainText }
                 }
 
-                Rectangle { width: 1; height: parent.height; color: "#334447" }
+                Rectangle { width: 1; height: parent.height; color: root.divider }
 
                 Column {
                   width: parent.width - Math.round(parent.width * 0.47) - 31
@@ -1007,6 +1161,8 @@ Item {
                   Text { text: "Ground rules"; color: root.brass; font.family: "sans-serif"; font.pixelSize: 15; font.bold: true; textFormat: Text.PlainText }
                   Text { width: parent.width; text: "Use the reading to notice patterns and ask better questions—not to surrender a decision."; color: root.ivory; font.family: "sans-serif"; font.pixelSize: 13; lineHeight: 1.45; wrapMode: Text.Wrap; textFormat: Text.PlainText }
                   Text { width: parent.width; text: "Arcana does not predict outcomes, diagnose people, read someone else’s mind, or replace medical, legal, financial, or human support."; color: root.muted; font.family: "sans-serif"; font.pixelSize: 12; lineHeight: 1.45; wrapMode: Text.Wrap; textFormat: Text.PlainText }
+                  ArcanaButton { systemTheme: root.systemTheme; text: root.service && root.service.reversals ? "V  Reversed cards: On" : "V  Reversed cards: Off"; selected: !!root.service && root.service.reversals; onClicked: { if (root.resolveService()) root.service.toggleReversals() } }
+                  Text { width: parent.width; text: "Applies to new draws. Keys: ↑ ↓ PgUp PgDn scroll · Shift+C copies with evidence IDs."; color: root.muted; font.family: "sans-serif"; font.pixelSize: 11; wrapMode: Text.Wrap; textFormat: Text.PlainText }
                   ArcanaButton { systemTheme: root.systemTheme; text: "Back to reading"; onClicked: { root.viewMode = "reading"; keyboardRoot.forceActiveFocus() } }
                 }
               }

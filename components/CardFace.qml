@@ -114,7 +114,7 @@ Column {
 
   Text {
     width: parent.width
-    visible: root.itemData && root.itemData.positionId !== "single"
+    visible: !!root.itemData && root.itemData.positionId !== "single"
     text: root.itemData ? root.itemData.positionLabel : ""
     color: "#62d6df"
     font.family: "monospace"

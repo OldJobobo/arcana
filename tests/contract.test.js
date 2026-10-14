@@ -11,11 +11,12 @@ function readJson(relative) {
   return JSON.parse(fs.readFileSync(path.join(root, relative), "utf8"));
 }
 
-test("manifest freezes the alpha identity and all three Quattro kinds", () => {
+test("manifest freezes the release identity and all three Quattro kinds", () => {
   const manifest = readJson("manifest.json");
   assert.equal(manifest.schemaVersion, 1);
   assert.equal(manifest.id, "org.ministryoftaste.arcana");
-  assert.equal(manifest.version, "0.1.0-alpha");
+  assert.equal(manifest.version, "0.2.0");
+  assert.equal(manifest.version, readJson("package.json").version);
   assert.deepEqual(manifest.kinds, ["service", "panel", "bar-widget"]);
   assert.deepEqual(manifest.entryPoints, {
     service: "ArcanaService.qml",
@@ -36,9 +37,20 @@ test("every declared entry point exists and QML uses the singleton contract", ()
   assert.match(widget, /serviceFor\(root\.moduleName\)/);
 });
 
+test("panel version is small, manifest-driven, and baseline-aligned beside the title", () => {
+  const panel = fs.readFileSync(path.join(root, "Panel.qml"), "utf8");
+  const label = panel.match(/Text \{\s+id: versionLabel\b[^}]+\}/);
+  assert.ok(label, "version label exists");
+  assert.match(label[0], /anchors\.left: panelTitle\.right/);
+  assert.match(label[0], /anchors\.baseline: panelTitle\.baseline/);
+  assert.match(label[0], /"v" \+ root\.manifest\.version/);
+  assert.match(label[0], /font\.pixelSize: 10/);
+  assert.match(label[0], /color: root\.muted/);
+});
+
 test("dynamic agent prompts use a Process argv array and never bar.run interpolation", () => {
   const qml = fs.readFileSync(path.join(root, "ArcanaService.qml"), "utf8");
-  assert.match(qml, /\["omarchy", "agent", "prompt", root\.agentPacket\]/);
+  assert.match(qml, /\["omarchy", "agent", "prompt", handoffPrompt\(\)\]/);
   assert.match(qml, /\["omarchy", "default", "agent"\]/);
   assert.doesNotMatch(qml, /bar\.run\([^\n]*agentPacket/);
   assert.doesNotMatch(qml, /bash\s+-lc/);
@@ -48,22 +60,24 @@ test("Quattro service cuts over atomically to validated semantic-v2 assets", () 
   const qml = fs.readFileSync(path.join(root,"ArcanaService.qml"),"utf8");
   assert.match(qml,/assets\/semantic-v2\/cards\.json/);
   assert.match(qml,/assets\/spreads\.json/);
-  assert.match(qml,/Interpretation\.validateCatalog\(deckSnapshot\(\), spreadSnapshot\(\)\)/);
-  assert.match(qml,/Interpretation\.migrateState/);
+  assert.match(qml,/engine = Interpretation\.createEngine\(deckSnapshot\(\), spreadSnapshot\(\)\)/);
+  assert.match(qml,/engine\.migrateState/);
   assert.match(qml,/Arcana\.drawV2/);
-  assert.match(qml,/Interpretation\.interpret/);
-  assert.match(qml,/Interpretation\.toPanelReading/);
-  assert.match(qml,/Interpretation\.buildHandoff/);
+  assert.match(qml,/engine\.interpret/);
+  assert.match(qml,/engine\.toPanelReading/);
+  assert.match(qml,/engine\.buildHandoff/);
   assert.doesNotMatch(qml,/Arcana\.compose|Arcana\.buildHandoff|Arcana\.draw\(/);
 });
 
 test("copy and agent handoff use bounded semantic projections without shell interpolation", () => {
   const qml=fs.readFileSync(path.join(root,"ArcanaService.qml"),"utf8");
   const panel=fs.readFileSync(path.join(root,"Panel.qml"),"utf8");
-  assert.match(qml,/Interpretation\.copyReading/);
-  assert.match(qml,/lastCopyArgv = \["wl-copy", text\]/);
+  assert.match(qml,/engine\.copyReadableReading/);
+  assert.match(qml,/engine\.copyReading/);
+  assert.match(qml,/lastCopyArgv = \["wl-copy"\]/);
   assert.match(qml,/copyProcess\.command = lastCopyArgv/);
-  assert.match(qml,/\["omarchy", "agent", "prompt", root\.agentPacket\]/);
+  assert.match(qml,/write\(root\.lastCopyText\)/);
+  assert.match(qml,/\["install", "-m", "600", "-T", "\/dev\/stdin", root\.handoffPath\]/);
   assert.match(panel,/Qt\.Key_C/);
   assert.match(panel,/C  Copy/);
   assert.doesNotMatch(qml,/bash\s+-lc|sh\s+-c/);
@@ -74,20 +88,23 @@ test("question submission recomposes before producing the exact preview and argv
   const recompose=qml.indexOf("function recomposeWithQuestion(question)");
   const prepare=qml.indexOf("function prepareAgent(question)");
   const guard=qml.indexOf("!recomposeWithQuestion(question)",prepare);
-  const serialize=qml.indexOf("Interpretation.buildHandoff",prepare);
+  const serialize=qml.indexOf("engine.buildHandoff",prepare);
   assert.ok(recompose >= 0 && prepare > recompose);
   assert.ok(guard > prepare && serialize > guard);
   assert.match(qml,/currentSemanticReading\.cards\.map/);
-  assert.match(qml,/currentReading = Interpretation\.toPanelReading/);
+  assert.match(qml,/currentReading = engine\.toPanelReading/);
   assert.match(qml,/stateAdapter\.lastReading = reading/);
-  assert.match(qml,/agentPacket = Interpretation\.buildHandoff/);
-  assert.match(qml,/lastAgentArgv = \["omarchy", "agent", "prompt", root\.agentPacket\]/);
+  assert.match(qml,/agentPacket = engine\.buildHandoff/);
+  assert.match(qml,/lastHandoffText = root\.agentPacket/);
+  assert.match(qml,/lastAgentArgv = \["omarchy", "agent", "prompt", handoffPrompt\(\)\]/);
   assert.match(qml,/agentLaunch\.command = lastAgentArgv/);
+  // The packet travels through an owner-only file, never argv.
+  assert.match(qml,/write\(root\.lastHandoffText\)/);
 });
 
 test("state migration precedes restoration and gates every draw", () => {
   const qml=fs.readFileSync(path.join(root,"ArcanaService.qml"),"utf8");
-  const migration=qml.indexOf("Interpretation.migrateState");
+  const migration=qml.indexOf("engine.migrateState");
   const restore=qml.indexOf("currentSemanticReading = migrated.lastReading");
   assert.ok(migration >= 0 && restore > migration);
   assert.match(qml,/readonly property bool ready: semanticReady && cards\.length === 78 && stateMigrationApplied/);
@@ -185,7 +202,6 @@ test("motion is perceptible, bounded, state-driven, and never loops", () => {
   assert.match(panel, /id:\s*readingFade/);
   assert.match(panel, /Behavior on renderScale/);
   assert.match(panel, /ColorAnimation/);
-  assert.match(panel, /Behavior on width/);
   assert.doesNotMatch(panel + button, /loops:\s*Animation\.Infinite|running:\s*true[\s\S]{0,120}loops/i);
   const durations = [...(panel + button).matchAll(/duration:\s*(\d+)/g)].map(match => Number(match[1]));
   assert.ok(durations.length >= 6);
@@ -231,7 +247,7 @@ test("revealed cards open a bounded keyboard-accessible inspection view", () => 
   assert.match(panel, /function openInspection/);
   assert.match(panel, /function closeInspection/);
   assert.match(panel, /id:\s*inspectionLayer/);
-  assert.match(panel, /root\.inspectionOpen \? 0 : frameBounds\.x/);
+  assert.match(panel, /id:\s*outsideClick[\s\S]{0,200}enabled: root\.opened && !root\.inspectionOpen/);
   assert.match(panel, /Math\.min\(480/);
   assert.match(panel, /Click, Enter, or Esc to return/);
   assert.match(panel, /event\.accepted = true/);

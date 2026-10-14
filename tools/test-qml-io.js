@@ -5,6 +5,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const {spawnSync} = require("node:child_process");
 const root = path.resolve(__dirname, "..");
+const Interpretation = require("../src/Interpretation");
 const base = path.join(root, ".release-local");
 fs.mkdirSync(base, {recursive: true});
 const scratch = fs.mkdtempSync(path.join(base, "qml-io-"));
@@ -62,8 +63,13 @@ try {
   run("agent-handoff", agentState, {PATH: bin + path.delimiter + process.env.PATH, ARCANA_HANDOFF_RECORD: record});
   const captured = JSON.parse(fs.readFileSync(record, "utf8"));
   const semantic = JSON.parse(fs.readFileSync(path.join(agentState, "omarchy", "arcana.json"), "utf8")).lastReading;
-  if (captured.argv.length !== 3 || JSON.parse(captured.argv[2]).semantic.readingId !== semantic.id) throw new Error("process packet identity mismatch");
-  if (captured.cwd !== path.join(agentState, "omarchy", "arcana-agent-context")) throw new Error("agent process escaped isolated context");
+  const contextDir = path.join(agentState, "omarchy", "arcana-agent-context");
+  const handoffFile = path.join(contextDir, "handoff.md");
+  if (captured.argv.length !== 3 || !captured.argv[2].includes(handoffFile)) throw new Error("agent prompt does not point at the handoff file");
+  if (Buffer.byteLength(captured.argv[2]) > 1024 || captured.argv[2].includes("```json")) throw new Error("packet leaked into argv");
+  if (Interpretation.handoffPacket(fs.readFileSync(handoffFile, "utf8")).semantic.readingId !== semantic.id) throw new Error("handoff file packet identity mismatch");
+  if ((fs.statSync(handoffFile).mode & 0o077) !== 0) throw new Error("handoff file is readable by other users");
+  if (captured.cwd !== contextDir) throw new Error("agent process escaped isolated context");
 } finally {
   fs.rmSync(scratch, {recursive: true, force: true});
 }

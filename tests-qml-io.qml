@@ -1,3 +1,5 @@
+// Lives at the repository root: Quickshell uses this file's directory as the
+// config root and cannot import ArcanaService.qml from outside it.
 import QtQml
 import Quickshell
 import Quickshell.Io
@@ -89,7 +91,7 @@ ShellRoot {
         phase = 2
       } else if (phase === 2 && service.agentStatus === "ready") {
         check(service.launchAgent(), "explicit launch rejected")
-        check(service.lastAgentArgv[3] === previewPacket, "launched packet differs from preview")
+        check(service.lastHandoffText === previewPacket, "launched packet differs from preview")
         phase = 3
       } else if (phase === 3 && service.agentStatus === "launched" && service.stateStatus === "saved") done()
       return

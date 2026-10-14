@@ -19,7 +19,14 @@ Item {
   property string statePathOverride: ""
   readonly property string effectiveStatePath: statePathOverride === "" ? statePath : statePathOverride
   readonly property string agentContextDir: stateBase + "/arcana-agent-context"
+  // The previewed packet is handed over in this file, not in argv: terminals
+  // may cap launch arguments (Splinterm allows 4 KiB), and argv is visible in
+  // the process list for the whole agent session.
+  readonly property string handoffPath: agentContextDir + "/handoff.md"
   property var deckDocument: ({schemaVersion: 0, cards: []})
+  // Interpretation engine bound to the validated catalogs; rebuilt only when
+  // the deck or spread assets load.
+  property var engine: null
   property var spreadDocument: ({schemaVersion: 0, spreads: []})
   readonly property var cards: deckDocument.cards || []
   property bool semanticReady: false
@@ -38,6 +45,8 @@ Item {
   property var currentSemanticReading: null
   property var currentReading: null
   property string currentReadingKind: "daily"
+  // Local date the shown reading was drawn, or "" when unknown.
+  property string currentReadingDate: ""
   property int readingRevision: 0
   property string pendingDrawKind: ""
   property int pendingCount: 1
@@ -49,11 +58,15 @@ Item {
   property string agentStatus: "idle"
   property bool agentLaunchRunning: false
   property var lastCopyArgv: []
+  property string lastCopyText: ""
   property var lastAgentArgv: []
+  property string lastHandoffText: ""
   property string copyStatus: "idle"
   property real uiScale: 1
   property bool fullscreen: false
   property string themeMode: "arcana"
+  property bool reversals: true
+  readonly property var history: stateAdapter.history || []
 
   signal readingUpdated()
 
@@ -61,9 +74,13 @@ Item {
     return Qt.formatDate(new Date(), "yyyy-MM-dd")
   }
 
+  function localDateOf(iso) {
+    var date = new Date(String(iso || ""))
+    return isNaN(date.getTime()) ? "" : Qt.formatDate(date, "yyyy-MM-dd")
+  }
+
   function reversalsEnabled() {
-    var p = stateAdapter.preferences || ({})
-    return p.reversals !== false
+    return reversals
   }
 
   function persistState() {
@@ -118,6 +135,7 @@ Item {
     uiScale = Settings.normalizeScale(preferences.uiScale)
     fullscreen = Settings.normalizeFullscreen(preferences.fullscreen)
     themeMode = Settings.normalizeThemeMode(preferences.themeMode)
+    reversals = preferences.reversals !== false
   }
 
   function finishStateLoad() {
@@ -139,26 +157,24 @@ Item {
     console.warn("Arcana state load failed closed:", FileViewError.toString(error))
   }
 
+  function setPreference(key, value) {
+    var preferences = JSON.parse(JSON.stringify(stateAdapter.preferences || ({})))
+    preferences[key] = value
+    stateAdapter.preferences = preferences
+    persistState()
+    return value
+  }
+
   function setUiScale(value) {
     if (!ready) return uiScale
-    var next = Settings.normalizeScale(value)
-    var preferences = JSON.parse(JSON.stringify(stateAdapter.preferences || ({})))
-    preferences.uiScale = next
-    stateAdapter.preferences = preferences
-    uiScale = next
-    persistState()
-    return next
+    uiScale = setPreference("uiScale", Settings.normalizeScale(value))
+    return uiScale
   }
 
   function setFullscreen(value) {
     if (!ready) return fullscreen
-    var next = Settings.normalizeFullscreen(value)
-    var preferences = JSON.parse(JSON.stringify(stateAdapter.preferences || ({})))
-    preferences.fullscreen = next
-    stateAdapter.preferences = preferences
-    fullscreen = next
-    persistState()
-    return next
+    fullscreen = setPreference("fullscreen", Settings.normalizeFullscreen(value))
+    return fullscreen
   }
 
   function toggleFullscreen() {
@@ -167,17 +183,32 @@ Item {
 
   function setThemeMode(value) {
     if (!ready) return themeMode
-    var next = Settings.normalizeThemeMode(value)
-    var preferences = JSON.parse(JSON.stringify(stateAdapter.preferences || ({})))
-    preferences.themeMode = next
-    stateAdapter.preferences = preferences
-    themeMode = next
-    persistState()
-    return next
+    themeMode = setPreference("themeMode", Settings.normalizeThemeMode(value))
+    return themeMode
   }
 
   function toggleThemeMode() {
     return setThemeMode(themeMode === "system" ? "arcana" : "system")
+  }
+
+  // Affects future draws only; the current reading keeps its orientations.
+  function setReversals(value) {
+    if (!ready) return reversals
+    reversals = setPreference("reversals", value === true)
+    return reversals
+  }
+
+  function toggleReversals() {
+    return setReversals(!reversals)
+  }
+
+  property var titleIndex: ({})
+
+  function cardTitle(cardId) {
+    var title = titleIndex[cardId] || String(cardId)
+    return title.split(" ").map(function(word, index) {
+      return index > 0 && /^(of|and|the)$/i.test(word) ? word.toLowerCase() : word
+    }).join(" ")
   }
 
   function deckSnapshot() {
@@ -192,11 +223,15 @@ Item {
     semanticReady = false
     if (deckDocument.schemaVersion !== 2 || spreadDocument.schemaVersion !== 1) return
     try {
-      Interpretation.validateCatalog(deckSnapshot(), spreadSnapshot())
+      engine = Interpretation.createEngine(deckSnapshot(), spreadSnapshot())
+      var titles = ({})
+      for (var i = 0; i < cards.length; i++) titles[cards[i].id] = cards[i].title
+      titleIndex = titles
       semanticReady = cards.length === 78
       dataStatus = semanticReady ? "ready" : "invalid"
       if (semanticReady) restoreMigratedState()
     } catch (error) {
+      engine = null
       dataStatus = "invalid"
       console.warn("Arcana rejected semantic-v2 assets:", error)
     }
@@ -238,8 +273,43 @@ Item {
       && stateAdapter.dailySelection.length === 1
   }
 
+  // True when the reading on screen is a daily draw from an earlier day, such
+  // as after midnight or a restart restoring yesterday's card.
+  function dailyIsStale() {
+    return currentReadingKind === "daily" && !!currentSemanticReading && !showingTodaysDaily()
+  }
+
+  // A restored daily is dated only when it is the persisted daily selection.
+  function restoredReadingDate(state) {
+    if (String(state.lastReadingKind || "daily") !== "daily") return ""
+    var shown = (state.lastReading && state.lastReading.cards) || []
+    var daily = state.dailySelection || []
+    if (shown.length !== 1 || daily.length !== 1) return ""
+    if (shown[0].cardId !== daily[0].cardId || shown[0].orientation !== daily[0].orientation) return ""
+    return String(state.dailyDate || "")
+  }
+
+  function showingTodaysDaily() {
+    if (currentReadingKind !== "daily" || !currentSemanticReading || !persistedDailyIsCurrent()) return false
+    var shown = currentSemanticReading.cards[0]
+    var daily = stateAdapter.dailySelection[0]
+    return currentSemanticReading.cards.length === 1 && shown.cardId === daily.cardId && shown.orientation === daily.orientation
+  }
+
   function stateSnapshot() {
-    return JSON.parse(JSON.stringify({schemaVersion:stateAdapter.schemaVersion,dailyDate:stateAdapter.dailyDate,dailySeed:stateAdapter.dailySeed,dailySelection:stateAdapter.dailySelection,lastReadingSelection:stateAdapter.lastReadingSelection,lastReading:stateAdapter.lastReading,lastReadingKind:stateAdapter.lastReadingKind,freeCounter:stateAdapter.freeCounter,preferences:stateAdapter.preferences,migration:stateAdapter.migration}))
+    return JSON.parse(JSON.stringify({
+      schemaVersion: stateAdapter.schemaVersion,
+      dailyDate: stateAdapter.dailyDate,
+      dailySeed: stateAdapter.dailySeed,
+      dailySelection: stateAdapter.dailySelection,
+      lastReadingSelection: stateAdapter.lastReadingSelection,
+      lastReading: stateAdapter.lastReading,
+      lastReadingKind: stateAdapter.lastReadingKind,
+      freeCounter: stateAdapter.freeCounter,
+      preferences: stateAdapter.preferences,
+      migration: stateAdapter.migration,
+      history: stateAdapter.history
+    }))
   }
 
   function applyState(next) {
@@ -253,13 +323,14 @@ Item {
     stateAdapter.freeCounter = next.freeCounter
     stateAdapter.preferences = next.preferences
     stateAdapter.migration = next.migration
+    stateAdapter.history = next.history || []
   }
 
   function restoreMigratedState() {
     if (!semanticReady || !stateLoaded || stateMigrationApplied) return
     try {
       var before = loadedStateDocument || stateSnapshot()
-      var migrated = Interpretation.migrateState(deckSnapshot(), spreadSnapshot(), before)
+      var migrated = engine.migrateState(before)
       applyState(migrated)
       stateMigrationApplied = true
       loadedStateDocument = null
@@ -267,7 +338,8 @@ Item {
       if (migrated.lastReading) {
         currentSemanticReading = migrated.lastReading
         currentReadingKind = String(migrated.lastReadingKind || "daily")
-        currentReading = Interpretation.toPanelReading(deckSnapshot(), spreadSnapshot(), currentSemanticReading, {kind:currentReadingKind,createdAt:null})
+        currentReadingDate = restoredReadingDate(migrated)
+        currentReading = engine.toPanelReading(currentSemanticReading, {kind:currentReadingKind,createdAt:null})
         readingRevision++
         readingUpdated()
       }
@@ -283,8 +355,10 @@ Item {
 
   function requestDaily(force) {
     if (!ready || entropyProcess.running || drawStatus === "collecting") return false
+    // Already showing today's card: keep it (and any saved question) as is.
+    if (force !== true && showingTodaysDaily()) return true
     if (force !== true && persistedDailyIsCurrent()) {
-      return setReading("daily", stateAdapter.dailySelection, "single")
+      return setReading("daily", stateAdapter.dailySelection, "single", true)
     }
     pendingDrawKind = "daily"
     pendingCount = 1
@@ -336,7 +410,7 @@ Item {
       ? Arcana.dailyKeyV2(localDateKey()) + ":" + entropy
       : kind + ":" + entropy + ":" + String(Number(stateAdapter.freeCounter || 0))
     var selection = Arcana.drawV2(root.cards, {seed: seed, count: count, reversals: reversalsEnabled()})
-    if (!setReading(kind, selection, count === 3 ? "context-friction-doorway" : "single")) return
+    if (!setReading(kind, selection, count === 3 ? "context-friction-doorway" : "single", true)) return
     if (kind === "daily") {
       stateAdapter.dailyDate = localDateKey()
       stateAdapter.dailySeed = seed
@@ -355,28 +429,63 @@ Item {
     return output
   }
 
-  function composeSemantic(kind, selection, spreadId, question) {
-    var policy = reversalsEnabled() ? "energy_state" : "none"
-    var reading = Interpretation.interpret(deckSnapshot(), spreadSnapshot(), {spreadId:spreadId,cards:positionedSelection(selection,spreadId),originalQuestion:question === undefined ? null : question,topicLens:"general",tradition:"rws",reversalPolicy:policy,elementalDignity:"disabled",narratorId:"clear-reflective-v1"})
+  function composeSemantic(kind, selection, spreadId, question, recordHistory, reversalPolicy) {
+    var policy = reversalPolicy || (reversalsEnabled() ? "energy_state" : "none")
+    var reading = engine.interpret({
+      spreadId: spreadId,
+      cards: positionedSelection(selection, spreadId),
+      originalQuestion: question === undefined ? null : question,
+      topicLens: "general",
+      tradition: "rws",
+      reversalPolicy: policy,
+      elementalDignity: "disabled",
+      narratorId: "clear-reflective-v1"
+    })
     var createdAt = new Date().toISOString()
     agentPacket = ""
     agentStatus = "idle"
     copyStatus = "idle"
     currentSemanticReading = reading
     currentReadingKind = kind
-    currentReading = Interpretation.toPanelReading(deckSnapshot(), spreadSnapshot(), reading, {kind:kind,createdAt:createdAt})
+    currentReadingDate = localDateKey()
+    currentReading = engine.toPanelReading(reading, {kind:kind,createdAt:createdAt})
     readingRevision++
     stateAdapter.lastReading = reading
     stateAdapter.lastReadingSelection = positionedSelection(selection,spreadId)
     stateAdapter.lastReadingKind = kind
+    if (recordHistory === true) {
+      stateAdapter.history = Interpretation.appendHistory(stateAdapter.history, {
+        kind: kind,
+        createdAt: createdAt,
+        reversalPolicy: policy,
+        cards: selectionSnapshot(selection).map(function(item) { return {cardId:item.cardId,orientation:item.orientation} })
+      })
+    }
     persistState()
     readingUpdated()
     return reading
   }
 
-  function setReading(kind, selection, spreadId) {
-    try { composeSemantic(kind, selection, spreadId, null); drawStatus = "ready"; return true }
+  function setReading(kind, selection, spreadId, recordHistory) {
+    try { composeSemantic(kind, selection, spreadId, null, recordHistory); drawStatus = "ready"; return true }
     catch (error) { drawStatus = "interpretation-failed"; console.warn("Arcana interpretation failed closed:", error); return false }
+  }
+
+  // Reopen a reading from history without recording it again.
+  function restoreHistory(index) {
+    if (!ready || drawStatus === "collecting") return false
+    var entry = (stateAdapter.history || [])[index]
+    if (!entry) return false
+    try {
+      var valid = engine.historyEntry(entry)
+      composeSemantic(valid.kind, valid.cards, valid.kind === "spread" ? "context-friction-doorway" : "single", null, false, valid.reversalPolicy)
+      currentReadingDate = localDateOf(valid.createdAt)
+      drawStatus = "ready"
+      return true
+    } catch (error) {
+      console.warn("Arcana could not restore history entry:", error)
+      return false
+    }
   }
 
   function recomposeWithQuestion(question) {
@@ -384,7 +493,9 @@ Item {
     try {
       var selection = currentSemanticReading.cards.map(function(item) { return {cardId:item.cardId,orientation:item.orientation} })
       var original = String(question || "")
-      composeSemantic(currentReadingKind, selection, currentSemanticReading.spreadId, original.trim() === "" ? null : original)
+      var date = currentReadingDate
+      composeSemantic(currentReadingKind, selection, currentSemanticReading.spreadId, original.trim() === "" ? null : original, false, currentSemanticReading.reversalPolicy)
+      currentReadingDate = date
       return true
     } catch (error) {
       console.warn("Arcana question recomposition failed closed:", error)
@@ -398,7 +509,7 @@ Item {
       agentStatus = currentSemanticReading ? "question-failed" : "no-reading"
       return false
     }
-    agentPacket = Interpretation.buildHandoff(deckSnapshot(), spreadSnapshot(), currentSemanticReading)
+    agentPacket = engine.buildHandoff(currentSemanticReading)
     if (testMode) {
       configuredAgent = "test-agent"
       agentStatus = "ready"
@@ -410,11 +521,22 @@ Item {
     return true
   }
 
-  function copyCurrentReading() {
+  // Plain-text projections of the current reading. "evidence" keeps claim IDs
+  // for auditing; "readable" is what a person pastes into notes.
+  function readingText(format) {
+    if (!currentSemanticReading) return ""
+    if (format === "evidence") return engine.copyReading(currentSemanticReading, 8000)
+    return engine.copyReadableReading(currentSemanticReading, 8000, {kind:currentReadingKind,localDate:currentReadingDate})
+  }
+
+  function copyCurrentReading(format) {
     if (!currentSemanticReading || copyProcess.running) return false
     try {
-      var text = Interpretation.copyReading(deckSnapshot(), spreadSnapshot(), currentSemanticReading, 8000)
-      lastCopyArgv = ["wl-copy", text]
+      var text = readingText(format === "evidence" ? "evidence" : "readable")
+      // The text goes through stdin: wl-copy stays running to serve the
+      // clipboard, and its argv would expose the reading in /proc.
+      lastCopyText = text
+      lastCopyArgv = ["wl-copy"]
       copyProcess.command = lastCopyArgv
       copyStatus = testMode ? "copied" : "copying"
       if (!testMode) copyProcess.running = true
@@ -435,10 +557,16 @@ Item {
       return false
     agentStatus = "launching"
     agentLaunchRunning = true
-    lastAgentArgv = ["omarchy", "agent", "prompt", root.agentPacket]
+    lastHandoffText = root.agentPacket
+    lastAgentArgv = ["omarchy", "agent", "prompt", handoffPrompt()]
     agentLaunch.command = lastAgentArgv
-    if (!testMode) agentLaunch.running = true
+    if (!testMode) handoffWriter.running = true
     return true
+  }
+
+  function handoffPrompt() {
+    return "Read the Arcana tarot reading handoff at " + handoffPath
+      + " and follow the instructions at the top of that file. Reading it is the only action to take on this computer unless I ask for more."
   }
 
   FileView {
@@ -491,6 +619,7 @@ Item {
       property int freeCounter: 0
       property var preferences: ({reversals:true, uiScale:1, fullscreen:false, themeMode:"arcana"})
       property var migration: ({fromSchemaVersion:2, legacyReadingRecovered:false})
+      property var history: []
     }
   }
 
@@ -548,11 +677,14 @@ Item {
     onTriggered: { agentGetter.running = false; root.agentStatus = "unavailable" }
   }
 
+  // The agent command may keep running for the whole terminal session. Once
+  // it has survived a second the terminal is up, so report it as launched.
   Timer {
     interval: 1000
-    running: root.agentStatus === "launching" && !root.testMode
+    running: root.agentStatus === "launching" && !handoffWriter.running && !root.testMode
     onTriggered: {
-      if (!agentLaunch.running) { root.agentLaunchRunning = false; root.agentStatus = "launch-failed" }
+      if (agentLaunch.running) root.agentStatus = "launched"
+      else { root.agentLaunchRunning = false; root.agentStatus = "launch-failed" }
     }
   }
 
@@ -573,7 +705,15 @@ Item {
   Process {
     id: copyProcess
     running: false
-    onExited: function(exitCode) { root.copyStatus = exitCode === 0 ? "copied" : "copy-failed" }
+    stdinEnabled: true
+    onStarted: {
+      write(root.lastCopyText)
+      stdinEnabled = false
+    }
+    onExited: function(exitCode) {
+      stdinEnabled = true
+      root.copyStatus = exitCode === 0 ? "copied" : "copy-failed"
+    }
   }
 
   Process {
@@ -598,28 +738,62 @@ Item {
     onExited: root.agentStatus = "retry"
   }
 
+  // Owner-only file, replaced on each launch; the packet goes through stdin.
+  Process {
+    id: handoffWriter
+    command: ["install", "-m", "600", "-T", "/dev/stdin", root.handoffPath]
+    running: false
+    stdinEnabled: true
+    onStarted: {
+      write(root.lastHandoffText)
+      stdinEnabled = false
+    }
+    onExited: function(exitCode) {
+      stdinEnabled = true
+      if (exitCode === 0) { agentLaunch.running = true; return }
+      root.agentLaunchRunning = false
+      root.agentStatus = "launch-failed"
+    }
+  }
+
   Process {
     id: agentLaunch
     workingDirectory: root.agentContextDir
     running: false
     onExited: function(exitCode) {
       root.agentLaunchRunning = false
-      root.agentStatus = exitCode === 0 ? "launched" : "launch-failed"
+      // A session that already launched may exit non-zero when it is closed.
+      if (root.agentStatus === "launching") root.agentStatus = exitCode === 0 ? "launched" : "launch-failed"
     }
   }
 
+  // omarchy-shell org.ministryoftaste.arcana.service <function> [arg]
+  // Quickshell IPC has no optional parameters: declared args are required.
   IpcHandler {
     target: "org.ministryoftaste.arcana.service"
-    function status(arg: string): string {
-      return JSON.stringify({ready:root.ready,stateLoaded:root.stateLoaded,migrationApplied:root.stateMigrationApplied,cards:root.cards.length,kind:root.currentReadingKind,readingId:root.currentSemanticReading ? root.currentSemanticReading.id : null,drawStatus:root.drawStatus,agentStatus:root.agentStatus,stateStatus:root.stateStatus,dataStatus:root.dataStatus,copyStatus:root.copyStatus,scale:root.uiScale,fullscreen:root.fullscreen,theme:root.themeMode})
+    function status(): string {
+      return JSON.stringify({ready:root.ready,stateLoaded:root.stateLoaded,migrationApplied:root.stateMigrationApplied,cards:root.cards.length,kind:root.currentReadingKind,readingId:root.currentSemanticReading ? root.currentSemanticReading.id : null,dailyIsStale:root.dailyIsStale(),drawStatus:root.drawStatus,agentStatus:root.agentStatus,stateStatus:root.stateStatus,dataStatus:root.dataStatus,copyStatus:root.copyStatus,scale:root.uiScale,fullscreen:root.fullscreen,theme:root.themeMode,reversals:root.reversals,historyLength:root.history.length})
     }
-    function daily(arg: string): string { return root.requestDaily(false) ? "ok" : "busy" }
-    function free(arg: string): string { return root.requestFree() ? "ok" : "busy" }
-    function spread(arg: string): string { return root.requestSpread() ? "ok" : "busy" }
+    function daily(): string { return root.requestDaily(false) ? "ok" : "busy" }
+    function free(): string { return root.requestFree() ? "ok" : "busy" }
+    function spread(): string { return root.requestSpread() ? "ok" : "busy" }
     function scale(arg: string): string { return String(root.setUiScale(Number(arg))) }
     function theme(arg: string): string { return root.setThemeMode(String(arg)) }
     function fullscreen(arg: string): string { return String(root.setFullscreen(arg === "true")) }
-    function retryStorage(arg: string): string { return root.retryStorage() ? "ok" : "busy" }
+    function reversals(arg: string): string { return String(root.setReversals(arg !== "false")) }
+    function retryStorage(): string { return root.retryStorage() ? "ok" : "busy" }
+    // Current reading as "text", "evidence", or "json" (panel projection).
+    function reading(arg: string): string {
+      if (!root.currentSemanticReading) return ""
+      if (arg === "json") return JSON.stringify(root.currentReading)
+      return root.readingText(arg === "evidence" ? "evidence" : "readable")
+    }
+    // Prepares the agent packet for an optional question and returns it. It
+    // never launches an agent; launching stays an explicit panel action.
+    function handoff(arg: string): string {
+      return root.prepareAgent(arg) ? root.agentPacket : ""
+    }
+    function history(): string { return JSON.stringify(root.history) }
   }
 
   Component.onCompleted: {
